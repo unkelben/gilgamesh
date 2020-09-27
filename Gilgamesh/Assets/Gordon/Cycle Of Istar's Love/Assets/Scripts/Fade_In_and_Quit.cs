@@ -28,6 +28,20 @@ public class Fade_In_and_Quit : MonoBehaviour
         fadeIn = true;
     }
 
+    void Start()
+    {
+        Color objectColor = this.GetComponent<Renderer>().material.color;
+        float fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
+
+        objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+        this.GetComponent<Renderer>().material.color = objectColor;
+
+        if (objectColor.a <= 0)
+        {
+            Debug.Log("GoodStart");
+        }
+    }
+
 
     void OnMouseDown()
     {
