@@ -10,9 +10,6 @@
 /Gilgamesh/[Ll]ogs/
 /Gilgamesh/[Mm]emoryCaptures/
 
-# Asset meta data should only be ignored when the corresponding asset is also ignored
-*.meta
-
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /Gilgamesh/[Aa]ssets/AssetStoreTools*
 
