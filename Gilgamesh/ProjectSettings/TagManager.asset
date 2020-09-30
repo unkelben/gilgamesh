@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Block
+  - Needle
+  - Target
   layers:
   - Default
   - TransparentFX
@@ -39,6 +41,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Curtains
+    uniqueID: 3621826791
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Targets
+    uniqueID: 796259075
+    locked: 0
+  - name: Needles
+    uniqueID: 2369913681
     locked: 0
