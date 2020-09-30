@@ -30,7 +30,33 @@ public class DivingMovement : MonoBehaviour
         }
         
         transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed;
-       
 
     }
+    
 }
+
+
+/**
+    void Update()
+    {
+        rb.velocity = Vector2.zero;
+
+        if(Input.GetKey(KeyCode.DownArrow))
+        {
+            rb.velocity = new Vector2(0, -movementspeed * Time.deltaTime);
+        }
+
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            rb.velocity = new Vector2(movementspeed * Time.deltaTime, 0);
+        }
+
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            rb.velocity = new Vector2(-movementspeed * Time.deltaTime, 0);
+        }
+
+    }
+**/ 
