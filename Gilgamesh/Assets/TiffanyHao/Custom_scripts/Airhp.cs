@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Airhp : MonoBehaviour
 {
     public Slider s;
 
     [SerializeField]
-    private float decreaseRate = 0.0003f; 
+    private float decreaseRate = 0.0002f; 
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +22,17 @@ public class Airhp : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(s.value >= 0)
+
+        if(s.value <= 0)
+        {
+            SceneManager.LoadScene("BadEnding"); 
+        }
+
+        if(s.value > 0)
         {
             s.value -= decreaseRate; 
         }
+
     }
 
 }
