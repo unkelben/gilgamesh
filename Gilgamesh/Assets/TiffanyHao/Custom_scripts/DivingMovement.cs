@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DivingMovement : MonoBehaviour
 {
@@ -32,31 +33,14 @@ public class DivingMovement : MonoBehaviour
         transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed;
 
     }
-    
-}
 
-
-/**
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        rb.velocity = Vector2.zero;
-
-        if(Input.GetKey(KeyCode.DownArrow))
+        Debug.Log("Found flower");
+        if(collision.gameObject.CompareTag("Flower"))
         {
-            rb.velocity = new Vector2(0, -movementspeed * Time.deltaTime);
+            SceneManager.LoadScene("GoodEnding"); 
         }
-
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            rb.velocity = new Vector2(movementspeed * Time.deltaTime, 0);
-        }
-
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            rb.velocity = new Vector2(-movementspeed * Time.deltaTime, 0);
-        }
-
     }
-**/ 
+
+}
