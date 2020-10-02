@@ -8,6 +8,18 @@ namespace Game.ClawMachine
     {
         [SerializeField] GameObject hand;
 
+        
+
+        private void Start()
+        {
+            
+        }
+
+        private void FixedUpdate()
+        {
+            
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.tag == "PinchLimit")
@@ -15,5 +27,7 @@ namespace Game.ClawMachine
                 hand.GetComponent<Hand>().stopPinching = true;
             }
         }
+
+        
     }
 }

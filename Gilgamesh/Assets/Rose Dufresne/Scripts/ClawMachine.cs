@@ -15,9 +15,36 @@ namespace Game.ClawMachine
 
         Rigidbody rb;
 
+        //GroundCheck Variables
+        [SerializeField] LayerMask mWhatIsGround;
+        [SerializeField] private float kGroundCheckRadius = 0.1f;
+        private List<GroundCheck> mGroundCheckList;
+        private bool mGrounded;
+        private GameObject[] fingers;
+
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
+
+            // Obtain ground check components and store in list
+            mGroundCheckList = new List<GroundCheck>();
+            GroundCheck[] groundChecksArray = transform.GetComponentsInChildren<GroundCheck>();
+            foreach (GroundCheck g in groundChecksArray)
+            {
+                mGroundCheckList.Add(g);
+            }
+        }
+
+        private void Start()
+        {
+            Finger[] fingerArray = FindObjectsOfType<Finger>();
+            fingers = new GameObject[fingerArray.Length];
+            for (int i=0; i < fingerArray.Length; i++)
+            {
+                fingers[i] = fingerArray[i].gameObject;
+            }
+
+            mGrounded = false;
         }
 
         private void Update()
@@ -27,6 +54,7 @@ namespace Game.ClawMachine
 
         private void FixedUpdate()
         {
+            CheckGrounded();
             Movement();
         }
 
@@ -35,15 +63,37 @@ namespace Game.ClawMachine
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
 
+            if (mGrounded)
+            {
+                vertical = vertical < 0 ? vertical = 0 : vertical;
+            }
+
             isMoving = horizontal != 0 || vertical != 0;
 
             inputVector = new Vector3(horizontal, vertical, 0f).normalized;
-            moveAmount = Vector3.SmoothDamp(moveAmount, inputVector, ref smoothMoveVelocity, 0.15f);
+            moveAmount = mGrounded ? inputVector : Vector3.SmoothDamp(moveAmount, inputVector, ref smoothMoveVelocity, 0.15f);
         }
 
         private void Movement()
         {
             rb.velocity = transform.TransformDirection(moveAmount) * speed * Time.deltaTime;
+        }
+
+        //IsGrounded function that performs the logic and returns a boolean - true if the player is on the ground, false otherwise.
+        private void CheckGrounded()
+        {
+            foreach (GroundCheck g in mGroundCheckList)
+            {
+                for (int i = 0; i < fingers.Length; i++)
+                {
+                    if (g.CheckGrounded(kGroundCheckRadius, mWhatIsGround, fingers[i]))
+                    {
+                        mGrounded = true;
+                        return;
+                    }
+                }
+            }
+            mGrounded = false;
         }
     }
 }

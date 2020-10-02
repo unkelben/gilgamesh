@@ -285,7 +285,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0.5020091, w: 0.86486244}
   m_LocalPosition: {x: -1.1553106, y: -3.7968092, z: -0.009999752}
   m_LocalScale: {x: 0.50517, y: 2.3112, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1393118048}
   m_Father: {fileID: 1044010104}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -33.476}
@@ -445,6 +446,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 300
+  mWhatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  kGroundCheckRadius: 0.1
 --- !u!1 &508036327
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +481,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: 0.5020109, w: 0.86486125}
   m_LocalPosition: {x: 1.155313, y: -3.7968087, z: -0.009999752}
   m_LocalScale: {x: 0.5051701, y: 2.3112, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1094135617}
   m_Father: {fileID: 1313112349}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 33.476}
@@ -1208,6 +1214,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1094135616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1094135617}
+  - component: {fileID: 1094135618}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1094135617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094135616}
+  m_LocalRotation: {x: -0, y: -0, z: -0.2879976, w: 0.9576312}
+  m_LocalPosition: {x: -0.57, y: -0.505, z: 0.04299903}
+  m_LocalScale: {x: 0.9481734, y: 0.56763005, z: 1}
+  m_Children: []
+  m_Father: {fileID: 508036328}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1094135618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094135616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1f7c05f8e89e948853a499629dfcec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1313112348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,6 +1369,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinchSpeed: 10
   isRight: 0
+--- !u!1 &1393118047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1393118048}
+  - component: {fileID: 1393118049}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1393118048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393118047}
+  m_LocalRotation: {x: -0, y: -0, z: 0.28799585, w: 0.95763165}
+  m_LocalPosition: {x: 0.74, y: -0.511, z: 0.04299903}
+  m_LocalScale: {x: 0.9481788, y: 0.567628, z: 1}
+  m_Children: []
+  m_Father: {fileID: 371128200}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1393118049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393118047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1f7c05f8e89e948853a499629dfcec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1444977002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,7 +1424,7 @@ GameObject:
   - component: {fileID: 1444977005}
   - component: {fileID: 1444977004}
   - component: {fileID: 1444977003}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1526,6 +1618,10 @@ PrefabInstance:
       propertyPath: m_BlendShapeWeights.Array.data[0]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 9d7e60c176bbb15419b87b4c278de1a3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8af198b1d21b0bc4692b6425e8c64cbf, type: 2}
     - target: {fileID: 919132149155446097, guid: 9d7e60c176bbb15419b87b4c278de1a3, type: 3}
       propertyPath: m_Name
       value: Enkidu_v4_smooth
