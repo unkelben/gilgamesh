@@ -87,7 +87,7 @@ public class Fade_In_and_Quit : MonoBehaviour
                 if (Gamestart == false)
                 {
                     Debug.Log("Close Game");
-                    UnityEditor.EditorApplication.isPlaying = false;
+                    //UnityEditor.EditorApplication.isPlaying = false;
                     Application.Quit();
                 }
 
