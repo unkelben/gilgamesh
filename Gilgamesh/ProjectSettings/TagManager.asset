@@ -7,6 +7,8 @@ TagManager:
   - Block
   - Needle
   - Target
+  - Flower
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - 
   - Background Image
   - Sprites
-  - 
+  - player
   - 
   - 
   - 
