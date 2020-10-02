@@ -8,6 +8,7 @@ public class Enkidu : MonoBehaviour
     Rigidbody2D enkiduRigidBody;
 
 
+
     void Start()
     {
         enkiduRigidBody = GetComponent<Rigidbody2D>();
@@ -24,5 +25,17 @@ public class Enkidu : MonoBehaviour
         Vector2 enkiduVel = new Vector2(controlDir * speed, enkiduRigidBody.velocity.y);
 
         enkiduRigidBody.velocity = enkiduVel;
+
+        Flip();
+    }
+
+    private void Flip()
+    {
+        bool playerIsMoving = Mathf.Abs(enkiduRigidBody.velocity.x) > Mathf.Epsilon;
+
+        if (playerIsMoving)
+        {
+            transform.localScale = new Vector2 (Mathf.Sign(enkiduRigidBody.velocity.x) / 4, 0.25f);
+        }
     }
 }
