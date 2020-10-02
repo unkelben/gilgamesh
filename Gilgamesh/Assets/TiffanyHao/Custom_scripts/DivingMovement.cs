@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class DivingMovement : MonoBehaviour
@@ -11,8 +12,10 @@ public class DivingMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     private float move_side;
-    private float move_down; 
-    
+    private float move_down;
+    public Slider s;
+    public GameObject background;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); 
@@ -29,6 +32,27 @@ public class DivingMovement : MonoBehaviour
         {
             move_down = 0; 
         }
+        //get screen width and object width
+        var screenW = background.GetComponent<SpriteRenderer>().bounds.size.x;
+        var objectW = gameObject.GetComponent<BoxCollider2D>().bounds.size.x;
+        //if player is moving left and hits left border, block movement
+        if (move_side < 0)
+        {
+            if (transform.position.x <= 0 - screenW / 2 + objectW / 2)
+            {
+                move_side = 0;
+                //Debug.Log("left_boder");
+            }
+        }
+        //if player is moving right and hits right border, block movement
+        if (move_side > 0)
+        {
+            if (transform.position.x >= screenW / 2 - objectW / 2)
+            {
+                move_side = 0;
+                //Debug.Log("right_boder");
+            }
+        }
         
         transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed;
 
@@ -36,10 +60,26 @@ public class DivingMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Found flower");
         if(collision.gameObject.CompareTag("Flower"))
         {
             SceneManager.LoadScene("GoodEnding"); 
+        }
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            //Debug.Log("hit enemy");
+            //Decrease air bar value
+            for (int i = 0; i < 1000; i++)
+            {
+                //s.value -= Airhp.decreaseRate;
+                s.value = 0;
+            }
+            //if air bar value <=0 -> gameover, assign the collided object as last bounty
+            if (s.value >= 0)
+            {
+                PlayerPrefs.SetString("lastBounty", collision.gameObject.name);
+                string lastBounty = PlayerPrefs.GetString("lastBounty");
+                Debug.Log(lastBounty);
+            }
         }
     }
 

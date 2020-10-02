@@ -11,7 +11,7 @@ public class Airhp : MonoBehaviour
     public Slider s;
 
     [SerializeField]
-    private float decreaseRate = 0.0002f; 
+    public static float decreaseRate = 0.0002f; 
     // Start is called before the first frame update
     void Start()
     {
@@ -25,14 +25,14 @@ public class Airhp : MonoBehaviour
 
         if(s.value <= 0)
         {
+
             SceneManager.LoadScene("BadEnding"); 
         }
 
-        if(s.value > 0)
-        {
-            s.value -= decreaseRate; 
-        }
-
+        //if(s.value > 0)
+        //{
+          //  s.value -= decreaseRate; 
+        //}
     }
 
 }

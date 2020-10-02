@@ -8,6 +8,7 @@ TagManager:
   - Needle
   - Target
   - Flower
+  - Enemy
   layers:
   - Default
   - TransparentFX
