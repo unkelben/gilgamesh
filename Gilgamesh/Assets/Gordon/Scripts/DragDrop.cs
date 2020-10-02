@@ -40,6 +40,9 @@ public class DragDrop : MonoBehaviour
     [SerializeField] private Transform textSorry3;
     [SerializeField] private Transform textSorry4;
 
+    [SerializeField] private Transform textGameOver1;
+    [SerializeField] private Transform textGameOver2;
+
     [SerializeField] private Transform textspawnPointL;
     [SerializeField] private Transform textspawnPointR;
 
@@ -190,6 +193,7 @@ public class DragDrop : MonoBehaviour
                 audioVeryMadIstar.Play(1);
                 audioBMG.Play(0);
                 textSuperReject.transform.position = textspawnPointL.transform.position;
+                textGameOver2.transform.position = placeImageOnScreen.transform.position;
 
             }
             else
@@ -198,6 +202,7 @@ public class DragDrop : MonoBehaviour
                 MadIstar.transform.position = placeImageOnScreen.transform.position;
                 audioMadIstar.Play(1);
                 textReject.transform.position = textspawnPointL.transform.position;
+                textGameOver1.transform.position = placeImageOnScreen.transform.position;
             }
             
 
