@@ -7,14 +7,15 @@ public class Sharing : MonoBehaviour
 {
     [SerializeField] CharacterViewer enkidu;
     [SerializeField] CharacterViewer shamhat;
+    [SerializeField] Part skirt;
     public Color skirtColor;
 
     public void ShareClothes()
     {
-        enkidu.EquipPart(SlotCategory.Skirt, "Fantasy 03", "Fantasy");
+        enkidu.EquipPart(SlotCategory.Skirt, skirt);
         enkidu.SetPartColor(SlotCategory.Skirt, ColorCode.Color1, skirtColor);
 
-        shamhat.EquipPart(SlotCategory.Skirt, "Fantasy 03", "Fantasy");
+        shamhat.EquipPart(SlotCategory.Skirt, skirt);
         shamhat.SetPartColor(SlotCategory.Skirt, ColorCode.Color1, skirtColor);
     }
 

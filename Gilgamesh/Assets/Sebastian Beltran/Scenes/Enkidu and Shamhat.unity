@@ -976,6 +976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enkidu: {fileID: 1577977417}
   shamhat: {fileID: 91282800}
+  skirt: {fileID: 11400000, guid: 96196ccbcd70ccf46a170f2871461fe2, type: 2}
   skirtColor: {r: 0.9607843, g: 0.8509804, b: 0.78431374, a: 0}
 --- !u!4 &949487537
 Transform:
