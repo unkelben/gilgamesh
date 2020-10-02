@@ -76,7 +76,7 @@ public class DivingMovement : MonoBehaviour
             //if air bar value <=0 -> gameover, assign the collided object as last bounty
             if (s.value >= 0)
             {
-                PlayerPrefs.SetString("lastBounty", collision.gameObject.name);
+                PlayerPrefs.SetString("lastBounty", collision.gameObject.GetComponent<EnemyMovement>().enemy_name);
                 string lastBounty = PlayerPrefs.GetString("lastBounty");
                 Debug.Log(lastBounty);
             }
