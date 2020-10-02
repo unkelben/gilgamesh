@@ -1,25 +1,43 @@
 fileFormatVersion: 2
-guid: fdb97e34c2ec37b44b6d1b09c234967b
+guid: f4ce78ba39eb5634ea5161e69c5bd354
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9003423962299339650
-    second: Woodcutter_attack1_0
+      213: -2449558402042788823
+    second: Male 10-2_0
   - first:
-      213: 2824886239409089999
-    second: Woodcutter_attack1_1
+      213: 195146783506505606
+    second: Male 10-2_1
   - first:
-      213: -7861718794189056894
-    second: Woodcutter_attack1_2
+      213: -8403310011850597145
+    second: Male 10-2_2
   - first:
-      213: 1167447168798534649
-    second: Woodcutter_attack1_3
+      213: -1728513005237478486
+    second: Male 10-2_3
   - first:
-      213: -2488760612029165208
-    second: Woodcutter_attack1_4
+      213: -8017028700775438230
+    second: Male 10-2_4
   - first:
-      213: 5327983651339067107
-    second: Woodcutter_attack1_5
+      213: -1798268547464190222
+    second: Male 10-2_5
+  - first:
+      213: 6101467247821783836
+    second: Male 10-2_6
+  - first:
+      213: 9050557167781300142
+    second: Male 10-2_7
+  - first:
+      213: -8035324443485296261
+    second: Male 10-2_8
+  - first:
+      213: -5402141305674866599
+    second: Male 10-2_9
+  - first:
+      213: -1910926680850783499
+    second: Male 10-2_10
+  - first:
+      213: -4297663169182811059
+    second: Male 10-2_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -131,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Woodcutter_attack1_0
+      name: Male 10-2_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 26
-        height: 32
+        x: 5
+        y: 96
+        width: 23
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7c68e4cb996d0380800000000000000
-      internalID: -9003423962299339650
+      spriteID: 9248aa59c9b610ed0800000000000000
+      internalID: -2449558402042788823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Woodcutter_attack1_1
+      name: Male 10-2_1
       rect:
         serializedVersion: 2
-        x: 49
-        y: 0
-        width: 26
-        height: 33
+        x: 37
+        y: 96
+        width: 23
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcd2ede5113043720800000000000000
-      internalID: 2824886239409089999
+      spriteID: 68f17f537fc45b200800000000000000
+      internalID: 195146783506505606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Woodcutter_attack1_2
+      name: Male 10-2_2
       rect:
         serializedVersion: 2
-        x: 99
-        y: 0
-        width: 22
-        height: 38
+        x: 69
+        y: 96
+        width: 23
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 284595ce86095e290800000000000000
-      internalID: -7861718794189056894
+      spriteID: 7ec592e1112716b80800000000000000
+      internalID: -8403310011850597145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Woodcutter_attack1_3
+      name: Male 10-2_3
       rect:
         serializedVersion: 2
-        x: 151
-        y: 0
-        width: 32
-        height: 36
+        x: 5
+        y: 64
+        width: 23
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fba54eb30b933010800000000000000
-      internalID: 1167447168798534649
+      spriteID: aab5d2d64961308e0800000000000000
+      internalID: -1728513005237478486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Woodcutter_attack1_4
+      name: Male 10-2_4
       rect:
         serializedVersion: 2
-        x: 199
-        y: 0
-        width: 38
-        height: 28
+        x: 37
+        y: 64
+        width: 23
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,17 +247,101 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 861940dc865267dd0800000000000000
-      internalID: -2488760612029165208
+      spriteID: a682b286fdacdb090800000000000000
+      internalID: -8017028700775438230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Woodcutter_attack1_5
+      name: Male 10-2_5
       rect:
         serializedVersion: 2
-        x: 247
+        x: 69
+        y: 64
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f6a3a1a8444b07e0800000000000000
+      internalID: -1798268547464190222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male 10-2_6
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 32
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13091b8224cca450800000000000000
+      internalID: 6101467247821783836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male 10-2_7
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 32
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea748fccac90a9d70800000000000000
+      internalID: 9050557167781300142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male 10-2_8
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 32
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79ab0bddfacc7090800000000000000
+      internalID: -8035324443485296261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male 10-2_9
+      rect:
+        serializedVersion: 2
+        x: 5
         y: 0
         width: 24
         height: 30
@@ -250,8 +352,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ee572be6ecc0f940800000000000000
-      internalID: 5327983651339067107
+      spriteID: 950e8c0ba1db705b0800000000000000
+      internalID: -5402141305674866599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male 10-2_10
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 0
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2a21cee460b75e0800000000000000
+      internalID: -1910926680850783499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male 10-2_11
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c349c1e12ab54c0800000000000000
+      internalID: -4297663169182811059
       vertices: []
       indices: 
       edges: []
