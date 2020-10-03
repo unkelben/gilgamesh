@@ -6,12 +6,14 @@ public class Enkidu : MonoBehaviour
 {
     [SerializeField] float speed;
     Rigidbody2D enkiduRigidBody;
+    Animator enkiduAnimator;
 
 
 
     void Start()
     {
         enkiduRigidBody = GetComponent<Rigidbody2D>();
+        enkiduAnimator = GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
@@ -26,6 +28,11 @@ public class Enkidu : MonoBehaviour
 
         enkiduRigidBody.velocity = enkiduVel;
 
+        bool playerIsMoving = Mathf.Abs(enkiduRigidBody.velocity.x) > Mathf.Epsilon;
+       
+        enkiduAnimator.SetBool("Walking", playerIsMoving);
+ 
+
         Flip();
     }
 
@@ -37,5 +44,6 @@ public class Enkidu : MonoBehaviour
         {
             transform.localScale = new Vector2 (Mathf.Sign(enkiduRigidBody.velocity.x) / 4, 0.25f);
         }
+
     }
 }
