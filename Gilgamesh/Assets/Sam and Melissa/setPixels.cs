@@ -11,6 +11,9 @@ public class setPixels : MonoBehaviour
     Renderer rend;
     Texture2D texture;
     List<List<Vector3>> paths = new List<List<Vector3>>();
+    Vector3 pointA = new Vector3(20f, 20f, 0f);
+    Vector3 pointB = new Vector3(20f, 108f, 0f);
+    bool connected = false;
 
     void Start()
     {
@@ -21,16 +24,51 @@ public class setPixels : MonoBehaviour
         texture = Instantiate(rend.material.mainTexture) as Texture2D;
         rend.material.mainTexture = texture;
 
+        List<Vector3> newpath = new List<Vector3>();
+        newpath.Add(pointA);
+        paths.Add(newpath);
+
+        newpath = new List<Vector3>();
+        newpath.Add(pointB);
+        paths.Add(newpath);
+
+        texture.SetPixel(Mathf.RoundToInt(pointA.x), Mathf.RoundToInt(pointA.y), Color.red);
+        texture.SetPixel(Mathf.RoundToInt(pointB.x), Mathf.RoundToInt(pointB.y), Color.blue);
+        texture.Apply();
     }
 
     void OnMouseDown()
     {
-        drawAtMousePos(1);
+        drawAtMousePos(2);
+    }
+
+    void OnMouseUp()
+    {
+        if (!connected)
+        {
+            foreach (List<Vector3> path in paths)
+            {
+                if (path.Contains(pointA) && path.Contains(pointB))
+                {
+                    if (!connected)
+                    {
+                        foreach (Vector3 vec in path)
+                        {
+                            texture.SetPixel(Mathf.RoundToInt(vec.x), Mathf.RoundToInt(vec.y), Color.green);
+                        }
+                        texture.Apply();
+                    }
+                    
+                    connected = true;
+                } 
+            }
+        }
+        
     }
 
     void OnMouseDrag()
     {
-        drawAtMousePos(1);
+        drawAtMousePos(2);
     }
 
     void drawAtMousePos(int size)
@@ -73,7 +111,8 @@ public class setPixels : MonoBehaviour
                 int counter = 0;
 
                 foreach (List<Vector3> path in paths)
-                {   
+                {
+                    bool inrange = false;
                     foreach (Vector3 vec in path)
                     {
                         Vector3 d = pix - vec;
@@ -81,11 +120,11 @@ public class setPixels : MonoBehaviour
                         {
                             // pixel is close enough to something in this list 
                             added = true;
-                            
+                            inrange = true;
                         }
                     }
 
-                    if(added)
+                    if(inrange)
                     {
                         path.Add(pix);
                         joining.Add(counter);
@@ -97,6 +136,7 @@ public class setPixels : MonoBehaviour
                 // if pixel was close to multiple paths, join paths
                 if (joining.Count > 1)
                 {
+                    //Debug.Log(joining);
                     foreach( int index in joining)
                     {
                         if (index != joining[0])
@@ -111,7 +151,7 @@ public class setPixels : MonoBehaviour
                         
                     }
 
-                    Debug.Log("joined!");
+                    Debug.Log("joined! path count: "+paths.Count);
                 }
 
                 if (!added)
@@ -119,7 +159,7 @@ public class setPixels : MonoBehaviour
                     List<Vector3> newpath = new List<Vector3>();
                     newpath.Add(pix);
                     paths.Add(newpath);
-                    Debug.Log("new");
+                    Debug.Log("new path. new count: "+paths.Count);
                 }
             }
         }
