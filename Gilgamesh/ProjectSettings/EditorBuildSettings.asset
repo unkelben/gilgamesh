@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Gordon/Scenes/Gordon.unity
+    guid: e264454af1a2ede45857bee4bc4eb32d
   m_configObjects: {}

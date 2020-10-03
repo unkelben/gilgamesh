@@ -9,6 +9,7 @@ TagManager:
   - Target
   - Flower
   - Enemy
+  - Player1
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Background Image
   - Sprites
   - player
-  - 
+  - ground
   - 
   - 
   - 
