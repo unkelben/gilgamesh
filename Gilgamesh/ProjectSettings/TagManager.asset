@@ -9,6 +9,7 @@ TagManager:
   - Target
   - Flower
   - Enemy
+  - Player1
   layers:
   - Default
   - TransparentFX
@@ -43,6 +44,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: walkTiles
+    uniqueID: 674032515
+    locked: 0
+  - name: foreground
+    uniqueID: 3970121359
+    locked: 0
+  - name: background
+    uniqueID: 2279546819
+    locked: 0
   - name: Curtains
     uniqueID: 3621826791
     locked: 0
