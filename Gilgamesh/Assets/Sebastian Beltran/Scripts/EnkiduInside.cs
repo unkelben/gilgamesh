@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enkidu : MonoBehaviour
+public class EnkiduInside : MonoBehaviour
 {
     [SerializeField] float speed;
     Rigidbody2D enkiduRigidBody;
@@ -42,7 +42,7 @@ public class Enkidu : MonoBehaviour
 
         if (playerIsMoving)
         {
-            transform.localScale = new Vector2 (Mathf.Sign(enkiduRigidBody.velocity.x) / 4, 0.25f);
+            transform.localScale = new Vector2 (Mathf.Sign(enkiduRigidBody.velocity.x) / 2, 0.5f);
         }
 
     }
