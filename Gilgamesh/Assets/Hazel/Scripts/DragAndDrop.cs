@@ -8,12 +8,10 @@ public class DragAndDrop : MonoBehaviour
 {
     bool canMove;
     bool dragging;
-    public Collider2D collider;
-    public Collider2D collider2;
+    public Collider2D clothesCollider;
+    public Collider2D bodyCollider;
     void Start()
     {
-        collider = GetComponent<Collider2D>();
-        collider2 = GetComponent<Collider2D>();
         canMove = false;
         dragging = false;
 
@@ -26,7 +24,7 @@ public class DragAndDrop : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (collider == Physics2D.OverlapPoint(mousePos))
+            if (clothesCollider == Physics2D.OverlapPoint(mousePos))
             {
                 canMove = true;
             }

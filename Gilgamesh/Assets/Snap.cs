@@ -10,12 +10,22 @@ public class Snap : MonoBehaviour
         
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+  private void OnCollisionStay2D(Collision2D collision)
     {
         //If the object hit is the player
         if (Input.GetMouseButtonUp(0))
         {
-            this.transform.position = new Vector3(0, 0, 0);
+            
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        this.transform.position = new Vector3(53, 0, 0);
+        if (collision.gameObject.tag == "Target")
+        {
+            
         }
     }
 }
