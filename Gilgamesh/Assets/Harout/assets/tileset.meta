@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: ccf0c8dbed716ea46aeae08809028ce2
+=======
+<<<<<<< Updated upstream:Gilgamesh/Assets/Harout/animation/humbaba.meta
+guid: 1c43d0cf3151ff2439cf996b0ce71b0d
+=======
+guid: ccf0c8dbed716ea46aeae08809028ce2
+>>>>>>> Stashed changes:Gilgamesh/Assets/Harout/assets/tileset.meta
+>>>>>>> Stashed changes
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
