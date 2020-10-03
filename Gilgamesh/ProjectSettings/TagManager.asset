@@ -48,21 +48,15 @@ TagManager:
   - name: walkTiles
     uniqueID: 674032515
     locked: 0
-  - name: foreground
+  - name: background
     uniqueID: 3970121359
     locked: 0
-  - name: background
+  - name: foreground
     uniqueID: 2279546819
-    locked: 0
-  - name: Curtains
-    uniqueID: 3621826791
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Targets
-    uniqueID: 796259075
-    locked: 0
-  - name: Needles
-    uniqueID: 2369913681
+  - name: player
+    uniqueID: 2028651403
     locked: 0
