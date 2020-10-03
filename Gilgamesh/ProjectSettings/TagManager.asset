@@ -9,6 +9,7 @@ TagManager:
   - Target
   - Flower
   - Enemy
+  - Player1
   layers:
   - Default
   - TransparentFX
