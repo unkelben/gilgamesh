@@ -5,8 +5,10 @@ using UnityEngine;
 public class EnkiduFinal : MonoBehaviour
 {
     [SerializeField] float speed;
+    [SerializeField] GameObject lion;
     Rigidbody2D enkiduRigidBody;
     Animator enkiduAnimator;
+
 
 
 
@@ -59,5 +61,10 @@ public class EnkiduFinal : MonoBehaviour
         {
             enkiduAnimator.SetBool("Attack", false);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(lion);
     }
 }
