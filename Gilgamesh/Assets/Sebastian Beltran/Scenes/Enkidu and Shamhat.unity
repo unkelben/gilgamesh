@@ -1480,8 +1480,8 @@ MonoBehaviour:
     the button will appear  after dialogue). \n\nUse the left arrow to go inside
     the house."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1b7649083344e4179a57a5cc72d4a5e2, type: 2}
+  m_sharedMaterial: {fileID: 2554577272178190401, guid: 1b7649083344e4179a57a5cc72d4a5e2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
