@@ -6,7 +6,8 @@ namespace Game.Balance
 {
     public class BalanceTilting : MonoBehaviour
     {
-        public float weight;
+        [SerializeField] GameObject enkidu;
+        public float weight = -30;
 
         private float rotationAngleZ;
 
@@ -24,8 +25,10 @@ namespace Game.Balance
 
         void RotateBalanceBar()
         {
+            weight = enkidu.GetComponent<Enkidu>().weightBalance;
             rotationAngleZ = weight;
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, rotationAngleZ);
+            
         }
     }
 }

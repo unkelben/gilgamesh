@@ -9,11 +9,7 @@ namespace Game.ClawMachine
         [SerializeField] GameObject pivot;
 
         //ClayCheck Variables
-        [SerializeField] LayerMask whatIsClay;
-        [SerializeField] private Vector3 clayBoxExtents = new Vector3(0.5f,0.5f,0.5f);
-        private List<ColliderCheck> clayCheckList;
         public bool isTouchingClay { get; set; }
-        private GameObject clay;
 
         private void Awake()
         {
@@ -21,14 +17,6 @@ namespace Game.ClawMachine
             for (int i=0; i < clawmachine.Length; i++)
             {
                 Physics.IgnoreCollision(GetComponent<Collider>(), clawmachine[i].GetComponent<Collider>(), true);
-            }
-
-            // Obtain clay check components and store in list
-            clayCheckList = new List<ColliderCheck>();
-            ColliderCheck[] clayCheckArray = transform.GetComponentsInChildren<ColliderCheck>();
-            foreach (ColliderCheck g in clayCheckArray)
-            {
-                clayCheckList.Add(g);
             }
         }
 

@@ -10,6 +10,7 @@ public class Clay : MonoBehaviour
 
     private void Start()
     {
+        finger = new List<GameObject>();
         touchingClay = false;
     }
 
