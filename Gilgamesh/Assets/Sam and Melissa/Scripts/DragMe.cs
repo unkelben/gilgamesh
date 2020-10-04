@@ -17,30 +17,39 @@ public class DragMe : MonoBehaviour
     private Vector3 offset;
 
     private Camera myMainCamera;
+    GameObject checker;
 
     void Start()
     {
         myMainCamera = Camera.main; // Camera.main is expensive ; cache it here
+        checker = GameObject.Find("PixelCam");
     }
 
     void OnMouseDown()
     {
-        //Debug.Log("yo");
-        dragPlane = new Plane(myMainCamera.transform.forward, transform.position);
-        Ray camRay = myMainCamera.ScreenPointToRay(Input.mousePosition);
+        if (checker.GetComponent<checkPathCovered>().active)
+        {
+            dragPlane = new Plane(myMainCamera.transform.forward, transform.position);
+            Ray camRay = myMainCamera.ScreenPointToRay(Input.mousePosition);
 
-        float planeDist;
-        dragPlane.Raycast(camRay, out planeDist);
-        offset = transform.position - camRay.GetPoint(planeDist);
+            float planeDist;
+            dragPlane.Raycast(camRay, out planeDist);
+            offset = transform.position - camRay.GetPoint(planeDist);
+        }
+        
     }
 
     void OnMouseDrag()
     {
-        Ray camRay = myMainCamera.ScreenPointToRay(Input.mousePosition);
+        if (checker.GetComponent<checkPathCovered>().active)
+        {
+            Ray camRay = myMainCamera.ScreenPointToRay(Input.mousePosition);
 
-        float planeDist;
-        dragPlane.Raycast(camRay, out planeDist);
-        Vector3 newpos = camRay.GetPoint(planeDist) + offset;
-        transform.position = new Vector3(newpos.x, transform.position.y, 0f); 
+            float planeDist;
+            dragPlane.Raycast(camRay, out planeDist);
+            Vector3 newpos = camRay.GetPoint(planeDist) + offset;
+            transform.position = new Vector3(newpos.x, transform.position.y, transform.position.z);
+        }
+            
     }
 }

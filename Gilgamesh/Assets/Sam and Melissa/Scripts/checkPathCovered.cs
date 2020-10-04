@@ -11,6 +11,8 @@ public class checkPathCovered : MonoBehaviour
     float nextCheck = 0f;
     float checkInterval = 1f;
     public bool active = true;
+    
+    float completionThreshold = 0.031f;
 
     public Texture2D tex;
     private Color32[] pixels;
@@ -58,7 +60,13 @@ public class checkPathCovered : MonoBehaviour
                 }
                 nextCheck = Time.time + checkInterval;
                 float percent = counter / totalPix;
-                Debug.Log(percent);
+                //Debug.Log(percent);
+
+                if (percent > completionThreshold)
+                {
+                    active = false;
+                    Debug.Log("complete!");
+                }
             }
         }
         
