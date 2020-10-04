@@ -40,6 +40,7 @@ public class DragMe : MonoBehaviour
 
         float planeDist;
         dragPlane.Raycast(camRay, out planeDist);
-        transform.position = camRay.GetPoint(planeDist) + offset;
+        Vector3 newpos = camRay.GetPoint(planeDist) + offset;
+        transform.position = new Vector3(newpos.x, transform.position.y, 0f); 
     }
 }
