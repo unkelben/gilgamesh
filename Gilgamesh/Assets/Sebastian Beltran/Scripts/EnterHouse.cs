@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnterHouse : MonoBehaviour
+public class ExitHouse : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        SceneManager.LoadScene("Enkidu and Shepherds");
+        if (other.tag == "Player")
+        {
+            SceneManager.LoadScene("Final Scene");
+        }
+        
     }
+
+   
 }
