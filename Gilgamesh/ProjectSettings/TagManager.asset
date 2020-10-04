@@ -9,6 +9,11 @@ TagManager:
   - Target
   - Flower
   - Enemy
+  - Player1
+  - breakable
+  - Activator
+  - Ground
+  - bread
   layers:
   - Default
   - TransparentFX
@@ -21,7 +26,7 @@ TagManager:
   - Background Image
   - Sprites
   - player
-  - 
+  - ground
   - 
   - 
   - 
@@ -43,15 +48,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Curtains
-    uniqueID: 3621826791
+  - name: CAMERA
+    uniqueID: 2955582159
+    locked: 0
+  - name: ?player
+    uniqueID: 2028651403
+    locked: 0
+  - name: walkTiles
+    uniqueID: 674032515
+    locked: 0
+  - name: background
+    uniqueID: 3970121359
+    locked: 0
+  - name: foreground
+    uniqueID: 2279546819
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Targets
-    uniqueID: 796259075
+  - name: signs
+    uniqueID: 2295301705
     locked: 0
-  - name: Needles
-    uniqueID: 2369913681
+  - name: player
+    uniqueID: 176318603
     locked: 0

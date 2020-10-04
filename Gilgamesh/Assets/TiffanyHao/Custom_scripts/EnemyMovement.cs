@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour
     public float speed;
     public string direction;
     public GameObject background;
+    public string enemy_name;
     
     // Start is called before the first frame update
     void Start()
