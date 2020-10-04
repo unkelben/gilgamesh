@@ -43,6 +43,9 @@ public class sign : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             playerInRange = true;
+
+           
+
         }
     }
 
