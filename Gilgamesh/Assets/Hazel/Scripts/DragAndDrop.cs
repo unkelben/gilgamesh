@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
 public class DragAndDrop : MonoBehaviour
 {
     bool canMove;
     bool dragging;
     public Collider2D clothesCollider;
     public Collider2D bodyCollider;
+    public Sprite off;
     void Start()
     {
         canMove = false;
@@ -41,6 +41,7 @@ public class DragAndDrop : MonoBehaviour
         }
         if (dragging)
         {
+            this.GetComponent<SpriteRenderer>().sprite = off;
             this.transform.position = mousePos;
         }
 
@@ -48,6 +49,7 @@ public class DragAndDrop : MonoBehaviour
         {
             canMove = false;
             dragging = false;
+            this.GetComponent<SpriteRenderer>().sprite = off;
         }
     }
 
