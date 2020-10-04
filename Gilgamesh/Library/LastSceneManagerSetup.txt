@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/solUruk/Scenes/sheep.unity
+- path: Assets/solUruk/Scenes/characters.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

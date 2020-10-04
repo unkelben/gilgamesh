@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/solUruk/Scenes/characters.unity
+    guid: 652864ee23396e84db7f261ca9658e83
+  - enabled: 1
+    path: Assets/solUruk/Scenes/uruk.unity
+    guid: 533736d70a7822848b68907a8e77bc15
+  - enabled: 1
+    path: Assets/solUruk/Scenes/tavern.unity
+    guid: 416d497d44022144e8200059c4cbf641
+  - enabled: 1
+    path: Assets/solUruk/Scenes/sheep.unity
+    guid: 16ede68f3f98dd94cbf0ce4eb8d1081e
   m_configObjects: {}
