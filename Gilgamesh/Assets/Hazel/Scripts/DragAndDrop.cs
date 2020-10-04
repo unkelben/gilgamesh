@@ -49,7 +49,7 @@ public class DragAndDrop : MonoBehaviour
         {
             canMove = false;
             dragging = false;
-            this.GetComponent<SpriteRenderer>().sprite = off;
+            
         }
     }
 

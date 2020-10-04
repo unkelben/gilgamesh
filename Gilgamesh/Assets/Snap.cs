@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Snap : MonoBehaviour
 {
-
+    public new Vector3 location;
     public Sprite on;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,7 @@ public class Snap : MonoBehaviour
     void OnCollisionStay2D(Collision2D collision)
     {
 
-        this.transform.position = new Vector3(53, 0, 0);
+        this.transform.position = location;
         this.GetComponent<SpriteRenderer>().sprite = on;
 
     }
