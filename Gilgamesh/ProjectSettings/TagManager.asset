@@ -12,6 +12,7 @@ TagManager:
   - Player1
   - breakable
   - Activator
+  - Enkidu
   layers:
   - Default
   - TransparentFX

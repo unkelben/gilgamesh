@@ -1307,7 +1307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4746940663971764419, guid: 71d489073334941bf9db209fb06935b0, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Enkidu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71d489073334941bf9db209fb06935b0, type: 3}
