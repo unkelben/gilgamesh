@@ -24,9 +24,11 @@ public class player_movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        currentState = PlayerState.walk;
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
+        animator.SetFloat("moveX", 0);
+        animator.SetFloat("moveY", -1);
     }
 
     // Update is called once per frame
@@ -48,7 +50,7 @@ public class player_movement : MonoBehaviour
             UpdateAnimationAndMove();
         }
 
-        MoveCharacter();
+        
 
         //if (change != Vector3.zero)
         // {        {
@@ -70,6 +72,7 @@ public class player_movement : MonoBehaviour
     {
         if (change != Vector3.zero)
         {
+            MoveCharacter();
             transform.Translate(new Vector3(change.x, change.y));
             animator.SetFloat("moveX", change.x);
             animator.SetFloat("moveY", change.y);
@@ -91,6 +94,7 @@ public class player_movement : MonoBehaviour
 
     void MoveCharacter()
     {
+        
         myRigidbody.MovePosition(
             transform.position + change * speed * Time.deltaTime
     );
