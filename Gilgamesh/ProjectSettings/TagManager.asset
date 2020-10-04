@@ -13,6 +13,7 @@ TagManager:
   - breakable
   - Activator
   - Ground
+  - bread
   layers:
   - Default
   - TransparentFX
