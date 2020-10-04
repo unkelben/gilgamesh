@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 334082316}
   - component: {fileID: 334082315}
   m_Layer: 0
-  m_Name: back pannel
+  m_Name: back pannel (feet)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,7 +175,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca47d64dedc1a2c4aab033aae7aedadf, type: 2}
+  - {fileID: 2100000, guid: b83bde24da888c84a9f2230b44833634, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 1283067625}
   - component: {fileID: 1283067624}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Dirt Layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,7 +334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8109765465b6c499aeb0062567fd5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brushSize: 2
 --- !u!64 &1283067625
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -406,8 +405,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283067623}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: -0.18, y: 1.26, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.343, y: 1.268, z: 0}
+  m_LocalScale: {x: 1.222574, y: 1.2910548, z: 1.108432}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -440,8 +439,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.9807038, g: 0.9811321, b: 0.80989677, a: 1}
+  m_Intensity: 2.32
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -498,7 +497,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724484839}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 3.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

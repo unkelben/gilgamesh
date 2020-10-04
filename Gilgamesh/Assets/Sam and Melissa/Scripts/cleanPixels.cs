@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class cleanPixels : MonoBehaviour
 {
-    public int brushSize = 2;
+    int brushSize = 4;
     private Camera myMainCamera;
     private Plane dragPlane;
     Renderer rend;
     Texture2D texture;
+    bool complete = false;
 
     List<Vector3> dirt = new List<Vector3>();
     int dirtCount = 100;
@@ -22,17 +23,18 @@ public class cleanPixels : MonoBehaviour
         // duplicate the original texture and assign to the material
         texture = Instantiate(rend.material.mainTexture) as Texture2D;
         rend.material.mainTexture = texture;
-
+        /*
         // generate dirt 
         for(int i=0; i<dirtCount; i++)
         {
             int x = Mathf.RoundToInt(Random.Range(0, 128));
             int y = Mathf.RoundToInt(Random.Range(0, 128));
             dirt.Add(new Vector3( x, y,0f) );
-            texture.SetPixel(x,y, Color.gray);
+            texture.SetPixel(x,y, Color.black);
         }
         // update texture 
         texture.Apply();
+        */
     }
 
     // onmousedown()
@@ -90,12 +92,15 @@ public class cleanPixels : MonoBehaviour
 
                 if (Random.Range(0, 100) < 20) // including a bit of randomness so cleaning isn't always perfect
                 {
+
+                    Color pixColor = texture.GetPixel(pixelX + x, pixelY + y);
+
                     texture.SetPixel(pixelX + x, pixelY + y, Color.clear);
                     Vector3 pixpos = new Vector3(pixelX + x, pixelY + y, 0f);
 
                     // if this was a dirty pixel, increment cleaned pixels and 
                     // remove that pixel from dirt array. 
-                    if ( dirt.Contains( pixpos ) )
+                    if ( pixColor.a != 0f )
                     {
                         dirtCleared++;
                         dirt.Remove(pixpos);
@@ -107,6 +112,10 @@ public class cleanPixels : MonoBehaviour
         // show updated pixels
         texture.Apply();
 
-        Debug.Log("Dirt left: " + dirt.Count);
+        if (dirtCleared > 3650)
+        {
+            complete = true;
+            Debug.Log("complete!");
+        }
     }
 }
