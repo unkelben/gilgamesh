@@ -18,6 +18,11 @@ public class room_transition : MonoBehaviour
     public GameObject enkidu;
     public GameObject timer;
 
+
+    public GameObject dialogueBox;
+    public Text dialogueText;
+    public string dialog;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +52,8 @@ public class room_transition : MonoBehaviour
                 StartCoroutine(placenameCo());
             }
 
+            
+
         }
 
         if (other.CompareTag("Player1"))
@@ -62,8 +69,12 @@ public class room_transition : MonoBehaviour
     {
         text.SetActive(true);
         placeText.text = placeName;
+        dialogueBox.SetActive(true);
+        dialogueText.text = dialog;
         yield return new WaitForSeconds(3f);
         text.SetActive(false);
+        dialogueBox.SetActive(false);
+
     }
 
 

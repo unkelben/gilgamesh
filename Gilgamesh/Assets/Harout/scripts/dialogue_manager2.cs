@@ -31,6 +31,7 @@ public class dialogue_manager2 : MonoBehaviour
             continueButton.SetActive(true);
         }
 
+     
 
 
     }
@@ -70,6 +71,8 @@ public class dialogue_manager2 : MonoBehaviour
         else
         {
             textDisplay.text = "";
+            continueButton.SetActive(false);
+
         }
     }
 
