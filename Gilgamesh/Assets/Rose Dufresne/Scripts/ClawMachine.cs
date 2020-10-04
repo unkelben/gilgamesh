@@ -18,7 +18,7 @@ namespace Game.ClawMachine
         //GroundCheck Variables
         [SerializeField] LayerMask mWhatIsGround;
         [SerializeField] private float kGroundCheckRadius = 0.1f;
-        private List<GroundCheck> mGroundCheckList;
+        private List<ColliderCheck> mGroundCheckList;
         private bool mGrounded;
         private GameObject[] fingers;
 
@@ -27,11 +27,18 @@ namespace Game.ClawMachine
             rb = GetComponent<Rigidbody>();
 
             // Obtain ground check components and store in list
-            mGroundCheckList = new List<GroundCheck>();
-            GroundCheck[] groundChecksArray = transform.GetComponentsInChildren<GroundCheck>();
-            foreach (GroundCheck g in groundChecksArray)
+            mGroundCheckList = new List<ColliderCheck>();
+            ColliderCheck[] groundChecksArray = transform.GetComponentsInChildren<ColliderCheck>();
+            foreach (ColliderCheck g in groundChecksArray)
             {
                 mGroundCheckList.Add(g);
+            }
+
+            GameObject[] ignore = GameObject.FindGameObjectsWithTag("ClawMachine");
+            for (int i = 0; i < ignore.Length; i++)
+            {
+                for (int j=0; j< gameObject.GetComponentsInChildren<Collider>().Length; j++)
+                Physics.IgnoreCollision(gameObject.GetComponentsInChildren<Collider>()[j], ignore[i].GetComponent<Collider>(), true);
             }
         }
 
@@ -82,7 +89,7 @@ namespace Game.ClawMachine
         //IsGrounded function that performs the logic and returns a boolean - true if the player is on the ground, false otherwise.
         private void CheckGrounded()
         {
-            foreach (GroundCheck g in mGroundCheckList)
+            foreach (ColliderCheck g in mGroundCheckList)
             {
                 for (int i = 0; i < fingers.Length; i++)
                 {
