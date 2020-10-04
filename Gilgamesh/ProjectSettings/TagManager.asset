@@ -12,6 +12,7 @@ TagManager:
   - Player1
   - breakable
   - Activator
+  - Ground
   layers:
   - Default
   - TransparentFX
