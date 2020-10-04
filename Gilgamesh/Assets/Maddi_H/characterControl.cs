@@ -30,4 +30,12 @@ public class characterControl : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("bread")) 
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }
