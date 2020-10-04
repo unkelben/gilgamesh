@@ -14,7 +14,8 @@ public class personMovement : MonoBehaviour
     public Rigidbody2D rbNpc;
 
     // Start is called before the first frame update
-    void Start(){
+    void Start()
+    {
       player = FindObjectOfType<playerMovement>();
     }
 
