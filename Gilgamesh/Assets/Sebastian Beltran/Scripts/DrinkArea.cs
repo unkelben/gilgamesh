@@ -6,6 +6,7 @@ public class DrinkArea : MonoBehaviour
 {
     //Pass Goblet
     [SerializeField] GameObject goblet;
+    
 
     //Declare boolean that checks if the goblet is inside the drink area
     //Initialize the count of drinks to 0
@@ -13,7 +14,7 @@ public class DrinkArea : MonoBehaviour
     //Declare velocity for goblet
     //Declare vector 2 for goblet position
     public bool drinkIsInside;
-    public int drinkCounter = 0;
+    public static int drinkCounter = 0;
     float initialPosition;
     float velocityX = 0f;
     float velocityY;
@@ -44,7 +45,7 @@ public class DrinkArea : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && drinkIsInside == true)
         {
             drinkCounter++;
-            velocityY = velocityY - 1;
+            velocityY = velocityY - 1.5f;
         } else if (drinkIsInside == false && gobletPos.y < -1f)
         {
             gobletPos.y = initialPosition;
