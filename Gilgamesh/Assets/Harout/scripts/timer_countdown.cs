@@ -30,7 +30,7 @@ public class timer_countdown : MonoBehaviour
         currentTime -= 1 * Time.deltaTime;
         countdownText.text = currentTime.ToString("0");
 
-        if (currentTime <= 20)
+        if (currentTime <= 15)
         {
             SceneManager.LoadScene("game_over");
         }
