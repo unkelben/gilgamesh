@@ -3,43 +3,50 @@ using System.Collections;
 using System.Collections.Generic;
 using Game.ClawMachine;
 
-public class Clay : MonoBehaviour
+namespace Game.Clay
 {
-    private bool touchingClay;
-    private List<GameObject> finger;
-
-    private void Start()
+    public class Clay : MonoBehaviour
     {
-        finger = new List<GameObject>();
-        touchingClay = false;
-    }
+        private bool touchingClay;
+        private List<GameObject> finger;
+        [SerializeField] float weight;
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonUp(0) && touchingClay)
+        public float clayWeight { get; set; }
+
+        private void Start()
         {
+            clayWeight = weight;
+            finger = new List<GameObject>();
             touchingClay = false;
-            foreach (GameObject f in finger)
-            {
-                f.GetComponentInParent<Finger>().isTouchingClay = touchingClay;
-            }
-            finger.Clear();
-            gameObject.transform.parent = transform.parent.parent.parent;
-            gameObject.transform.GetComponent<Rigidbody>().useGravity = true;
-            gameObject.transform.GetComponent<Rigidbody>().isKinematic = false;
         }
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "FingerTip" && finger.Count < 2 && Input.GetMouseButton(0))
+        private void Update()
         {
-            touchingClay = true;
-            finger.Add(other.gameObject);
-            other.GetComponentInParent<Finger>().isTouchingClay = touchingClay;
-            gameObject.transform.parent = other.transform.parent.parent;
-            gameObject.GetComponent<Rigidbody>().useGravity = false;
-            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            if (Input.GetMouseButtonUp(0) && touchingClay)
+            {
+                touchingClay = false;
+                foreach (GameObject f in finger)
+                {
+                    f.GetComponentInParent<Finger>().isTouchingClay = touchingClay;
+                }
+                finger.Clear();
+                gameObject.transform.parent = transform.parent.parent.parent;
+                gameObject.transform.GetComponent<Rigidbody>().isKinematic = false;
+                gameObject.transform.GetComponent<Rigidbody>().useGravity = true;
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "FingerTip" && finger.Count < 2 && Input.GetMouseButton(0))
+            {
+                touchingClay = true;
+                finger.Add(other.gameObject);
+                other.GetComponentInParent<Finger>().isTouchingClay = touchingClay;
+                gameObject.transform.parent = other.transform.parent.parent;
+                gameObject.GetComponent<Rigidbody>().useGravity = false;
+                gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            }
         }
     }
 }

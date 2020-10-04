@@ -1,34 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Game.Clay;
 
 public class Enkidu : MonoBehaviour
 {
-
     [SerializeField] GameObject enkidu;
 
     private SkinnedMeshRenderer blendshapes;
-    private float weight;
+    //private float weight;
+    private float weightToAdd;
     public float weightBalance { get; set; }
-    private bool increaseWeight;
-    private float interval;
+    public bool increaseWeight { get; set; }
+    public float interval { get; set; }
+    private Vector3 initialScale;
 
-    float headWeight = 0;
-    float arm_R_Weight = 100;
-    float arm_L_Weight = 100;
+    public Stack<float> clayWeights;
+
+    //float headWeight = 0;
+    //float arm_R_Weight = 100;
+    //float arm_L_Weight = 100;
 
     // Start is called before the first frame update
     void Start()
     {
-        weight = 100;
+        clayWeights = new Stack<float>();
+
+        initialScale = enkidu.transform.localScale;
+        weightToAdd = 0;
+        //weight = 100;
         weightBalance = -30f;
-        interval = 10;
+        interval = 0;
         increaseWeight = false;
         blendshapes = enkidu.GetComponent<SkinnedMeshRenderer>();
+
+        //set up blend shapes
         blendshapes.SetBlendShapeWeight(0, 0f); //arm_L
         blendshapes.SetBlendShapeWeight(1, 0f); //arm_R
         blendshapes.SetBlendShapeWeight(2, 0f); //head
-        blendshapes.SetBlendShapeWeight(3, 100f); //body
+        blendshapes.SetBlendShapeWeight(3, weightBalance*(-100f/30f)); //body
     }
 
     // Update is called once per frame
@@ -36,25 +46,57 @@ public class Enkidu : MonoBehaviour
     {
         if (increaseWeight)
         {
-            weight -= 10*Time.deltaTime;
-            weightBalance += 3* Time.deltaTime;
-            blendshapes.SetBlendShapeWeight(3, weight);
-            if (weight <= 100-interval)
-            {
-                interval += 10;
-                increaseWeight = false;
-            }
+            IncreaseWeight();
+        }
+    }
+
+    private void IncreaseWeight()
+    {
+        weightBalance += weightToAdd / 10f * Time.deltaTime;
+        if (weightBalance * (-100f / 30f) >= 0)
+            blendshapes.SetBlendShapeWeight(3, weightBalance * (-100f / 30f));
+
+        IncreaseScale();
+        if (weightBalance * (-100f / 30f) <= 100 - interval)
+        {
+            increaseWeight = false;
+        }
+    }
+
+    public float DecreaseWeight(float weightToAdd)
+    {
+        weightBalance -= weightToAdd / 10f * Time.deltaTime;
+        if (weightBalance * (-100f / 30f) <= 100)
+            blendshapes.SetBlendShapeWeight(3, weightBalance * (-100f / 30f));
+
+        DecreaseScale();
+        return weightBalance * (-100f / 30f);
+    }
+
+    private void IncreaseScale()
+    {
+        if (weightBalance * (-100f / 30f) <= 0 && weightBalance * (-100f / 30f) >= -30f)
+        {
+            enkidu.transform.localScale = new Vector3(initialScale.x - weightBalance * (-100f / 30f), initialScale.y - weightBalance * (-100f / 30f), initialScale.z - weightBalance * (-100f / 30f));
+        }
+    }
+
+    private void DecreaseScale()
+    {
+        if (weightBalance * (-100f / 30f) <= 0 && weightBalance * (-100f / 30f) >= -30f)
+        {
+            enkidu.transform.localScale = new Vector3(initialScale.x + weightBalance * (-100f / 30f), initialScale.y + weightBalance * (-100f / 30f), initialScale.z + weightBalance * (-100f / 30f));
         }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.collider.tag == "Clay")
+        if (other.collider.tag == "Clay"/* && other.collider.transform.parent == null*/)
         {
-            if (blendshapes.GetBlendShapeWeight(3) > 0)
-            {
-                increaseWeight = true;
-            }
+            increaseWeight = true;
+            weightToAdd = other.collider.GetComponent<Clay>().clayWeight;
+            interval += weightToAdd;
+
             //if (blendshapes.GetBlendShapeWeight(3) <= 50 && blendshapes.GetBlendShapeWeight(2) <= 100)
             //{
             //    blendshapes.SetBlendShapeWeight(2, headWeight+50);
@@ -68,6 +110,7 @@ public class Enkidu : MonoBehaviour
             //    blendshapes.SetBlendShapeWeight(0, arm_L_Weight-50);
             //}
 
+            clayWeights.Push(other.collider.GetComponent<Clay>().clayWeight);
             Destroy(other.collider.gameObject);
         }
     }

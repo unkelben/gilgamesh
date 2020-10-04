@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Game.Balance
 {
@@ -21,6 +22,7 @@ namespace Game.Balance
         void Update()
         {
             RotateBalanceBar();
+            WinningCondition();
         }
 
         void RotateBalanceBar()
@@ -29,6 +31,14 @@ namespace Game.Balance
             rotationAngleZ = weight;
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, rotationAngleZ);
             
+        }
+
+        void WinningCondition()
+        {
+            if (weight <= 0.01f && weight >= -0.01f)
+            {
+                SceneManager.LoadScene("EndScene");
+            }
         }
     }
 }
