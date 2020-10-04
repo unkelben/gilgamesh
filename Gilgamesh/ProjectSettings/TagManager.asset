@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Player1
   - breakable
+  - Activator
   layers:
   - Default
   - TransparentFX
