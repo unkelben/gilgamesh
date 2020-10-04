@@ -37,10 +37,22 @@ public class setPixels : MonoBehaviour
         newpath.Add(pointB);
         paths.Add(newpath);
 
-        // draw points A and B on texture. 
-        texture.SetPixel(Mathf.RoundToInt(pointA.x), Mathf.RoundToInt(pointA.y), Color.red);
+        float fact = rend.bounds.size.x / 128f;
+        // show points A and B:
+        GameObject.Find("startPoint").transform.position = new Vector3(
+            transform.position.x - rend.bounds.size.x / 2 + fact * pointA.x,
+            transform.position.y - rend.bounds.size.y / 2 + fact * pointA.y,
+            0f);
+
+        GameObject.Find("stopPoint").transform.position = new Vector3(
+            transform.position.x - rend.bounds.size.x / 2 + fact * pointB.x,
+            transform.position.y - rend.bounds.size.y / 2 + fact * pointB.y,
+            0f);
+        /*
+        texture.SetPixel(Mathf.RoundToInt(pointA.x), Mathf.RoundToInt(pointA.y), Color.blue);
         texture.SetPixel(Mathf.RoundToInt(pointB.x), Mathf.RoundToInt(pointB.y), Color.blue);
         texture.Apply();
+        */
     }
 
     // onmousedown()
