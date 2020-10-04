@@ -48,6 +48,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: CAMERA
+    uniqueID: 2955582159
+    locked: 0
   - name: ?player
     uniqueID: 2028651403
     locked: 0
@@ -68,7 +71,4 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 176318603
-    locked: 0
-  - name: New Layer
-    uniqueID: 2955582159
     locked: 0
