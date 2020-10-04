@@ -1,6 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 49ef8a51174bf594cbbef194b2c79539
 folderAsset: yes
+=======
+<<<<<<< Updated upstream:Gilgamesh/Assets/Harout/vignette 1.unity.meta
+guid: a5e35679e8cf2bb4e94738622b09af6c
+=======
+guid: 49ef8a51174bf594cbbef194b2c79539
+folderAsset: yes
+>>>>>>> Stashed changes:Gilgamesh/Assets/Harout/assets/font.meta
+>>>>>>> Stashed changes
 DefaultImporter:
   externalObjects: {}
   userData: 
