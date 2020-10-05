@@ -10,8 +10,11 @@ public class personMovement : MonoBehaviour
     private float stepX = 0f;
     private float stepY = 0f;
 
-    public playerMovement player;
     public Rigidbody2D rbNpc;
+    private playerMovement player;
+
+    public readonly string playerMovementX = "playerMovementX";
+    public readonly string playerMovementY = "playerMovementY";
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +28,12 @@ public class personMovement : MonoBehaviour
         rbNpc.MovePosition(new Vector2(rbNpc.position.x + movementX * Time.fixedDeltaTime, rbNpc.position.y + movementY * Time.fixedDeltaTime));
 
         stepX = Random.Range(1f,10f);
-        stepY = Random.Range(1f,stepX);
+        stepY = Random.Range(1f,10f);
 
-        movementX = player.movement.x/stepX;
-        movementY = player.movement.y/stepY;
+        float getX = PlayerPrefs.GetFloat(playerMovementX);
+        float getY = PlayerPrefs.GetFloat(playerMovementY);
 
-        // if (player.rb.position.x-rbNpc.position.x<=-10f) {}
+        movementX = -getX/stepX;
+        movementY = getY/stepY;
     }
 }

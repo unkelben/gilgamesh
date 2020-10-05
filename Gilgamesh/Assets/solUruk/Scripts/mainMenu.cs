@@ -6,18 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class mainMenu : MonoBehaviour
 {
-  public bool isGilgamesh = false;
+  public readonly string selectedCharacter = "selectedCharacter";
+
     // Play as Gilgamesh
     public void Gilgamesh()
     {
-      isGilgamesh = true;
+      PlayerPrefs.SetInt(selectedCharacter, 0);
       StartGame();
     }
 
     // Play as Enkidu
     public void Enkidu()
     {
-      isGilgamesh = false;
+      PlayerPrefs.SetInt(selectedCharacter, 1);
       StartGame();
     }
     // Start the Game

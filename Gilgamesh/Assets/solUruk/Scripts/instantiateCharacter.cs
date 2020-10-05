@@ -2,25 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(mainMenu))]
 public class instantiateCharacter : MonoBehaviour
 {
   public GameObject gilgamesh;
   public GameObject enkidu;
 
-  private mainMenu character;
+  public readonly string selectedCharacter = "selectedCharacter";
 
     // Start is called before the first frame update
     void Start()
     {
-        character = FindObjectOfType<mainMenu>();
+        int getCharacter = PlayerPrefs.GetInt(selectedCharacter);
 
-        if (character.isGilgamesh)
+        switch(getCharacter)
         {
-          Instantiate(gilgamesh, new Vector3(-1.17f, 4.75f, 0f), Quaternion.identity);
-        }
-        else
-        {
-          Instantiate(enkidu, new Vector3(-1.17f, 4.75f, 0f), Quaternion.identity);
+          case 0:
+            Instantiate(gilgamesh, new Vector3(-1.17f, 4.75f, 0f), Quaternion.identity);
+            break;
+          case 1:
+            Instantiate(enkidu, new Vector3(-1.17f, 4.75f, 0f), Quaternion.identity);
+            break;
+          default:
+            Application.Quit();
+            break;
         }
     }
 }
