@@ -242,9 +242,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 520458942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f13398231c241134da264bfbe29d050b, type: 3}
+  m_Script: {fileID: 11500000, guid: 7597b7cbc96221b4bada5f000f7d40d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMouseOverBowl: 0
 --- !u!1 &604110084
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13398231c241134da264bfbe29d050b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMouseOverJug: 0
 --- !u!1 &1031791491
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,9 +508,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1031791491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f13398231c241134da264bfbe29d050b, type: 3}
+  m_Script: {fileID: 11500000, guid: 57c6d224d88bbde49952b364b3f70a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMouseOverRag: 0
 --- !u!1 &1106196740
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +812,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1955365255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f13398231c241134da264bfbe29d050b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5176d630f72733642826e9d060e03a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMouseOverCup: 0
