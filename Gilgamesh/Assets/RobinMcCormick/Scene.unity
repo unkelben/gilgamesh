@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMouseOverBowl: 0
+  sprite: {fileID: 0}
 --- !u!1 &604110084
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +345,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.093937516, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -355,7 +356,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.56, y: 3.98}
+  m_Size: {x: 3.372125, y: 3.98}
   m_EdgeRadius: 0
 --- !u!95 &604110088
 Animator:
@@ -389,6 +390,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMouseOverJug: 0
+  interactedWithJug: 0
+  sprite: {fileID: 0}
 --- !u!1 &1031791491
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMouseOverRag: 0
+  sprite: {fileID: 0}
 --- !u!1 &1106196740
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,3 +820,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMouseOverCup: 0
+  interactedWithCup: 0
+  wJ: {fileID: 0}
+  sprite: {fileID: 0}

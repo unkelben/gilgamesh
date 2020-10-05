@@ -5,7 +5,7 @@ using UnityEngine;
 public class MouseOverWaterJug : MonoBehaviour
 {
     public bool isMouseOverJug = false;
-    bool interactedWithJug = false;
+    public bool interactedWithJug = false;
 
     Animator animator;
 
