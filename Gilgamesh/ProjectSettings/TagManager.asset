@@ -14,6 +14,7 @@ TagManager:
   - Activator
   - Ground
   - bread
+  - String
   layers:
   - Default
   - TransparentFX

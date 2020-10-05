@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pierce : MonoBehaviour
 {
 
-    public float pushValueX;
+    public float pushValueY;
     void Start()
     {
         
@@ -25,7 +25,7 @@ public class Pierce : MonoBehaviour
             Destroy(this.gameObject);
 
             Vector2 pushBack = collision.transform.parent.position;
-            pushBack -= new Vector2 (pushValueX,0);
+            pushBack -= new Vector2 (0, pushValueY);
             collision.transform.parent.position = pushBack;
         }
     }
