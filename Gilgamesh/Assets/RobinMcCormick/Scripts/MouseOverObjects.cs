@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MouseOverObjects : MonoBehaviour
 {
+    public bool isMouseOver = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,12 @@ public class MouseOverObjects : MonoBehaviour
     void OnMouseEnter()
     {
         Debug.Log("mouse over!");
+        isMouseOver = true;
+    }
+
+    void OnMouseExit()
+    {
+        Debug.Log("mouse gone!");
+        isMouseOver = false;
     }
 }
