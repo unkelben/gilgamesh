@@ -10,6 +10,7 @@ public class MouseOverCup : MonoBehaviour
     public MouseOverWaterJug wJ;
     public ChangeBackground cB;
 
+    Animator animator;
 
     public SpriteRenderer sprite;
 
@@ -23,18 +24,18 @@ public class MouseOverCup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (wJ.interactedWithJug == true)
+        if (wJ.interactedWithJug == true && interactedWithCup == false)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("Interacted with cup.");
-      //          animator.SetBool("isPour", true);
+                animator.SetBool("cupIsMove", true);
                cB.interactionAmount = cB.interactionAmount++;
                 interactedWithCup = true;
             }
             else
             {
-      //          animator.SetBool("isPour", false);
+                animator.SetBool("cupIsMove", false);
             }
         }
     }
