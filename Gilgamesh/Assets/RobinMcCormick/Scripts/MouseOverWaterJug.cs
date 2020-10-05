@@ -39,7 +39,10 @@ public class MouseOverWaterJug : MonoBehaviour
     void OnMouseEnter()
     {
         Debug.Log("on jug");
-        sprite.color = Color.gray;
+        if (interactedWithJug == false)
+        {
+            sprite.color = Color.gray;
+        }
         isMouseOverJug = true;
     }
 
