@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Harout/scenes/game_over.unity
     guid: f2c1abd04d26bf14592c91b07a561d59
+  - enabled: 1
+    path: Assets/TiffanyHao/BadEnding.unity
+    guid: 775ab2820e6d97c418e291e7978f2bb5
+  - enabled: 1
+    path: Assets/TiffanyHao/GoodEnding.unity
+    guid: adf822e4d85c64947b5760a2c8dda245
+  - enabled: 1
+    path: Assets/TiffanyHao/MainDiving.unity
+    guid: 1d48bf0a44f1c8a418caec5f3644624e
   m_configObjects: {}
