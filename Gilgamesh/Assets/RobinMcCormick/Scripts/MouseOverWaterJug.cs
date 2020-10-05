@@ -16,7 +16,7 @@ public class MouseOverWaterJug : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        sprite.color = new Color(1, 1, 1, 1);
+        sprite.color = Color.white;
     }
 
     // Update is called once per frame
@@ -39,14 +39,14 @@ public class MouseOverWaterJug : MonoBehaviour
     void OnMouseEnter()
     {
         Debug.Log("on jug");
-        sprite.color = new Color(0, 0, 0, 1);
+        sprite.color = Color.gray;
         isMouseOverJug = true;
     }
 
    void OnMouseExit()
     {
         Debug.Log("not on jug");
-        sprite.color = new Color(1, 1, 1, 1);
+        sprite.color = Color.white;
         isMouseOverJug = false;
     }
 }
