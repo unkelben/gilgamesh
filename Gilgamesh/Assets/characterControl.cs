@@ -2,27 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class characterControl : MonoBehaviour
+public class Move2D : MonoBehaviour
 {
     public float MovementSpeed = 1;
-    public float JumpForce = 1;
+  //  public float JumpForce = 1;
+    public bool isGrounded = false;
 
-    private Rigidbody2D _rigidbody;
+     Rigidbody2D _rigidbody;
     // Start is called before the first frame update
-    private void Start()
+     void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+       
     }
 
     
-    private void Update()
+    void Update()
     {
-        var movement = Input.GetAxis("Horizontal");
-        transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
-//char Jump
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
+       Jump();
+       Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+       transform.position += movement * Time.deltaTime * MovementSpeed;
+    }
+
+    void Jump()
+    {
+        if(Input.GetButtonDown("Jump") && isGrounded == true)
         {
-            _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
         }
     }
 }

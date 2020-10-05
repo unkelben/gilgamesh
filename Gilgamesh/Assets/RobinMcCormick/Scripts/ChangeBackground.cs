@@ -8,20 +8,22 @@ public class ChangeBackground : MonoBehaviour
     public Sprite backgroundSprite3;
     public Sprite backgroundSprite4;
 
+    public int interactionAmount;
+
 
     // Start is called before the first frame update
     void Start()
     {
-      //  SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-
-}
+        //  SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        interactionAmount = 0;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (interactionAmount == 1)
         {
-            print("space key was pressed");
+            print("background changed");
             GameObject bg2 = new GameObject("enkidu_bg2", typeof(SpriteRenderer));
             SpriteRenderer bg2Renderer = bg2.GetComponent<SpriteRenderer>();
             bg2Renderer.sprite = backgroundSprite2;
@@ -29,9 +31,9 @@ public class ChangeBackground : MonoBehaviour
             bg2Renderer.sortingOrder = 2;
         }
 
-        if (Input.GetKeyDown("e"))
+        if (interactionAmount == 2)
         {
-            print("e key was pressed");
+            print("background changed 2");
             GameObject bg3 = new GameObject("enkidu_bg3", typeof(SpriteRenderer));
             SpriteRenderer bg3Renderer = bg3.GetComponent<SpriteRenderer>();
             bg3Renderer.sprite = backgroundSprite3;
@@ -39,9 +41,9 @@ public class ChangeBackground : MonoBehaviour
             bg3Renderer.sortingOrder = 3;
         }
 
-        if (Input.GetKeyDown("r"))
+        if (interactionAmount == 3)
         {
-            print("r key was pressed");
+            print("background changed 3");
             GameObject bg4 = new GameObject("enkidu_bg4", typeof(SpriteRenderer));
             SpriteRenderer bg4Renderer = bg4.GetComponent<SpriteRenderer>();
             bg4Renderer.sprite = backgroundSprite4;
