@@ -11,8 +11,8 @@ public class RemoveClay : MonoBehaviour
 
     private bool clayRemoved;
     private bool decreaseWeight;
-    private float interval;
-    private float weightBalance;
+    public float interval;
+    public float weightBalance;
 
     // Start is called before the first frame update
     void Start()
@@ -29,28 +29,29 @@ public class RemoveClay : MonoBehaviour
             clayRemoved = false;
         }
 
-        if(decreaseWeight)
-        {
-            enkidu.GetComponent<Enkidu>().interval -= clayPrefab.GetComponent<Clay>().clayWeight;
-            weightBalance = enkidu.GetComponent<Enkidu>().DecreaseWeight(clayPrefab.GetComponent<Clay>().clayWeight);
-            print(weightBalance);
-            if (100 - weightBalance <= interval)
-            {
-                decreaseWeight = false;
-            }
-        }
+        //if(decreaseWeight)
+        //{
+        //    weightBalance = enkidu.GetComponent<Enkidu>().DecreaseWeight(clayPrefab.GetComponent<Clay>().clayWeight);
+        //    if (100 - weightBalance <= interval)
+        //    {
+        //        decreaseWeight = false;
+        //    }
+        //}
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "PinchLimit" && Input.GetMouseButton(0) && enkidu.GetComponent<Enkidu>().clayWeights.Count > 0 && !clayRemoved)
+        if (other.tag == "PinchLimit" && Input.GetMouseButtonDown(0) && enkidu.GetComponent<Enkidu>().clayWeights.Count > 0 && !clayRemoved)
         {
             decreaseWeight = true;
             clayPrefab.GetComponent<Clay>().clayWeight = enkidu.GetComponent<Enkidu>().clayWeights.Pop();
+            print(clayPrefab.GetComponent<Clay>().clayWeight);
             GameObject clay = Instantiate(clayPrefab, other.transform.position, Quaternion.identity) as GameObject;
             clay.transform.parent = other.transform.parent;
+            clay.tag = "Clay";
             clayRemoved = true;
             interval += clayPrefab.GetComponent<Clay>().clayWeight;
+            enkidu.GetComponent<Enkidu>().interval -= clayPrefab.GetComponent<Clay>().clayWeight;
         }
     }
 }

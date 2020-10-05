@@ -10,9 +10,9 @@ public class Enkidu : MonoBehaviour
     private SkinnedMeshRenderer blendshapes;
     //private float weight;
     private float weightToAdd;
-    public float weightBalance { get; set; }
+    public float weightBalance;
     public bool increaseWeight { get; set; }
-    public float interval { get; set; }
+    public float interval;
     private Vector3 initialScale;
 
     public Stack<float> clayWeights;
@@ -44,9 +44,27 @@ public class Enkidu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (increaseWeight)
+        //if (increaseWeight)
+        //{
+        //    IncreaseWeight();
+        //}
+        //print(weightBalance * (-100f / 30f));
+
+        if (100 - weightBalance * (-100f / 30f) >= interval) //remove weight
         {
-            IncreaseWeight();
+            weightBalance -= weightToAdd / 10f * Time.deltaTime;
+            if (weightBalance * (-100f / 30f) <= 100)
+                blendshapes.SetBlendShapeWeight(3, weightBalance * (-100f / 30f));
+
+            DecreaseScale();
+        }
+        else //add weight
+        {
+            weightBalance += weightToAdd / 10f * Time.deltaTime;
+            if (weightBalance * (-100f / 30f) >= 0)
+                blendshapes.SetBlendShapeWeight(3, weightBalance * (-100f / 30f));
+
+            IncreaseScale();
         }
     }
 
@@ -95,6 +113,8 @@ public class Enkidu : MonoBehaviour
         {
             increaseWeight = true;
             weightToAdd = other.collider.GetComponent<Clay>().clayWeight;
+            weightToAdd = 20; //shhh... hardcoded
+            print(other.collider.GetComponent<Clay>().clayWeight);
             interval += weightToAdd;
 
             //if (blendshapes.GetBlendShapeWeight(3) <= 50 && blendshapes.GetBlendShapeWeight(2) <= 100)

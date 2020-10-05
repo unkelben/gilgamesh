@@ -11,7 +11,7 @@ namespace Game.Clay
         private List<GameObject> finger;
         [SerializeField] float weight;
 
-        public float clayWeight { get; set; }
+        public float clayWeight;
 
         private void Start()
         {
