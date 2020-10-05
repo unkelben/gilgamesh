@@ -152,7 +152,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 49896720}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e39e610b73d1cdd4491892127957b452, type: 3}
+  m_Script: {fileID: 11500000, guid: 50c09612fb48cb148903362c09309075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   location: {x: 53, y: 20, z: 0}
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 365913913}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e39e610b73d1cdd4491892127957b452, type: 3}
+  m_Script: {fileID: 11500000, guid: 50c09612fb48cb148903362c09309075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   location: {x: 53, y: 0, z: 0}
@@ -620,7 +620,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 880402086}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e39e610b73d1cdd4491892127957b452, type: 3}
+  m_Script: {fileID: 11500000, guid: 50c09612fb48cb148903362c09309075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   location: {x: 53, y: 0, z: 0}
@@ -802,6 +802,7 @@ GameObject:
   - component: {fileID: 1474527549}
   - component: {fileID: 1474527548}
   - component: {fileID: 1474527551}
+  - component: {fileID: 1474527552}
   m_Layer: 0
   m_Name: enkiBase
   m_TagString: Player
@@ -875,7 +876,7 @@ SpriteRenderer:
   m_SortingLayerID: -324845937
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ad7e8913b818df34cad93dcc26f5d037, type: 3}
+  m_Sprite: {fileID: -1317161997677984394, guid: ad7e8913b818df34cad93dcc26f5d037, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -921,6 +922,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1474527552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474527547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48eb197ae2a6224ebeaa1d6a347afb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surprise: {fileID: 5961451647625052814, guid: ad7e8913b818df34cad93dcc26f5d037, type: 3}
+  noSurprise: {fileID: -1317161997677984394, guid: ad7e8913b818df34cad93dcc26f5d037, type: 3}
 --- !u!1 &1734405186
 GameObject:
   m_ObjectHideFlags: 0

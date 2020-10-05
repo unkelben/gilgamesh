@@ -43,13 +43,14 @@ public class DragAndDrop : MonoBehaviour
         {
             this.GetComponent<SpriteRenderer>().sprite = off;
             this.transform.position = mousePos;
+            this.GetComponent<SpriteRenderer>().sortingOrder = 1;
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             canMove = false;
             dragging = false;
-            
+            this.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
     }
 
