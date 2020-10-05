@@ -33,7 +33,7 @@ public class ChangeBackground : MonoBehaviour
 
         if (interactionAmount == 2)
         {
-            print("e key was pressed");
+            print("background changed 2");
             GameObject bg3 = new GameObject("enkidu_bg3", typeof(SpriteRenderer));
             SpriteRenderer bg3Renderer = bg3.GetComponent<SpriteRenderer>();
             bg3Renderer.sprite = backgroundSprite3;
@@ -43,7 +43,7 @@ public class ChangeBackground : MonoBehaviour
 
         if (interactionAmount == 3)
         {
-            print("r key was pressed");
+            print("background changed 3");
             GameObject bg4 = new GameObject("enkidu_bg4", typeof(SpriteRenderer));
             SpriteRenderer bg4Renderer = bg4.GetComponent<SpriteRenderer>();
             bg4Renderer.sprite = backgroundSprite4;
