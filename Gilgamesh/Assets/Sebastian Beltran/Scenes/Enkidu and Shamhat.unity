@@ -2252,6 +2252,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnkiduNaked
       objectReference: {fileID: 0}
+    - target: {fileID: 8407046577968790395, guid: 92167470815894c6db8a5ae444259c1b, type: 3}
+      propertyPath: m_TagString
+      value: Enkidu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92167470815894c6db8a5ae444259c1b, type: 3}
 --- !u!1 &1942393438
