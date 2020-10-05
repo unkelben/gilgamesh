@@ -30,12 +30,12 @@ public class MouseOverCup : MonoBehaviour
             {
                 Debug.Log("Interacted with cup.");
                 animator.SetBool("cupIsMove", true);
-               cB.interactionAmount = cB.interactionAmount++;
+              // cB.interactionAmount = cB.interactionAmount++;
                 interactedWithCup = true;
             }
             else
             {
-                animator.SetBool("cupIsMove", false);
+               // animator.SetBool("cupIsMove", false);
             }
         }
     }
