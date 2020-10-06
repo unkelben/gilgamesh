@@ -21,8 +21,13 @@ EditorBuildSettings:
     path: Assets/Harout/scenes/title_screen.unity
     guid: 11f60c96a1853cb4fad03084e88f8555
   - enabled: 0
+<<<<<<< Updated upstream
     path: Assets/Harout/vignette 1.unity
     guid: a5e35679e8cf2bb4e94738622b09af6c
+=======
+    path: Assets/Harout/scenes/vignette_1.unity
+    guid: fb2efbe314eb56b4da26cdeb6500a51a
+>>>>>>> Stashed changes
   - enabled: 0
     path: Assets/Harout/scenes/game_over.unity
     guid: f2c1abd04d26bf14592c91b07a561d59
