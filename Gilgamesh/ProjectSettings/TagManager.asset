@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Block
+  - Needle
+  - Target
+  - Flower
+  - Enemy
+  - Player1
+  - breakable
+  - Activator
+  - Ground
+  - bread
+  - String
+  - Enkidu
   layers:
   - Default
   - TransparentFX
