@@ -30,7 +30,7 @@ public class Player : MonoBehaviour {
     void Update() {
         if (start) {
             if (Input.GetMouseButtonDown(0)) {
-                hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100, LayerMask.GetMask("player"));
+                hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100, LayerMask.GetMask("Water"));
                 if (hit) {
                     switch (hit.collider.name) {
                         case "Trap":

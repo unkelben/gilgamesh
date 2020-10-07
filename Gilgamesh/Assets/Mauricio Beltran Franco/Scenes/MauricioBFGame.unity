@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 740036883}
   - component: {fileID: 740036882}
   - component: {fileID: 740036881}
-  m_Layer: 10
+  m_Layer: 4
   m_Name: Trap
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1670,7 +1670,7 @@ GameObject:
   - component: {fileID: 1284341343}
   - component: {fileID: 1284341342}
   - component: {fileID: 1284341344}
-  m_Layer: 10
+  m_Layer: 4
   m_Name: Pond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2076,7 +2076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1591503543}
   - component: {fileID: 1591503542}
-  m_Layer: 10
+  m_Layer: 4
   m_Name: Shovel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2597,7 +2597,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2036507071}
   - component: {fileID: 2036507072}
-  m_Layer: 10
+  m_Layer: 4
   m_Name: Shovel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
