@@ -9,9 +9,13 @@
 /Gilgamesh/[Bb]uilds/
 /Gilgamesh/[Ll]ogs/
 /Gilgamesh/[Mm]emoryCaptures/
+# /Gilgamesh/[Aa]ssets/Fungus/
+/Gilgamesh/[Aa]ssets/FungusExamples/
+/Gilgamesh/[Aa]ssets/Tests/
 
-# Asset meta data should only be ignored when the corresponding asset is also ignored
-!/Gilgamesh/[Aa]ssets/**/*.meta
+# /Gilgamesh/[Aa]ssets/Fungus.meta
+/Gilgamesh/[Aa]ssets/FungusExamples.meta
+/Gilgamesh/[Aa]ssets/Tests.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /Gilgamesh/[Aa]ssets/AssetStoreTools*
@@ -57,4 +61,3 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
-

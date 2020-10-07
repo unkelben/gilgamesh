@@ -4,11 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PinchLimit
-  - ClawMachine
-  - Clay
-  - FingerTip
-  - Balance
+  - Block
+  - Needle
+  - Target
+  - Flower
+  - Enemy
+  - Player1
+  - breakable
+  - Activator
+  - Ground
+  - bread
+  - String
+  - Enkidu
   layers:
   - Default
   - TransparentFX
@@ -18,9 +25,9 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
-  - ClawMachine
-  - Clay
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -45,4 +52,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 4146809285
+    locked: 0
+  - name: Sprite
+    uniqueID: 2048442193
     locked: 0

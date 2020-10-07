@@ -27,7 +27,7 @@ namespace Game.Balance
 
         void RotateBalanceBar()
         {
-            weight = enkidu.GetComponent<Enkidu>().weightBalance;
+            weight = enkidu.GetComponent<EnkiduR>().weightBalance;
             rotationAngleZ = weight;
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, rotationAngleZ);
             
