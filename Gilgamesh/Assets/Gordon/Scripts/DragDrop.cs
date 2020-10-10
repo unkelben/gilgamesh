@@ -22,9 +22,17 @@ public class DragDrop : MonoBehaviour
     [SerializeField] private Transform placeImageOnScreen;
 
     [SerializeField] private Transform Istar;
+    [SerializeField] private Transform Istar2;
+    [SerializeField] private Transform Istar3;
+    [SerializeField] private Transform Istar4;
+    [SerializeField] private Transform Istar5;
+    [SerializeField] private Transform Istar6;
+
     [SerializeField] private Transform MadIstar;
     [SerializeField] private Transform VeryMadIstar;
     [SerializeField] private Transform EndingBG;
+
+    [SerializeField] private Transform IstarRareEnding;
 
     [SerializeField] private Transform textStart;
     [SerializeField] private Transform textReject;
@@ -86,15 +94,15 @@ public class DragDrop : MonoBehaviour
     bool CurrentStallion = false;
     bool CurrentTammuz = false;
 
-
-    bool ChoseIllustration = false;
     int currentIllustration;
     int lastIllustration;
+
+    int heartsGiven = 0;
 
 
     public void updateWhatHasBeenSeen()
     {
-        if( seenIshullanu == true && seenShephered == true && seenStallion == true && seenTammuz == true)
+        if (seenIshullanu == true && seenShephered == true && seenStallion == true && seenTammuz == true)
         {
             allIsSeen = true;
         }
@@ -197,20 +205,20 @@ public class DragDrop : MonoBehaviour
     public void OnMouseDown()
     {
         isDragging = true;
-       
+
     }
 
     public void OnMouseUp()
     {
         isDragging = false;
-       
+
 
         if (!GetComponent<Renderer>().isVisible)
         {
 
             updateTextEnding();
             updateWhatHasBeenSeen();
-            if ( allIsSeen == true)
+            if (allIsSeen == true)
             {
                 Istar.transform.position = respawnPoint2.transform.position;
                 EndingBG.transform.position = placeImageOnScreen.transform.position;
@@ -229,9 +237,9 @@ public class DragDrop : MonoBehaviour
                 textReject.transform.position = textspawnPointL.transform.position;
                 textGameOver1.transform.position = placeImageOnScreen.transform.position;
             }
-            
 
-       
+
+
 
         }
 
@@ -248,12 +256,12 @@ public class DragDrop : MonoBehaviour
                 Debug.Log("Yeeee");
                 Heart.transform.position = respawnPoint.transform.position;
 
-                
+
                 pickIllustration();
 
             }
         }
-        
+
     }
 
     public void pickIllustration()
@@ -267,19 +275,21 @@ public class DragDrop : MonoBehaviour
             pickIllustration();
         }
 
-        if(currentIllustration != lastIllustration)
+        if (currentIllustration != lastIllustration)
         {
             if (currentIllustration == 1)
             {
                 Debug.Log("1");
                 seenIshullanu = true;
                 Ishullanu.transform.position = placeImageOnScreen.transform.position;
-
+                heartsGiven++;
                 audioIshullanuKick.Play(1);
                 audioIshullanuFalling.Play(1);
                 CurrentIshullanu = true;
                 updateText();
+               
                 lastIllustration = currentIllustration;
+               
 
             }
             if (currentIllustration == 2)
@@ -287,11 +297,11 @@ public class DragDrop : MonoBehaviour
                 Debug.Log("2");
                 seenShephered = true;
                 Shephered.transform.position = placeImageOnScreen.transform.position;
-
+                heartsGiven++;
                 audioShepheredDogo.Play(1);
                 CurrentShephered = true;
                 updateText();
-
+                
                 lastIllustration = currentIllustration;
 
             }
@@ -300,13 +310,14 @@ public class DragDrop : MonoBehaviour
                 Debug.Log("3");
                 seenStallion = true;
                 Stallion.transform.position = placeImageOnScreen.transform.position;
-
+                heartsGiven++;
                 audioStallionDrink.Play(1);
                 audioStallionHaha.Play(1);
                 audioStallionWipe.Play(1);
 
                 CurrentStallion = true;
                 updateText();
+                
                 lastIllustration = currentIllustration;
 
             }
@@ -315,16 +326,52 @@ public class DragDrop : MonoBehaviour
                 Debug.Log("4");
                 seenTammuz = true;
                 Tammuz.transform.position = placeImageOnScreen.transform.position;
-
+                heartsGiven++;
                 audioTammuzWingsRips.Play(1);
                 audioTammuzHaha.Play(1);
 
                 CurrentTammuz = true;
                 updateText();
+                
                 lastIllustration = currentIllustration;
             }
+
+            Debug.Log(heartsGiven);
+            IstarState();
         }
     }
+
+    public void IstarState() {
+
+        if (heartsGiven == 1){
+            Istar.transform.position = respawnPoint2.transform.position;
+            Istar2.transform.position = placeImageOnScreen.transform.position;
+        }
+        if (heartsGiven == 3)
+        {
+            Istar2.transform.position = respawnPoint2.transform.position;
+            Istar3.transform.position = placeImageOnScreen.transform.position;
+        }
+        if (heartsGiven == 6)
+        {
+            Istar3.transform.position = respawnPoint2.transform.position;
+            Istar4.transform.position = placeImageOnScreen.transform.position;
+        }
+        if (heartsGiven >= 10 && heartsGiven <= 49)
+        {
+            Istar4.transform.position = respawnPoint2.transform.position;
+            Istar5.transform.position = placeImageOnScreen.transform.position;
+        }
+        if (heartsGiven >= 50 && heartsGiven <= 99)
+        {
+            Istar5.transform.position = respawnPoint2.transform.position;
+            Istar6.transform.position = placeImageOnScreen.transform.position;
+        }
+
+
+
+    }
+
 
     void Update()
     {
