@@ -87,6 +87,9 @@ public class DragDrop : MonoBehaviour
     bool CurrentTammuz = false;
 
 
+    bool ChoseIllustration = false;
+    int currentIllustration;
+    int lastIllustration;
 
 
     public void updateWhatHasBeenSeen()
@@ -245,71 +248,83 @@ public class DragDrop : MonoBehaviour
                 Debug.Log("Yeeee");
                 Heart.transform.position = respawnPoint.transform.position;
 
-                int ranInt = Random.Range(1, 5);
-       
-
-
-                if (ranInt == 1) 
-                {
-                    Debug.Log("1");
-                    seenIshullanu = true;
-                    Ishullanu.transform.position = placeImageOnScreen.transform.position;
-                    
-                    audioIshullanuKick.Play(1);
-                    audioIshullanuFalling.Play(1);
-                    CurrentIshullanu = true;
-                    updateText();
-
-                }
-                if (ranInt == 2)
-                {
-                    Debug.Log("2");
-                    seenShephered = true;
-                    Shephered.transform.position = placeImageOnScreen.transform.position;
-
-                    audioShepheredDogo.Play(1);
-                    CurrentShephered = true;
-                    updateText();
-
-
-
-                }
-                if (ranInt == 3)
-                {
-                    Debug.Log("3");
-                    seenStallion = true;
-                    Stallion.transform.position = placeImageOnScreen.transform.position;
-
-                    audioStallionDrink.Play(1);
-                    audioStallionHaha.Play(1);
-                    audioStallionWipe.Play(1);
-
-                    CurrentStallion = true;
-                    updateText();
-
-                }
-                if (ranInt == 4)
-                {
-                    Debug.Log("4");
-                    seenTammuz = true;
-                    Tammuz.transform.position = placeImageOnScreen.transform.position;
-
-                    audioTammuzWingsRips.Play(1);
-                    audioTammuzHaha.Play(1);
-
-                    CurrentTammuz = true;
-                    updateText();
-                }
-                if (ranInt == 5)
-                {
-                    Debug.Log("5");
-                }
+                
+                pickIllustration();
 
             }
         }
         
     }
 
+    public void pickIllustration()
+    {
+        int ranInt = Random.Range(1, 5);
+        currentIllustration = ranInt;
+
+
+        if (currentIllustration == lastIllustration)
+        {
+            pickIllustration();
+        }
+
+        if(currentIllustration != lastIllustration)
+        {
+            if (currentIllustration == 1)
+            {
+                Debug.Log("1");
+                seenIshullanu = true;
+                Ishullanu.transform.position = placeImageOnScreen.transform.position;
+
+                audioIshullanuKick.Play(1);
+                audioIshullanuFalling.Play(1);
+                CurrentIshullanu = true;
+                updateText();
+                lastIllustration = currentIllustration;
+
+            }
+            if (currentIllustration == 2)
+            {
+                Debug.Log("2");
+                seenShephered = true;
+                Shephered.transform.position = placeImageOnScreen.transform.position;
+
+                audioShepheredDogo.Play(1);
+                CurrentShephered = true;
+                updateText();
+
+                lastIllustration = currentIllustration;
+
+            }
+            if (currentIllustration == 3)
+            {
+                Debug.Log("3");
+                seenStallion = true;
+                Stallion.transform.position = placeImageOnScreen.transform.position;
+
+                audioStallionDrink.Play(1);
+                audioStallionHaha.Play(1);
+                audioStallionWipe.Play(1);
+
+                CurrentStallion = true;
+                updateText();
+                lastIllustration = currentIllustration;
+
+            }
+            if (currentIllustration == 4)
+            {
+                Debug.Log("4");
+                seenTammuz = true;
+                Tammuz.transform.position = placeImageOnScreen.transform.position;
+
+                audioTammuzWingsRips.Play(1);
+                audioTammuzHaha.Play(1);
+
+                CurrentTammuz = true;
+                updateText();
+                lastIllustration = currentIllustration;
+            }
+        }
+    }
 
     void Update()
     {
