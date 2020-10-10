@@ -46,6 +46,18 @@ public class DragDrop : MonoBehaviour
     [SerializeField] private Transform textspawnPointL;
     [SerializeField] private Transform textspawnPointR;
 
+
+    public MeshRenderer visbleTextIshullanu;
+    public MeshRenderer visbleTextShephered;
+    public MeshRenderer visbleTextStallion;
+    public MeshRenderer visbleTextTammuz;
+
+    public MeshRenderer visbleTextSorry1;
+    public MeshRenderer visbleTextSorry2;
+    public MeshRenderer visbleTextSorry3;
+    public MeshRenderer visbleTextSorry4;
+
+
     public AudioSource audioIshullanuKick;
     public AudioSource audioIshullanuFalling;
     public AudioSource audioShepheredDogo;
@@ -101,6 +113,16 @@ public class DragDrop : MonoBehaviour
         textSorry2.transform.position = respawnPoint2.transform.position;
         textSorry3.transform.position = respawnPoint2.transform.position;
         textSorry4.transform.position = respawnPoint2.transform.position;
+
+        visbleTextIshullanu.enabled = false;
+        visbleTextShephered.enabled = false;
+        visbleTextStallion.enabled = false;
+        visbleTextTammuz.enabled = false;
+
+        visbleTextSorry1.enabled = false;
+        visbleTextSorry2.enabled = false;
+        visbleTextSorry3.enabled = false;
+        visbleTextSorry4.enabled = false;
 
         if (CurrentIshullanu == true)
         {

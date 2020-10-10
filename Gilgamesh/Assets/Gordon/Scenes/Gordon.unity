@@ -624,7 +624,6 @@ GameObject:
   - component: {fileID: 152317332}
   - component: {fileID: 152317331}
   - component: {fileID: 152317330}
-  - component: {fileID: 152317333}
   m_Layer: 0
   m_Name: TextIshullanu
   m_TagString: Untagged
@@ -783,21 +782,6 @@ RectTransform:
   m_AnchoredPosition: {x: 72.3, y: 7.4}
   m_SizeDelta: {x: 4.744182, y: 3.68191}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &152317333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152317329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0db47975223c4c448bee129e3855d88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  img: {fileID: 152317332}
-  respawnPoint: {fileID: 240367446}
-  fadeSpeed: 8
 --- !u!1 &240367445
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +791,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 240367446}
+  - component: {fileID: 240367448}
+  - component: {fileID: 240367447}
   m_Layer: 0
   m_Name: textRespawnPointLeft
   m_TagString: Untagged
@@ -828,6 +814,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &240367447
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240367445}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &240367448
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240367445}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &247277167
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,6 +960,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 247277169}
   respawnPoint: {fileID: 1160485252}
+  visbleTextIshullanu: {fileID: 152317331}
+  visbleTextShephered: {fileID: 291000724}
+  visbleTextStallion: {fileID: 1848531394}
+  visbleTextTammuz: {fileID: 1772031834}
+  visbleTextSorry1: {fileID: 2122975163}
+  visbleTextSorry2: {fileID: 1467402384}
+  visbleTextSorry3: {fileID: 1717754448}
+  visbleTextSorry4: {fileID: 80061122}
   fadeSpeed: 1
 --- !u!50 &247277171
 Rigidbody2D:
@@ -1155,7 +1196,6 @@ GameObject:
   - component: {fileID: 291000725}
   - component: {fileID: 291000724}
   - component: {fileID: 291000723}
-  - component: {fileID: 291000726}
   m_Layer: 0
   m_Name: TextShephered
   m_TagString: Untagged
@@ -1314,21 +1354,6 @@ RectTransform:
   m_AnchoredPosition: {x: 71, y: 35.26}
   m_SizeDelta: {x: 4.744182, y: 3.68191}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &291000726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 291000722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0db47975223c4c448bee129e3855d88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  img: {fileID: 291000725}
-  respawnPoint: {fileID: 240367446}
-  fadeSpeed: 8
 --- !u!1 &459877778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,6 +1618,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 583547107}
   respawnPoint: {fileID: 1160485252}
+  visbleTextIshullanu: {fileID: 152317331}
+  visbleTextShephered: {fileID: 291000724}
+  visbleTextStallion: {fileID: 1848531394}
+  visbleTextTammuz: {fileID: 1772031834}
+  visbleTextSorry1: {fileID: 2122975163}
+  visbleTextSorry2: {fileID: 1467402384}
+  visbleTextSorry3: {fileID: 1717754448}
+  visbleTextSorry4: {fileID: 80061122}
   fadeSpeed: 1
 --- !u!50 &583547109
 Rigidbody2D:
@@ -3447,6 +3480,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1278657592}
   respawnPoint: {fileID: 1160485252}
+  visbleTextIshullanu: {fileID: 152317331}
+  visbleTextShephered: {fileID: 291000724}
+  visbleTextStallion: {fileID: 1848531394}
+  visbleTextTammuz: {fileID: 1772031834}
+  visbleTextSorry1: {fileID: 2122975163}
+  visbleTextSorry2: {fileID: 1467402384}
+  visbleTextSorry3: {fileID: 1717754448}
+  visbleTextSorry4: {fileID: 80061122}
   fadeSpeed: 1
 --- !u!50 &1278657594
 Rigidbody2D:
@@ -3666,6 +3707,14 @@ MonoBehaviour:
   textGameOver2: {fileID: 633808565}
   textspawnPointL: {fileID: 240367446}
   textspawnPointR: {fileID: 709012692}
+  visbleTextIshullanu: {fileID: 152317331}
+  visbleTextShephered: {fileID: 291000724}
+  visbleTextStallion: {fileID: 1848531394}
+  visbleTextTammuz: {fileID: 1772031834}
+  visbleTextSorry1: {fileID: 2122975163}
+  visbleTextSorry2: {fileID: 1467402384}
+  visbleTextSorry3: {fileID: 1717754448}
+  visbleTextSorry4: {fileID: 80061122}
   audioIshullanuKick: {fileID: 1948871657}
   audioIshullanuFalling: {fileID: 633465680}
   audioShepheredDogo: {fileID: 849651344}
@@ -4382,6 +4431,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 1612757198}
   respawnPoint: {fileID: 1160485252}
+  visbleTextIshullanu: {fileID: 152317331}
+  visbleTextShephered: {fileID: 291000724}
+  visbleTextStallion: {fileID: 1848531394}
+  visbleTextTammuz: {fileID: 1772031834}
+  visbleTextSorry1: {fileID: 2122975163}
+  visbleTextSorry2: {fileID: 1467402384}
+  visbleTextSorry3: {fileID: 1717754448}
+  visbleTextSorry4: {fileID: 80061122}
   fadeSpeed: 1
 --- !u!50 &1612757200
 Rigidbody2D:
@@ -4856,7 +4913,6 @@ GameObject:
   - component: {fileID: 1772031835}
   - component: {fileID: 1772031834}
   - component: {fileID: 1772031833}
-  - component: {fileID: 1772031836}
   m_Layer: 0
   m_Name: TextTammuz
   m_TagString: Untagged
@@ -5012,24 +5068,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 44.23, y: 7.47}
+  m_AnchoredPosition: {x: 44.5, y: 7.3}
   m_SizeDelta: {x: 4.744182, y: 3.68191}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1772031836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772031832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0db47975223c4c448bee129e3855d88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  img: {fileID: 1772031835}
-  respawnPoint: {fileID: 240367446}
-  fadeSpeed: 8
 --- !u!1 &1848531392
 GameObject:
   m_ObjectHideFlags: 0
@@ -5041,7 +5082,6 @@ GameObject:
   - component: {fileID: 1848531395}
   - component: {fileID: 1848531394}
   - component: {fileID: 1848531393}
-  - component: {fileID: 1848531396}
   m_Layer: 0
   m_Name: TextStallion
   m_TagString: Untagged
@@ -5200,21 +5240,6 @@ RectTransform:
   m_AnchoredPosition: {x: 43.8, y: 35}
   m_SizeDelta: {x: 4.744182, y: 3.68191}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1848531396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1848531392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0db47975223c4c448bee129e3855d88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  img: {fileID: 1848531395}
-  respawnPoint: {fileID: 240367446}
-  fadeSpeed: 8
 --- !u!1 &1864790395
 GameObject:
   m_ObjectHideFlags: 0
