@@ -13,7 +13,18 @@ public class Fade_In_Out : MonoBehaviour
     [SerializeField] private Transform img;
     [SerializeField] private Transform respawnPoint;
 
-    SpriteRenderer rend;
+
+    public MeshRenderer visbleTextIshullanu;
+    public MeshRenderer visbleTextShephered;
+    public MeshRenderer visbleTextStallion;
+    public MeshRenderer visbleTextTammuz;
+
+    public MeshRenderer visbleTextSorry1;
+    public MeshRenderer visbleTextSorry2;
+    public MeshRenderer visbleTextSorry3;
+    public MeshRenderer visbleTextSorry4;
+
+
     private bool fadeOut = false;
     private bool fadeIn = false;
     public float fadeSpeed;
@@ -91,6 +102,15 @@ public class Fade_In_Out : MonoBehaviour
 
             if (objectColor.a >= 1)
             {
+                visbleTextIshullanu.enabled = true;
+                visbleTextShephered.enabled = true;
+                visbleTextStallion.enabled = true;
+                visbleTextTammuz.enabled = true;
+
+                visbleTextSorry1.enabled = true;
+                visbleTextSorry2.enabled = true;
+                visbleTextSorry3.enabled = true;
+                visbleTextSorry4.enabled = true;
                 fadeIn = false;
             }
 
