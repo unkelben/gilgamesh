@@ -13,6 +13,8 @@ public class Fade_In_Out : MonoBehaviour
     [SerializeField] private Transform img;
     [SerializeField] private Transform respawnPoint;
 
+    [SerializeField] private Transform backgroundEnding;
+
 
     public MeshRenderer visbleTextIshullanu;
     public MeshRenderer visbleTextShephered;
@@ -23,6 +25,10 @@ public class Fade_In_Out : MonoBehaviour
     public MeshRenderer visbleTextSorry2;
     public MeshRenderer visbleTextSorry3;
     public MeshRenderer visbleTextSorry4;
+
+    public MeshRenderer visbleEnding;
+    public MeshRenderer visbleGameOver;
+
 
 
     private bool fadeOut = false;
@@ -52,6 +58,8 @@ public class Fade_In_Out : MonoBehaviour
         Debug.Log("Click");
         if(fadeIn == false)
         {
+            backgroundEnding.transform.position = respawnPoint.transform.position;
+            visbleGameOver.enabled = true;
             FadeOutObject();
         }
         
@@ -84,6 +92,7 @@ public class Fade_In_Out : MonoBehaviour
             if (objectColor.a <= 0)
             {
                 img.transform.position = respawnPoint.transform.position;
+                
                 fadeOut = false;
 
             }
@@ -106,11 +115,15 @@ public class Fade_In_Out : MonoBehaviour
                 visbleTextShephered.enabled = true;
                 visbleTextStallion.enabled = true;
                 visbleTextTammuz.enabled = true;
-
+               
                 visbleTextSorry1.enabled = true;
                 visbleTextSorry2.enabled = true;
                 visbleTextSorry3.enabled = true;
                 visbleTextSorry4.enabled = true;
+
+
+
+                visbleEnding.enabled = false;
                 fadeIn = false;
             }
 
