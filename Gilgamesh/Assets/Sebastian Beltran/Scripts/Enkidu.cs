@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 public class Enkidu : MonoBehaviour
 {
     [SerializeField] float speed;
     Rigidbody2D enkiduRigidBody;
     Animator enkiduAnimator;
+    public Flowchart flowchart;
+    bool allowMovement;
+    
 
 
 
@@ -18,7 +22,10 @@ public class Enkidu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        allowMovement = flowchart.GetBooleanVariable("allowMovement");
+        if (allowMovement == true) { 
+            Move();
+        }
     }
 
     private void Move()
