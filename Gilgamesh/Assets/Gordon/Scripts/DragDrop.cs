@@ -28,6 +28,8 @@ public class DragDrop : MonoBehaviour
     [SerializeField] private Transform Istar5;
     [SerializeField] private Transform Istar6;
 
+    [SerializeField] private Transform Gilgamesh;
+
     [SerializeField] private Transform MadIstar;
     [SerializeField] private Transform VeryMadIstar;
     [SerializeField] private Transform EndingBG;
@@ -217,7 +219,7 @@ public class DragDrop : MonoBehaviour
 
             updateTextEnding();
             updateWhatHasBeenSeen();
-            if (allIsSeen == true)
+            if (allIsSeen == true && heartsGiven <= 99)
             {
                 Istar.transform.position = respawnPoint2.transform.position;
                 Istar2.transform.position = respawnPoint2.transform.position;
@@ -233,7 +235,8 @@ public class DragDrop : MonoBehaviour
                 
 
             }
-            else
+            
+            if(allIsSeen == false && heartsGiven <= 99)
             {
                 Istar.transform.position = respawnPoint2.transform.position;
                 Istar2.transform.position = respawnPoint2.transform.position;
@@ -246,9 +249,6 @@ public class DragDrop : MonoBehaviour
                 textReject.transform.position = textspawnPointL.transform.position;
                
             }
-
-
-
 
         }
 
@@ -263,11 +263,18 @@ public class DragDrop : MonoBehaviour
             if (!isDragging)
             {
                 Debug.Log("Yeeee");
-                Heart.transform.position = respawnPoint.transform.position;
 
-
-                pickIllustration();
-
+                if (heartsGiven <= 98)
+                {
+                    Heart.transform.position = respawnPoint.transform.position;
+                    pickIllustration();
+                }
+                if (heartsGiven >= 99)
+                {
+                    Heart.transform.position = respawnPoint2.transform.position;
+                    Istar6.transform.position = respawnPoint2.transform.position;
+                    Gilgamesh.transform.position = placeImageOnScreen.transform.position;
+                }
             }
         }
 

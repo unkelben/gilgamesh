@@ -1025,6 +1025,7 @@ MonoBehaviour:
   img: {fileID: 247277169}
   respawnPoint: {fileID: 1160485252}
   backgroundEnding: {fileID: 1284093541}
+  backgroundEnding2: {fileID: 2115481713}
   visbleTextIshullanu: {fileID: 152317331}
   visbleTextShephered: {fileID: 291000724}
   visbleTextStallion: {fileID: 1848531394}
@@ -1421,6 +1422,88 @@ RectTransform:
   m_AnchoredPosition: {x: 71, y: 35.26}
   m_SizeDelta: {x: 4.744182, y: 3.68191}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &368093209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 368093211}
+  - component: {fileID: 368093210}
+  m_Layer: 0
+  m_Name: Gilgamesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &368093210
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368093209}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d59a0cf55bc88864f8f24241edc0b379, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 7.1, y: 8.95}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &368093211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368093209}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 41.22, y: -26.22, z: 0}
+  m_LocalScale: {x: 1, y: 1.15, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 49
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &459877778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1750,6 +1833,7 @@ MonoBehaviour:
   img: {fileID: 583547107}
   respawnPoint: {fileID: 1160485252}
   backgroundEnding: {fileID: 1284093541}
+  backgroundEnding2: {fileID: 2115481713}
   visbleTextIshullanu: {fileID: 152317331}
   visbleTextShephered: {fileID: 291000724}
   visbleTextStallion: {fileID: 1848531394}
@@ -3105,6 +3189,7 @@ MonoBehaviour:
   img: {fileID: 1003445798}
   respawnPoint: {fileID: 1160485252}
   backgroundEnding: {fileID: 1284093541}
+  backgroundEnding2: {fileID: 1864790397}
   visbleTextIshullanu: {fileID: 254830591}
   visbleTextShephered: {fileID: 291000724}
   visbleTextStallion: {fileID: 1848531394}
@@ -3697,6 +3782,7 @@ MonoBehaviour:
   img: {fileID: 1278657592}
   respawnPoint: {fileID: 1160485252}
   backgroundEnding: {fileID: 1284093541}
+  backgroundEnding2: {fileID: 2115481713}
   visbleTextIshullanu: {fileID: 152317331}
   visbleTextShephered: {fileID: 291000724}
   visbleTextStallion: {fileID: 1848531394}
@@ -3949,7 +4035,6 @@ MonoBehaviour:
   audioMadIstar: {fileID: 97255200}
   audioVeryMadIstar: {fileID: 741011158}
   audioBMG: {fileID: 1965646513}
-  visbleGame: {fileID: 0}
 --- !u!1 &1284093539
 GameObject:
   m_ObjectHideFlags: 0
@@ -4784,6 +4869,7 @@ MonoBehaviour:
   img: {fileID: 1612757198}
   respawnPoint: {fileID: 1160485252}
   backgroundEnding: {fileID: 1284093541}
+  backgroundEnding2: {fileID: 2115481713}
   visbleTextIshullanu: {fileID: 152317331}
   visbleTextShephered: {fileID: 291000724}
   visbleTextStallion: {fileID: 1848531394}
@@ -5403,6 +5489,7 @@ MonoBehaviour:
   img: {fileID: 1732085317}
   respawnPoint: {fileID: 1160485252}
   backgroundEnding: {fileID: 1864790397}
+  backgroundEnding2: {fileID: 1284093541}
   visbleTextIshullanu: {fileID: 1934211097}
   visbleTextShephered: {fileID: 291000724}
   visbleTextStallion: {fileID: 1848531394}
@@ -6667,7 +6754,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 49
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

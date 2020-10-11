@@ -14,7 +14,7 @@ public class Fade_In_Out : MonoBehaviour
     [SerializeField] private Transform respawnPoint;
 
     [SerializeField] private Transform backgroundEnding;
-
+    [SerializeField] private Transform backgroundEnding2;
 
     public MeshRenderer visbleTextIshullanu;
     public MeshRenderer visbleTextShephered;
@@ -28,7 +28,6 @@ public class Fade_In_Out : MonoBehaviour
 
     public MeshRenderer visbleEnding;
     public MeshRenderer visbleGameOver;
-
 
 
     private bool fadeOut = false;
@@ -59,6 +58,7 @@ public class Fade_In_Out : MonoBehaviour
         if(fadeIn == false)
         {
             backgroundEnding.transform.position = respawnPoint.transform.position;
+            backgroundEnding2.transform.position = respawnPoint.transform.position;
             visbleGameOver.enabled = true;
             FadeOutObject();
         }
