@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 public class DrinkArea : MonoBehaviour
 {
     //Pass Goblet
     [SerializeField] GameObject goblet;
     [SerializeField] GameObject clothes;
+    [SerializeField] Flowchart flowchart;
 
     [SerializeField] Sprite pants;
     [SerializeField] Sprite shoes;
@@ -18,6 +20,7 @@ public class DrinkArea : MonoBehaviour
     //Declare velocity for goblet
     //Declare vector 2 for goblet position
     public bool drinkIsInside;
+    bool startClothesGame;
     public static int drinkCounter = 0;
     public static int clothesCounter = 0;
     float initialPosition;
@@ -38,23 +41,36 @@ public class DrinkArea : MonoBehaviour
         initialPosClothes = clothesPos.y;
         velocityY = -3f;
 
+        clothes.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        startClothesGame = flowchart.GetBooleanVariable("startClothesGame");
+
         drinkGame();
-        
+
+        if (startClothesGame == true)
+        {
+            clothesGame();
+        }
+
     }
 
     public void clothesGame()
     {
+        clothes.SetActive(true);
+        velocityY = -3f;
         clothesPos.y = clothes.transform.position.y;
         clothes.GetComponent<Rigidbody2D>().velocity = new Vector2(velocityX, velocityY);
 
         if (Input.GetKeyDown(KeyCode.Space) && drinkIsInside == true)
         {
             clothesCounter++;
+            clothesPos.y = initialPosClothes;
+            clothes.transform.position = clothesPos;
             if (clothesCounter == 1)
             {
                 clothes.GetComponent<SpriteRenderer>().sprite = pants;
@@ -64,7 +80,7 @@ public class DrinkArea : MonoBehaviour
                 clothes.GetComponent<SpriteRenderer>().sprite = shoes;
             }
         }
-        else if (drinkIsInside == false && gobletPos.y < -1f)
+        else if (drinkIsInside == false && clothesPos.y < -1f)
         {
             clothesPos.y = initialPosClothes;
             clothes.transform.position = clothesPos;
@@ -95,7 +111,7 @@ public class DrinkArea : MonoBehaviour
 
         if (drinkCounter == 7)
         {
-            Destroy(goblet);
+            goblet.SetActive(false);
         }
     }
 
