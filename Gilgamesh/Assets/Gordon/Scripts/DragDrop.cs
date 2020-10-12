@@ -95,6 +95,8 @@ public class DragDrop : MonoBehaviour
     bool CurrentStallion = false;
     bool CurrentTammuz = false;
 
+    bool isSecretEndAchived = false;
+
     int currentIllustration;
     int lastIllustration;
 
@@ -219,7 +221,7 @@ public class DragDrop : MonoBehaviour
 
             updateTextEnding();
             updateWhatHasBeenSeen();
-            if (allIsSeen == true && heartsGiven <= 99)
+            if (allIsSeen == true && isSecretEndAchived == false)
             {
                 Istar.transform.position = respawnPoint2.transform.position;
                 Istar2.transform.position = respawnPoint2.transform.position;
@@ -236,7 +238,7 @@ public class DragDrop : MonoBehaviour
 
             }
             
-            if(allIsSeen == false && heartsGiven <= 99)
+            if(allIsSeen == false && isSecretEndAchived == false)
             {
                 Istar.transform.position = respawnPoint2.transform.position;
                 Istar2.transform.position = respawnPoint2.transform.position;
@@ -264,21 +266,48 @@ public class DragDrop : MonoBehaviour
             {
                 Debug.Log("Yeeee");
 
-                if (heartsGiven <= 98)
-                {
-                    Heart.transform.position = respawnPoint.transform.position;
-                    pickIllustration();
-                }
-                if (heartsGiven >= 99)
-                {
-                    Heart.transform.position = respawnPoint2.transform.position;
-                    Istar6.transform.position = respawnPoint2.transform.position;
-                    Gilgamesh.transform.position = placeImageOnScreen.transform.position;
-                }
+                HeartGiven();
+
+              
             }
         }
 
     }
+
+    public void HeartGiven()
+    {
+        
+
+
+        if (heartsGiven <= 17)
+        {
+            
+            isSecretEndAchived = false;
+            
+        }
+        if (heartsGiven == 18)
+        {
+            isSecretEndAchived = true;
+         
+        }
+
+        if (isSecretEndAchived == false)
+        {
+            Heart.transform.position = respawnPoint.transform.position;
+            pickIllustration();
+        }
+        if (isSecretEndAchived == true)
+        {
+            Heart.transform.position = respawnPoint2.transform.position;
+            Istar6.transform.position = respawnPoint2.transform.position;
+            Gilgamesh.transform.position = placeImageOnScreen.transform.position;
+        }
+
+
+    }
+
+
+
 
     public void pickIllustration()
     {
@@ -373,12 +402,16 @@ public class DragDrop : MonoBehaviour
             Istar3.transform.position = respawnPoint2.transform.position;
             Istar4.transform.position = placeImageOnScreen.transform.position;
         }
-        if (heartsGiven >= 10 && heartsGiven <= 49)
+
+        //49
+        if (heartsGiven >= 10 && heartsGiven <= 15)
         {
             Istar4.transform.position = respawnPoint2.transform.position;
             Istar5.transform.position = placeImageOnScreen.transform.position;
         }
-        if (heartsGiven >= 50 && heartsGiven <= 99)
+
+        //50 99
+        if (heartsGiven >= 16 && heartsGiven <= 17)
         {
             Istar5.transform.position = respawnPoint2.transform.position;
             Istar6.transform.position = placeImageOnScreen.transform.position;
