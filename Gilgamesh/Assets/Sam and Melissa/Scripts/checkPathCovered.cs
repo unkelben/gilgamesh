@@ -12,7 +12,7 @@ public class checkPathCovered : MonoBehaviour
     float checkInterval = 1f;
     public bool active = true;
     
-    float completionThreshold = 0.031f;
+    float completionThreshold = 0.024f;
 
     public Texture2D tex;
     private Color32[] pixels;
@@ -20,16 +20,18 @@ public class checkPathCovered : MonoBehaviour
     Color32 pathColor = new Color32(144,127,109,255);
     public RenderTexture renderTexture;
     float totalPix = 0f;
+    GameObject scene;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        scene = GameObject.Find("scene_manager");
     }
 
     // Update is called once per frame
     void Update()
     {
+        active = scene.GetComponent<sceneManager>().scene1started;
 
         if (active)
         {
@@ -38,8 +40,6 @@ public class checkPathCovered : MonoBehaviour
                 float counter = 0;
                 // next 2 lines grabbed from https://docs.unity3d.com/ScriptReference/Texture2D.ReadPixels.html
                // Texture2D tex = (Texture2D) GetComponent<Renderer>().material.mainTexture;
-
-
 
                 Texture2D tex2d = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGBA32, false);
                 totalPix = renderTexture.width * renderTexture.height;
@@ -60,11 +60,12 @@ public class checkPathCovered : MonoBehaviour
                 }
                 nextCheck = Time.time + checkInterval;
                 float percent = counter / totalPix;
-                //Debug.Log(percent);
+                Debug.Log(percent);
 
                 if (percent > completionThreshold)
                 {
                     active = false;
+                    scene.GetComponent<sceneManager>().scene1over = true;
                     Debug.Log("complete!");
                 }
             }
