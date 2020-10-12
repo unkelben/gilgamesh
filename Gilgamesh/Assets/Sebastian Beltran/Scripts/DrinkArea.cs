@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CharacterCreator2D;
 using Fungus;
 
 public class DrinkArea : MonoBehaviour
@@ -9,6 +10,7 @@ public class DrinkArea : MonoBehaviour
     [SerializeField] GameObject goblet;
     [SerializeField] GameObject clothes;
     [SerializeField] Flowchart flowchart;
+    [SerializeField] CharacterViewer enkidu;
 
     [SerializeField] Sprite pants;
     [SerializeField] Sprite shoes;
@@ -29,6 +31,11 @@ public class DrinkArea : MonoBehaviour
     float velocityY;
     Vector2 gobletPos;
     Vector2 clothesPos;
+
+    public Color shirtColor1;
+    public Color shirtColor2;
+    public Color pantsColor;
+    public Color bootsColor;
 
 
     // Start
@@ -73,11 +80,21 @@ public class DrinkArea : MonoBehaviour
             clothes.transform.position = clothesPos;
             if (clothesCounter == 1)
             {
+                enkidu.EquipPart(SlotCategory.Armor, "Fantasy 01 Male");
+                enkidu.SetPartColor(SlotCategory.Armor, shirtColor1, shirtColor2, shirtColor2);
                 clothes.GetComponent<SpriteRenderer>().sprite = pants;
             }
             else if (clothesCounter == 2)
             {
+                enkidu.EquipPart(SlotCategory.Skirt, "");
+                enkidu.EquipPart(SlotCategory.Pants, "Fantasy 00 Male");
+                enkidu.SetPartColor(SlotCategory.Pants, ColorCode.Color1, pantsColor);
                 clothes.GetComponent<SpriteRenderer>().sprite = shoes;
+            }
+            else if (clothesCounter == 3)
+            {
+                enkidu.EquipPart(SlotCategory.Boots, "Fantasy 00");
+                enkidu.SetPartColor(SlotCategory.Boots, ColorCode.Color1, bootsColor);
             }
         }
         else if (drinkIsInside == false && clothesPos.y < -1f)

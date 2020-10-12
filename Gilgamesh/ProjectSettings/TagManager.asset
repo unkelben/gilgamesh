@@ -17,6 +17,7 @@ TagManager:
   - String
   - Enkidu
   - Meet Trigger
+  - Axe
   layers:
   - Default
   - TransparentFX

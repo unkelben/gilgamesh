@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
+using CharacterCreator2D;
 
 public class StartGame : MonoBehaviour
 {
     [SerializeField] GameObject playSpace;
+    [SerializeField] GameObject exitHouse;
     [SerializeField] Flowchart flowchart;
-    
+    [SerializeField] GameObject axe;
+
     private static int drinkCounter;
     private static int clothesCounter;
     bool startDrinkGame;
@@ -37,6 +40,13 @@ public class StartGame : MonoBehaviour
         if (drinkCounter == 7 && startDrinkGame == true)
         {
             flowchart.ExecuteBlock("Final Dialogue");
+        }
+
+        if (clothesCounter == 3)
+        {
+            flowchart.ExecuteBlock("Need Weapon");
+            axe.GetComponent<BoxCollider2D>().enabled = true;
+            exitHouse.SetActive(true);
         }
     }
 }
