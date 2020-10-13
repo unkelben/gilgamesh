@@ -52,12 +52,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: walkway
+    uniqueID: 1943750703
+    locked: 0
+  - name: Sprite
+    uniqueID: 2048442193
+    locked: 0
+  - name: title
+    uniqueID: 1306676825
+    locked: 0
+  - name: bread
+    uniqueID: 2686212525
+    locked: 0
+  - name: canvas
+    uniqueID: 468131813
+    locked: 0
+  - name: foreground
+    uniqueID: 2055204933
     locked: 0
   - name: Background
     uniqueID: 4146809285
     locked: 0
-  - name: Sprite
-    uniqueID: 2048442193
+  - name: Default
+    uniqueID: 0
     locked: 0
