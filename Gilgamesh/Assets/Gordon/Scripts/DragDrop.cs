@@ -279,13 +279,13 @@ public class DragDrop : MonoBehaviour
         
 
 
-        if (heartsGiven <= 17)
+        if (heartsGiven <= 99)
         {
             
             isSecretEndAchived = false;
             
         }
-        if (heartsGiven == 18)
+        if (heartsGiven == 100)
         {
             isSecretEndAchived = true;
          
@@ -404,14 +404,14 @@ public class DragDrop : MonoBehaviour
         }
 
         //49
-        if (heartsGiven >= 10 && heartsGiven <= 15)
+        if (heartsGiven >= 10 && heartsGiven <= 49)
         {
             Istar4.transform.position = respawnPoint2.transform.position;
             Istar5.transform.position = placeImageOnScreen.transform.position;
         }
 
         //50 99
-        if (heartsGiven >= 16 && heartsGiven <= 17)
+        if (heartsGiven >= 50 && heartsGiven <= 99)
         {
             Istar5.transform.position = respawnPoint2.transform.position;
             Istar6.transform.position = placeImageOnScreen.transform.position;

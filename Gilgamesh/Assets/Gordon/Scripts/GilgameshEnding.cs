@@ -16,6 +16,8 @@ public class GilgameshEnding : MonoBehaviour
 
     public MeshRenderer visbleGameOver;
 
+    public AudioSource GilgameshSpeaks;
+
     SpriteRenderer rend;
     private bool fadeOut = false;
     private bool fadeIn = false;
@@ -25,6 +27,8 @@ public class GilgameshEnding : MonoBehaviour
 
     public float timeRemaining;
     public bool timerIsRunning = false;
+
+
 
 
     public void FadeOutObject()
@@ -116,8 +120,11 @@ public class GilgameshEnding : MonoBehaviour
             if (objectColor.a >= 1)
             {
                 Gamestart = false;
+                GilgameshSpeaks.Play(1);
                 timerIsRunning = true;
                 EndingImage.transform.position = placeImageOnScreen.transform.position;
+
+                
                 fadeIn = false;
 
             }
