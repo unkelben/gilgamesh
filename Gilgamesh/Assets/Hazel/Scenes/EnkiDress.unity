@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 49896721}
   m_Layer: 9
   m_Name: enkiHair0
-  m_TagString: Untagged
+  m_TagString: hair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,7 +156,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location: {x: 53, y: 18, z: 0}
+  location2: {x: 5, y: 5, z: 0}
   on: {fileID: 5930199833723246881, guid: 6be188ba95de89c4cbedf476bf512b9a, type: 3}
+  hairs: []
 --- !u!114 &49896722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,7 +362,7 @@ GameObject:
   - component: {fileID: 192274863}
   m_Layer: 9
   m_Name: enkiShoes0
-  m_TagString: Untagged
+  m_TagString: shoes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -378,7 +380,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location: {x: 53, y: -30, z: 0}
+  location2: {x: 0, y: 0, z: 0}
   on: {fileID: -8729853274237785346, guid: c13cb7728a82fef4c859d41e08fd32f4, type: 3}
+  hairs: []
 --- !u!114 &192274864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,7 +504,7 @@ GameObject:
   - component: {fileID: 365913915}
   m_Layer: 9
   m_Name: enkiDress0
-  m_TagString: Untagged
+  m_TagString: dress
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -518,7 +522,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location: {x: 53, y: 0, z: 0}
+  location2: {x: 0, y: 0, z: 0}
   on: {fileID: -6348350906100388582, guid: dc73a59bb80db6a41970593779fe2736, type: 3}
+  hairs: []
 --- !u!114 &365913916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,7 +741,7 @@ GameObject:
   - component: {fileID: 795915527}
   m_Layer: 9
   m_Name: enkiHair1
-  m_TagString: Untagged
+  m_TagString: hair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -753,7 +759,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location: {x: 53, y: 18, z: 0}
+  location2: {x: 5, y: 5, z: 0}
   on: {fileID: -5146846884181473876, guid: a7e9e08a5a975ce44b613ad78a17f143, type: 3}
+  hairs: []
 --- !u!114 &795915528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,7 +883,7 @@ GameObject:
   - component: {fileID: 880402091}
   m_Layer: 9
   m_Name: enkiShirt0
-  m_TagString: Untagged
+  m_TagString: shirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -980,7 +988,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880402086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -74.4, y: 3.8, z: 0}
+  m_LocalPosition: {x: -81.4, y: 4.2, z: 0}
   m_LocalScale: {x: 15, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -999,7 +1007,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location: {x: 53, y: -3, z: 0}
+  location2: {x: 0, y: 0, z: 0}
   on: {fileID: -9040485977245357974, guid: 148ffaa1808b3f84d9f4a1b39c742d49, type: 3}
+  hairs: []
 --- !u!1 &1096250597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,7 +1108,7 @@ GameObject:
   - component: {fileID: 1187741944}
   m_Layer: 9
   m_Name: enkiPants0
-  m_TagString: Untagged
+  m_TagString: pants
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1116,7 +1126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location: {x: 53, y: -21, z: 0}
+  location2: {x: 0, y: 0, z: 0}
   on: {fileID: 6647212464992734659, guid: e64fa933d7dff6d42a3aca06f0e2a689, type: 3}
+  hairs: []
 --- !u!114 &1187741945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1318,6 +1330,7 @@ GameObject:
   - component: {fileID: 1474527548}
   - component: {fileID: 1474527551}
   - component: {fileID: 1474527552}
+  - component: {fileID: 1474527553}
   m_Layer: 0
   m_Name: enkiBase
   m_TagString: Player
@@ -1451,6 +1464,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   surprise: {fileID: 5961451647625052814, guid: ad7e8913b818df34cad93dcc26f5d037, type: 3}
   noSurprise: {fileID: -1317161997677984394, guid: ad7e8913b818df34cad93dcc26f5d037, type: 3}
+--- !u!114 &1474527553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474527547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d78d8e20ff47864fb81bcd6890fb919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shirt: 0
+  shoes: 0
+  dress: 0
+  pants: 0
+  hair: 0
 --- !u!1 &1734405186
 GameObject:
   m_ObjectHideFlags: 0
