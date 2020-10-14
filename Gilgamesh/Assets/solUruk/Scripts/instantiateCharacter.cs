@@ -18,10 +18,10 @@ public class instantiateCharacter : MonoBehaviour
         switch(getCharacter)
         {
           case 0:
-            Instantiate(gilgamesh, new Vector3(-1.17f, 4.75f, 0f), Quaternion.identity);
+            Instantiate(gilgamesh, new Vector3(-4f, 3f, 0.05f), Quaternion.identity);
             break;
           case 1:
-            Instantiate(enkidu, new Vector3(-1.17f, 4.75f, 0f), Quaternion.identity);
+            Instantiate(enkidu, new Vector3(-4f, 3f, 0.05f), Quaternion.identity);
             break;
           default:
             Application.Quit();
