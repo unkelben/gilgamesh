@@ -40,6 +40,7 @@ public class StartGame : MonoBehaviour
         if (drinkCounter == 7 && startDrinkGame == true)
         {
             flowchart.ExecuteBlock("Final Dialogue");
+            startDrinkGame = false;
         }
 
         if (clothesCounter == 3)

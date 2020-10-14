@@ -14,6 +14,7 @@ public class DrinkArea : MonoBehaviour
 
     [SerializeField] Sprite pants;
     [SerializeField] Sprite shoes;
+    [SerializeField] Sprite wearArea;
 
 
     //Declare boolean that checks if the goblet is inside the drink area
@@ -25,6 +26,7 @@ public class DrinkArea : MonoBehaviour
     bool startClothesGame;
     public static int drinkCounter = 0;
     public static int clothesCounter = 0;
+    private int flowDrinkCounter = 0;
     float initialPosition;
     float initialPosClothes;
     float velocityX = 0f;
@@ -68,6 +70,7 @@ public class DrinkArea : MonoBehaviour
 
     public void clothesGame()
     {
+        gameObject.GetComponent<SpriteRenderer>().sprite = wearArea;
         clothes.SetActive(true);
         velocityY = -3f;
         clothesPos.y = clothes.transform.position.y;
@@ -86,6 +89,7 @@ public class DrinkArea : MonoBehaviour
             }
             else if (clothesCounter == 2)
             {
+                flowchart.ExecuteBlock("Hurry");
                 enkidu.EquipPart(SlotCategory.Skirt, "");
                 enkidu.EquipPart(SlotCategory.Pants, "Fantasy 00 Male");
                 enkidu.SetPartColor(SlotCategory.Pants, ColorCode.Color1, pantsColor);
@@ -118,7 +122,7 @@ public class DrinkArea : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && drinkIsInside == true)
         {
             drinkCounter++;
-            velocityY = velocityY - 1.5f;
+            velocityY = velocityY - 2f;
         }
         else if (drinkIsInside == false && gobletPos.y < -1f)
         {
@@ -126,7 +130,31 @@ public class DrinkArea : MonoBehaviour
             goblet.transform.position = gobletPos;
         }
 
-        if (drinkCounter == 7)
+        if (drinkCounter == 1)
+        {
+            flowchart.ExecuteBlock("First Drink");
+        }
+        else if (drinkCounter == 2)
+        {
+            flowchart.ExecuteBlock("Two Drinks");
+        }
+        else if (drinkCounter == 3)
+        {
+            flowchart.ExecuteBlock("Three Drinks");
+        }
+        else if (drinkCounter == 4)
+        {
+            flowchart.ExecuteBlock("Four Drinks");
+        }
+        else if (drinkCounter == 5)
+        {
+            flowchart.ExecuteBlock("Five Drinks");
+        }
+        else if (drinkCounter == 6)
+        {
+            flowchart.ExecuteBlock("Six Drinks");
+        }
+        else if (drinkCounter == 7)
         {
             goblet.SetActive(false);
         }
