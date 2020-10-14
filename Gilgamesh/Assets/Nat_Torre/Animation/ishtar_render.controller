@@ -11,27 +11,27 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 4289827260506645873}
-    m_Position: {x: 1380, y: -70, z: 0}
+    m_Position: {x: 3400, y: 950, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -855523709807022207}
-    m_Position: {x: 1880, y: 110, z: 0}
+    m_Position: {x: 3900, y: 1130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2203962861151561976}
-    m_Position: {x: 1620, y: -230, z: 0}
+    m_Position: {x: 3640, y: 790, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3596422798726678919}
-    m_Position: {x: 1550, y: 80, z: 0}
+    m_Position: {x: 3570, y: 1100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4874595272902201107}
-    m_Position: {x: 1880, y: -140, z: 0}
+    m_Position: {x: 3900, y: 880, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 1240, y: 150, z: 0}
-  m_EntryPosition: {x: 1240, y: 250, z: 0}
-  m_ExitPosition: {x: 1990, y: 250, z: 0}
+  m_AnyStatePosition: {x: 3260, y: 1170, z: 0}
+  m_EntryPosition: {x: 3260, y: 1270, z: 0}
+  m_ExitPosition: {x: 4010, y: 1270, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -855523709807022207}
 --- !u!1101 &-7253069378800271544
@@ -200,31 +200,31 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: rejection
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: firstRetort
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: secondHit
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: afterFirstRetort
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
