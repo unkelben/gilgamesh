@@ -22,7 +22,7 @@ public class Dressed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(shirt + " " + shoes + " " + dress + " " + pants + " " + hair);
+       // Debug.Log(shirt + " " + shoes + " " + dress + " " + pants + " " + hair);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
