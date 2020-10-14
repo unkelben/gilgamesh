@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Harout/scenes/title_screen.unity
-    guid: 11f60c96a1853cb4fad03084e88f8555
+    path: Assets/solUruk/Scenes/titlescreen.unity
+    guid: 46c9a872ef604dd4798707b23d9389f0
   - enabled: 1
-    path: Assets/Harout/scenes/vignette_1.unity
-    guid: fb2efbe314eb56b4da26cdeb6500a51a
-  - enabled: 1
-    path: Assets/Harout/scenes/game_over.unity
-    guid: f2c1abd04d26bf14592c91b07a561d59
+    path: Assets/solUruk/Scenes/uruk.unity
+    guid: 533736d70a7822848b68907a8e77bc15
   m_configObjects: {}
