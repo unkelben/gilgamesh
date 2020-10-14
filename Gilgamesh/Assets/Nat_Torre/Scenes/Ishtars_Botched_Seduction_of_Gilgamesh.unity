@@ -374,7 +374,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Charisma
+  m_Text: 'Charisma:: 89'
 --- !u!222 &309610142
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -453,7 +453,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Confidence
+  m_Text: 'Confidence:: 92'
 --- !u!222 &326767888
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2925,7 +2925,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ec0dbdb438e736144b7e86f362d50903, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e168fa4cc7a37d34bbe01805b3fab85a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4337,7 +4337,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Stamina
+  m_Text: 'Stamina:: 90'
 --- !u!222 &1444824963
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4504,7 +4504,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 220.3, y: 0}
+  m_AnchoredPosition: {x: 240.8, y: 0}
   m_SizeDelta: {x: 283, y: 177}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1544717253
@@ -4714,7 +4714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: Gilgamesh
-  nameColor: {r: 1, g: 0.5235849, b: 0.5235849, a: 1}
+  nameColor: {r: 0, g: 0, b: 0, a: 1}
   soundEffect: {fileID: 0}
   portraits: []
   portraitsFace: 0
@@ -4792,7 +4792,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b53cd286c1b1c98479f39d6a8bdc1f71, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef621f7b455576545bf3db2c1f2265c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4982,7 +4982,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 476f9f8398f7ffe43ba9b37d2c0b7358, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14e5d20b865b6704397a7902f2a4ca63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
