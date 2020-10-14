@@ -48,7 +48,8 @@ public class Dressed : MonoBehaviour
 
         if (collision.gameObject.tag == "dress")
         {
-            dress += 1;
+            pants += 1;
+            shirt += 1;
         }
  
     }
@@ -73,7 +74,8 @@ public class Dressed : MonoBehaviour
 
         if (collision.gameObject.tag == "dress")
         {
-            dress += -1;
+            pants += -1;
+            shirt += -1;
         }
 
         if (collision.gameObject.tag == "hair")

@@ -179,6 +179,7 @@ MonoBehaviour:
   clothesCollider: {fileID: 49896723}
   bodyCollider: {fileID: 1474527548}
   off: {fileID: 2962381329280023454, guid: 6be188ba95de89c4cbedf476bf512b9a, type: 3}
+  originalLayer: 0
 --- !u!61 &49896723
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -408,6 +409,7 @@ MonoBehaviour:
   clothesCollider: {fileID: 192274865}
   bodyCollider: {fileID: 1474527548}
   off: {fileID: -3379401874997975753, guid: c13cb7728a82fef4c859d41e08fd32f4, type: 3}
+  originalLayer: 0
 --- !u!61 &192274865
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -555,6 +557,7 @@ MonoBehaviour:
   clothesCollider: {fileID: 365913917}
   bodyCollider: {fileID: 1474527548}
   off: {fileID: -7223320770986672967, guid: dc73a59bb80db6a41970593779fe2736, type: 3}
+  originalLayer: 0
 --- !u!61 &365913917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -797,6 +800,7 @@ MonoBehaviour:
   clothesCollider: {fileID: 795915529}
   bodyCollider: {fileID: 1474527548}
   off: {fileID: -9115705428128471092, guid: 87b7840b4ca0f12458e3933ca67d6072, type: 3}
+  originalLayer: 0
 --- !u!61 &795915529
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -923,6 +927,7 @@ MonoBehaviour:
   clothesCollider: {fileID: 880402088}
   bodyCollider: {fileID: 1474527548}
   off: {fileID: 7610730568822892405, guid: 148ffaa1808b3f84d9f4a1b39c742d49, type: 3}
+  originalLayer: 0
 --- !u!61 &880402088
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1174,6 +1179,7 @@ MonoBehaviour:
   clothesCollider: {fileID: 1187741946}
   bodyCollider: {fileID: 1474527548}
   off: {fileID: -1983410311030894638, guid: e64fa933d7dff6d42a3aca06f0e2a689, type: 3}
+  originalLayer: 0
 --- !u!61 &1187741946
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1633,6 +1639,7 @@ MonoBehaviour:
   clothesCollider: {fileID: 1794906774}
   bodyCollider: {fileID: 1474527548}
   off: {fileID: 8121302520350478840, guid: 736479637c729fd43b991c239b7c0165, type: 3}
+  originalLayer: 0
 --- !u!61 &1794906774
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -80,7 +80,7 @@ public class Snap : MonoBehaviour
                     }
                 }
             }
-            if (GameObject.Find("enkiBase").GetComponent<Dressed>().dress >= 2)
+            if (GameObject.Find("enkiBase").GetComponent<Dressed>().shirt >= 2 || GameObject.Find("enkiBase").GetComponent<Dressed>().pants >= 2)
             {
                 foreach (GameObject dresse in dresses)
                 {

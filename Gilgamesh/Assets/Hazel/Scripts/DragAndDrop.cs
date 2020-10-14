@@ -10,10 +10,12 @@ public class DragAndDrop : MonoBehaviour
     public Collider2D clothesCollider;
     public Collider2D bodyCollider;
     public Sprite off;
+    public int originalLayer;
     void Start()
     {
         canMove = false;
         dragging = false;
+        originalLayer = this.GetComponent<SpriteRenderer>().sortingOrder;
 
     }
 
@@ -36,7 +38,7 @@ public class DragAndDrop : MonoBehaviour
             {
                 dragging = true;
             }
-            this.GetComponent<SpriteRenderer>().sortingOrder += 1;
+            this.GetComponent<SpriteRenderer>().sortingOrder = 200;
 
         }
         if (dragging)
@@ -50,7 +52,7 @@ public class DragAndDrop : MonoBehaviour
         {
             canMove = false;
             dragging = false;
-            this.GetComponent<SpriteRenderer>().sortingOrder += -1;
+            this.GetComponent<SpriteRenderer>().sortingOrder = originalLayer;
         }
     }
 
