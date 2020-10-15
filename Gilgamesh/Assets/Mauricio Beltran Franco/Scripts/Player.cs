@@ -21,6 +21,8 @@ public class Player : MonoBehaviour {
     bool disarm;
     bool shovelFill;
 
+    float shovelTimer = 1;
+
     // Start is called before the first frame update
     void Start() {
 
@@ -28,6 +30,8 @@ public class Player : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        if (shovelTimer < 1) shovelTimer += Time.deltaTime;
+
         if (start) {
             if (Input.GetMouseButtonDown(0)) {
                 hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100, LayerMask.GetMask("Water"));
@@ -38,8 +42,11 @@ public class Player : MonoBehaviour {
                             shovelFill = false;
                             break;
                         case "Shovel":
-                            shovelFill = true;
-                            disarm = false;
+                            if (shovelTimer >= 1) {
+                                shovelTimer = 0;
+                                shovelFill = true;
+                                disarm = false;
+                            }
                             break;
                         case "Pond":
                             if (drink) goDrink = true;
