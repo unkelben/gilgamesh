@@ -26,7 +26,7 @@ namespace Game.ClawMachine
             {
                 pivot.GetComponent<Hand>().stopPinching = true;
             }
-            if (Input.GetMouseButton(1) && isTouchingClay)
+            if (Input.GetMouseButtonUp(0) && isTouchingClay)
             {
                 pivot.GetComponent<Hand>().stopPinching = false;
             }

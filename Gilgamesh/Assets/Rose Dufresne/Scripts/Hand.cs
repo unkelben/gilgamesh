@@ -61,8 +61,15 @@ namespace Game.ClawMachine
         {
             rotationAngleZ = isRight ? -pinchSpeed : pinchSpeed;
             transform.Rotate(new Vector3(0, 0, rotationAngleZ * Time.deltaTime), Space.Self);
-            blendshapes.SetBlendShapeWeight(0, (Vector3.Angle(initialRotationZ, transform.up)*10f));
-            blendshapes.SetBlendShapeWeight(1, (Vector3.Angle(initialRotationZ, transform.up)*10f));
+            if (isRight)
+            {
+                blendshapes.SetBlendShapeWeight(1, (Vector3.Angle(initialRotationZ, transform.up) * 10f));
+            }
+            else
+            {
+
+                blendshapes.SetBlendShapeWeight(0, (Vector3.Angle(initialRotationZ, transform.up) * 10f));
+            }
         }
 
         private void UnPinch()

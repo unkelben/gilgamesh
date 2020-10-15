@@ -45,7 +45,6 @@ public class RemoveClay : MonoBehaviour
         {
             decreaseWeight = true;
             clayPrefab.GetComponent<Clay>().clayWeight = enkidu.GetComponent<EnkiduR>().clayWeights.Pop();
-            print(clayPrefab.GetComponent<Clay>().clayWeight);
             GameObject clay = Instantiate(clayPrefab, other.transform.position, Quaternion.identity) as GameObject;
             clay.transform.parent = other.transform.parent;
             clay.tag = "Clay";

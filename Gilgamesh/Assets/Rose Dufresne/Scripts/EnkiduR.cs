@@ -48,7 +48,6 @@ public class EnkiduR : MonoBehaviour
         //{
         //    IncreaseWeight();
         //}
-        //print(weightBalance * (-100f / 30f));
 
         if (100 - weightBalance * (-100f / 30f) >= interval) //remove weight
         {
@@ -111,27 +110,29 @@ public class EnkiduR : MonoBehaviour
     {
         if (other.collider.tag == "Clay"/* && other.collider.transform.parent == null*/)
         {
-            increaseWeight = true;
-            weightToAdd = other.collider.GetComponent<Clay>().clayWeight;
-            weightToAdd = 20; //shhh... hardcoded
-            print(other.collider.GetComponent<Clay>().clayWeight);
-            interval += weightToAdd;
+            if (!other.collider.GetComponent<Clay>().isInHand)
+            {
+                increaseWeight = true;
+                weightToAdd = other.collider.GetComponent<Clay>().clayWeight;
+                weightToAdd = 20; //shhh... hardcoded
+                interval += weightToAdd;
+                
+                //if (blendshapes.GetBlendShapeWeight(3) <= 50 && blendshapes.GetBlendShapeWeight(2) <= 100)
+                //{
+                //    blendshapes.SetBlendShapeWeight(2, headWeight+50);
+                //}
+                //if (blendshapes.GetBlendShapeWeight(1) > 0 && blendshapes.GetBlendShapeWeight(2) >= 100)
+                //{
+                //    blendshapes.SetBlendShapeWeight(1, arm_R_Weight-50);
+                //}
+                //if (blendshapes.GetBlendShapeWeight(0) > 0 && blendshapes.GetBlendShapeWeight(1) <= 0)
+                //{
+                //    blendshapes.SetBlendShapeWeight(0, arm_L_Weight-50);
+                //}
 
-            //if (blendshapes.GetBlendShapeWeight(3) <= 50 && blendshapes.GetBlendShapeWeight(2) <= 100)
-            //{
-            //    blendshapes.SetBlendShapeWeight(2, headWeight+50);
-            //}
-            //if (blendshapes.GetBlendShapeWeight(1) > 0 && blendshapes.GetBlendShapeWeight(2) >= 100)
-            //{
-            //    blendshapes.SetBlendShapeWeight(1, arm_R_Weight-50);
-            //}
-            //if (blendshapes.GetBlendShapeWeight(0) > 0 && blendshapes.GetBlendShapeWeight(1) <= 0)
-            //{
-            //    blendshapes.SetBlendShapeWeight(0, arm_L_Weight-50);
-            //}
-
-            clayWeights.Push(other.collider.GetComponent<Clay>().clayWeight);
-            Destroy(other.collider.gameObject);
+                clayWeights.Push(other.collider.GetComponent<Clay>().clayWeight);
+                Destroy(other.collider.gameObject);
+            }
         }
     }
 }
