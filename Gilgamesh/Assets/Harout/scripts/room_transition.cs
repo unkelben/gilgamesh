@@ -56,7 +56,7 @@ public class room_transition : MonoBehaviour
 
         }
 
-        if (other.CompareTag("Player1"))
+        if (other.CompareTag("Player"))
         {
             enkidu.SetActive(false);
            

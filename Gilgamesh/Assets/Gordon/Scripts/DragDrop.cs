@@ -22,9 +22,21 @@ public class DragDrop : MonoBehaviour
     [SerializeField] private Transform placeImageOnScreen;
 
     [SerializeField] private Transform Istar;
+    [SerializeField] private Transform Istar2;
+    [SerializeField] private Transform Istar3;
+    [SerializeField] private Transform Istar4;
+    [SerializeField] private Transform Istar5;
+    [SerializeField] private Transform Istar6;
+    [SerializeField] private Transform Istar7;
+    [SerializeField] private Transform Istar8;
+
+    [SerializeField] private Transform Gilgamesh;
+
     [SerializeField] private Transform MadIstar;
     [SerializeField] private Transform VeryMadIstar;
     [SerializeField] private Transform EndingBG;
+
+    
 
     [SerializeField] private Transform textStart;
     [SerializeField] private Transform textReject;
@@ -40,11 +52,22 @@ public class DragDrop : MonoBehaviour
     [SerializeField] private Transform textSorry3;
     [SerializeField] private Transform textSorry4;
 
-    [SerializeField] private Transform textGameOver1;
-    [SerializeField] private Transform textGameOver2;
+    
 
     [SerializeField] private Transform textspawnPointL;
     [SerializeField] private Transform textspawnPointR;
+
+
+    public MeshRenderer visbleTextIshullanu;
+    public MeshRenderer visbleTextShephered;
+    public MeshRenderer visbleTextStallion;
+    public MeshRenderer visbleTextTammuz;
+
+    public MeshRenderer visbleTextSorry1;
+    public MeshRenderer visbleTextSorry2;
+    public MeshRenderer visbleTextSorry3;
+    public MeshRenderer visbleTextSorry4;
+
 
     public AudioSource audioIshullanuKick;
     public AudioSource audioIshullanuFalling;
@@ -74,12 +97,17 @@ public class DragDrop : MonoBehaviour
     bool CurrentStallion = false;
     bool CurrentTammuz = false;
 
+    bool isSecretEndAchived = false;
 
+    int currentIllustration;
+    int lastIllustration;
+
+    int heartsGiven = 0;
 
 
     public void updateWhatHasBeenSeen()
     {
-        if( seenIshullanu == true && seenShephered == true && seenStallion == true && seenTammuz == true)
+        if (seenIshullanu == true && seenShephered == true && seenStallion == true && seenTammuz == true)
         {
             allIsSeen = true;
         }
@@ -101,6 +129,16 @@ public class DragDrop : MonoBehaviour
         textSorry2.transform.position = respawnPoint2.transform.position;
         textSorry3.transform.position = respawnPoint2.transform.position;
         textSorry4.transform.position = respawnPoint2.transform.position;
+
+        visbleTextIshullanu.enabled = false;
+        visbleTextShephered.enabled = false;
+        visbleTextStallion.enabled = false;
+        visbleTextTammuz.enabled = false;
+
+        visbleTextSorry1.enabled = false;
+        visbleTextSorry2.enabled = false;
+        visbleTextSorry3.enabled = false;
+        visbleTextSorry4.enabled = false;
 
         if (CurrentIshullanu == true)
         {
@@ -172,41 +210,53 @@ public class DragDrop : MonoBehaviour
     public void OnMouseDown()
     {
         isDragging = true;
-       
+
     }
 
     public void OnMouseUp()
     {
         isDragging = false;
-       
+
 
         if (!GetComponent<Renderer>().isVisible)
         {
 
             updateTextEnding();
             updateWhatHasBeenSeen();
-            if ( allIsSeen == true)
+            if (allIsSeen == true && isSecretEndAchived == false)
             {
                 Istar.transform.position = respawnPoint2.transform.position;
+                Istar2.transform.position = respawnPoint2.transform.position;
+                Istar3.transform.position = respawnPoint2.transform.position;
+                Istar4.transform.position = respawnPoint2.transform.position;
+                Istar5.transform.position = respawnPoint2.transform.position;
+                Istar6.transform.position = respawnPoint2.transform.position;
+                Istar7.transform.position = respawnPoint2.transform.position;
+                Istar8.transform.position = respawnPoint2.transform.position;
                 EndingBG.transform.position = placeImageOnScreen.transform.position;
                 VeryMadIstar.transform.position = placeImageOnScreen.transform.position;
                 audioVeryMadIstar.Play(1);
                 audioBMG.Play(0);
                 textSuperReject.transform.position = textspawnPointL.transform.position;
-                textGameOver2.transform.position = placeImageOnScreen.transform.position;
+                
 
             }
-            else
+            
+            if(allIsSeen == false && isSecretEndAchived == false)
             {
                 Istar.transform.position = respawnPoint2.transform.position;
+                Istar2.transform.position = respawnPoint2.transform.position;
+                Istar3.transform.position = respawnPoint2.transform.position;
+                Istar4.transform.position = respawnPoint2.transform.position;
+                Istar5.transform.position = respawnPoint2.transform.position;
+                Istar6.transform.position = respawnPoint2.transform.position;
+                Istar7.transform.position = respawnPoint2.transform.position;
+                Istar8.transform.position = respawnPoint2.transform.position;
                 MadIstar.transform.position = placeImageOnScreen.transform.position;
                 audioMadIstar.Play(1);
                 textReject.transform.position = textspawnPointL.transform.position;
-                textGameOver1.transform.position = placeImageOnScreen.transform.position;
+               
             }
-            
-
-       
 
         }
 
@@ -221,71 +271,177 @@ public class DragDrop : MonoBehaviour
             if (!isDragging)
             {
                 Debug.Log("Yeeee");
-                Heart.transform.position = respawnPoint.transform.position;
 
-                int ranInt = Random.Range(1, 5);
-       
+                HeartGiven();
 
-
-                if (ranInt == 1) 
-                {
-                    Debug.Log("1");
-                    seenIshullanu = true;
-                    Ishullanu.transform.position = placeImageOnScreen.transform.position;
-                    
-                    audioIshullanuKick.Play(1);
-                    audioIshullanuFalling.Play(1);
-                    CurrentIshullanu = true;
-                    updateText();
-
-                }
-                if (ranInt == 2)
-                {
-                    Debug.Log("2");
-                    seenShephered = true;
-                    Shephered.transform.position = placeImageOnScreen.transform.position;
-
-                    audioShepheredDogo.Play(1);
-                    CurrentShephered = true;
-                    updateText();
-
-
-
-                }
-                if (ranInt == 3)
-                {
-                    Debug.Log("3");
-                    seenStallion = true;
-                    Stallion.transform.position = placeImageOnScreen.transform.position;
-
-                    audioStallionDrink.Play(1);
-                    audioStallionHaha.Play(1);
-                    audioStallionWipe.Play(1);
-
-                    CurrentStallion = true;
-                    updateText();
-
-                }
-                if (ranInt == 4)
-                {
-                    Debug.Log("4");
-                    seenTammuz = true;
-                    Tammuz.transform.position = placeImageOnScreen.transform.position;
-
-                    audioTammuzWingsRips.Play(1);
-                    audioTammuzHaha.Play(1);
-
-                    CurrentTammuz = true;
-                    updateText();
-                }
-                if (ranInt == 5)
-                {
-                    Debug.Log("5");
-                }
-
+              
             }
         }
+
+    }
+
+    public void HeartGiven()
+    {
         
+
+
+        if (heartsGiven <= 99)
+        {
+            
+            isSecretEndAchived = false;
+            
+        }
+        if (heartsGiven == 100)
+        {
+            isSecretEndAchived = true;
+         
+        }
+
+        if (isSecretEndAchived == false)
+        {
+            Heart.transform.position = respawnPoint.transform.position;
+            pickIllustration();
+        }
+        if (isSecretEndAchived == true)
+        {
+            Heart.transform.position = respawnPoint2.transform.position;
+            Istar8.transform.position = respawnPoint2.transform.position;
+            Gilgamesh.transform.position = placeImageOnScreen.transform.position;
+        }
+
+
+    }
+
+
+
+
+    public void pickIllustration()
+    {
+        int ranInt = Random.Range(1, 5);
+        currentIllustration = ranInt;
+
+
+        if (currentIllustration == lastIllustration)
+        {
+            pickIllustration();
+        }
+
+        if (currentIllustration != lastIllustration)
+        {
+            if (currentIllustration == 1)
+            {
+                Debug.Log("1");
+                seenIshullanu = true;
+                Ishullanu.transform.position = placeImageOnScreen.transform.position;
+                heartsGiven++;
+                audioIshullanuKick.Play(1);
+                audioIshullanuFalling.Play(1);
+                CurrentIshullanu = true;
+                updateText();
+               
+                lastIllustration = currentIllustration;
+               
+
+            }
+            if (currentIllustration == 2)
+            {
+                Debug.Log("2");
+                seenShephered = true;
+                Shephered.transform.position = placeImageOnScreen.transform.position;
+                heartsGiven++;
+                audioShepheredDogo.Play(1);
+                CurrentShephered = true;
+                updateText();
+                
+                lastIllustration = currentIllustration;
+
+            }
+            if (currentIllustration == 3)
+            {
+                Debug.Log("3");
+                seenStallion = true;
+                Stallion.transform.position = placeImageOnScreen.transform.position;
+                heartsGiven++;
+                audioStallionDrink.Play(1);
+                audioStallionHaha.Play(1);
+                audioStallionWipe.Play(1);
+
+                CurrentStallion = true;
+                updateText();
+                
+                lastIllustration = currentIllustration;
+
+            }
+            if (currentIllustration == 4)
+            {
+                Debug.Log("4");
+                seenTammuz = true;
+                Tammuz.transform.position = placeImageOnScreen.transform.position;
+                heartsGiven++;
+                audioTammuzWingsRips.Play(1);
+                audioTammuzHaha.Play(1);
+
+                CurrentTammuz = true;
+                updateText();
+                
+                lastIllustration = currentIllustration;
+            }
+
+            Debug.Log(heartsGiven);
+            IstarState();
+        }
+    }
+
+    public void IstarState() {
+
+        if (heartsGiven == 4){
+            Istar.transform.position = respawnPoint2.transform.position;
+            Istar2.transform.position = placeImageOnScreen.transform.position;
+        }
+        if (heartsGiven == 10)
+        {
+            Istar2.transform.position = respawnPoint2.transform.position;
+            Istar3.transform.position = placeImageOnScreen.transform.position;
+        }
+        if (heartsGiven == 20)
+        {
+            Istar3.transform.position = respawnPoint2.transform.position;
+            Istar4.transform.position = placeImageOnScreen.transform.position;
+        }
+
+        //49
+        if (heartsGiven == 40)
+        {
+            Istar4.transform.position = respawnPoint2.transform.position;
+            Istar5.transform.position = placeImageOnScreen.transform.position;
+        }
+
+
+
+        if (heartsGiven == 60)
+        {
+            Istar5.transform.position = respawnPoint2.transform.position;
+            Istar6.transform.position = placeImageOnScreen.transform.position;
+        }
+
+
+      
+        if (heartsGiven == 80)
+        {
+            Istar6.transform.position = respawnPoint2.transform.position;
+            Istar7.transform.position = placeImageOnScreen.transform.position;
+        }
+
+
+        //50 99
+        if (heartsGiven == 90)
+        {
+            Istar7.transform.position = respawnPoint2.transform.position;
+            Istar8.transform.position = placeImageOnScreen.transform.position;
+        }
+
+
+
     }
 
 

@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Rose Dufresne/Creation_Of_Enkidu.unity
-    guid: 56cbc8ca94734cb4cb686031a7a6daf9
+    path: Assets/Harout/scenes/title_screen.unity
+    guid: 11f60c96a1853cb4fad03084e88f8555
   - enabled: 1
-    path: Assets/Rose Dufresne/EndScene.unity
-    guid: 670fae9cff9a669478ba2a479dc630bc
+    path: Assets/Harout/scenes/vignette_1.unity
+    guid: fb2efbe314eb56b4da26cdeb6500a51a
+  - enabled: 1
+    path: Assets/Harout/scenes/game_over.unity
+    guid: f2c1abd04d26bf14592c91b07a561d59
   m_configObjects: {}

@@ -10,10 +10,12 @@ public class DragAndDrop : MonoBehaviour
     public Collider2D clothesCollider;
     public Collider2D bodyCollider;
     public Sprite off;
+    public int originalLayer;
     void Start()
     {
         canMove = false;
         dragging = false;
+        originalLayer = this.GetComponent<SpriteRenderer>().sortingOrder;
 
     }
 
@@ -36,21 +38,21 @@ public class DragAndDrop : MonoBehaviour
             {
                 dragging = true;
             }
-
+            this.GetComponent<SpriteRenderer>().sortingOrder = 200;
 
         }
         if (dragging)
         {
             this.GetComponent<SpriteRenderer>().sprite = off;
             this.transform.position = mousePos;
-            this.GetComponent<SpriteRenderer>().sortingOrder = 1;
+            
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             canMove = false;
             dragging = false;
-            this.GetComponent<SpriteRenderer>().sortingOrder = 0;
+            this.GetComponent<SpriteRenderer>().sortingOrder = originalLayer;
         }
     }
 

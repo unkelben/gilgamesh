@@ -11,6 +11,13 @@ public class Fade_In_and_Quit : MonoBehaviour
 {
     // Start is called before the first frame update
 
+
+    [SerializeField] private Transform placeImageOnScreen;
+
+    [SerializeField] private Transform EndingImage;
+    
+    public MeshRenderer visbleEndingText;
+
     SpriteRenderer rend;
     private bool fadeOut = false;
     private bool fadeIn = false;
@@ -47,6 +54,7 @@ public class Fade_In_and_Quit : MonoBehaviour
         if (collision.gameObject.name == "Heart_Detector" && fadeIn == false)
         {
             FadeInObject();
+            visbleEndingText.enabled = true;
         }
     }
 
@@ -87,8 +95,10 @@ public class Fade_In_and_Quit : MonoBehaviour
                 if (Gamestart == false)
                 {
                     Debug.Log("Close Game");
-                    UnityEditor.EditorApplication.isPlaying = false;
-                    Application.Quit();
+                    EndingImage.transform.position = placeImageOnScreen.transform.position;
+                   
+                    //UnityEditor.EditorApplication.isPlaying = false;
+                    //Application.Quit();
                 }
 
             }
