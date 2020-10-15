@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class clean : MonoBehaviour
+public class Clean : MonoBehaviour
 {
     public Collider2D bodyCollider;
     public GameObject bubble;
