@@ -27,7 +27,7 @@ namespace Rose.Balance
 
         void RotateBalanceBar()
         {
-            weight = enkidu.GetComponent<EnkiduR>().weightBalance;
+            weight = enkidu.GetComponent<Enkidu>().weightBalance;
             rotationAngleZ = weight;
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, rotationAngleZ);
             

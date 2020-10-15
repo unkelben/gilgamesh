@@ -6,7 +6,7 @@ namespace Rose.Balance
 {
     using Rose.Clay;
 
-    public class EnkiduR : MonoBehaviour
+    public class Enkidu : MonoBehaviour
     {
         [SerializeField] GameObject enkidu;
 
@@ -117,7 +117,7 @@ namespace Rose.Balance
                 {
                     increaseWeight = true;
                     weightToAdd = other.collider.GetComponent<Clay>().clayWeight;
-                    weightToAdd = 20; //shhh... hardcoded
+                    //weightToAdd = 20; //shhh... hardcoded
                     interval += weightToAdd;
 
                     //if (blendshapes.GetBlendShapeWeight(3) <= 50 && blendshapes.GetBlendShapeWeight(2) <= 100)

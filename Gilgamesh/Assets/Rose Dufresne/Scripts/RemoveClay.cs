@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Rose.Balance;
 
 namespace Rose.Clay
 {
+    using Rose.Balance;
+
     public class RemoveClay : MonoBehaviour
     {
         [SerializeField] GameObject enkidu;
@@ -33,7 +34,7 @@ namespace Rose.Clay
 
             //if(decreaseWeight)
             //{
-            //    weightBalance = enkidu.GetComponent<EnkiduR>().DecreaseWeight(clayPrefab.GetComponent<Clay>().clayWeight);
+            //    weightBalance = enkidu.GetComponent<Enkidu>().DecreaseWeight(clayPrefab.GetComponent<Clay>().clayWeight);
             //    if (100 - weightBalance <= interval)
             //    {
             //        decreaseWeight = false;
@@ -43,16 +44,16 @@ namespace Rose.Clay
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.tag == "PinchLimit" && Input.GetMouseButtonDown(0) && enkidu.GetComponent<EnkiduR>().clayWeights.Count > 0 && !clayRemoved)
+            if (other.tag == "PinchLimit" && Input.GetMouseButtonDown(0) && enkidu.GetComponent<Enkidu>().clayWeights.Count > 0 && !clayRemoved)
             {
                 decreaseWeight = true;
-                clayPrefab.GetComponent<Clay>().clayWeight = enkidu.GetComponent<EnkiduR>().clayWeights.Pop();
+                clayPrefab.GetComponent<Clay>().clayWeight = enkidu.GetComponent<Enkidu>().clayWeights.Pop();
                 GameObject clay = Instantiate(clayPrefab, other.transform.position, Quaternion.identity) as GameObject;
                 clay.transform.parent = other.transform.parent;
                 clay.tag = "Clay";
                 clayRemoved = true;
                 interval += clayPrefab.GetComponent<Clay>().clayWeight;
-                enkidu.GetComponent<EnkiduR>().interval -= clayPrefab.GetComponent<Clay>().clayWeight;
+                enkidu.GetComponent<Enkidu>().interval -= clayPrefab.GetComponent<Clay>().clayWeight;
             }
         }
     }
