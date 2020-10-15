@@ -16,6 +16,12 @@ TagManager:
   - bread
   - String
   - Enkidu
+  - ClawMachine
+  - PinchLimit
+  - FingerTip
+  - Clay
+  - Underside
+  - InsideHand
   layers:
   - Default
   - TransparentFX
