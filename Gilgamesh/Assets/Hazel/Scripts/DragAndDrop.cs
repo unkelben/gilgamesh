@@ -46,7 +46,7 @@ public class DragAndDrop : MonoBehaviour
             this.GetComponent<SpriteRenderer>().sprite = off;
             this.transform.position = mousePos;
             this.GetComponent<SpriteRenderer>().sortingOrder = 100;
-            Debug.Log(this.GetComponent<SpriteRenderer>().sortingOrder);
+            
         }
 
         if (Input.GetMouseButtonUp(0))
