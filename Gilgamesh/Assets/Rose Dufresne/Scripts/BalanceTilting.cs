@@ -35,10 +35,10 @@ namespace Rose.Balance
 
         void WinningCondition()
         {
-            if (weight <= 0.01f && weight >= -0.01f)
-            {
-                SceneManager.LoadScene("EndScene");
-            }
+            //if (weight <= 0.01f && weight >= -0.01f)
+            //{
+            //    SceneManager.LoadScene("EndScene");
+            //}
         }
     }
 }

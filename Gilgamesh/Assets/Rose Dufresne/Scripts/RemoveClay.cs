@@ -8,20 +8,20 @@ namespace Rose.Clay
 
     public class RemoveClay : MonoBehaviour
     {
-        [SerializeField] GameObject enkidu;
-
+        [SerializeField] GameObject enkiduStand;
         [SerializeField] GameObject clayPrefab;
 
-        private bool clayRemoved;
+        private bool clayCanBeRemoved;
         private bool decreaseWeight;
-        public float interval;
-        public float weightBalance;
+        private Transform claySpawnPosition;
+        private float interval;
+        private float weightBalance;
 
         // Start is called before the first frame update
         void Start()
         {
             interval = 0;
-            clayRemoved = false;
+            clayCanBeRemoved = false;
         }
 
         // Update is called once per frame
@@ -29,31 +29,35 @@ namespace Rose.Clay
         {
             if (Input.GetMouseButtonUp(0))
             {
-                clayRemoved = false;
+                clayCanBeRemoved = false;
             }
 
-            //if(decreaseWeight)
-            //{
-            //    weightBalance = enkidu.GetComponent<Enkidu>().DecreaseWeight(clayPrefab.GetComponent<Clay>().clayWeight);
-            //    if (100 - weightBalance <= interval)
-            //    {
-            //        decreaseWeight = false;
-            //    }
-            //}
+            if (Input.GetMouseButtonDown(0) && clayCanBeRemoved)
+            {
+                decreaseWeight = true;
+                GameObject clay = Instantiate(clayPrefab, claySpawnPosition.position + new Vector3(0,0.7f,0), Quaternion.identity) as GameObject;
+                clay.GetComponent<Clay>().weight = enkiduStand.GetComponent<Enkidu>().clayWeights.Pop();
+                clay.transform.parent = claySpawnPosition.parent;
+                clay.tag = "Clay";
+                interval = clay.GetComponent<Clay>().weight;
+                enkiduStand.GetComponent<Enkidu>().interval -= interval;
+                clayCanBeRemoved = false;
+            }
         }
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.tag == "PinchLimit" && Input.GetMouseButtonDown(0) && enkidu.GetComponent<Enkidu>().clayWeights.Count > 0 && !clayRemoved)
+            if (other.tag == "PinchLimit" && enkiduStand.GetComponent<Enkidu>().clayWeights.Count > 0)
             {
-                decreaseWeight = true;
-                clayPrefab.GetComponent<Clay>().clayWeight = enkidu.GetComponent<Enkidu>().clayWeights.Pop();
-                GameObject clay = Instantiate(clayPrefab, other.transform.position, Quaternion.identity) as GameObject;
-                clay.transform.parent = other.transform.parent;
-                clay.tag = "Clay";
-                clayRemoved = true;
-                interval += clayPrefab.GetComponent<Clay>().clayWeight;
-                enkidu.GetComponent<Enkidu>().interval -= clayPrefab.GetComponent<Clay>().clayWeight;
+                clayCanBeRemoved = true;
+                claySpawnPosition = other.gameObject.transform;
+            }
+        }
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.tag == "PinchLimit")
+            {
+                clayCanBeRemoved = false;
             }
         }
     }

@@ -11,13 +11,11 @@ namespace Rose.Clay
         private bool undersideTouched;
         public bool isInHand { get; set; }
         private List<GameObject> finger;
-        [SerializeField] float weight;
-
-        public float clayWeight;
+        [SerializeField] public float weight;
 
         private void Start()
         {
-            clayWeight = weight;
+            transform.localScale = (transform.localScale / 40f) * weight;
             finger = new List<GameObject>();
             touchingClay = false;
         }
@@ -61,7 +59,6 @@ namespace Rose.Clay
                     foreach (GameObject f in finger)
                     {
                         f.GetComponentInParent<Finger>().isTouchingClay = touchingClay;
-                        print(f.name);
                     }
                 }
             }
