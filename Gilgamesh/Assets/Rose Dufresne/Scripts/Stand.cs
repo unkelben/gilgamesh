@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Balance
+namespace Rose.Balance
 {
     public class Stand : MonoBehaviour
     {

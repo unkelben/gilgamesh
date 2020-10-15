@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.ClawMachine
+namespace Rose.ClawMachine
 {
     public class ClawMachine : MonoBehaviour
     {

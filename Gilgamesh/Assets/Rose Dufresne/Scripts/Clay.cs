@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Game.ClawMachine;
+using Rose.ClawMachine;
 
-namespace Game.Clay
+namespace Rose.Clay
 {
     public class Clay : MonoBehaviour
     {

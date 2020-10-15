@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour
+namespace Rose.Level
 {
-    //MAIN MENU
-
-    public static string modePlayed;
-
-    public void LoadLevel(string name)
+    public class LevelManager : MonoBehaviour
     {
-        modePlayed = name;
-        Debug.Log("New Level Load:" + name);
-        //Application.LoadLevel(name);
-        SceneManager.LoadScene(name);
+        //MAIN MENU
+
+        public static string modePlayed;
+
+        public void LoadLevel(string name)
+        {
+            modePlayed = name;
+            Debug.Log("New Level Load:" + name);
+            //Application.LoadLevel(name);
+            SceneManager.LoadScene(name);
+        }
     }
 }

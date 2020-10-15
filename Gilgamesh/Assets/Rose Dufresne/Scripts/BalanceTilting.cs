@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Game.Balance
+namespace Rose.Balance
 {
     public class BalanceTilting : MonoBehaviour
     {
