@@ -17,7 +17,7 @@ public class room_transition : MonoBehaviour
     public Text placeText;
     public GameObject enkidu;
     public GameObject timer;
-
+ 
 
     public GameObject dialogueBox;
     public Text dialogueText;
@@ -53,14 +53,13 @@ public class room_transition : MonoBehaviour
             }
 
             
-
         }
 
-        if (other.CompareTag("Player"))
-        {
-            enkidu.SetActive(false);
+     // if (other.CompareTag("Player"))
+     ///{
+      ///   enkidu.SetActive(false);
            
-        }
+    //  }
 
     }
 

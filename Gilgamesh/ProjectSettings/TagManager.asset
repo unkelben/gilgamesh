@@ -20,8 +20,12 @@ TagManager:
   - pants
   - dress
   - hair
+<<<<<<< Updated upstream
   - Texts
   - MyPlayer
+=======
+  - transition
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
