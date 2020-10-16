@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: afa2d9e3cfa3d654da0399ecbf434223
+guid: 29e40214c87ca3b4da5ed689444366c4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9136834448258697486
-    second: bubble_0
+      213: -4539635489052982440
+    second: enkiDress1_0
   - first:
-      213: 1762854388791719718
-    second: bubble_1
-  - first:
-      213: -8014315233242688854
-    second: bubble_2
-  - first:
-      213: 4509215315611281716
-    second: bubble_3
+      213: 5149865856953164244
+    second: enkiDress1_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -75,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -87,7 +81,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -99,99 +93,57 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 12
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bubble_0
+      name: enkiDress1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 208
-        width: 198
-        height: 200
+        y: 0
+        width: 396
+        height: 563
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f6fcf37a71733180800000000000000
-      internalID: -9136834448258697486
+      spriteID: 8538d312399fff0c0800000000000000
+      internalID: -4539635489052982440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubble_1
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 208
-        width: 198
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6273ba20abae67810800000000000000
-      internalID: 1762854388791719718
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bubble_2
+      name: enkiDress1_1
       rect:
         serializedVersion: 2
         x: 396
-        y: 208
-        width: 198
-        height: 200
+        y: 0
+        width: 396
+        height: 563
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa2519cc1ce67c090800000000000000
-      internalID: -8014315233242688854
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bubble_3
-      rect:
-        serializedVersion: 2
-        x: 593
-        y: 208
-        width: 199
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 439e2ce4073f39e30800000000000000
-      internalID: 4509215315611281716
+      spriteID: 4d12b9436bff77740800000000000000
+      internalID: 5149865856953164244
       vertices: []
       indices: 
       edges: []
@@ -199,7 +151,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: bc54388dcd0aa8945bf641f87dd8d8ec
+    spriteID: 942eaeadf0848d54fa906c10672eb2c1
     internalID: 0
     vertices: []
     indices: 

@@ -22,6 +22,8 @@ TagManager:
   - hair
   - Texts
   - MyPlayer
+  - Wall
+  - bubble
   layers:
   - Default
   - TransparentFX
