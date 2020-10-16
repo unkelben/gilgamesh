@@ -17,20 +17,22 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        var cammoveside = - player_t.gameObject.GetComponent<DivingMovement>().move_side;
-        var playerspeed = player_t.gameObject.GetComponent<DivingMovement>().fallingspeed;
-        if (cammoveside < 0)
-        {
-            Debug.Log("cam moving left");
-        }
-        else if (cammoveside > 0)
-        {
-            Debug.Log("cam moving right");
-        }
+        //var cammoveside = - player_t.gameObject.GetComponent<DivingMovement>().move_side;
+        //var playerspeed = player_t.gameObject.GetComponent<DivingMovement>().fallingspeed;
+        //if (cammoveside < 0)
+        //{
+        //    Debug.Log("cam moving left");
+        //}
+        //else if (cammoveside > 0)
+        //{
+        //    Debug.Log("cam moving right");
+        //}
         //this script prevents camera from following the player to the right and left bounds of the game scene:
         //basically what it does is the opposite from player movements
         /*move_side = Input.GetAxis("Horizontal");*/ // <0 is left, >0 is right 
-        transform.position += new Vector3(cammoveside, 0, 0) * Time.deltaTime * playerspeed;
+        var cameraZ = transform.position.z;
+        var cameraY = player_t.position.y + 5;
+        transform.position = new Vector3(0, cameraY, cameraZ);
 
         //only have camera follows if movingcam == true
         //if (movingcam == true)
