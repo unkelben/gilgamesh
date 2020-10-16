@@ -4,11 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Block
-  - Needle
-  - Target
-  - Flower
-  - Enemy
   - Player1
   - breakable
   - Activator
@@ -24,61 +19,54 @@ TagManager:
   - MyPlayer
   - Wall
   - bubble
+  - Enemy
+  - Flower
+  - Wall
+  - Wall_right
+  - Wall_left
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  -
   - Water
   - UI
-  - 
-  - 
-  - Background Image
-  - Sprites
-  - player
-  - ground
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  -
+  -
+  - background
+  - sprite
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
   m_SortingLayers:
-  - name: CAMERA
-    uniqueID: 2955582159
-    locked: 0
-  - name: ?player
-    uniqueID: 2028651403
-    locked: 0
-  - name: walkTiles
-    uniqueID: 674032515
-    locked: 0
-  - name: background
-    uniqueID: 3970121359
-    locked: 0
-  - name: foreground
-    uniqueID: 2279546819
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: signs
-    uniqueID: 2295301705
+  - name: Background
+    uniqueID: 1180590965
     locked: 0
-  - name: player
-    uniqueID: 176318603
+  - name: Midground
+    uniqueID: 1727978063
+    locked: 0
+  - name: Foreground
+    uniqueID: 2469790791
     locked: 0
