@@ -9,28 +9,50 @@ public class Snap : MonoBehaviour
     public Sprite on;
     public Sprite off;
     public bool dressed = false;
+
     public GameObject[] hairs;
     public GameObject[] shoes;
     public GameObject[] shirts;
     public GameObject[] dresses;
     public GameObject[] pants;
+    public GameObject bubble;
+    public float minimum = 0.0f;
+    public float maximum = 1f;
+    public float duration = 5.0f;
+    private float startTime;
     // Start is called before the first frame update
     void Start()
     {
-       
+        
+            
     }
+
+    void Update()
+    {
+        if (bubble.GetComponent<Clean>().cleaning == true)
+        {
+            this.GetComponent<Renderer>().enabled = false;
+            bubble.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+        }
+
+        else
+        {
+            this.GetComponent<Renderer>().enabled = true;
+            float t = (Time.time - startTime) / duration;
+            bubble.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, Mathf.SmoothStep(minimum, maximum, t));
+        }
+    }
+
 
     void OnCollisionStay2D(Collision2D collision)
     {
-      
-        this.transform.position = location;
+                  
+            this.transform.position = location;
         this.GetComponent<SpriteRenderer>().sprite = on;
         dressed = true;
 
         if (!Input.GetMouseButton(0))
         {
-
-            Debug.Log("1");
             hairs = GameObject.FindGameObjectsWithTag("hair");
             shoes = GameObject.FindGameObjectsWithTag("shoes");
             shirts = GameObject.FindGameObjectsWithTag("shirt");
@@ -129,8 +151,8 @@ public class Snap : MonoBehaviour
                 }
             }
 
-
-        }
+        
+    }
 
     }
 
