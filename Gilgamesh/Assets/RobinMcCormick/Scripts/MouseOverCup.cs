@@ -26,10 +26,11 @@ public class MouseOverCup : MonoBehaviour
     {
         if (wJ.interactedWithJug == true && interactedWithCup == false)
         {
+            if (isMouseOverCup == true) { 
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("Interacted with cup.");
-                animator.SetBool("cupIsMove", true);
+               // animator.SetBool("cupIsMove", true);
               // cB.interactionAmount = cB.interactionAmount++;
                 interactedWithCup = true;
             }
@@ -37,6 +38,7 @@ public class MouseOverCup : MonoBehaviour
             {
                // animator.SetBool("cupIsMove", false);
             }
+        }
         }
     }
         
