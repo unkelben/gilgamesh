@@ -16,5 +16,6 @@ public class Ending : MonoBehaviour
     void Update()
     {
         txt.text = "You got: " + PlayerPrefs.GetString("lastBounty");
+        //Debug.Log("You got: " + PlayerPrefs.GetString("lastBounty"));
     }
 }
