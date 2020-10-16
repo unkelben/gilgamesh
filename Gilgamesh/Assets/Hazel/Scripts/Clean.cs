@@ -13,10 +13,14 @@ public class Clean : MonoBehaviour
     public float cleanLvl = 0;
     public bool cleaning = true;
     public float rinsing = 0;
+    public GameObject rain;
     // Start is called before the first frame update
     void Start()
     {
+        if (cleanLvl <= 155) { 
+            rain.GetComponent<Renderer>().enabled = false;
 
+    }
     }
 
     // Update is called once per frame
@@ -48,12 +52,15 @@ public class Clean : MonoBehaviour
         {
 
             //rain
+           rain.GetComponent<Renderer>().enabled = true;
+            enkiDirty.GetComponent<Renderer>().enabled = false;
             Destroy(GameObject.FindWithTag("bubble"));
             rinsing += 1;
 
-            if (rinsing >= 50){
+            if (rinsing >= 500){
                 cleaning = false;
-                enkiDirty.GetComponent<Renderer>().enabled = false;
+                
+                rain.GetComponent<Renderer>().enabled = false;
             }
 
             
