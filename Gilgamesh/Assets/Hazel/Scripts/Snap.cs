@@ -23,8 +23,9 @@ public class Snap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-            
+        locationBack = this.transform.position;
+
+
     }
 
     void Update()
