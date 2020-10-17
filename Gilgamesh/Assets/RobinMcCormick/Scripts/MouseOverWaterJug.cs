@@ -9,7 +9,7 @@ public class MouseOverWaterJug : MonoBehaviour
 
 
 
-    //  Animator animator;
+      Animator animator;
 
     public SpriteRenderer sprite;
 
@@ -17,7 +17,7 @@ public class MouseOverWaterJug : MonoBehaviour
     void Start()
     {
         interactedWithJug = false;
-     //   animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         sprite.color = Color.white;
     }
@@ -30,11 +30,11 @@ public class MouseOverWaterJug : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("Interacted with jug.");
-           //     animator.SetBool("isPour", true);
+                animator.SetBool("isPour", true);
                 interactedWithJug = true;
             } else
             {
-          //      animator.SetBool("isPour", false);
+                animator.SetBool("isPour", false);
             }
         }
     }
