@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnkiduCollide : MonoBehaviour
-{
+public class EnkiduCollide : MonoBehaviour { 
+
+    public MouseOverRag mouseOverRag;
+    public MouseOverCup mouseOverCup;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,7 @@ public class EnkiduCollide : MonoBehaviour
         if (other.gameObject.CompareTag("Cup"))
         {
             Debug.Log("Cup touched Enkidu");
+            mouseOverCup.isDrink = true;
             // animation of cup pouring to enkidu's mouth
             // sfx of drinking enkidu
             // return cup
@@ -31,11 +35,16 @@ public class EnkiduCollide : MonoBehaviour
         if (other.gameObject.CompareTag("Rag"))
         {
             Debug.Log("Rag touched Enkidu");
-            // animation of rag gently rubbing over enkidu's face
-            // sfx of rag gently rubbing over enkidu's face
-            // return rag
-            // change bg function
-            // disable rag function
+           if (mouseOverRag.ragOnEnkidu == true)
+            {
+                mouseOverRag.wipeEnkiduFace = true;
+                // animation of rag gently rubbing over enkidu's face
+                // sfx of rag gently rubbing over enkidu's face
+                // return rag
+                // change bg function
+                // disable rag function
+            }
+
         }
     }
 }

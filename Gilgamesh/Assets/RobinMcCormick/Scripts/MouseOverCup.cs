@@ -11,7 +11,9 @@ public class MouseOverCup : MonoBehaviour
     public ChangeBackground cB;
     public TestDrag tD;
 
-    // Animator animator;
+    public bool isDrink = false;
+
+     Animator animator;
 
     public SpriteRenderer sprite;
 
@@ -19,6 +21,7 @@ public class MouseOverCup : MonoBehaviour
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         sprite.color = Color.white;
     }
 
@@ -29,6 +32,15 @@ public class MouseOverCup : MonoBehaviour
         {
 
             tD.dragActive = true;
+
+            if (isDrink)
+            {
+                animator.SetBool("isDrink", true);
+            }
+            else
+            {
+                animator.SetBool("isDrink", false);
+            }
 
                 // animator.SetBool("cupIsMove", true);
                 // cB.interactionAmount = cB.interactionAmount++;
