@@ -669,6 +669,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64f1abe0cdcabc4181591d7bea2a798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dragActive: 1
+  overCup: {fileID: 0}
+  overRag: {fileID: 0}
+  cupCollider: {fileID: 0}
+  ragCollider: {fileID: 1031791494}
+  enkiduCollider: {fileID: 230702562}
 --- !u!1 &1106196740
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ public class MouseOverRag : MonoBehaviour
             {
                 Debug.Log("Interacted with rag.");
                 //     animator.SetBool("isWet", true);
-                interactedWithRag = true;
+              //  interactedWithRag = true;
             }
             else
             {
