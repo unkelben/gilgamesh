@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 22fb488ae193bfb4a8dc1fcd3d663222
+guid: dc2d54b878af8ad4ebcd5f0181747c63
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4168600678249354186
-    second: enkiPants1_0
+      213: 4564762472110629621
+    second: enkiShoes2_0
   - first:
-      213: -3967262412339110497
-    second: enkiPants1_1
+      213: 7579813288836387896
+    second: enkiShoes2_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -107,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enkiPants1_0
+      name: enkiShoes2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 396
-        height: 285
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac3518d0b38d9d930800000000000000
-      internalID: 4168600678249354186
+      spriteID: 5f22032884b495f30800000000000000
+      internalID: 4564762472110629621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enkiPants1_1
+      name: enkiShoes2_1
       rect:
         serializedVersion: 2
         x: 396
         y: 0
         width: 396
-        height: 283
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,8 +142,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9d94cdfad371f8c0800000000000000
-      internalID: -3967262412339110497
+      spriteID: 834d0e0d608e03960800000000000000
+      internalID: 7579813288836387896
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 36bcf8523e9a77540a49b10f9625d78f
+    spriteID: b90f03dc4ac56af4f9f1a259184804d4
     internalID: 0
     vertices: []
     indices: 

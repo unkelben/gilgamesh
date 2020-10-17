@@ -14,9 +14,15 @@ public class Clean : MonoBehaviour
     public bool cleaning = true;
     public float rinsing = 0;
     public GameObject rain;
+    private AudioSource source;
+    private AudioSource source2;
+    private bool isPlaying = false;
+    private bool isPlaying2 = false;
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
+        source2 = rain.GetComponent<AudioSource>();
         if (cleanLvl <= 155) { 
             rain.GetComponent<Renderer>().enabled = false;
 
@@ -35,7 +41,14 @@ public class Clean : MonoBehaviour
         {
             if (bodyCollider == Physics2D.OverlapPoint(mousePos))
             {
+                if (!isPlaying)
+                {
+                    source.Play();
+                    isPlaying = true;
+                }
+
                 
+
                 cleanLvl += 1;
 
                 GameObject BubbleInstantiated = Instantiate(bubble, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.Euler(new Vector3(0, 0, Random.Range(0, 360)))) as GameObject;
@@ -51,8 +64,14 @@ public class Clean : MonoBehaviour
         else if (cleanLvl >= 150)
         {
 
-            //rain
-           rain.GetComponent<Renderer>().enabled = true;
+            if (!isPlaying2)
+            {
+                source2.Play();
+                isPlaying2 = true;
+            }
+
+            source.Pause();
+            rain.GetComponent<Renderer>().enabled = true;
             enkiDirty.GetComponent<Renderer>().enabled = false;
             Destroy(GameObject.FindWithTag("bubble"));
             rinsing += 1;
@@ -61,6 +80,7 @@ public class Clean : MonoBehaviour
                 cleaning = false;
                 
                 rain.GetComponent<Renderer>().enabled = false;
+                source2.Pause();
             }
 
             

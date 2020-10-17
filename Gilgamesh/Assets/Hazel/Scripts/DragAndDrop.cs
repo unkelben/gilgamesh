@@ -22,8 +22,7 @@ public class DragAndDrop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePosnot = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 mousePos = new Vector2(mousePosnot.x,mousePosnot.y);
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (Input.GetMouseButtonDown(0))
         {
