@@ -5,6 +5,7 @@ using UnityEngine;
 public class MouseOverRag : MonoBehaviour
 {
     public bool isMouseOverRag = false;
+    public bool interactedWithRag = false;
 
     public SpriteRenderer sprite;
 
@@ -18,13 +19,28 @@ public class MouseOverRag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (interactedWithRag == false && isMouseOverRag == true)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("Interacted with rag.");
+                //     animator.SetBool("isWet", true);
+              //  interactedWithRag = true;
+            }
+            else
+            {
+                //      animator.SetBool("isWet", false);
+            }
+        }
     }
 
     void OnMouseEnter()
     {
         Debug.Log("on rag");
-        sprite.color = Color.gray;
+        if (interactedWithRag == false)
+        {
+            sprite.color = Color.gray;
+        }
         isMouseOverRag = true;
     }
 

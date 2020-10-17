@@ -4,12 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Player1
-  - Enemy
-  - Flower
-  - Wall
-  - Wall_right
-  - Wall_left
+  - Cup
+  - Rag
   layers:
   - Default
   - TransparentFX
@@ -19,8 +15,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - background
+  - sprites
   - 
   - 
   - 
@@ -47,12 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 1180590965
+  - name: behindbg
+    uniqueID: 2591072889
     locked: 0
-  - name: Midground
-    uniqueID: 1727978063
+  - name: background
+    uniqueID: 882901369
     locked: 0
-  - name: Foreground
-    uniqueID: 2469790791
+  - name: foreground
+    uniqueID: 211793261
     locked: 0

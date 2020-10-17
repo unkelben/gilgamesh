@@ -9,8 +9,9 @@ public class MouseOverCup : MonoBehaviour
     public bool interactedWithCup = false;
     public MouseOverWaterJug wJ;
     public ChangeBackground cB;
+    public TestDrag tD;
 
-   // Animator animator;
+    // Animator animator;
 
     public SpriteRenderer sprite;
 
@@ -24,24 +25,16 @@ public class MouseOverCup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (wJ.interactedWithJug == true && interactedWithCup == false && isMouseOverCup == true)
+        if (wJ.interactedWithJug == true)
         {
-            
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log("Interacted with cup.");
-               // animator.SetBool("cupIsMove", true);
-              // cB.interactionAmount = cB.interactionAmount++;
-                interactedWithCup = true;
-            }
-            else
-            {
-               // animator.SetBool("cupIsMove", false);
-            }
-        
+
+            tD.dragActive = true;
+
+                // animator.SetBool("cupIsMove", true);
+                // cB.interactionAmount = cB.interactionAmount++;
+                //  interactedWithCup = true;
         }
     }
-        
 
     void OnMouseEnter()
     {
@@ -54,9 +47,9 @@ public class MouseOverCup : MonoBehaviour
     }
 
     void OnMouseExit()
-    {
-        Debug.Log("not on cup");
-        sprite.color = Color.white;
-        isMouseOverCup = false;
-    }
+   {
+       Debug.Log("not on cup");
+       sprite.color = Color.white;
+       isMouseOverCup = false;
+   }
 }

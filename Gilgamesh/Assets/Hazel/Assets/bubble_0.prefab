@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4288810546913909601}
   m_Layer: 9
   m_Name: bubble_0
-  m_TagString: Untagged
+  m_TagString: bubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4288810546913909603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -291, y: -104.5, z: 6.26}
-  m_LocalScale: {x: 9, y: 9, z: 0}
+  m_LocalScale: {x: 15, y: 15, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

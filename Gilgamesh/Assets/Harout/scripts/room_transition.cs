@@ -17,6 +17,7 @@ public class room_transition : MonoBehaviour
     public Text placeText;
     public GameObject enkidu;
     public GameObject timer;
+    public GameObject transitioncancel;
  
 
     public GameObject dialogueBox;
@@ -41,12 +42,14 @@ public class room_transition : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
 
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !other.isTrigger)
         {
             cam.minPosition += cameraChange;
             cam.maxPosition += cameraChange;
             other.transform.position += playerChange;
-            timer.SetActive(true);
+            //   timer.SetActive(true);
+            transitioncancel.SetActive(false);
+
             if (needText)
             {
                 StartCoroutine(placenameCo());

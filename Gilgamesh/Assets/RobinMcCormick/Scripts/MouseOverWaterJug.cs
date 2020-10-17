@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class MouseOverWaterJug : MonoBehaviour
 {
-    public bool isMouseOverJug = false;
-    public bool interactedWithJug = false;
+    public bool isMouseOverJug;
+    public bool interactedWithJug;
 
-  //  Animator animator;
+
+
+    //  Animator animator;
 
     public SpriteRenderer sprite;
 
     // Start is called before the first frame update
     void Start()
     {
+        interactedWithJug = false;
      //   animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         sprite.color = Color.white;
