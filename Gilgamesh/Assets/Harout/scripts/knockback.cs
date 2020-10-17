@@ -15,10 +15,7 @@ public class knockback : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("breakable") && this.gameObject.CompareTag("Player"))
-        {
-            other.GetComponent<tree>().Break();
-        }
+     
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player"))
 
         {
@@ -30,7 +27,7 @@ public class knockback : MonoBehaviour
                 hit.AddForce(difference, ForceMode2D.Impulse);
                 if (other.gameObject.CompareTag("Enemy"))
                 {
-                    hit.GetComponent<enemy>().currenState = EnemyState.stagger;
+                    hit.GetComponent<enemy>().currentState = EnemyState.stagger;
                     other.GetComponent<enemy>().Knock(hit, knockTime);
                 }
                 

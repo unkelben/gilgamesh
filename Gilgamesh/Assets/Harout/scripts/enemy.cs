@@ -14,11 +14,12 @@ public enum EnemyState
 
 public class enemy : MonoBehaviour
 {
-    public EnemyState currenState;
+    public EnemyState currentState;
     public int health;
     public string enemyName;
     public int baseAttack;
     public float moveSpeed;
+    
 
 
     public void Knock (Rigidbody2D myRigidbody, float knockTime)
@@ -33,7 +34,7 @@ public class enemy : MonoBehaviour
         {
             yield return new WaitForSeconds(knockTime);
             myRigidbody.velocity = Vector2.zero;
-            currenState = EnemyState.idle;
+            currentState = EnemyState.idle;
             myRigidbody.velocity = Vector2.zero;
 
         }
