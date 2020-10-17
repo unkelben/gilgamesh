@@ -405,8 +405,8 @@ GameObject:
   - component: {fileID: 604110086}
   - component: {fileID: 604110085}
   - component: {fileID: 604110087}
-  - component: {fileID: 604110088}
   - component: {fileID: 604110089}
+  - component: {fileID: 604110088}
   m_Layer: 9
   m_Name: waterjug
   m_TagString: Untagged
@@ -552,6 +552,7 @@ GameObject:
   - component: {fileID: 1031791494}
   - component: {fileID: 1031791495}
   - component: {fileID: 1031791496}
+  - component: {fileID: 1031791497}
   m_Layer: 9
   m_Name: rag
   m_TagString: Rag
@@ -598,7 +599,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 211793261
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: aedd895fefa29e94c98ce9f5fc90886d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -664,6 +665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMouseOverRag: 0
   interactedWithRag: 0
+  isWet: 0
   sprite: {fileID: 0}
 --- !u!114 &1031791496
 MonoBehaviour:
@@ -678,6 +680,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragActive: 1
+--- !u!95 &1031791497
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031791491}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1106196740
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,6 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feffa63801b139d4d96f606c52e4a2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseOverRag: {fileID: 0}
 --- !u!1 &1955365255
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,6 +987,7 @@ GameObject:
   - component: {fileID: 1955365258}
   - component: {fileID: 1955365261}
   - component: {fileID: 1955365259}
+  - component: {fileID: 1955365260}
   m_Layer: 9
   m_Name: cup
   m_TagString: Cup
@@ -1011,7 +1034,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 211793261
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9f8c2376960eac149a4ee835fad1700e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1081,6 +1104,25 @@ MonoBehaviour:
   cB: {fileID: 1106196743}
   tD: {fileID: 1955365261}
   sprite: {fileID: 1955365256}
+--- !u!95 &1955365260
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955365255}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce2eb88857968a64fa1c0c5e65190a36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1955365261
 MonoBehaviour:
   m_ObjectHideFlags: 0
