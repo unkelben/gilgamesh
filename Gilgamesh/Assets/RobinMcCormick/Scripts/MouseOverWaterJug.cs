@@ -7,9 +7,7 @@ public class MouseOverWaterJug : MonoBehaviour
     public bool isMouseOverJug;
     public bool interactedWithJug;
 
-
-
-      Animator animator;
+    Animator animator;
 
     public SpriteRenderer sprite;
 
