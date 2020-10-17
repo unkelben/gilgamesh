@@ -33,7 +33,7 @@ public class MouseOverCup : MonoBehaviour
     void Update()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
+        Debug.Log(mousePos);
         if (wJ.interactedWithJug == true && isMouseOverCup == true)
         {
             //interactedWithCup == false   

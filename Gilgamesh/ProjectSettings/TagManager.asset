@@ -3,26 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Player1
-  - breakable
-  - Activator
-  - Ground
-  - bread
-  - String
-  - shirt
-  - shoes
-  - pants
-  - dress
-  - hair
-  - Texts
-  - MyPlayer
-  - bubble
-  - Enemy
-  - Flower
-  - Wall
-  - Wall_right
-  - Wall_left
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -32,13 +13,8 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< Updated upstream
   - background
   - sprites
-=======
-  - 
-  - 
->>>>>>> Stashed changes
   - 
   - 
   - 
@@ -65,12 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< Updated upstream
+  - name: behindbg
+    uniqueID: 2591072889
+    locked: 0
   - name: background
-    uniqueID: 1337140039
+    uniqueID: 882901369
     locked: 0
   - name: foreground
-    uniqueID: 732409667
+    uniqueID: 211793261
     locked: 0
-=======
->>>>>>> Stashed changes
