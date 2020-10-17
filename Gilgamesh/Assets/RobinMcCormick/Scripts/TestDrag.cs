@@ -32,21 +32,21 @@ public class TestDrag : MonoBehaviour
             {
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
                 transform.Translate(mousePosition);
-                CheckDragColl();
+              //  CheckDragColl();
             }
         }
     }
 
-    public void CheckDragColl()
-    {
-        if (cupCollider == enkiduCollider)
-        {
-            Debug.Log("Cup has touched Enkidu!");
-        }
+  //  public void CheckDragColl()
+  //  {
+   //     if (cupCollider == enkiduCollider)
+   //     {
+  //          Debug.Log("Cup has touched Enkidu!");
+  //      }
 
-        if (ragCollider == enkiduCollider)
-        {
-            Debug.Log("Rag has touched Enkidu!");
-        }
-    }
+  //      if (ragCollider == enkiduCollider)
+  //      {
+  //          Debug.Log("Rag has touched Enkidu!");
+  //      }
+   // }
 }
