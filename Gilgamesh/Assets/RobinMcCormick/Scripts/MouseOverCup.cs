@@ -42,9 +42,11 @@ public class MouseOverCup : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 
-                if (cupCollider == Physics2D.OverlapPoint(mousePos))
+              //  if (cupCollider == Physics2D.OverlapPoint(mousePos))
+              if (isMouseOverCup == true)
                 {
                     Debug.Log("Clicked cup");
+                    sprite.color = Color.gray;
                     canMove = true;
                     Debug.Log("canMove = true");
                     //   this.GetComponent<Snap>().dressed = false;
@@ -52,6 +54,7 @@ public class MouseOverCup : MonoBehaviour
                 else
                 {
                     canMove = false;
+                    sprite.color = Color.white;
                 }
                 if (canMove)
                 {
@@ -62,7 +65,7 @@ public class MouseOverCup : MonoBehaviour
                 if (dragging)
                 {
                    
-                    this.transform.position = mousePos;
+                    sprite.transform.position = mousePos;
                     Debug.Log("Transform to mouse pos");
 
                 }
@@ -71,10 +74,11 @@ public class MouseOverCup : MonoBehaviour
                 {
                     canMove = false;
                     dragging = false;
+                    Debug.Log("Done Dragging");
                 }
 
                 // animator.SetBool("cupIsMove", true);
-                 cB.interactionAmount = cB.interactionAmount++;
+                // cB.interactionAmount = cB.interactionAmount++;
                 //  interactedWithCup = true;
             }
 
@@ -95,9 +99,9 @@ public class MouseOverCup : MonoBehaviour
     }
 
     void OnMouseExit()
-    {
-        Debug.Log("not on cup");
-        sprite.color = Color.white;
-        isMouseOverCup = false;
-    }
+   {
+       Debug.Log("not on cup");
+       sprite.color = Color.white;
+       isMouseOverCup = false;
+   }
 }
