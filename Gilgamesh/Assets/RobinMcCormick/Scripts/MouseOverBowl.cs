@@ -21,7 +21,7 @@ public class MouseOverBowl : MonoBehaviour
         
     }
 
-    void OnMouseEnter()
+        void OnMouseEnter()
     {
         Debug.Log("on bowl");
         sprite.color = Color.gray;
