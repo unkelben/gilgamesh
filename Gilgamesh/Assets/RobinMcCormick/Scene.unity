@@ -194,6 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d7493510115e745b1b26314f6fbd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseOverRag: {fileID: 0}
+  mouseOverCup: {fileID: 0}
 --- !u!50 &230702565
 Rigidbody2D:
   serializedVersion: 4
@@ -666,6 +668,8 @@ MonoBehaviour:
   isMouseOverRag: 0
   interactedWithRag: 0
   isWet: 0
+  ragOnEnkidu: 0
+  wipeEnkiduFace: 0
   sprite: {fileID: 0}
 --- !u!114 &1031791496
 MonoBehaviour:
@@ -690,7 +694,7 @@ Animator:
   m_GameObject: {fileID: 1031791491}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d2c058e1ba34e948ac241d3009ec78a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1103,6 +1107,7 @@ MonoBehaviour:
   wJ: {fileID: 604110089}
   cB: {fileID: 1106196743}
   tD: {fileID: 1955365261}
+  isDrink: 0
   sprite: {fileID: 1955365256}
 --- !u!95 &1955365260
 Animator:

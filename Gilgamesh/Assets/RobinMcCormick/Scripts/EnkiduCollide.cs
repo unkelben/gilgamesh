@@ -24,7 +24,7 @@ public class EnkiduCollide : MonoBehaviour {
         if (other.gameObject.CompareTag("Cup"))
         {
             Debug.Log("Cup touched Enkidu");
-            mouseOverCup.isDrink = true;
+            //mouseOverCup.isDrink = true;
             // animation of cup pouring to enkidu's mouth
             // sfx of drinking enkidu
             // return cup
