@@ -155,6 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  direction: r
+  direction: 
   background: {fileID: 0}
   enemy_name: Dark Stingray
