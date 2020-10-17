@@ -33,15 +33,18 @@ public class MouseOverCup : MonoBehaviour
     void Update()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Debug.Log(mousePos);
-        if (wJ.interactedWithJug == true && isMouseOverCup == true)
+       // Debug.Log(mousePos);
+        if (wJ.interactedWithJug == true)
+
+        //&& isMouseOverCup == true
         {
             //interactedWithCup == false   
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("Clicked cup");
+                
                 if (cupCollider == Physics2D.OverlapPoint(mousePos))
                 {
+                    Debug.Log("Clicked cup");
                     canMove = true;
                     Debug.Log("canMove = true");
                     //   this.GetComponent<Snap>().dressed = false;
@@ -55,23 +58,27 @@ public class MouseOverCup : MonoBehaviour
                     dragging = true;
                     Debug.Log("dragging = true");
                 }
-                
-               // animator.SetBool("cupIsMove", true);
-              // cB.interactionAmount = cB.interactionAmount++;
-              //  interactedWithCup = true;
+
+                if (dragging)
+                {
+                   
+                    this.transform.position = mousePos;
+                    Debug.Log("Transform to mouse pos");
+
+                }
+
+                if (Input.GetMouseButtonUp(0))
+                {
+                    canMove = false;
+                    dragging = false;
+                }
+
+                // animator.SetBool("cupIsMove", true);
+                 cB.interactionAmount = cB.interactionAmount++;
+                //  interactedWithCup = true;
             }
 
-            if (dragging)
-            {
-                this.transform.position = mousePos;
-
-            }
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                canMove = false;
-                dragging = false;
-            }
+            
 
         }
     }
