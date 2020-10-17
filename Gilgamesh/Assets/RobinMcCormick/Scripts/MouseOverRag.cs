@@ -7,6 +7,8 @@ public class MouseOverRag : MonoBehaviour
     public bool isMouseOverRag = false;
     public bool interactedWithRag = false;
     public bool isWet = false;
+    public bool ragOnEnkidu = false;
+    public bool wipeEnkiduFace = false;
 
     public SpriteRenderer sprite;
 
@@ -28,11 +30,21 @@ public class MouseOverRag : MonoBehaviour
             if (isWet) 
             {
                 animator.SetBool("isWet", true);
+                ragOnEnkidu = true;
             }
             
             else
             {
                 animator.SetBool("isWet", false);
+            }
+
+            if (wipeEnkiduFace)
+            {
+                animator.SetBool("wipeFace", true);
+            }
+            else
+            {
+                animator.SetBool("wipeFace", false);
             }
         }
     }
