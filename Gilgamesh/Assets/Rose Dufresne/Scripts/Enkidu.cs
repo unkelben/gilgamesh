@@ -24,7 +24,7 @@ namespace Rose.Balance
 
         public Stack<float> clayWeights { get; set; }
 
-        private float OscillationTimer;
+        private float oscillationTimer;
 
         // Start is called before the first frame update
         void Start()
@@ -35,15 +35,16 @@ namespace Rose.Balance
             enkidu.transform.localScale = new Vector3(0, 0, 0);
             initialScale = enkidu.transform.localScale;
             weightToAdd = 0;
-            //weight = 100;
             weightBalance = -30f;
             interval = 0;
             increaseWeight = false;
             targetFormAchieved = false;
             targetSizeAchieved = false;
+
             blendshapes = enkidu.GetComponent<SkinnedMeshRenderer>();
-            
             blendshapes.SetBlendShapeWeight(3, weightBalance * (-100f / 30f)); //body
+
+            oscillationTimer = 0;
         }
 
         // Update is called once per frame
@@ -72,6 +73,11 @@ namespace Rose.Balance
             }
             else
             {
+                //oscillationTimer += Time.deltaTime;
+                //if (oscillationTimer <= 2f)
+                //{
+                //    weightBalance = ((interval - 100) / (100f) * 30f) * Mathf.Pow(Mathf.Epsilon,(-oscillationTimer)) * Mathf.Cos(2 * oscillationTimer) + Mathf.Sin(2 * oscillationTimer);
+                //}
                 weightBalance = ((int)interval - 100) / (100f) * 30f;
             }
 
