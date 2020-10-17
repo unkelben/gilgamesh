@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BowlCollide : MonoBehaviour
 {
+    public MouseOverRag mouseOverRag;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,10 @@ public class BowlCollide : MonoBehaviour
         if (other.gameObject.CompareTag("Rag"))
         {
             Debug.Log("Rag touched Bowl");
+            mouseOverRag.isWet = true;
+            // animation of rag dipping into bowl
+            // sfx of rag dipping into bowl
+            // animation of rag back on table
         }
     }
 }

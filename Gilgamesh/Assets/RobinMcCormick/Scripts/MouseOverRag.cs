@@ -6,30 +6,33 @@ public class MouseOverRag : MonoBehaviour
 {
     public bool isMouseOverRag = false;
     public bool interactedWithRag = false;
+    public bool isWet = false;
 
     public SpriteRenderer sprite;
+
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         sprite.color = Color.white;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (interactedWithRag == false && isMouseOverRag == true)
+        if (interactedWithRag == false)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (isWet) 
             {
-                Debug.Log("Interacted with rag.");
-                //     animator.SetBool("isWet", true);
-              //  interactedWithRag = true;
+                animator.SetBool("isWet", true);
             }
+            
             else
             {
-                //      animator.SetBool("isWet", false);
+                animator.SetBool("isWet", false);
             }
         }
     }

@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Cup
   - Rag
+  - breakable
+  - bubble
+  - Flower
+  - Wall
+  - Wall_right
+  - Wall_left
+  - Enemy
   layers:
   - Default
   - TransparentFX
