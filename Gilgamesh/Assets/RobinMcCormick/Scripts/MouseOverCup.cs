@@ -14,8 +14,6 @@ public class MouseOverCup : MonoBehaviour
     bool dragging;
     public Collider2D cupCollider;
     public Collider2D enkiduCollider;
-    public Sprite off;
-    public int originalLayer;
 
     // Animator animator;
 
@@ -29,7 +27,6 @@ public class MouseOverCup : MonoBehaviour
 
         canMove = false;
         dragging = false;
-        originalLayer = this.GetComponent<SpriteRenderer>().sortingOrder;
     }
 
     // Update is called once per frame
@@ -42,11 +39,12 @@ public class MouseOverCup : MonoBehaviour
             //interactedWithCup == false   
             if (Input.GetMouseButtonDown(0))
             {
-
+                Debug.Log("Clicked cup");
                 if (cupCollider == Physics2D.OverlapPoint(mousePos))
                 {
                     canMove = true;
-                 //   this.GetComponent<Snap>().dressed = false;
+                    Debug.Log("canMove = true");
+                    //   this.GetComponent<Snap>().dressed = false;
                 }
                 else
                 {
@@ -55,8 +53,9 @@ public class MouseOverCup : MonoBehaviour
                 if (canMove)
                 {
                     dragging = true;
+                    Debug.Log("dragging = true");
                 }
-                Debug.Log("Interacted with cup.");
+                
                // animator.SetBool("cupIsMove", true);
               // cB.interactionAmount = cB.interactionAmount++;
               //  interactedWithCup = true;
@@ -64,9 +63,7 @@ public class MouseOverCup : MonoBehaviour
 
             if (dragging)
             {
-                this.GetComponent<SpriteRenderer>().sprite = off;
                 this.transform.position = mousePos;
-                this.GetComponent<SpriteRenderer>().sortingOrder = 100;
 
             }
 
@@ -74,7 +71,6 @@ public class MouseOverCup : MonoBehaviour
             {
                 canMove = false;
                 dragging = false;
-                this.GetComponent<SpriteRenderer>().sortingOrder = originalLayer;
             }
 
         }
