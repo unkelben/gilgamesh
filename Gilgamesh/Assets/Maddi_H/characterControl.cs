@@ -21,6 +21,9 @@ public class characterControl : MonoBehaviour
        Jump();
        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
        transform.position += movement * Time.deltaTime * MovementSpeed;
+
+       // changing sprite 
+    
     }
 
     void Jump()
@@ -38,4 +41,6 @@ public class characterControl : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+    
 }
