@@ -7,13 +7,16 @@ public class MouseOverWaterJug : MonoBehaviour
     public bool isMouseOverJug = false;
     public bool interactedWithJug = false;
 
-  //  Animator animator;
+
+
+    //  Animator animator;
 
     public SpriteRenderer sprite;
 
     // Start is called before the first frame update
     void Start()
     {
+
      //   animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         sprite.color = Color.white;
