@@ -991,6 +991,7 @@ GameObject:
   - component: {fileID: 1955365258}
   - component: {fileID: 1955365261}
   - component: {fileID: 1955365259}
+  - component: {fileID: 1955365260}
   m_Layer: 9
   m_Name: cup
   m_TagString: Cup
@@ -1108,6 +1109,25 @@ MonoBehaviour:
   tD: {fileID: 1955365261}
   isDrink: 0
   sprite: {fileID: 1955365256}
+--- !u!95 &1955365260
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955365255}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce2eb88857968a64fa1c0c5e65190a36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1955365261
 MonoBehaviour:
   m_ObjectHideFlags: 0
