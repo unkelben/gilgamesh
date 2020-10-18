@@ -28,6 +28,8 @@ public class sceneManager : MonoBehaviour
     int phase = 0;
     float backdropFadeout = 1f;
 
+    public string sceneState = "council";
+
     public bool scene1started = false;
     public bool scene1over = false;
 
@@ -172,6 +174,9 @@ public class sceneManager : MonoBehaviour
 
                 // phase 6 is scene 1
             case 6:
+
+                sceneState = "mountains";
+
                 if (!scene1started)
                 {
                     scene1started = true;
@@ -215,6 +220,8 @@ public class sceneManager : MonoBehaviour
 
                 // grow bubbles 3 and 4
             case 8:
+
+                sceneState = "council";
 
                 shrinkBubble(maskBubble);
 
@@ -262,6 +269,8 @@ public class sceneManager : MonoBehaviour
                 // case 10 is scene 2
             case 10:
 
+                sceneState = "path";
+
                 if (scene2over)
                 {
                     phase = 11;
@@ -296,6 +305,7 @@ public class sceneManager : MonoBehaviour
                 // handle bubbles before scene 3
             case 12:
 
+                sceneState = "council";
                 shrinkBubble(maskBubble2);
 
                 if (counter > 50) growBubble(bubble5, bubble5InitScale);
@@ -344,6 +354,7 @@ public class sceneManager : MonoBehaviour
                 // phase 14 is scene 3
             case 14:
 
+                sceneState = "feet";
                 if (scene3over)
                 {
                     counter = 0;
@@ -369,6 +380,8 @@ public class sceneManager : MonoBehaviour
                 break;
 
             case 16:
+
+                sceneState = "council";
 
                 shrinkBubble(maskBubble3);
                 if (counter == 300)

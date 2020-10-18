@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class cleanPixels : MonoBehaviour
 {
-    int brushSize = 4;
+    int brushSize = 7;
     private Camera myMainCamera;
     private Plane dragPlane;
     Renderer rend;
