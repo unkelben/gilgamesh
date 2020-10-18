@@ -32,6 +32,8 @@ public class MouseOverCup : MonoBehaviour
         {
             tD.dragActive = true;
 
+
+
                 // cB.interactionAmount = cB.interactionAmount++;
                 //  interactedWithCup = true;
         }
