@@ -115,6 +115,7 @@ public class cleanPixels : MonoBehaviour
         if (dirtCleared > 3650)
         {
             complete = true;
+            GameObject.Find("scene_manager").GetComponent<sceneManager>().scene3over = true;
             Debug.Log("complete!");
         }
     }

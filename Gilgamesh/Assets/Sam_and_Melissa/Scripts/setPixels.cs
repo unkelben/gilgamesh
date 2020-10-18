@@ -15,13 +15,16 @@ public class setPixels : MonoBehaviour
     Renderer rend;
     Texture2D texture;
     List<List<Vector3>> paths = new List<List<Vector3>>();
-    Vector3 pointA = new Vector3(20f, 20f, 0f);
-    Vector3 pointB = new Vector3(20f, 108f, 0f);
+    Vector3 pointA = new Vector3(40f, 50f, 0f);
+    Vector3 pointB = new Vector3(40f, 78f, 0f);
     bool connected = false;
 
+    GameObject startPoint;
+    GameObject endPoint;
+    GameObject sceneManager;
     void Start()
     {
-
+        sceneManager = GameObject.Find("scene_manager");
         myMainCamera = Camera.main;
         rend = GetComponent<Renderer>();
         // duplicate the original texture and assign to the material
@@ -39,20 +42,30 @@ public class setPixels : MonoBehaviour
 
         float fact = rend.bounds.size.x / 128f;
         // show points A and B:
-        GameObject.Find("startPoint").transform.position = new Vector3(
+        startPoint = GameObject.Find("startPoint");
+        endPoint = GameObject.Find("stopPoint");
+        startPoint.transform.position = new Vector3(
             transform.position.x - rend.bounds.size.x / 2 + fact * pointA.x,
             transform.position.y - rend.bounds.size.y / 2 + fact * pointA.y,
-            0f);
+            startPoint.transform.position.z);
 
-        GameObject.Find("stopPoint").transform.position = new Vector3(
+        endPoint.transform.position = new Vector3(
             transform.position.x - rend.bounds.size.x / 2 + fact * pointB.x,
             transform.position.y - rend.bounds.size.y / 2 + fact * pointB.y,
-            0f);
+            endPoint.transform.position.z);
         /*
         texture.SetPixel(Mathf.RoundToInt(pointA.x), Mathf.RoundToInt(pointA.y), Color.blue);
         texture.SetPixel(Mathf.RoundToInt(pointB.x), Mathf.RoundToInt(pointB.y), Color.blue);
         texture.Apply();
         */
+    }
+
+    private void Update()
+    {
+        if (connected)
+        {
+            sceneManager.GetComponent<sceneManager>().scene2over = true;
+        }
     }
 
     // onmousedown()
@@ -61,6 +74,7 @@ public class setPixels : MonoBehaviour
     //
     void OnMouseDown()
     {
+        Debug.Log("mouse down");
         drawAtMousePos(brushSize);
     }
 
