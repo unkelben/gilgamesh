@@ -21,7 +21,7 @@ public class player_movement : MonoBehaviour
     private Rigidbody2D myRigidbody;
     private Vector3 change;
     private Animator animator;
-    public vector_value startingPosition;
+
 
 
 
@@ -33,7 +33,7 @@ public class player_movement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
-        transform.position = startingPosition.initialValue;
+
     }
 
     // Update is called once per frame
