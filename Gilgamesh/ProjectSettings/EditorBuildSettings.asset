@@ -32,4 +32,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Hazel/Scenes/EnkiDress.unity
     guid: 4c31ebc7c49b5af4ebff087fdcbff0e0
+  - enabled: 1
+    path: Assets/William/Scenes/IntroWilliam.unity
+    guid: 175a4cbf704bbd74a8e9000dd9652b83
+  - enabled: 1
+    path: Assets/William/Scenes/Wrath.unity
+    guid: f289fd884b958cd47bf0a4215ed0c1af
+  - enabled: 1
+    path: Assets/William/Scenes/InterludeWilliam.unity
+    guid: b742dbe9dcbc2684b9c65d0e684c8d93
+  - enabled: 1
+    path: Assets/William/Scenes/Praise.unity
+    guid: 4ab940ec7e28990438d80279102bcc47
   m_configObjects: {}
