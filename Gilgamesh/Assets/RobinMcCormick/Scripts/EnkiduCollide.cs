@@ -6,6 +6,7 @@ public class EnkiduCollide : MonoBehaviour {
 
     public MouseOverRag mouseOverRag;
     public MouseOverCup mouseOverCup;
+    public ChangeBackground cB;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class EnkiduCollide : MonoBehaviour {
         if (other.gameObject.CompareTag("Cup"))
         {
             Debug.Log("Cup touched Enkidu");
-
+            
             //mouseOverCup.isDrink = true;
             // animation of cup pouring to enkidu's mouth
             // sfx of drinking enkidu
@@ -55,6 +56,11 @@ public class EnkiduCollide : MonoBehaviour {
         {
             other.transform.rotation = Quaternion.Euler(0, 0, 30);
         }
+
+        if (other.gameObject.CompareTag("Rag"))
+        {
+            other.transform.rotation = Quaternion.Euler(0, 0, -30);
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -62,6 +68,12 @@ public class EnkiduCollide : MonoBehaviour {
         if (other.gameObject.CompareTag("Cup"))
         {
             other.transform.rotation = Quaternion.Euler(0, 0, 0);
+            cB.interactionAmount = cB.interactionAmount+=1;
+        }
+
+        if (other.gameObject.CompareTag("Rag"))
+        {
+            cB.interactionAmount = cB.interactionAmount+=1;
         }
     }
 }

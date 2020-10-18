@@ -8,6 +8,8 @@ public class CurtainClose : MonoBehaviour
     public bool isMouseOverCurtain = false;
     public bool interactedWithCurtain = false;
 
+    public ChangeBackground cB;
+
     public SpriteRenderer spriteR;
     public Sprite newSprite;
 
@@ -31,6 +33,7 @@ public class CurtainClose : MonoBehaviour
                 spriteR.transform.position = new Vector3(-4.18f, 2.35f, 0);
                 spriteR.transform.localScale = new Vector3(0.5293848f, 0.5293848f, 0.5293848f);
                 source.Play();
+                cB.interactionAmount = cB.interactionAmount += 1;
 
                 interactedWithCurtain = true;
             }
@@ -39,9 +42,13 @@ public class CurtainClose : MonoBehaviour
 
     void OnMouseEnter()
     {
-        Debug.Log("on curtain");
-        spriteR.color = Color.gray;
-        isMouseOverCurtain = true;
+        if (interactedWithCurtain == false)
+        {
+            Debug.Log("on curtain");
+            spriteR.color = Color.gray;
+            isMouseOverCurtain = true;
+        }
+
     }
 
     void OnMouseExit()
