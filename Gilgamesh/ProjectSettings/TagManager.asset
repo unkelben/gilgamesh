@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Cup
+  - Rag
+  - breakable
+  - bubble
+  - Flower
+  - Wall
+  - Wall_right
+  - Wall_left
+  - Enemy
   layers:
   - Default
   - TransparentFX

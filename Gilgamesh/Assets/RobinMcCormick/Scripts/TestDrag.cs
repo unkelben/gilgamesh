@@ -21,8 +21,13 @@ public class TestDrag : MonoBehaviour
     {
         if (isDragging)
         {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            transform.Translate(mousePosition);
+            if (dragActive)
+            {
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+                transform.Translate(mousePosition);
+             
+            }
         }
     }
+
 }

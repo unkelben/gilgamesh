@@ -9,11 +9,11 @@ public class MouseOverCup : MonoBehaviour
     public bool interactedWithCup = false;
     public MouseOverWaterJug wJ;
     public ChangeBackground cB;
+    public TestDrag tD;
 
-    public Collider2D cupCollider;
-    public Collider2D enkiduCollider;
+    public bool isDrink = false;
 
-    // Animator animator;
+  //  Animator animator;
 
     public SpriteRenderer sprite;
 
@@ -21,20 +21,17 @@ public class MouseOverCup : MonoBehaviour
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
+   //     animator = GetComponent<Animator>();
         sprite.color = Color.white;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-       // Debug.Log(mousePos);
         if (wJ.interactedWithJug == true)
         {
-            //interactedWithCup == false   
-         
-                
-                // animator.SetBool("cupIsMove", true);
+            tD.dragActive = true;
+
                 // cB.interactionAmount = cB.interactionAmount++;
                 //  interactedWithCup = true;
         }

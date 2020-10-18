@@ -133,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 230702563}
   - component: {fileID: 230702562}
+  - component: {fileID: 230702564}
+  - component: {fileID: 230702565}
   m_Layer: 0
   m_Name: enkiduCollider
   m_TagString: Untagged
@@ -150,7 +152,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.55008054, y: 0.14631891}
@@ -180,6 +182,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &230702564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230702561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d7493510115e745b1b26314f6fbd1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOverRag: {fileID: 0}
+  mouseOverCup: {fileID: 0}
+--- !u!50 &230702565
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230702561}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &520458942
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +227,6 @@ GameObject:
   m_Component:
   - component: {fileID: 520458944}
   - component: {fileID: 520458943}
-  - component: {fileID: 520458945}
   - component: {fileID: 520458946}
   m_Layer: 9
   m_Name: bowl
@@ -264,32 +300,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &520458945
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 520458942}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.15903974, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.96, y: 2}
-    newSize: {x: 3.96, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.6419206, y: 2}
-  m_EdgeRadius: 0
 --- !u!114 &520458946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +325,7 @@ GameObject:
   - component: {fileID: 594612957}
   - component: {fileID: 594612956}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: blackbg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -397,8 +407,8 @@ GameObject:
   - component: {fileID: 604110086}
   - component: {fileID: 604110085}
   - component: {fileID: 604110087}
-  - component: {fileID: 604110088}
   - component: {fileID: 604110089}
+  - component: {fileID: 604110088}
   m_Layer: 9
   m_Name: waterjug
   m_TagString: Untagged
@@ -544,9 +554,10 @@ GameObject:
   - component: {fileID: 1031791494}
   - component: {fileID: 1031791495}
   - component: {fileID: 1031791496}
+  - component: {fileID: 1031791497}
   m_Layer: 9
   m_Name: rag
-  m_TagString: Untagged
+  m_TagString: Rag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -590,7 +601,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 211793261
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: aedd895fefa29e94c98ce9f5fc90886d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -656,6 +667,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMouseOverRag: 0
   interactedWithRag: 0
+  isWet: 0
+  ragOnEnkidu: 0
+  wipeEnkiduFace: 0
   sprite: {fileID: 0}
 --- !u!114 &1031791496
 MonoBehaviour:
@@ -669,6 +683,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64f1abe0cdcabc4181591d7bea2a798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dragActive: 1
+--- !u!95 &1031791497
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031791491}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d2c058e1ba34e948ac241d3009ec78a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1106196740
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +885,99 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1251359261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1251359264}
+  - component: {fileID: 1251359263}
+  - component: {fileID: 1251359262}
+  - component: {fileID: 1251359265}
+  m_Layer: 0
+  m_Name: bowlCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!50 &1251359262
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251359261}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1251359263
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251359261}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07825565, y: 0.10061455}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4248161, y: 0.8882065}
+  m_EdgeRadius: 0
+--- !u!4 &1251359264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251359261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.2, y: -2, z: -401.06305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1251359265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251359261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feffa63801b139d4d96f606c52e4a2d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOverRag: {fileID: 0}
 --- !u!1 &1955365255
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,11 +989,12 @@ GameObject:
   - component: {fileID: 1955365257}
   - component: {fileID: 1955365256}
   - component: {fileID: 1955365258}
+  - component: {fileID: 1955365261}
   - component: {fileID: 1955365259}
   - component: {fileID: 1955365260}
   m_Layer: 9
   m_Name: cup
-  m_TagString: Untagged
+  m_TagString: Cup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -910,7 +1038,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 211793261
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9f8c2376960eac149a4ee835fad1700e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -978,8 +1106,8 @@ MonoBehaviour:
   interactedWithCup: 0
   wJ: {fileID: 604110089}
   cB: {fileID: 1106196743}
-  cupCollider: {fileID: 1955365258}
-  enkiduCollider: {fileID: 230702562}
+  tD: {fileID: 1955365261}
+  isDrink: 0
   sprite: {fileID: 1955365256}
 --- !u!95 &1955365260
 Animator:
@@ -1000,3 +1128,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1955365261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955365255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a64f1abe0cdcabc4181591d7bea2a798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragActive: 0
