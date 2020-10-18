@@ -676,7 +676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 245113434}
   m_Layer: 0
-  m_Name: IntroViewPosition
+  m_Name: DivingCameraPositon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -689,8 +689,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245113433}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.02068, y: 317.56247, z: 239.14009}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 291.69, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -854,7 +854,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270919888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.2, y: 332.6, z: 0}
+  m_LocalPosition: {x: -9.2, y: 332.6, z: 10}
   m_LocalScale: {x: 1.6586361, y: 2.699456, z: 1.6586361}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3903,7 +3903,7 @@ GameObject:
   - component: {fileID: 923178738}
   - component: {fileID: 923178737}
   m_Layer: 0
-  m_Name: Background_layer2
+  m_Name: ocean_placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3968,7 +3968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923178736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.7, y: 306.8, z: 0}
+  m_LocalPosition: {x: -5.7, y: 306.8, z: 10}
   m_LocalScale: {x: 9.34053, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4383,7 +4383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099246421}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -36.3, y: 326.1, z: 0}
+  m_LocalPosition: {x: -15.299998, y: 326.1, z: 10}
   m_LocalScale: {x: 2.7221792, y: 3.8952794, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4658,8 +4658,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1216163214}
   - component: {fileID: 1216163213}
+  - component: {fileID: 1216163215}
   m_Layer: 0
-  m_Name: MainTheme
+  m_Name: SoundBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4675,11 +4676,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 012cae116460c9f4598124287f032bcd, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4775,6 +4776,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1216163215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216163212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c597460ddbbd1f4b941d8ebceca3cd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wind: {fileID: 8300000, guid: a2a73c5dbdf795049bd42bdbfd6f171b, type: 3}
+  mainTheme: {fileID: 8300000, guid: 012cae116460c9f4598124287f032bcd, type: 3}
+  diving: {fileID: 1277918085}
 --- !u!1001 &1216185840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5110,7 +5126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277918084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 24.6, z: 0}
+  m_LocalPosition: {x: 0.5, y: 286, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 520026515}
@@ -6602,11 +6618,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e719ef91be56d534c98bbefe4d25c12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intro_player: {fileID: 0}
+  DivingPosition: {fileID: 245113434}
   player_t: {fileID: 1277918086}
-  transitionspeed: 0
+  transitionspeed: 5
   background: {fileID: 548104695}
-  diving: {fileID: 0}
+  diving: {fileID: 1277918085}
 --- !u!81 &1616128657
 AudioListener:
   m_ObjectHideFlags: 0
@@ -6666,7 +6682,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616128655}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 24.6, z: -10}
+  m_LocalPosition: {x: -0.5, y: 343.42, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7299,8 +7315,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732981772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.9, y: 345.1, z: 0}
-  m_LocalScale: {x: 12.82662, y: 8.651208, z: 1}
+  m_LocalPosition: {x: -4.8999987, y: 347.49, z: 8.83}
+  m_LocalScale: {x: 12.82662, y: 9.646062, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13

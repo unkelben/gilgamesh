@@ -38,6 +38,7 @@ public class DivingMovement : MonoBehaviour
     //Platyer sounds
     public AudioClip gasping;
     public AudioClip bubbles;
+    public AudioClip splash; 
     public AudioSource A;
 
 

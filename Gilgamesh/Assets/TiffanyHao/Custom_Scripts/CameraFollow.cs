@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Transform intro_player; 
+    public Transform DivingPosition; 
 
     public Transform player_t;
 
@@ -26,15 +26,23 @@ public class CameraFollow : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.DownArrow))
+        if(!isSwimming)
         {
-            //move camera to the position of swimming gilgamesh
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                Debug.Log("Entering water!");
 
+                //move camera to the position of swimming gilgamesh
+                transform.position = Vector3.Lerp(transform.position, DivingPosition.position, Time.deltaTime * transitionspeed);
 
-            //parent this camera to the player 
-            transform.SetParent(player_t, false); 
-            
+                transform.SetParent(player_t, false);
+                isSwimming = true;
+                diving.playerSwimming = true; 
+                //parent this camera to the player 
+            }
         }
+     
+     
     }
     // Update is called once per frame
     void LateUpdate()
