@@ -2655,11 +2655,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5750251885032147433, guid: a5f69e73af8e6604fa0fa36bdf2688d1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 5750251885032147433, guid: a5f69e73af8e6604fa0fa36bdf2688d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.4
+      value: 4.65
       objectReference: {fileID: 0}
     - target: {fileID: 5750251885746283312, guid: a5f69e73af8e6604fa0fa36bdf2688d1, type: 3}
       propertyPath: m_SortingOrder
@@ -2857,6 +2857,14 @@ PrefabInstance:
     - target: {fileID: 8768064902467709613, guid: a2ba81689af9f3a42ab28851c7258628, type: 3}
       propertyPath: m_SortingOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768064902467709614, guid: a2ba81689af9f3a42ab28851c7258628, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768064902467709614, guid: a2ba81689af9f3a42ab28851c7258628, type: 3}
+      propertyPath: stoppingDistance
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2ba81689af9f3a42ab28851c7258628, type: 3}
@@ -5616,6 +5624,23 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1367883664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8768064902467709600, guid: a2ba81689af9f3a42ab28851c7258628, type: 3}
+  m_PrefabInstance: {fileID: 625831789}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1367883665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367883664}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7dd2101926a61a40a529a72e47b6d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1465176026
 GameObject:
   m_ObjectHideFlags: 0
