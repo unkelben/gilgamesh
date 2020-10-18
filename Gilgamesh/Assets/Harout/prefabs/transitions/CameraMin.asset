@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CameraMin
   m_EditorClassIdentifier: 
   initialValue: {x: 0, y: 0}
-  defaultValue: {x: 0, y: 20.27}
+  defaultValue: {x: 0, y: 10}

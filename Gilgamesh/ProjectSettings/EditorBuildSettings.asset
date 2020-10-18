@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Harout/scenes/title_screen.unity
     guid: 11f60c96a1853cb4fad03084e88f8555
   - enabled: 1
-    path: Assets/Harout/scenes/story_introduction.unity
+    path: Assets/Harout/scenes/intro.unity
     guid: ea9bfa0d10044664b9f3941cf13e9359
   - enabled: 1
     path: Assets/Harout/scenes/house.unity
