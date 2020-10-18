@@ -27,6 +27,8 @@ public class DragDrop : MonoBehaviour
     [SerializeField] private Transform Istar4;
     [SerializeField] private Transform Istar5;
     [SerializeField] private Transform Istar6;
+    [SerializeField] private Transform Istar7;
+    [SerializeField] private Transform Istar8;
 
     [SerializeField] private Transform Gilgamesh;
 
@@ -34,7 +36,7 @@ public class DragDrop : MonoBehaviour
     [SerializeField] private Transform VeryMadIstar;
     [SerializeField] private Transform EndingBG;
 
-    [SerializeField] private Transform IstarRareEnding;
+    
 
     [SerializeField] private Transform textStart;
     [SerializeField] private Transform textReject;
@@ -229,6 +231,8 @@ public class DragDrop : MonoBehaviour
                 Istar4.transform.position = respawnPoint2.transform.position;
                 Istar5.transform.position = respawnPoint2.transform.position;
                 Istar6.transform.position = respawnPoint2.transform.position;
+                Istar7.transform.position = respawnPoint2.transform.position;
+                Istar8.transform.position = respawnPoint2.transform.position;
                 EndingBG.transform.position = placeImageOnScreen.transform.position;
                 VeryMadIstar.transform.position = placeImageOnScreen.transform.position;
                 audioVeryMadIstar.Play(1);
@@ -246,6 +250,8 @@ public class DragDrop : MonoBehaviour
                 Istar4.transform.position = respawnPoint2.transform.position;
                 Istar5.transform.position = respawnPoint2.transform.position;
                 Istar6.transform.position = respawnPoint2.transform.position;
+                Istar7.transform.position = respawnPoint2.transform.position;
+                Istar8.transform.position = respawnPoint2.transform.position;
                 MadIstar.transform.position = placeImageOnScreen.transform.position;
                 audioMadIstar.Play(1);
                 textReject.transform.position = textspawnPointL.transform.position;
@@ -299,7 +305,7 @@ public class DragDrop : MonoBehaviour
         if (isSecretEndAchived == true)
         {
             Heart.transform.position = respawnPoint2.transform.position;
-            Istar6.transform.position = respawnPoint2.transform.position;
+            Istar8.transform.position = respawnPoint2.transform.position;
             Gilgamesh.transform.position = placeImageOnScreen.transform.position;
         }
 
@@ -388,33 +394,50 @@ public class DragDrop : MonoBehaviour
 
     public void IstarState() {
 
-        if (heartsGiven == 1){
+        if (heartsGiven == 4){
             Istar.transform.position = respawnPoint2.transform.position;
             Istar2.transform.position = placeImageOnScreen.transform.position;
         }
-        if (heartsGiven == 3)
+        if (heartsGiven == 10)
         {
             Istar2.transform.position = respawnPoint2.transform.position;
             Istar3.transform.position = placeImageOnScreen.transform.position;
         }
-        if (heartsGiven == 6)
+        if (heartsGiven == 20)
         {
             Istar3.transform.position = respawnPoint2.transform.position;
             Istar4.transform.position = placeImageOnScreen.transform.position;
         }
 
         //49
-        if (heartsGiven >= 10 && heartsGiven <= 49)
+        if (heartsGiven == 40)
         {
             Istar4.transform.position = respawnPoint2.transform.position;
             Istar5.transform.position = placeImageOnScreen.transform.position;
         }
 
-        //50 99
-        if (heartsGiven >= 50 && heartsGiven <= 99)
+
+
+        if (heartsGiven == 60)
         {
             Istar5.transform.position = respawnPoint2.transform.position;
             Istar6.transform.position = placeImageOnScreen.transform.position;
+        }
+
+
+      
+        if (heartsGiven == 80)
+        {
+            Istar6.transform.position = respawnPoint2.transform.position;
+            Istar7.transform.position = placeImageOnScreen.transform.position;
+        }
+
+
+        //50 99
+        if (heartsGiven == 90)
+        {
+            Istar7.transform.position = respawnPoint2.transform.position;
+            Istar8.transform.position = placeImageOnScreen.transform.position;
         }
 
 

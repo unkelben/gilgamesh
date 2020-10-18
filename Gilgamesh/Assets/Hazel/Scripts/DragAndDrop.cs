@@ -29,6 +29,7 @@ public class DragAndDrop : MonoBehaviour
             if (clothesCollider == Physics2D.OverlapPoint(mousePos))
             {
                 canMove = true;
+                this.GetComponent<Snap>().dressed = false;
             }
             else
             {
@@ -38,13 +39,14 @@ public class DragAndDrop : MonoBehaviour
             {
                 dragging = true;
             }
-            this.GetComponent<SpriteRenderer>().sortingOrder = 200;
+            
 
         }
         if (dragging)
         {
             this.GetComponent<SpriteRenderer>().sprite = off;
             this.transform.position = mousePos;
+            this.GetComponent<SpriteRenderer>().sortingOrder = 100;
             
         }
 

@@ -7,7 +7,10 @@ public enum PlayerState
 {
     walk,
     attack,
-    interact
+    interact,
+    stagger,
+    idle
+       
 }
 
 
@@ -18,6 +21,7 @@ public class player_movement : MonoBehaviour
     private Rigidbody2D myRigidbody;
     private Vector3 change;
     private Animator animator;
+    public vector_value startingPosition;
 
 
 
@@ -29,6 +33,7 @@ public class player_movement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
+        transform.position = startingPosition.initialValue;
     }
 
     // Update is called once per frame
@@ -41,11 +46,11 @@ public class player_movement : MonoBehaviour
         change.x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speed;
         change.y = Input.GetAxisRaw("Vertical") * Time.deltaTime * speed;
 
-        if(Input.GetButtonDown("attack")&& currentState != PlayerState.attack)
+        if (Input.GetButtonDown("attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger)
         {
             StartCoroutine(AttackCo());
         }
-           else if (currentState == PlayerState.walk)
+        else if (currentState == PlayerState.walk || currentState == PlayerState.idle)
         {
             UpdateAnimationAndMove();
         }
@@ -85,13 +90,6 @@ public class player_movement : MonoBehaviour
     }
 
 
-
-
-
-
-
-
-
     void MoveCharacter()
     {
         
@@ -100,4 +98,22 @@ public class player_movement : MonoBehaviour
     );
 
     }
+
+    public void Knock(float knockTime)
+    {
+        StartCoroutine(KnockCo(knockTime));
+    }
+
+    private IEnumerator KnockCo(float knockTime)
+    {
+        if (myRigidbody != null)
+        {
+            yield return new WaitForSeconds(knockTime);
+            myRigidbody.velocity = Vector2.zero;
+            currentState = PlayerState.idle;
+            myRigidbody.velocity = Vector2.zero;
+        }
+
+    }
+
 }

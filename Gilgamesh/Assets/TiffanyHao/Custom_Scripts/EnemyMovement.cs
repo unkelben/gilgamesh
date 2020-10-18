@@ -29,16 +29,16 @@ public class EnemyMovement : MonoBehaviour
         {
             direction = "right";
         }
-        Debug.Log(direction);
+        //Debug.Log(direction);
 
         if (direction == "left")
         {
-            transform.rotation = Quaternion.Euler(0, 0, -90);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
             transform.position += new Vector3(1, 0, 0) * Time.deltaTime * speed;
         }
         if (direction == "right")
         {
-            transform.rotation = Quaternion.Euler(0, 0, 90);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * speed;
         }
 

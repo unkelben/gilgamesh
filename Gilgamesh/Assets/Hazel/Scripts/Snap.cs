@@ -8,26 +8,52 @@ public class Snap : MonoBehaviour
     public Vector3 locationBack;
     public Sprite on;
     public Sprite off;
+    public bool dressed = false;
+
     public GameObject[] hairs;
     public GameObject[] shoes;
     public GameObject[] shirts;
     public GameObject[] dresses;
     public GameObject[] pants;
+    public GameObject bubble;
+    public float minimum = 0.0f;
+    public float maximum = 1f;
+    public float duration = 5.0f;
+    private float startTime;
     // Start is called before the first frame update
     void Start()
     {
-       
+        locationBack = this.transform.position;
+
+
     }
+
+    void Update()
+    {
+        if (bubble.GetComponent<Clean>().cleaning == true)
+        {
+            this.GetComponent<Renderer>().enabled = false;
+            bubble.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+        }
+
+        else
+        {
+            this.GetComponent<Renderer>().enabled = true;
+            float t = (Time.time - startTime) / duration;
+            bubble.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, Mathf.SmoothStep(minimum, maximum, t));
+        }
+    }
+
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        this.transform.position = location;
+                  
+            this.transform.position = location;
         this.GetComponent<SpriteRenderer>().sprite = on;
+        dressed = true;
 
         if (!Input.GetMouseButton(0))
         {
-
-            Debug.Log("1");
             hairs = GameObject.FindGameObjectsWithTag("hair");
             shoes = GameObject.FindGameObjectsWithTag("shoes");
             shirts = GameObject.FindGameObjectsWithTag("shirt");
@@ -45,8 +71,11 @@ public class Snap : MonoBehaviour
                     }
                     else
                     {
-                        hair.transform.position = locationBack;
-                        this.GetComponent<SpriteRenderer>().sprite = off;
+                        if (hair.GetComponent<Snap>().dressed == true)
+                        {
+                            hair.transform.position = hair.GetComponent<Snap>().locationBack;
+                            this.GetComponent<SpriteRenderer>().sprite = off;
+                        }
                     }
                 }
             }
@@ -60,8 +89,11 @@ public class Snap : MonoBehaviour
                     }
                     else
                     {
-                        shirt.transform.position = locationBack;
-                        this.GetComponent<SpriteRenderer>().sprite = off;
+                        if (shirt.GetComponent<Snap>().dressed == true)
+                        {
+                            shirt.transform.position = shirt.GetComponent<Snap>().locationBack;
+                            this.GetComponent<SpriteRenderer>().sprite = off;
+                        }
                     }
                 }
             }
@@ -75,8 +107,11 @@ public class Snap : MonoBehaviour
                     }
                     else
                     {
-                        shoe.transform.position = locationBack;
-                        this.GetComponent<SpriteRenderer>().sprite = off;
+                        if (shoe.GetComponent<Snap>().dressed == true)
+                        {
+                            shoe.transform.position = shoe.GetComponent<Snap>().locationBack;
+                            this.GetComponent<SpriteRenderer>().sprite = off;
+                        }
                     }
                 }
             }
@@ -90,8 +125,11 @@ public class Snap : MonoBehaviour
                     }
                     else
                     {
-                        dresse.transform.position = locationBack;
-                        this.GetComponent<SpriteRenderer>().sprite = off;
+                        if (dresse.GetComponent<Snap>().dressed == true)
+                        {
+                            dresse.transform.position = dresse.GetComponent<Snap>().locationBack;
+                            this.GetComponent<SpriteRenderer>().sprite = off;
+                        }
                     }
                 }
             }
@@ -105,14 +143,17 @@ public class Snap : MonoBehaviour
                     }
                     else
                     {
-                        pant.transform.position = locationBack;
-                        this.GetComponent<SpriteRenderer>().sprite = off;
+                        if (pant.GetComponent<Snap>().dressed == true)
+                        {
+                            pant.transform.position = pant.GetComponent<Snap>().locationBack;
+                            this.GetComponent<SpriteRenderer>().sprite = off;
+                        }
                     }
                 }
             }
 
-
-        }
+        
+    }
 
     }
 
