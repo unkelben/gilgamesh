@@ -16,6 +16,8 @@ public class DrinkArea : MonoBehaviour
     [SerializeField] Sprite shoes;
     [SerializeField] Sprite wearArea;
 
+    AudioSource drink;
+
 
     //Declare boolean that checks if the goblet is inside the drink area
     //Initialize the count of drinks to 0
@@ -24,6 +26,7 @@ public class DrinkArea : MonoBehaviour
     //Declare vector 2 for goblet position
     public bool drinkIsInside;
     bool startClothesGame;
+    bool startDrinkGame;
     public static int drinkCounter = 0;
     public static int clothesCounter = 0;
     private int flowDrinkCounter = 0;
@@ -50,6 +53,8 @@ public class DrinkArea : MonoBehaviour
         initialPosClothes = clothesPos.y;
         velocityY = -3f;
 
+        drink = goblet.GetComponent<AudioSource>();
+
         clothes.SetActive(false);
 
     }
@@ -57,9 +62,13 @@ public class DrinkArea : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        startDrinkGame = flowchart.GetBooleanVariable("startDrinkGame");
         startClothesGame = flowchart.GetBooleanVariable("startClothesGame");
 
-        drinkGame();
+        if(startDrinkGame == true)
+        {
+            drinkGame();
+        }
 
         if (startClothesGame == true)
         {
@@ -123,6 +132,7 @@ public class DrinkArea : MonoBehaviour
         {
             drinkCounter++;
             velocityY = velocityY - 2f;
+            drink.Play(0);
         }
         else if (drinkIsInside == false && gobletPos.y < -1f)
         {
@@ -156,6 +166,7 @@ public class DrinkArea : MonoBehaviour
         }
         else if (drinkCounter == 7)
         {
+            flowchart.ExecuteBlock("Seven Drinks");
             goblet.SetActive(false);
         }
     }
@@ -176,6 +187,5 @@ public class DrinkArea : MonoBehaviour
             drinkIsInside = false;
         }
     }
-
 
 }
