@@ -17,7 +17,7 @@ public class CustomCursor : MonoBehaviour
 
     private void Update()
     {
-        bool mouseState = Input.GetMouseButtonDown(0);
+        bool mouseState = Input.GetMouseButton(0);
         string sceneState = GameObject.Find("scene_manager").GetComponent<sceneManager>().sceneState;
         if (mouseState != lastMouseState || sceneState != lastSceneState)
         {
@@ -26,7 +26,7 @@ public class CustomCursor : MonoBehaviour
             switch (sceneState)
             {
                 case "path":
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButton(0))
                     {
                         Cursor.SetCursor(cursorPencil, Vector2.zero, CursorMode.ForceSoftware);
                     }
@@ -36,17 +36,17 @@ public class CustomCursor : MonoBehaviour
                     }
                     break;
                 case "mountains":
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButton(0))
                     {
                         Cursor.SetCursor(cursorGrab, Vector2.zero, CursorMode.ForceSoftware);
-                    }
+                    } 
                     else
                     {
                         Cursor.SetCursor(cursorHand, Vector2.zero, CursorMode.ForceSoftware);
                     }
                     break;
                 case "feet":
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButton(0))
                     {
                         Cursor.SetCursor(cursorScrub, Vector2.zero, CursorMode.ForceSoftware);
                     }
@@ -56,7 +56,7 @@ public class CustomCursor : MonoBehaviour
                     }
                     break;
                 case "council":
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButton(0))
                     {
                         Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
                     }
@@ -90,15 +90,6 @@ public class CustomCursor : MonoBehaviour
         if (GameObject.Find("scene_manager").GetComponent<sceneManager>().sceneState == "mountains")
         {
             Cursor.SetCursor(cursorHand, Vector2.zero, CursorMode.ForceSoftware);
-        }
-    }
-
-    private void OnMouseDown()
-    {
-        Debug.Log("cacs down");
-        if (GameObject.Find("scene_manager").GetComponent<sceneManager>().sceneState == "mountains")
-        {
-            Cursor.SetCursor(cursorGrab, Vector2.zero, CursorMode.ForceSoftware);
         }
     }
 }
