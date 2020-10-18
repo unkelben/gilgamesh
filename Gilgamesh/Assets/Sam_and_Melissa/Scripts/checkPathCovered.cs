@@ -32,7 +32,7 @@ public class checkPathCovered : MonoBehaviour
     void Update()
     {
         active = scene.GetComponent<sceneManager>().scene1started;
-
+      // active = true;
         if (active)
         {
             if (Time.time > nextCheck)
