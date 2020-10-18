@@ -60,7 +60,6 @@ public class checkPathCovered : MonoBehaviour
                 }
                 nextCheck = Time.time + checkInterval;
                 float percent = counter / totalPix;
-                Debug.Log(percent);
 
                 if (percent > completionThreshold)
                 {
