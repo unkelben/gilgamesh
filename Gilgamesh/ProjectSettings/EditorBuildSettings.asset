@@ -5,13 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Harout/scenes/title_screen.unity
     guid: 11f60c96a1853cb4fad03084e88f8555
-  - enabled: 1
+  - enabled: 0
     path: Assets/Harout/scenes/vignette_1.unity
     guid: fb2efbe314eb56b4da26cdeb6500a51a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Harout/scenes/game_over.unity
     guid: f2c1abd04d26bf14592c91b07a561d59
+  - enabled: 1
+    path: Assets/Sebastian Beltran/Scenes/Enkidu and Shamhat.unity
+    guid: 95cbaf56bb8b940b792f453422bbe8cb
+  - enabled: 1
+    path: Assets/Sebastian Beltran/Scenes/Enkidu and Shepherds.unity
+    guid: 10e0ee87a8a77464a81e59d490016a2c
+  - enabled: 1
+    path: Assets/Sebastian Beltran/Scenes/Final Scene.unity
+    guid: 4f906a514fd60488d9f769e986852eb9
   m_configObjects: {}
