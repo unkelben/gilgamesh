@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -9,7 +10,8 @@ public enum EnemyState
     idle,
     walk,
     attack,
-    stagger
+    stagger,
+    dead
 }
 
 public class enemy : MonoBehaviour
@@ -21,7 +23,7 @@ public class enemy : MonoBehaviour
     public int baseAttack;
     public float moveSpeed;
     Animator anim;
-    bool death;
+    bool dead, die;
 
     private void Awake()
     {
@@ -41,8 +43,13 @@ public class enemy : MonoBehaviour
         if(health <=0)
         {
             //  this.gameObject.SetActive(false);
-            
-            anim.SetTrigger("dead");
+            // dead = true;
+            //  die = true;
+            //anim.SetTrigger("dead");
+            //  currentState = EnemyState.dead;
+
+            SceneManager.LoadScene("game_over");
+
         }
 
     }
