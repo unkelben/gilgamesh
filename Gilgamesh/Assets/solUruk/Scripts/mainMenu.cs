@@ -6,7 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class mainMenu : MonoBehaviour
 {
+  public GameObject gilgamesh;
+  public GameObject enkidu;
+
+  public GameObject gButton;
+  public GameObject eButton;
+  public GameObject sidebars;
+
   public readonly string selectedCharacter = "selectedCharacter";
+    // Start is called before the first frame update
+    void Start()
+    {
+    }
 
     // Play as Gilgamesh
     public void Gilgamesh()
@@ -24,12 +35,23 @@ public class mainMenu : MonoBehaviour
     // Start the Game
     private void StartGame()
     {
-      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
-    }
+      Destroy(gButton);
+      Destroy(eButton);
+      Destroy(sidebars);
 
-    // Quit the game
-    public void QuitGame()
-    {
-      Application.Quit();
+      int getCharacter = PlayerPrefs.GetInt(selectedCharacter);
+
+      switch(getCharacter)
+      {
+        case 0:
+          Instantiate(gilgamesh, new Vector3(4.43f, -5.64f, 0f), Quaternion.identity);
+          break;
+        case 1:
+          Instantiate(enkidu, new Vector3(4.43f, -5.64f, 0f), Quaternion.identity);
+          break;
+        default:
+          Debug.Log("Error Loading Character");
+          break;
+      }
     }
 }

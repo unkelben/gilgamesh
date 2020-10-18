@@ -20,6 +20,8 @@ TagManager:
   - pants
   - dress
   - hair
+  - Npc
+  - Uruk
   layers:
   - Default
   - TransparentFX
