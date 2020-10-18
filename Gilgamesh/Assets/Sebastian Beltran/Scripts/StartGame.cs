@@ -9,7 +9,9 @@ public class StartGame : MonoBehaviour
     [SerializeField] GameObject playSpace;
     [SerializeField] GameObject exitHouse;
     [SerializeField] Flowchart flowchart;
+    [SerializeField] GameObject tableGoblet;
     [SerializeField] GameObject axe;
+    [SerializeField] CharacterViewer enkidu;
 
     private static int drinkCounter;
     private static int clothesCounter;
@@ -39,7 +41,7 @@ public class StartGame : MonoBehaviour
 
         if (drinkCounter == 7 && startDrinkGame == true)
         {
-            flowchart.ExecuteBlock("Final Dialogue");
+            //flowchart.ExecuteBlock("Final Dialogue");
             startDrinkGame = false;
         }
 
@@ -50,4 +52,18 @@ public class StartGame : MonoBehaviour
             exitHouse.SetActive(true);
         }
     }
+
+    public void EquipGoblet()
+    {
+        tableGoblet.SetActive(false);
+        enkidu.EquipPart(SlotCategory.MainHand, "Goblet");
+    }
+
+    public void UnequipGoblet()
+    {
+        enkidu.EquipPart(SlotCategory.MainHand, "");
+        tableGoblet.SetActive(true);
+    }
+
+
 }

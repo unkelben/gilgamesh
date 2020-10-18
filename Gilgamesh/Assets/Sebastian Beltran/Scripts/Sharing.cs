@@ -24,6 +24,9 @@ public class Sharing : MonoBehaviour
         if (shareButtonActive == true)
         {
             shareClothes.SetActive(true);
+        } else
+        {
+            shareClothes.SetActive(false);
         }
     }
 
