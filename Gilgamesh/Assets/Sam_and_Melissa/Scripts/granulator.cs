@@ -16,8 +16,8 @@ public class granulator : MonoBehaviour
 
     float nextTrigger = 0f;
 
-    float attackTime = 0.05f;
-    float releaseTime = 0.2f;
+    public float attackTime = 0.05f;
+    public float releaseTime = 0.2f;
 
     GameObject grainSource;
     AudioSource audioData;
@@ -30,10 +30,12 @@ public class granulator : MonoBehaviour
     List<float> startTimes = new List<float>();
 
     int counter =0;
+
+    public bool playing = false;
     // Start is called before the first frame update
     void Start()
     {
-        grainSource = GameObject.Find("granuChild");
+        grainSource = GameObject.Find("rocky");
        // audioData = GetComponent<AudioSource>();
 
     }
@@ -41,33 +43,36 @@ public class granulator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float t = Time.time;
-        // add sound if it's time to add
-        if (t>nextTrigger)
+        if (playing)
         {
 
-            GameObject buffer = Instantiate(grainSource);
-            grains.Add(buffer);
+            float t = Time.time;
+            // add sound if it's time to add
+            if (t > nextTrigger)
+            {
 
-            AudioSource audioData = buffer.GetComponent<AudioSource>();
-            channels.Add(audioData);
+                GameObject buffer = Instantiate(grainSource);
+                grains.Add(buffer);
 
-            float startTime = Random.Range( 0f, audioData.clip.length - minGrainLength);
-            float endTime = startTime + Mathf.Min(audioData.clip.length - startTime, Random.Range(minGrainLength, maxGrainLength));
+                AudioSource audioData = buffer.GetComponent<AudioSource>();
+                channels.Add(audioData);
 
-            
+                float startTime = Random.Range(0f, audioData.clip.length - minGrainLength);
+                float endTime = startTime + Mathf.Min(audioData.clip.length - startTime, Random.Range(minGrainLength, maxGrainLength));
 
-            audioData.time = startTime;
+                audioData.time = startTime;
 
-            stopTimes.Add(endTime);
-            startTimes.Add(startTime);
+                stopTimes.Add(endTime);
+                startTimes.Add(startTime);
 
-            audioData.Play();
+                audioData.Play();
 
-            nextTrigger = t + Random.Range(minTimeToNext, maxTimeToNext);
-           // Debug.Log("Added. Count: " + channels.Count);
+                nextTrigger = t + Random.Range(minTimeToNext, maxTimeToNext);
+                // Debug.Log("Added. Count: " + channels.Count);
+            }
+            counter++;
         }
-        counter++;
+        
 
 
         // remove sound if it's time to remove:
@@ -108,5 +113,44 @@ public class granulator : MonoBehaviour
             }
             else channels[i].volume = 1f;
         }
+    }
+
+    public void setupPathSceneSound()
+    {
+        minGrainLength = 0.12f;
+        maxGrainLength = 0.47f;
+
+        minTimeToNext = 0.12f;
+        maxTimeToNext = 0.25f;
+
+        attackTime = 0.07f;
+        releaseTime = 0.2f;
+        grainSource = GameObject.Find("scribbly");
+    }
+
+    public void setupMountainSceneSound()
+    {
+        minGrainLength = 0.36f;
+        maxGrainLength = 0.48f;
+
+        minTimeToNext = 0.05f;
+        maxTimeToNext = 0.12f;
+
+        attackTime = 0.49f;
+        releaseTime = 0.27f;
+        grainSource = GameObject.Find("rocky");
+    }
+
+    public void setupFootSceneSound()
+    {
+        minGrainLength = 0.22f;
+        maxGrainLength = 0.34f;
+
+        minTimeToNext = 0.05f;
+        maxTimeToNext = 0.09f;
+
+        attackTime = 0.20f;
+        releaseTime = 0.15f;
+        grainSource = GameObject.Find("watery");
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class cleanPixels : MonoBehaviour
 {
-    int brushSize = 7;
+    int brushSize = 6;
     private Camera myMainCamera;
     private Plane dragPlane;
     Renderer rend;
@@ -15,9 +15,15 @@ public class cleanPixels : MonoBehaviour
     int dirtCount = 100;
     int dirtCleared = 0;
 
+    bool cleaning = false;
+    float cleanStopTime = 0f;
+    float cleanStopInterval = 0.2f;
+
+    GameObject granu;
+
     void Start()
     {
-
+        granu = GameObject.Find("granu");
         myMainCamera = Camera.main;
         rend = GetComponent<Renderer>();
         // duplicate the original texture and assign to the material
@@ -35,6 +41,17 @@ public class cleanPixels : MonoBehaviour
         // update texture 
         texture.Apply();
         */
+    }
+
+    private void Update()
+    {
+        if (cleaning&&Time.time>=cleanStopTime)
+        {
+            cleaning = false;
+        }
+
+        granu.GetComponent<granulator>().playing = cleaning;
+        
     }
 
     // onmousedown()
@@ -63,6 +80,8 @@ public class cleanPixels : MonoBehaviour
 
     void cleanAtMousePos(int size)
     {
+        cleaning = true;
+        cleanStopTime = Time.time + cleanStopInterval;
         // next 4 lines are taken from that stackoverflow issue on top of the doc
         dragPlane = new Plane(myMainCamera.transform.forward, transform.position);
         Ray camRay = myMainCamera.ScreenPointToRay(Input.mousePosition);

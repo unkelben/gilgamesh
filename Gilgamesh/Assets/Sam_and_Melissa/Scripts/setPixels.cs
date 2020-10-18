@@ -22,8 +22,13 @@ public class setPixels : MonoBehaviour
     GameObject startPoint;
     GameObject endPoint;
     GameObject sceneManager;
+
+    GameObject granu;
+
+    bool drawing = false;
     void Start()
     {
+        granu = GameObject.Find("granu");
         sceneManager = GameObject.Find("scene_manager");
         myMainCamera = Camera.main;
         rend = GetComponent<Renderer>();
@@ -62,6 +67,10 @@ public class setPixels : MonoBehaviour
 
     private void Update()
     {
+        granu.GetComponent<granulator>().playing = drawing;
+        
+
+
         if (connected)
         {
             sceneManager.GetComponent<sceneManager>().scene2over = true;
@@ -74,6 +83,7 @@ public class setPixels : MonoBehaviour
     //
     void OnMouseDown()
     {
+        drawing = true;
         Debug.Log("mouse down");
         drawAtMousePos(brushSize);
     }
@@ -86,6 +96,7 @@ public class setPixels : MonoBehaviour
 
     void OnMouseUp()
     {
+        drawing = false;
         if (!connected)
         {
             foreach (List<Vector3> path in paths)
@@ -114,6 +125,7 @@ public class setPixels : MonoBehaviour
     //
     void OnMouseDrag()
     {
+        drawing = true;
         drawAtMousePos(brushSize);
     }
 

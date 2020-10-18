@@ -180,6 +180,7 @@ public class sceneManager : MonoBehaviour
                 if (!scene1started)
                 {
                     scene1started = true;
+                    GameObject.Find("granu").GetComponent<granulator>().setupMountainSceneSound();
                     bubble1.SetActive(false);
                     bubble2.SetActive(false);
                 }
@@ -234,6 +235,7 @@ public class sceneManager : MonoBehaviour
                         scene2appeared = true;
                         scene1.SetActive(false);
                         scene2.SetActive(true);
+                        GameObject.Find("granu").GetComponent<granulator>().setupPathSceneSound();
                     }
                     growBubble(maskBubble2, maskBubble2InitScale);
                 }
@@ -317,6 +319,7 @@ public class sceneManager : MonoBehaviour
                         scene3appeared = true;
                         scene2.SetActive(false);
                         scene3.SetActive(true);
+                        GameObject.Find("granu").GetComponent<granulator>().setupFootSceneSound();
                     }
                     growBubble(maskBubble3, maskBubble3InitScale);
                 }
