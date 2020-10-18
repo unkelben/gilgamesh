@@ -1,0 +1,17 @@
+Songs- 
+Name: Castle --- Artist: Deepixel ---- Source: Opengameart.org
+Name: egyptian-styledune-style --- Artist: 5pr1n6 Source: pengameart.org
+			
+Tiles:
+Name: Castle interior and exterior ---Artist: Stephen Challener Source: Opengameart.org
+Name: Zelda-like tilesets and sprites ----- Artist: ArMM1998 - Source: Opengameart.org
+
+sprites
+
+Sprite maker: http://gaurav.munjal.us/Universal-LPC-Spritesheet-Character-Generator/#?body=tanned2&nose=straight&clothes=formal&armor=chest_leather&hair=page_raven&arms=none&spikes=none&bracers=leather&weapon=longsword&bracelet=on&shield=none&belt=leather&shoes=none&hat=none&eyes=orange
+
+Humbaba: Pixel Art RPG Monster Sprites -------  Artist: CraftPix.net 2D Game Assets  ---- Source Opengameart.org
+
+
+Code: Artist:Mister Taft Creates    Source: Youtube
+
