@@ -23,11 +23,16 @@ public class setPixels : MonoBehaviour
     GameObject endPoint;
     GameObject sceneManager;
 
+    GameObject obstacle1;
+    GameObject obstacle2;
+
     GameObject granu;
 
     bool drawing = false;
     void Start()
     {
+        obstacle1 = GameObject.Find("obstacle1");
+        obstacle2 = GameObject.Find("obstacle2");
         granu = GameObject.Find("granu");
         sceneManager = GameObject.Find("scene_manager");
         myMainCamera = Camera.main;
@@ -85,7 +90,25 @@ public class setPixels : MonoBehaviour
     {
         drawing = true;
         Debug.Log("mouse down");
-        drawAtMousePos(brushSize);
+        if(clearOfObstacles())
+            drawAtMousePos(brushSize);
+    }
+
+
+    bool clearOfObstacles()
+    {
+        bool result = true;
+        bool obs1hover = obstacle1.GetComponent<obstacleHandler>().hovered;
+        bool obs2hover = obstacle2.GetComponent<obstacleHandler>().hovered;
+        if (
+            obs1hover
+            || obs2hover
+            )
+        {
+            result = false;
+        }
+       
+        return result;
     }
 
     // onmouseup()
@@ -126,7 +149,8 @@ public class setPixels : MonoBehaviour
     void OnMouseDrag()
     {
         drawing = true;
-        drawAtMousePos(brushSize);
+        if (clearOfObstacles())
+            drawAtMousePos(brushSize);
     }
 
     // drawatmousepos()
