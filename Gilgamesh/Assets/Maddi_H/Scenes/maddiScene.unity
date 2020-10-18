@@ -3356,7 +3356,6 @@ GameObject:
   - component: {fileID: 1304227350}
   - component: {fileID: 1304227352}
   - component: {fileID: 1304227353}
-  - component: {fileID: 1304227354}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3491,6 +3490,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 10
   isGrounded: 0
+  PackForest01_5: {fileID: 21300010, guid: b08e570699f1c8a4f9cc388204aef3bc, type: 3}
+  PackForest01_8: {fileID: 21300016, guid: b08e570699f1c8a4f9cc388204aef3bc, type: 3}
 --- !u!82 &1304227353
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3517,7 +3518,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -3587,19 +3588,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1304227354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1304227347}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b50cd912d9bcbc848b5d90249e60bd17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  breadValue: 0
 --- !u!1 &1316756418
 GameObject:
   m_ObjectHideFlags: 0
