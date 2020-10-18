@@ -1,19 +1,41 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
     // Start is called before the first frame update
+    public Transform intro_player; 
 
     public Transform player_t;
+
+    public float transitionspeed; 
+
     public GameObject background;
+
+    public DivingMovement diving;
+    
+    private bool isSwimming; 
+
     //private bool movingCam = true;
     void Start()
     {
-        
+        isSwimming = diving.playerSwimming; //false
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            //move camera to the position of swimming gilgamesh
+
+
+            //parent this camera to the player 
+            transform.SetParent(player_t, false); 
+            
+        }
+    }
     // Update is called once per frame
     void LateUpdate()
     {
@@ -30,9 +52,14 @@ public class CameraFollow : MonoBehaviour
         //this script prevents camera from following the player to the right and left bounds of the game scene:
         //basically what it does is the opposite from player movements
         /*move_side = Input.GetAxis("Horizontal");*/ // <0 is left, >0 is right 
-        var cameraZ = transform.position.z;
-        var cameraY = player_t.position.y + 1;
-        transform.position = new Vector3(0, cameraY, cameraZ);
+
+        if(isSwimming)
+        {
+            var cameraZ = transform.position.z;
+            var cameraY = player_t.position.y + 1;
+            transform.position = new Vector3(0, cameraY, cameraZ);
+        }
+       ;
 
         //only have camera follows if movingcam == true
         //if (movingcam == true)

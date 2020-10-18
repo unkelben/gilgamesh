@@ -18,6 +18,9 @@ public class DivingMovement : MonoBehaviour
     [SerializeField]
     private float constant_fall = -1;
 
+ 
+    public bool playerSwimming = false; //player starts with no swimming
+
     public bool wall_collidedleft = false;
     public bool wall_collidedright = false;
 
