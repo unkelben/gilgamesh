@@ -36,7 +36,6 @@ public class Clean : MonoBehaviour
 
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        Debug.Log(mousePos);
 
         if (Input.GetMouseButton(0) && Random.Range(0, 10) == 1 && cleanLvl <= 155)
 

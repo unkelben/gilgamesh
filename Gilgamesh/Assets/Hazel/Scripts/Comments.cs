@@ -16,6 +16,7 @@ public class Comments : MonoBehaviour
     public Sprite tieSprite;
     public GameObject commentsText;
     private AudioSource source;
+    private bool isPlaying = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,10 @@ public class Comments : MonoBehaviour
         if (commenting == true)
         {
             comment.GetComponent<Renderer>().enabled = true;
-            source.Play();
+            if (Input.GetMouseButtonUp(0))
+            {
+                source.Play();
+            }
         }
 
         else
