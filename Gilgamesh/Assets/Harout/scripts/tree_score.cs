@@ -24,7 +24,7 @@ public class tree_score : MonoBehaviour
         score.text = scoreValue.ToString();
 
 
-        if (scoreValue >= 25)
+        if (scoreValue >= 30)
         {
             humbaba.SetActive(true);
         }

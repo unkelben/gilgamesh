@@ -3221,6 +3221,114 @@ TextureImporter:
   - first:
       213: 1933500101653270567
     second: Overworld_1072
+  - first:
+      213: 5649468536085351866
+    second: Overworld_1073
+  - first:
+      213: 7594525048525668793
+    second: Overworld_1074
+  - first:
+      213: -133468628458739000
+    second: Overworld_0
+  - first:
+      213: 7969132930771980274
+    second: Overworld_1
+  - first:
+      213: -7595442279732793296
+    second: Overworld_2
+  - first:
+      213: 6053076746072080332
+    second: Overworld_3
+  - first:
+      213: 1277966320539815875
+    second: Overworld_4
+  - first:
+      213: 1501041890579778512
+    second: Overworld_5
+  - first:
+      213: -1087715480064992260
+    second: Overworld_6
+  - first:
+      213: -2012559779675572348
+    second: Overworld_7
+  - first:
+      213: 3805059948989461588
+    second: Overworld_8
+  - first:
+      213: 3638886106091770656
+    second: Overworld_9
+  - first:
+      213: 8338623585670253391
+    second: Overworld_10
+  - first:
+      213: -8610515704985548379
+    second: Overworld_11
+  - first:
+      213: -7404043053744786543
+    second: Overworld_12
+  - first:
+      213: 7730263765352824887
+    second: Overworld_13
+  - first:
+      213: 3496329003094684521
+    second: Overworld_14
+  - first:
+      213: 9106322911588331379
+    second: Overworld_15
+  - first:
+      213: -6504181613711314199
+    second: Overworld_16
+  - first:
+      213: 8962705337929200127
+    second: Overworld_17
+  - first:
+      213: 281783895532906205
+    second: Overworld_18
+  - first:
+      213: -8320354960961294868
+    second: Overworld_19
+  - first:
+      213: -3504756278408389839
+    second: Overworld_20
+  - first:
+      213: 1169798633053184497
+    second: Overworld_21
+  - first:
+      213: 8511929931269062367
+    second: Overworld_22
+  - first:
+      213: -3424119956841406715
+    second: Overworld_23
+  - first:
+      213: 1602885772914485498
+    second: Overworld_24
+  - first:
+      213: -5964268302768681057
+    second: Overworld_25
+  - first:
+      213: 7441460413618480501
+    second: Overworld_26
+  - first:
+      213: -2581136787812249675
+    second: Overworld_27
+  - first:
+      213: 2204480668911997233
+    second: Overworld_28
+  - first:
+      213: 4361993976775847441
+    second: Overworld_29
+  - first:
+      213: 5045962733990680693
+    second: Overworld_30
+  - first:
+      213: 5862163476995350195
+    second: Overworld_31
+  - first:
+      213: -741041411590011573
+    second: Overworld_32
+  - first:
+      213: -1812438448749675249
+    second: Overworld_33
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -11001,9 +11109,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 352
-        y: 416
-        width: 16
-        height: 16
+        y: 384
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -12598,10 +12706,10 @@ TextureImporter:
         serializedVersion: 2
         x: 448
         y: 384
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 1.4009718, y: 0.4943339}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

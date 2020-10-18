@@ -1,169 +1,187 @@
 fileFormatVersion: 2
-guid: 332809c16ae7479448a50a0e9366eac4
+guid: 40c34ac224c5aa34597bbe105995dc3c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7152930139536384079
-    second: character_0
+      213: 211854537732197995
+    second: enkidu_0
   - first:
-      213: -5725962078152895296
-    second: character_1
+      213: 5505573983381976058
+    second: enkidu_1
   - first:
-      213: -8401692288953904933
-    second: character_2
+      213: -7770661910567536625
+    second: enkidu_2
   - first:
-      213: 7888922196035610388
-    second: character_3
+      213: 2533513762079128880
+    second: enkidu_3
   - first:
-      213: -8090365562718305141
-    second: character_4
+      213: 5227697073013004929
+    second: enkidu_4
   - first:
-      213: 3445332486847661990
-    second: character_5
+      213: -2564970379522713880
+    second: enkidu_5
   - first:
-      213: 7456334905099763947
-    second: character_6
+      213: -4563326248962925537
+    second: enkidu_6
   - first:
-      213: 5377859178988851676
-    second: character_7
+      213: 3693703608107464763
+    second: enkidu_7
   - first:
-      213: -4124168217499134943
-    second: character_8
+      213: 607244940184103327
+    second: enkidu_8
   - first:
-      213: 4620578802948863353
-    second: character_9
+      213: 6572128792121829846
+    second: enkidu_9
   - first:
-      213: -6835189599539173722
-    second: character_10
+      213: 1787235090850790015
+    second: enkidu_10
   - first:
-      213: 679739729869728943
-    second: character_11
+      213: 7003596018264060506
+    second: enkidu_11
   - first:
-      213: 5248155131499935147
-    second: character_12
+      213: 640788621672362775
+    second: enkidu_12
   - first:
-      213: -3303779423006393323
-    second: character_13
+      213: -2184550727776107996
+    second: enkidu_13
   - first:
-      213: -790699523677361007
-    second: character_14
+      213: 1104655847857887422
+    second: enkidu_14
   - first:
-      213: 8470420716495695676
-    second: character_15
+      213: -6160283281923741790
+    second: enkidu_15
   - first:
-      213: 6167071470516247665
-    second: character_16
+      213: -2670952973187933742
+    second: enkidu_16
   - first:
-      213: -1580347878817688430
-    second: character_17
+      213: -5582034886344633582
+    second: enkidu_17
   - first:
-      213: -3181128867261425065
-    second: character_18
+      213: 6542251451163199499
+    second: enkidu_18
   - first:
-      213: -4888305619323244325
-    second: character_19
+      213: 8618164016356869625
+    second: enkidu_19
   - first:
-      213: 1822710792970894325
-    second: character_20
+      213: -8294296562329532805
+    second: enkidu_20
   - first:
-      213: -4656049468798845499
-    second: character_21
+      213: 5070985555727567511
+    second: enkidu_21
   - first:
-      213: 6237780861798913854
-    second: character_22
+      213: -668372189738293560
+    second: enkidu_22
   - first:
-      213: -9156188058010517731
-    second: character_23
+      213: -4847850586978859518
+    second: enkidu_23
   - first:
-      213: -4445699719359273135
-    second: character_24
+      213: 8436813423344972173
+    second: enkidu_24
   - first:
-      213: 1892806461834874077
-    second: character_25
+      213: -8198555258657956241
+    second: enkidu_25
   - first:
-      213: -8627026541424588849
-    second: character_26
+      213: 4346787086127708606
+    second: enkidu_26
   - first:
-      213: -6780520195603233165
-    second: character_27
+      213: -685187479013610536
+    second: enkidu_27
   - first:
-      213: -4060318028669273776
-    second: character_28
+      213: 7224533437891063503
+    second: enkidu_28
   - first:
-      213: -6092953325292582070
-    second: character_29
+      213: -4253634559340710839
+    second: enkidu_29
   - first:
-      213: 8340156370037202746
-    second: character_30
+      213: 4669302883254698913
+    second: enkidu_30
   - first:
-      213: -5163677950195982287
-    second: character_31
+      213: 953564267064875578
+    second: enkidu_31
   - first:
-      213: -740160595849798140
-    second: character_32
+      213: -2530500610152097319
+    second: enkidu_32
   - first:
-      213: 9134867320498260058
-    second: character_33
+      213: 7683538423394142650
+    second: enkidu_33
   - first:
-      213: 4365873776659892937
-    second: character_34
+      213: -4447975339090099045
+    second: enkidu_34
   - first:
-      213: -1038918931832879880
-    second: character_35
+      213: 2207170026503969249
+    second: enkidu_35
   - first:
-      213: 2690600881683387669
-    second: character_36
+      213: -206218981962676274
+    second: enkidu_36
   - first:
-      213: 6634202828824015816
-    second: character_37
+      213: 3753789528873394249
+    second: enkidu_37
   - first:
-      213: -5008138227279614530
-    second: character_38
+      213: -4949017020282552559
+    second: enkidu_38
   - first:
-      213: 122268285079091143
-    second: character_39
+      213: -7865537660061232280
+    second: enkidu_39
   - first:
-      213: 7113705111667027848
-    second: character_40
+      213: 1401635498919352741
+    second: enkidu_40
   - first:
-      213: -6692555241838817836
-    second: character_41
+      213: 8434053903973682682
+    second: enkidu_41
   - first:
-      213: 2180825371451227870
-    second: character_42
+      213: -6542389493748439858
+    second: enkidu_42
   - first:
-      213: -4702585941336802017
-    second: character_43
+      213: 8236490508883126058
+    second: enkidu_43
   - first:
-      213: -389262940572705114
-    second: character_44
+      213: -3062638539077771407
+    second: enkidu_44
   - first:
-      213: -9078226021229508275
-    second: character_45
+      213: 956598946035851113
+    second: enkidu_45
   - first:
-      213: 7805661433064171900
-    second: character_46
+      213: 7146417912206400833
+    second: enkidu_46
   - first:
-      213: -6068918389402846573
-    second: character_47
+      213: 4457265685280709673
+    second: enkidu_47
   - first:
-      213: 794369475904173520
-    second: character_48
+      213: 4035378104141987756
+    second: enkidu_48
   - first:
-      213: -4081081572662631122
-    second: character_49
+      213: 3639607686004697318
+    second: enkidu_49
   - first:
-      213: 904094962941711261
-    second: character_50
+      213: -5840564638926112455
+    second: enkidu_50
   - first:
-      213: -8258607753064836120
-    second: character_51
+      213: 7336586180749530310
+    second: enkidu_51
   - first:
-      213: -7326877051031357324
-    second: character_52
+      213: -2735667560948040583
+    second: enkidu_52
   - first:
-      213: -3061340027595065751
-    second: character_53
+      213: -1611849953183502292
+    second: enkidu_53
+  - first:
+      213: -8335171228885390461
+    second: enkidu_54
+  - first:
+      213: -6330954528509025342
+    second: enkidu_55
+  - first:
+      213: -9090391379586211047
+    second: enkidu_56
+  - first:
+      213: -8816580192899663786
+    second: enkidu_57
+  - first:
+      213: 7834041202088717786
+    second: enkidu_58
+  - first:
+      213: 4625255922772253148
+    second: enkidu_59
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -208,7 +226,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -228,7 +246,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -240,7 +258,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -252,7 +270,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -264,7 +282,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -275,34 +293,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 230
-        width: 15
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f4060466010544360800000000000000
-      internalID: 7152930139536384079
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_1
+      name: enkidu_0
       rect:
         serializedVersion: 2
         x: 17
-        y: 229
-        width: 15
-        height: 20
+        y: 1539
+        width: 30
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,83 +307,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c4d65ec3db4980b0800000000000000
-      internalID: -5725962078152895296
+      spriteID: b6e05916498a0f200800000000000000
+      internalID: 211854537732197995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_2
+      name: enkidu_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 230
-        width: 15
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd093c49061376b80800000000000000
-      internalID: -8401692288953904933
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_3
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 229
-        width: 15
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 417a563a0f41b7d60800000000000000
-      internalID: 7888922196035610388
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_4
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 230
-        width: 15
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b844f13a26f39bf80800000000000000
-      internalID: -8090365562718305141
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_5
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 230
+        x: 80
+        y: 1539
         width: 31
-        height: 20
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,20 +328,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a70ba384a740df20800000000000000
-      internalID: 3445332486847661990
+      spriteID: af37d1c3e5ab76c40800000000000000
+      internalID: 5505573983381976058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_6
+      name: enkidu_2
       rect:
         serializedVersion: 2
         x: 144
-        y: 229
-        width: 64
-        height: 21
+        y: 1538
+        width: 31
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,20 +349,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be041d047193a7760800000000000000
-      internalID: 7456334905099763947
+      spriteID: f08b6feb920192490800000000000000
+      internalID: -7770661910567536625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_7
+      name: enkidu_3
       rect:
         serializedVersion: 2
-        x: 217
-        y: 230
-        width: 15
-        height: 20
+        x: 208
+        y: 1537
+        width: 30
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,20 +370,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd154bf1e6ef1aa40800000000000000
-      internalID: 5377859178988851676
+      spriteID: 03d3a4ee759d82320800000000000000
+      internalID: 2533513762079128880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_8
+      name: enkidu_4
       rect:
         serializedVersion: 2
-        x: 2
-        y: 198
-        width: 13
-        height: 20
+        x: 272
+        y: 1538
+        width: 31
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,20 +391,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12412026bd204c6c0800000000000000
-      internalID: -4124168217499134943
+      spriteID: 18a1a465ac28c8840800000000000000
+      internalID: 5227697073013004929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_9
+      name: enkidu_5
       rect:
         serializedVersion: 2
-        x: 18
-        y: 197
-        width: 13
-        height: 20
+        x: 336
+        y: 1539
+        width: 31
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,20 +412,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 975777eb0f79f1040800000000000000
-      internalID: 4620578802948863353
+      spriteID: 8e656259705676cd0800000000000000
+      internalID: -2564970379522713880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_10
+      name: enkidu_6
       rect:
         serializedVersion: 2
-        x: 34
-        y: 198
-        width: 13
-        height: 20
+        x: 400
+        y: 1538
+        width: 31
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,20 +433,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a6e50b06478421a0800000000000000
-      internalID: -6835189599539173722
+      spriteID: f1c595044fecba0c0800000000000000
+      internalID: -4563326248962925537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_11
+      name: enkidu_7
       rect:
         serializedVersion: 2
-        x: 50
-        y: 197
-        width: 13
-        height: 20
+        x: 465
+        y: 1537
+        width: 31
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -520,20 +454,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: facea92deabee6900800000000000000
-      internalID: 679739729869728943
+      spriteID: b38f2da8cdba24330800000000000000
+      internalID: 3693703608107464763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_12
+      name: enkidu_8
       rect:
         serializedVersion: 2
-        x: 80
-        y: 198
-        width: 16
-        height: 18
+        x: 528
+        y: 1538
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,20 +475,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba57233494135d840800000000000000
-      internalID: 5248155131499935147
+      spriteID: f99a3574e0e5d6800800000000000000
+      internalID: 607244940184103327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_13
+      name: enkidu_9
       rect:
         serializedVersion: 2
-        x: 98
-        y: 198
-        width: 13
-        height: 20
+        x: 22
+        y: 1474
+        width: 22
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -562,20 +496,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51c75737e1e9622d0800000000000000
-      internalID: -3303779423006393323
+      spriteID: 6d9e988d054e43b50800000000000000
+      internalID: 6572128792121829846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_14
+      name: enkidu_10
       rect:
         serializedVersion: 2
-        x: 114
-        y: 198
-        width: 13
-        height: 20
+        x: 83
+        y: 1474
+        width: 25
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -583,20 +517,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19ce327f8fed605f0800000000000000
-      internalID: -790699523677361007
+      spriteID: f7a364098d88dc810800000000000000
+      internalID: 1787235090850790015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_15
+      name: enkidu_11
       rect:
         serializedVersion: 2
-        x: 146
-        y: 198
-        width: 13
-        height: 20
+        x: 149
+        y: 1475
+        width: 22
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -604,20 +538,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3fe5d073cafc8570800000000000000
-      internalID: 8470420716495695676
+      spriteID: a5238f2d875c13160800000000000000
+      internalID: 7003596018264060506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_16
+      name: enkidu_12
       rect:
         serializedVersion: 2
-        x: 162
-        y: 197
-        width: 13
-        height: 20
+        x: 214
+        y: 1475
+        width: 23
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -625,20 +559,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17c1190f3d6d59550800000000000000
-      internalID: 6167071470516247665
+      spriteID: 713b4ea3bd984e800800000000000000
+      internalID: 640788621672362775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_17
+      name: enkidu_13
       rect:
         serializedVersion: 2
-        x: 178
-        y: 198
-        width: 13
-        height: 20
+        x: 277
+        y: 1474
+        width: 25
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -646,20 +580,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 294978d2af9711ae0800000000000000
-      internalID: -1580347878817688430
+      spriteID: 4228515ffaaeea1e0800000000000000
+      internalID: -2184550727776107996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_18
+      name: enkidu_14
       rect:
         serializedVersion: 2
-        x: 194
-        y: 197
-        width: 13
-        height: 20
+        x: 339
+        y: 1474
+        width: 29
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -667,20 +601,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75a542a462c5ad3d0800000000000000
-      internalID: -3181128867261425065
+      spriteID: eb890a214a6845f00800000000000000
+      internalID: 1104655847857887422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_19
+      name: enkidu_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 167
-        width: 15
-        height: 20
+        x: 405
+        y: 1474
+        width: 25
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -688,20 +622,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd031b640ff392cb0800000000000000
-      internalID: -4888305619323244325
+      spriteID: 2a768216ef6428aa0800000000000000
+      internalID: -6160283281923741790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_20
+      name: enkidu_16
       rect:
         serializedVersion: 2
-        x: 16
-        y: 166
-        width: 15
-        height: 20
+        x: 469
+        y: 1474
+        width: 25
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -709,20 +643,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fbfc4f1fc19b4910800000000000000
-      internalID: 1822710792970894325
+      spriteID: 2d91c551c6edeead0800000000000000
+      internalID: -2670952973187933742
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_21
+      name: enkidu_17
       rect:
         serializedVersion: 2
-        x: 32
-        y: 167
-        width: 15
-        height: 20
+        x: 533
+        y: 1474
+        width: 24
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -730,146 +664,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cd399b4da3626fb0800000000000000
-      internalID: -4656049468798845499
+      spriteID: 213179388d0a882b0800000000000000
+      internalID: -5582034886344633582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_22
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 166
-        width: 15
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e37114605ac019650800000000000000
-      internalID: 6237780861798913854
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_23
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 166
-        width: 15
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1ffb99097faee080800000000000000
-      internalID: -9156188058010517731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_24
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 166
-        width: 15
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1576989d8a3bd42c0800000000000000
-      internalID: -4445699719359273135
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_25
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 166
-        width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddc4b32d279944a10800000000000000
-      internalID: 1892806461834874077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_26
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 166
-        width: 64
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc7458a8115a64880800000000000000
-      internalID: -8627026541424588849
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_27
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 134
-        width: 13
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37605bc8ec0c6e1a0800000000000000
-      internalID: -6780520195603233165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_28
+      name: enkidu_18
       rect:
         serializedVersion: 2
         x: 17
-        y: 133
-        width: 13
-        height: 20
+        y: 1410
+        width: 30
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -877,20 +685,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 059bd02f34ad6a7c0800000000000000
-      internalID: -4060318028669273776
+      spriteID: b08cdd1580fbaca50800000000000000
+      internalID: 6542251451163199499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_29
+      name: enkidu_19
       rect:
         serializedVersion: 2
-        x: 33
-        y: 134
-        width: 13
-        height: 20
+        x: 80
+        y: 1410
+        width: 31
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -898,20 +706,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4b86e48b3b717ba0800000000000000
-      internalID: -6092953325292582070
+      spriteID: 9f5410b038ed99770800000000000000
+      internalID: 8618164016356869625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_30
+      name: enkidu_20
       rect:
         serializedVersion: 2
-        x: 49
-        y: 133
-        width: 13
-        height: 20
+        x: 144
+        y: 1409
+        width: 31
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -919,20 +727,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3f574fc7003eb370800000000000000
-      internalID: 8340156370037202746
+      spriteID: b76ca9cb83db4ec80800000000000000
+      internalID: -8294296562329532805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_31
+      name: enkidu_21
       rect:
         serializedVersion: 2
-        x: 81
-        y: 134
-        width: 15
-        height: 18
+        x: 209
+        y: 1409
+        width: 30
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -940,20 +748,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1302d0c334ee658b0800000000000000
-      internalID: -5163677950195982287
+      spriteID: 79a4746ee72cf5640800000000000000
+      internalID: 5070985555727567511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_32
+      name: enkidu_22
       rect:
         serializedVersion: 2
-        x: 97
-        y: 134
-        width: 13
-        height: 20
+        x: 272
+        y: 1409
+        width: 31
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -961,20 +769,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40e91af0cdb6ab5f0800000000000000
-      internalID: -740160595849798140
+      spriteID: 8c626ecd80779b6f0800000000000000
+      internalID: -668372189738293560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_33
+      name: enkidu_23
       rect:
         serializedVersion: 2
-        x: 114
-        y: 134
-        width: 13
-        height: 20
+        x: 336
+        y: 1410
+        width: 31
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -982,20 +790,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a588f9ced6195ce70800000000000000
-      internalID: 9134867320498260058
+      spriteID: 206c4fe7399f8bcb0800000000000000
+      internalID: -4847850586978859518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_34
+      name: enkidu_24
       rect:
         serializedVersion: 2
-        x: 145
-        y: 134
-        width: 13
-        height: 20
+        x: 400
+        y: 1409
+        width: 31
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1003,20 +811,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ca81088113b69c30800000000000000
-      internalID: 4365873776659892937
+      spriteID: d8179bebb15951570800000000000000
+      internalID: 8436813423344972173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_35
+      name: enkidu_25
       rect:
         serializedVersion: 2
-        x: 161
-        y: 133
-        width: 13
-        height: 20
+        x: 464
+        y: 1409
+        width: 31
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1024,20 +832,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f44ca56cb40591f0800000000000000
-      internalID: -1038918931832879880
+      spriteID: f6e18481e61e83e80800000000000000
+      internalID: -8198555258657956241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_36
+      name: enkidu_26
       rect:
         serializedVersion: 2
-        x: 177
-        y: 134
-        width: 13
-        height: 20
+        x: 528
+        y: 1409
+        width: 32
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1045,20 +853,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51557191f3fe65520800000000000000
-      internalID: 2690600881683387669
+      spriteID: eb9b5e613d3e25c30800000000000000
+      internalID: 4346787086127708606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_37
+      name: enkidu_27
       rect:
         serializedVersion: 2
-        x: 193
-        y: 133
-        width: 13
-        height: 20
+        x: 21
+        y: 1346
+        width: 21
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1066,20 +874,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c372f3c25c611c50800000000000000
-      internalID: 6634202828824015816
+      spriteID: 8db29dc3e99bd76f0800000000000000
+      internalID: -685187479013610536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_38
+      name: enkidu_28
       rect:
         serializedVersion: 2
-        x: 7
-        y: 102
-        width: 16
-        height: 20
+        x: 84
+        y: 1346
+        width: 25
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1087,20 +895,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebda1f801d48f7ab0800000000000000
-      internalID: -5008138227279614530
+      spriteID: fcead6172e2b24460800000000000000
+      internalID: 7224533437891063503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_39
+      name: enkidu_29
       rect:
         serializedVersion: 2
-        x: 40
-        y: 99
-        width: 16
-        height: 22
+        x: 149
+        y: 1347
+        width: 22
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1108,20 +916,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c77f638b5262b100800000000000000
-      internalID: 122268285079091143
+      spriteID: 944fb2ea7ed08f4c0800000000000000
+      internalID: -4253634559340710839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_40
+      name: enkidu_30
       rect:
         serializedVersion: 2
-        x: 72
-        y: 97
-        width: 16
-        height: 24
+        x: 210
+        y: 1347
+        width: 24
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1129,20 +937,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88f2bc9eb15f8b260800000000000000
-      internalID: 7113705111667027848
+      spriteID: 1a38a19bb32bcc040800000000000000
+      internalID: 4669302883254698913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_41
+      name: enkidu_31
       rect:
         serializedVersion: 2
-        x: 104
-        y: 97
-        width: 16
-        height: 24
+        x: 273
+        y: 1346
+        width: 26
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1150,20 +958,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ddc48a57744f13a0800000000000000
-      internalID: -6692555241838817836
+      spriteID: a3a58e016adbb3d00800000000000000
+      internalID: 953564267064875578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_42
+      name: enkidu_32
       rect:
         serializedVersion: 2
-        x: 8
-        y: 70
-        width: 17
-        height: 20
+        x: 335
+        y: 1346
+        width: 30
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1171,20 +979,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ede728eee19d34e10800000000000000
-      internalID: 2180825371451227870
+      spriteID: 9d999fb2a1bd1ecd0800000000000000
+      internalID: -2530500610152097319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_43
+      name: enkidu_33
       rect:
         serializedVersion: 2
-        x: 40
-        y: 70
-        width: 17
-        height: 19
+        x: 401
+        y: 1346
+        width: 26
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1192,20 +1000,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1dbfd0700f0dbeb0800000000000000
-      internalID: -4702585941336802017
+      spriteID: ab90978ac7961aa60800000000000000
+      internalID: 7683538423394142650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_44
+      name: enkidu_34
       rect:
         serializedVersion: 2
-        x: 72
-        y: 70
-        width: 15
-        height: 20
+        x: 466
+        y: 1346
+        width: 25
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1213,20 +1021,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ae90fefa6f099af0800000000000000
-      internalID: -389262940572705114
+      spriteID: b9446d7defd9542c0800000000000000
+      internalID: -4447975339090099045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_45
+      name: enkidu_35
       rect:
         serializedVersion: 2
-        x: 104
-        y: 70
-        width: 15
-        height: 20
+        x: 531
+        y: 1346
+        width: 24
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1234,20 +1042,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4948ed3889a30280800000000000000
-      internalID: -9078226021229508275
+      spriteID: 1e998ace17171ae10800000000000000
+      internalID: 2207170026503969249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_46
+      name: enkidu_36
       rect:
         serializedVersion: 2
-        x: 9
-        y: 37
-        width: 16
-        height: 20
+        x: 30
+        y: 1220
+        width: 41
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1255,20 +1063,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c79a1ca97b7435c60800000000000000
-      internalID: 7805661433064171900
+      spriteID: ec70c22bdec532df0800000000000000
+      internalID: -206218981962676274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_47
+      name: enkidu_37
       rect:
         serializedVersion: 2
-        x: 41
-        y: 37
-        width: 20
-        height: 20
+        x: 214
+        y: 1219
+        width: 47
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1276,20 +1084,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39abecc11eed6cba0800000000000000
-      internalID: -6068918389402846573
+      spriteID: 940641620b3281430800000000000000
+      internalID: 3753789528873394249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_48
+      name: enkidu_38
       rect:
         serializedVersion: 2
-        x: 73
-        y: 38
-        width: 15
-        height: 20
+        x: 406
+        y: 1219
+        width: 47
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1297,20 +1105,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d57eaf54da260b00800000000000000
-      internalID: 794369475904173520
+      spriteID: 11f32b6bd3f815bb0800000000000000
+      internalID: -4949017020282552559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_49
+      name: enkidu_39
       rect:
         serializedVersion: 2
-        x: 105
-        y: 38
-        width: 15
-        height: 20
+        x: 587
+        y: 1219
+        width: 59
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1318,20 +1126,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e252d02aee51d57c0800000000000000
-      internalID: -4081081572662631122
+      spriteID: 863d79ceb2ff7d290800000000000000
+      internalID: -7865537660061232280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_50
+      name: enkidu_40
       rect:
         serializedVersion: 2
-        x: 9
-        y: 4
-        width: 13
-        height: 22
+        x: 779
+        y: 1219
+        width: 82
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1339,20 +1147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d935c55249dfb8c00800000000000000
-      internalID: 904094962941711261
+      spriteID: 5a95aa16f0c937310800000000000000
+      internalID: 1401635498919352741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_51
+      name: enkidu_41
       rect:
         serializedVersion: 2
-        x: 33
-        y: 5
-        width: 20
-        height: 21
+        x: 1001
+        y: 1219
+        width: 78
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1360,20 +1168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e3984b2108836d80800000000000000
-      internalID: -8258607753064836120
+      spriteID: afd09d21757cb0570800000000000000
+      internalID: 8434053903973682682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_52
+      name: enkidu_42
       rect:
         serializedVersion: 2
-        x: 68
-        y: 6
-        width: 18
-        height: 20
+        x: 10
+        y: 1026
+        width: 57
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1381,20 +1189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 478705c3424b15a90800000000000000
-      internalID: -7326877051031357324
+      spriteID: ec460e22b63c435a0800000000000000
+      internalID: -6542389493748439858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_53
+      name: enkidu_43
       rect:
         serializedVersion: 2
-        x: 101
-        y: 6
-        width: 18
-        height: 20
+        x: 225
+        y: 1028
+        width: 33
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1402,8 +1210,344 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 966f28ee67fe385d0800000000000000
-      internalID: -3061340027595065751
+      spriteID: a27ead1aa74ed4270800000000000000
+      internalID: 8236490508883126058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_44
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 1028
+        width: 38
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f19daa9725f75d0800000000000000
+      internalID: -3062638539077771407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_45
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1028
+        width: 58
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96fdaf25ca5864d00800000000000000
+      internalID: 956598946035851113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_46
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1028
+        width: 94
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d1d815a3d2d2360800000000000000
+      internalID: 7146417912206400833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_47
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 1028
+        width: 91
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92cd1b076836bdd30800000000000000
+      internalID: 4457265685280709673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_48
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 833
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cafb5cf510b800830800000000000000
+      internalID: 4035378104141987756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_49
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 836
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e8671e28eb728230800000000000000
+      internalID: 3639607686004697318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_50
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 836
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 939f911d76522fea0800000000000000
+      internalID: -5840564638926112455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_51
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 836
+        width: 56
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c49d9fa24ac0d560800000000000000
+      internalID: 7336586180749530310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_52
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 818
+        width: 82
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97cf126f8d4f80ad0800000000000000
+      internalID: -2735667560948040583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_53
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 820
+        width: 77
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20744de10f81a9e0800000000000000
+      internalID: -1611849953183502292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_54
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 642
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38bea30dde5835c80800000000000000
+      internalID: -8335171228885390461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_55
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 645
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c3a11f266ee328a0800000000000000
+      internalID: -6330954528509025342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_56
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 645
+        width: 37
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 913ad76043178d180800000000000000
+      internalID: -9090391379586211047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_57
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 645
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 658787cd60735a580800000000000000
+      internalID: -8816580192899663786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_58
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 645
+        width: 94
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adda54e77fa18bc60800000000000000
+      internalID: 7834041202088717786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enkidu_59
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 645
+        width: 91
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd99c1091c5303040800000000000000
+      internalID: 4625255922772253148
       vertices: []
       indices: 
       edges: []
@@ -1411,7 +1555,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c385b80f503801f48ad93ef384a90caa
+    spriteID: 6eca0136a1d90074cbf110f2f19b267b
     internalID: 0
     vertices: []
     indices: 

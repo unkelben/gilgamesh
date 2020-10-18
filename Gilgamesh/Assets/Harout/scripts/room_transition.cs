@@ -48,7 +48,7 @@ public class room_transition : MonoBehaviour
             cam.maxPosition += cameraChange;
             other.transform.position += playerChange;
             //   timer.SetActive(true);
-            transitioncancel.SetActive(false);
+          //  transitioncancel.SetActive(false);
 
             if (needText)
             {

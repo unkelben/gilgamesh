@@ -5,19 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Harout/scenes/title_screen.unity
     guid: 11f60c96a1853cb4fad03084e88f8555
-  - enabled: 0
+  - enabled: 1
     path: Assets/Harout/scenes/story_introduction.unity
     guid: ea9bfa0d10044664b9f3941cf13e9359
-  - enabled: 0
+  - enabled: 1
     path: Assets/Harout/scenes/house.unity
     guid: 3d1fe5afe8f3c9f45a257d00a776fd8a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Harout/scenes/vignette_1.unity
     guid: fb2efbe314eb56b4da26cdeb6500a51a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Harout/scenes/game_over.unity
     guid: f2c1abd04d26bf14592c91b07a561d59
   - enabled: 0
