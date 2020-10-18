@@ -41,14 +41,16 @@ public class PlayerCollision : MonoBehaviour
                 //s.value = 0;
             }
             //if air bar value <=0 -> gameover, assign the collided object as last bounty
-            if (s.value >= 0)
+            if (s.value > 0)
             {
                 //play audio cue
                 a.PlayOneShot(gasp); 
-
+            }
+            else
+            {
                 PlayerPrefs.SetString("lastBounty", collision.gameObject.GetComponent<EnemyMovement>().enemy_name);
                 string lastBounty = PlayerPrefs.GetString("lastBounty");
-                //Debug.Log(lastBounty);
+                SceneManager.LoadScene("BadEnding");
             }
         }
         if (collision.gameObject.CompareTag("Wall_left"))

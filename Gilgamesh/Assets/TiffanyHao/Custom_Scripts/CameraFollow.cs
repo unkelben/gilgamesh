@@ -31,7 +31,7 @@ public class CameraFollow : MonoBehaviour
         //basically what it does is the opposite from player movements
         /*move_side = Input.GetAxis("Horizontal");*/ // <0 is left, >0 is right 
         var cameraZ = transform.position.z;
-        var cameraY = player_t.position.y + 5;
+        var cameraY = player_t.position.y + 1;
         transform.position = new Vector3(0, cameraY, cameraZ);
 
         //only have camera follows if movingcam == true
