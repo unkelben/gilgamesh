@@ -1,0 +1,5 @@
+Soundtrack: Mesopotamian Music HQ by Djakro MultiArt Studio
+https://www.youtube.com/watch?v=vww7eQYhPMc
+
+Code for sound-in-all-scenes: Elvirais, on Unity's forum
+https://answers.unity.com/questions/1260393/make-music-continue-playing-through-scenes.html
