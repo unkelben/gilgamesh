@@ -194,9 +194,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d7493510115e745b1b26314f6fbd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseOverRag: {fileID: 0}
-  mouseOverCup: {fileID: 0}
-  cB: {fileID: 0}
+  mouseOverRag: {fileID: 1031791495}
+  mouseOverCup: {fileID: 1955365259}
+  cB: {fileID: 1106196743}
 --- !u!50 &230702565
 Rigidbody2D:
   serializedVersion: 4
@@ -1111,6 +1111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMouseOverCurtain: 0
   interactedWithCurtain: 0
+  cB: {fileID: 1106196743}
   spriteR: {fileID: 1828315318}
   newSprite: {fileID: 21300000, guid: 0f951d245c030514d9533aa1709000a3, type: 3}
 --- !u!61 &1828315317
@@ -1313,6 +1314,7 @@ GameObject:
   - component: {fileID: 1955365258}
   - component: {fileID: 1955365261}
   - component: {fileID: 1955365259}
+  - component: {fileID: 1955365260}
   m_Layer: 9
   m_Name: cup
   m_TagString: Cup
@@ -1429,7 +1431,27 @@ MonoBehaviour:
   cB: {fileID: 1106196743}
   tD: {fileID: 1955365261}
   isDrink: 0
+  animator: {fileID: 1955365260}
   sprite: {fileID: 1955365256}
+--- !u!95 &1955365260
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955365255}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce2eb88857968a64fa1c0c5e65190a36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1955365261
 MonoBehaviour:
   m_ObjectHideFlags: 0

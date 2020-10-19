@@ -25,7 +25,11 @@ public class EnkiduCollide : MonoBehaviour {
         if (other.gameObject.CompareTag("Cup"))
         {
             Debug.Log("Cup touched Enkidu");
-            
+
+            mouseOverCup.animator.enabled = true;
+            mouseOverCup.animator.SetBool("isDrink", true);
+            mouseOverCup.isDrink = true;
+
             //mouseOverCup.isDrink = true;
             // animation of cup pouring to enkidu's mouth
             // sfx of drinking enkidu
@@ -52,10 +56,6 @@ public class EnkiduCollide : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Cup"))
-        {
-            other.transform.rotation = Quaternion.Euler(0, 0, 30);
-        }
 
         if (other.gameObject.CompareTag("Rag"))
         {
@@ -67,8 +67,8 @@ public class EnkiduCollide : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Cup"))
         {
-            other.transform.rotation = Quaternion.Euler(0, 0, 0);
-            cB.interactionAmount = cB.interactionAmount+=1;
+
+            //   mouseOverCup.interactedWithCup = true;
         }
 
         if (other.gameObject.CompareTag("Rag"))
