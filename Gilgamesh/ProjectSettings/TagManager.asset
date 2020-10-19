@@ -4,26 +4,26 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Cup
-  - Rag
-  - breakable
-  - bubble
-  - Flower
-  - Wall
-  - Wall_right
-  - Wall_left
-  - Enemy
-  - MyPlayer
-  - Texts
-  - Block
-  - String
-  - Target
-  - LeftArmTarget
-  - Needle
-  - Player1
-  - Ground
-  - bread
-  - Top
+  - Head
+  - Hair
+  - Chest
+  - Legs
+  - Feet
+  - Option1
+  - Option2
+  - Option3
+  - Option4
+  - Option5
+  - Option6
+  - Option7
+  - Option8
+  - Option9
+  - Option10
+  - Option11
+  - Option12
+  - Option13
+  - Option14
+  - Option15
   layers:
   - Default
   - TransparentFX
@@ -33,8 +33,8 @@ TagManager:
   - UI
   - 
   - 
-  - background
-  - sprites
+  - 
+  - 
   - 
   - 
   - 
@@ -60,13 +60,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: behindbg
-    uniqueID: 2591072889
-    locked: 0
-  - name: background
-    uniqueID: 882901369
-    locked: 0
-  - name: foreground
-    uniqueID: 211793261
     locked: 0
