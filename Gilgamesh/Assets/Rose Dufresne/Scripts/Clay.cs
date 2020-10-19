@@ -15,14 +15,14 @@ namespace Rose.Clay
 
         private void Start()
         {
-            transform.localScale = (transform.localScale / 40f) * weight;
+            transform.localScale = (transform.localScale) * weight/10f;
             finger = new List<GameObject>();
             touchingClay = false;
         }
 
         private void Update()
         {
-            if (Input.GetMouseButtonUp(0) && touchingClay)
+            if (Input.GetKeyUp("space") && touchingClay)
             {
                 touchingClay = false;
                 foreach (GameObject f in finger)
@@ -45,7 +45,7 @@ namespace Rose.Clay
                 undersideTouched = true;
             }
 
-            if (other.tag == "FingerTip" && finger.Count < 3 && Input.GetMouseButton(0) && !undersideTouched)
+            if (other.tag == "FingerTip" && finger.Count < 3 && Input.GetKey("space") && !undersideTouched)
             {
                 other.tag = "Untagged";
                 touchingClay = true;

@@ -9,24 +9,32 @@ namespace Rose.Balance
     public class Enkidu : MonoBehaviour
     {
         [SerializeField] GameObject enkidu;
+        [SerializeField] ParticleSystem stars;
+        [SerializeField] ParticleSystem winning;
 
         private SkinnedMeshRenderer blendshapes;
-        //private float weight;
         private float weightToAdd;
         public float weightBalance { get; set; }
-        private bool increaseWeight;
         public float interval { get; set; }
         private Vector3 initialScale;
         private Vector3 targetScale;
-        private bool targetFormAchieved;
-        private bool targetSizeAchieved;
+        public bool targetFormAchieved { get; set; }
         private float weightGained;
+        private float timerForEquality;
 
         public Stack<float> clayWeights { get; set; }
 
-        private float oscillationTimer;
+        //private float oscillationTimer;
 
-        // Start is called before the first frame update
+        //particle effects
+        private float particleTimer;
+        private bool clayAdded;
+
+        //sounds
+        AudioSource starSound;
+        private float soundTimer;
+        AudioSource choir;
+
         void Start()
         {
             clayWeights = new Stack<float>();
@@ -37,27 +45,71 @@ namespace Rose.Balance
             weightToAdd = 0;
             weightBalance = -30f;
             interval = 0;
-            increaseWeight = false;
             targetFormAchieved = false;
-            targetSizeAchieved = false;
+            timerForEquality = 0;
 
             blendshapes = enkidu.GetComponent<SkinnedMeshRenderer>();
             blendshapes.SetBlendShapeWeight(3, weightBalance * (-100f / 30f)); //body
 
-            oscillationTimer = 0;
+            //particle effects
+            if (stars.isPlaying) stars.Stop();
+            particleTimer = 0;
+            clayAdded = false;
+
+            //sounds
+            AudioSource[] audioSources = GetComponents<AudioSource>();
+            starSound = audioSources[0];
+            choir = audioSources[1];
+        }
+        
+        void Update()
+        {
+            ParticleSystem();
+            UpdateEnkidu();
+            SoundSystem();
+            CheckEquality();
         }
 
-        // Update is called once per frame
-        void Update()
+        private void Timer()
+        {
+            //wait 3 seconds before confirming that he is balanced/equal
+            timerForEquality += Time.deltaTime;
+            if (timerForEquality >= 3f)
+            {
+                targetFormAchieved = true;
+            }
+            if (blendshapes.GetBlendShapeWeight(3) > 0 || Mathf.Ceil(enkidu.transform.localScale.magnitude) != Mathf.Ceil(targetScale.magnitude))
+            {
+                timerForEquality = 0f;
+            }
+        }
+
+        private void CheckEquality()
+        {
+            if (blendshapes.GetBlendShapeWeight(3) <= 0 && Mathf.Ceil(enkidu.transform.localScale.magnitude) == Mathf.Ceil(targetScale.magnitude))
+            {
+                Timer();
+                if (!winning.isPlaying) winning.Play();
+                if (!choir.isPlaying) choir.Play();
+            }
+            else
+            {
+                targetFormAchieved = false;
+                if (winning.isPlaying) winning.Stop();
+                if (choir.isPlaying) choir.Stop();
+            }
+        }
+
+        private void UpdateEnkidu()
         {
             weightGained = (100 - weightBalance * (-100f / 30f));
 
             if ((int)weightGained > (int)interval) //remove weight
             {
                 weightBalance -= weightToAdd / 10f * Time.deltaTime;
-                if (weightGained <= 130 && weightGained >= 30 && !targetFormAchieved)
+                if (weightGained <= 100)
                 {
-                    blendshapes.SetBlendShapeWeight(3, weightBalance * (-100f / 30f)+30f);
+                    blendshapes.SetBlendShapeWeight(3, weightBalance * (-100f / 30f));
                 }
 
                 UpdateScale();
@@ -65,9 +117,9 @@ namespace Rose.Balance
             else if ((int)weightGained < (int)interval) //add weight
             {
                 weightBalance += weightToAdd / 10f * Time.deltaTime;
-                if (weightGained <= 130 && weightGained >= 30 && !targetFormAchieved)
+                if (weightGained <= 100)
                 {
-                    blendshapes.SetBlendShapeWeight(3, (weightBalance * (-100f / 30f))+30f);
+                    blendshapes.SetBlendShapeWeight(3, (weightBalance * (-100f / 30f)));
                 }
                 UpdateScale();
             }
@@ -80,22 +132,51 @@ namespace Rose.Balance
                 //}
                 weightBalance = ((int)interval - 100) / (100f) * 30f;
             }
-
-
-            if (blendshapes.GetBlendShapeWeight(3) <= 0)
-            {
-                targetFormAchieved = true;
-            }
-
-            if (enkidu.transform.localScale == targetScale)
-            {
-                targetSizeAchieved = true;
-            }
         }
 
         private void UpdateScale()
         {
             enkidu.transform.localScale = new Vector3(initialScale.x + weightGained, initialScale.y + weightGained, initialScale.z + weightGained)*0.5f;
+        }
+
+        private void ParticleSystem()
+        {
+            if (clayAdded)
+            {
+                particleTimer += Time.deltaTime;
+            }
+            if (particleTimer <= 2f && clayAdded)
+            {
+                if (!stars.isPlaying) stars.Play();
+            }
+            else
+            {
+                if (stars.isPlaying) stars.Stop();
+                particleTimer = 0f;
+                clayAdded = false;
+            }
+
+            if (!clayAdded)
+            {
+                if (starSound.isPlaying) starSound.Stop();
+            }
+        }
+
+        private void SoundSystem()
+        {
+            if (clayAdded)
+            {
+                soundTimer += Time.deltaTime;
+            }
+            if (particleTimer <= 2f && clayAdded)
+            {
+                if (!starSound.isPlaying) starSound.Play();
+            }
+            else
+            {
+                if (starSound.isPlaying) starSound.Stop();
+                soundTimer = 0f;
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -104,35 +185,13 @@ namespace Rose.Balance
             {
                 if (!other.GetComponent<Clay>().isInHand)
                 {
-                    increaseWeight = true;
                     weightToAdd = other.GetComponent<Clay>().weight;
                     interval += weightToAdd;
                     clayWeights.Push(other.GetComponent<Clay>().weight);
                     Destroy(other.gameObject);
+                    clayAdded = true;
                 }
             }
-        }
-
-        private void IncreaseWeight()
-        {
-            weightBalance += weightToAdd / 10f * Time.deltaTime;
-            if (weightBalance * (-100f / 30f) >= 0)
-                blendshapes.SetBlendShapeWeight(3, weightBalance * (-100f / 30f));
-
-            UpdateScale();
-            if (weightBalance * (-100f / 30f) <= 100 - interval)
-            {
-                increaseWeight = false;
-            }
-        }
-
-        public void DecreaseWeight()
-        {
-            weightBalance -= weightToAdd / 10f * Time.deltaTime;
-            if (weightBalance * (-100f / 30f) <= 100)
-                blendshapes.SetBlendShapeWeight(3, weightBalance * (-100f / 30f));
-
-            UpdateScale();
         }
     }
 }

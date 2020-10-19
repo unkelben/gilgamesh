@@ -8,14 +8,14 @@ namespace Rose.ClawMachine
     {
         [SerializeField] float pinchSpeed;
         [SerializeField] bool isRight;
-        public float rotationAngleZ;
+        private float rotationAngleZ;
 
         private float originalAngleZ;
         public bool stopPinching { get; set; }
 
         [SerializeField] GameObject hand;
         private SkinnedMeshRenderer blendshapes;
-        public Vector3 initialRotationZ;
+        private Vector3 initialRotationZ;
 
         // Start is called before the first frame update
         void Start()
@@ -40,7 +40,7 @@ namespace Rose.ClawMachine
         {
             if (!stopPinching)
             {
-                if (Input.GetMouseButton(0))
+                if (Input.GetKey("space"))
                 {
                     Pinch();
                 }
@@ -50,7 +50,7 @@ namespace Rose.ClawMachine
                 }
             }
 
-            if (Input.GetMouseButtonUp(0) && stopPinching)
+            if (Input.GetKeyUp("space") && stopPinching)
             {
                 UnPinch();
                 stopPinching = false;
