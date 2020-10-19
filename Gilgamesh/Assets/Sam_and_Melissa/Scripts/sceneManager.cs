@@ -67,12 +67,12 @@ public class sceneManager : MonoBehaviour
         bubble4 = GameObject.Find("Bubble4");
         bubble5 = GameObject.Find("Bubble5");
         bubble6 = GameObject.Find("Bubble6");
-        bubble1InitScale = bubble3.transform.localScale;
-        bubble2InitScale = bubble3.transform.localScale;
+        bubble1InitScale = bubble1.transform.localScale;
+        bubble2InitScale = bubble2.transform.localScale;
         bubble3InitScale = bubble3.transform.localScale;
         bubble4InitScale = bubble4.transform.localScale;
-        bubble5InitScale = bubble3.transform.localScale;
-        bubble6InitScale = bubble3.transform.localScale;
+        bubble5InitScale = bubble5.transform.localScale;
+        bubble6InitScale = bubble6.transform.localScale;
 
         maskBubble = GameObject.Find("MaskBubble");
         maskBubbleInitScale = maskBubble.transform.localScale;
