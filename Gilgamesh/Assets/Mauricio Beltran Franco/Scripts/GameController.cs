@@ -15,6 +15,12 @@ public class GameController : MonoBehaviour {
     [SerializeField] Image night;
     [SerializeField] GameObject end;
 
+    [SerializeField] AudioSource shovelSound;
+    [SerializeField] AudioSource fallingSound;
+    [SerializeField] AudioSource closeTrapSound;
+    [SerializeField] AudioSource placeTrapSound;
+    [SerializeField] AudioSource drinkSound;
+    [SerializeField] AudioSource madSound;
     int day = 1;
 
     // Start is called before the first frame update
@@ -64,6 +70,30 @@ public class GameController : MonoBehaviour {
 
     public void DisableShovel() {
         shovel.enabled = false;
+    }
+
+    public void PlayShovel() {
+        shovelSound.Play();
+    }
+
+    public void PlayFalling() {
+        fallingSound.Play();
+    }
+
+    public void PlayCloseTrap() {
+        closeTrapSound.Play();
+    }
+
+    public void PlayPlaceTrap() {
+        placeTrapSound.Play();
+    }
+
+    public void PlayDrink() {
+        drinkSound.Play();
+    }
+
+    public void PlayMad() {
+        madSound.Play();
     }
 
     IEnumerator NextDay() {

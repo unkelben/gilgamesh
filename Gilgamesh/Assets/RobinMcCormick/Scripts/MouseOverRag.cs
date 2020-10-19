@@ -31,7 +31,6 @@ public class MouseOverRag : MonoBehaviour
             {
                 animator.SetBool("isWet", true);
                 ragOnEnkidu = true;
-                Debug.Log("is wet animation go");
             }
             
             else

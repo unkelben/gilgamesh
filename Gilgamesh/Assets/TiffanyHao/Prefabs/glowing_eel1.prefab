@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1727978063
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -451586388933636803, guid: 701b644c1aca9a04cb0f56869bbbbff3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -157,4 +157,4 @@ MonoBehaviour:
   speed: 3
   direction: 
   background: {fileID: 0}
-  enemy_name: Glowing Eel
+  enemy_name: Green Glowing Eel

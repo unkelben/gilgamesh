@@ -9,8 +9,11 @@ public class PlayerCollision : MonoBehaviour
     public Slider s;
     public GameObject player;
 
-    public AudioClip gasp; 
-    AudioSource a; 
+    public AudioClip gasp;
+    public AudioClip success; 
+    AudioSource a;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,16 +29,21 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.CompareTag("Top"))
+        {
+
+        }
         //Debug.Log("Gilgamesh colliding");
         if (collision.gameObject.CompareTag("Flower"))
         {
+            a.PlayOneShot(success); 
             SceneManager.LoadScene("GoodEnding");
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {
             ////Debug.Log("hit enemy");
             //Decrease air bar value
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 1500; i++)
             {
                 s.value -= Airhp.decreaseRate;
                 //s.value = 0;

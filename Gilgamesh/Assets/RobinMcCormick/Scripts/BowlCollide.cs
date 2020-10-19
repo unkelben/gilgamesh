@@ -6,10 +6,14 @@ public class BowlCollide : MonoBehaviour
 {
     public MouseOverRag mouseOverRag;
 
+    private AudioSource source;
+
+    public bool dipBowl = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -19,13 +23,16 @@ public class BowlCollide : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Rag"))
+        if (dipBowl == false)
         {
-            Debug.Log("Rag touched Bowl");
-            mouseOverRag.isWet = true;
-            // animation of rag dipping into bowl
-            // sfx of rag dipping into bowl
-            // animation of rag back on table
+            if (other.gameObject.CompareTag("Rag"))
+            {
+                Debug.Log("Rag touched Bowl");
+                mouseOverRag.isWet = true;
+                source.Play();
+                dipBowl = true;
+            }
         }
+
     }
 }

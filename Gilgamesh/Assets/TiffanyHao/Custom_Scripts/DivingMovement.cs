@@ -16,7 +16,7 @@ public class DivingMovement : MonoBehaviour
     public float fallingspeed = 10;
 
     [SerializeField]
-    private float constant_fall = -1;
+    private float constant_fall = -0.7f;
 
  
     public bool playerSwimming = false; //player starts with no swimming
@@ -27,78 +27,100 @@ public class DivingMovement : MonoBehaviour
     public GameObject playerobject;
     public Rigidbody2D rb;
     public float move_side;
-    private float move_down;
+    public float move_down;
     public Slider s;
     public GameObject background;
+
 
     private bool ismovingUp = false;
 
     private bool cooldown = false;
 
-    //Platyer sounds
-    public AudioClip gasping;
-    public AudioClip bubbles;
-    public AudioClip splash; 
-    public AudioSource A;
+    public Animator animator;
+
+    //Platyer sounds -> moved to playerCollision script
+    //public AudioClip gasping;
+    //public AudioClip bubbles;
+    //public AudioClip splash; 
+    //public AudioSource A;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         PlayerPrefs.SetString("lastBounty", "Nothing");
-        A = GetComponent<AudioSource>(); 
+        //A = GetComponent<AudioSource>(); 
     }
 
     private float forceAmount = 5f;
     void Update()
     {
         //check left right input 
-        move_side = Input.GetAxis("Horizontal"); // <0 is left, >0 is right 
-
-        move_down = Input.GetAxis("Vertical");  // positive is up, negative is down
-
-        move_down = -1; // always moving down
-
-        if (move_side < 0 && wall_collidedleft == true) {
-            move_side = 0;
-            //Debug.Log(wall_collidedleft);
-        }
-
-        else if (move_side > 0 && wall_collidedright == true)
+        if(playerSwimming)
         {
-            move_side = 0;
-        }
+            
 
 
-        //if(move_down >= 0)
-        //{
-        //    transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed; 
-        //}
+            move_side = Input.GetAxis("Horizontal"); // <0 is left, >0 is right 
 
-        //transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed;
+            move_down = Input.GetAxis("Vertical");  // positive is up, negative is down
 
- 
+            move_down = -1; // always moving down
 
-        if (Input.GetKeyDown("up"))
-        {
-            if (cooldown == false)
+            if (move_side < 0 && wall_collidedleft == true)
             {
-                ismovingUp = true;
-                AddForce();
-                Invoke("ResetCooldown", 0.5f); //wait for 0.5 sec to prevent button spamming
-                cooldown = true;
+                move_side = 0;
+                //Debug.Log(wall_collidedleft);
             }
-        } else
-        
-        if (ismovingUp == false)
-        {
-            transform.position += new Vector3(move_side, constant_fall, 0) * Time.deltaTime * fallingspeed;
-            if (move_side < 0)
-            {
-                Debug.Log(move_side);
-            }
-        }
 
+            else if (move_side > 0 && wall_collidedright == true)
+            {
+                move_side = 0;
+            }
+
+            //if(move_down >= 0)
+            //{
+            //    transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed; 
+            //}
+
+            //transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed;
+
+
+            if (Input.GetKeyDown("up"))
+            {
+                if(playerobject.transform.position.y <= 272)
+                {
+                    if (cooldown == false)
+                    {
+                        //animator.SetBool("isSwimming", true);
+                        //animator.SetTrigger("swim");
+                        animator.SetBool("up", true);
+                        ismovingUp = true;
+                        AddForce();
+                        Invoke("ResetCooldown", 0.5f); //wait for 0.5 sec to prevent button spamming
+                        cooldown = true;
+
+
+                    }
+                }
+            }
+            else
+
+            if (ismovingUp == false)
+            {
+                animator.SetBool("up", false);
+                if (transform.position.y > -304.3)
+                {
+                    transform.position += new Vector3(move_side, constant_fall, 0) * Time.deltaTime * fallingspeed;
+                }
+                else
+                {
+                    transform.position += new Vector3(move_side, 0, 0) * Time.deltaTime * fallingspeed;
+                }
+            }
+            
+        }
+       
     }
 
     void AddForce()
@@ -126,7 +148,5 @@ public class DivingMovement : MonoBehaviour
     {
         cooldown = false;
     }
-
-
 
 }

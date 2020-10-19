@@ -11,28 +11,30 @@ public class MouseOverCup : MonoBehaviour
     public ChangeBackground cB;
     public TestDrag tD;
 
+    public AudioSource cupSource;
+
     public bool isDrink = false;
 
-  //  Animator animator;
+   public Animator animator;
 
     public SpriteRenderer sprite;
 
     // Start is called before the first frame update
     void Start()
     {
+        cupSource = GetComponent<AudioSource>();
         sprite = GetComponent<SpriteRenderer>();
-   //     animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
+        animator.enabled = false;
         sprite.color = Color.white;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (wJ.interactedWithJug == true)
+        if (wJ.interactedWithJug == true && interactedWithCup == false)
         {
             tD.dragActive = true;
-
-                //  interactedWithCup = true;
         }
     }
 

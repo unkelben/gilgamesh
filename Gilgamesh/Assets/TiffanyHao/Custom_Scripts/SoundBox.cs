@@ -6,7 +6,14 @@ public class SoundBox : MonoBehaviour
 {
     public AudioClip wind;
     public AudioClip mainTheme;
+    public AudioClip splash;
+
+    
+    AudioSource [] group; 
     AudioSource B;
+    public AudioSource C;  
+
+    //need audiosources 
 
     public DivingMovement diving;
 
@@ -17,8 +24,11 @@ public class SoundBox : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        B = GetComponent<AudioSource>();
-        B.loop = true; 
+        group = GetComponents<AudioSource>();
+
+        B = group[0]; //the first audio source that takes care of groups 
+        B.loop = true;
+        C = group[1]; 
     }
 
     // Update is called once per frame

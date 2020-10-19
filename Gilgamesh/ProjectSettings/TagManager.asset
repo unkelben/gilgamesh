@@ -20,6 +20,10 @@ TagManager:
   - Target
   - LeftArmTarget
   - Needle
+  - Player1
+  - Ground
+  - bread
+  - Top
   layers:
   - Default
   - TransparentFX

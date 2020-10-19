@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Harout/scenes/title_screen.unity
     guid: 11f60c96a1853cb4fad03084e88f8555
-  - enabled: 1
+  - enabled: 0
     path: Assets/Harout/scenes/intro.unity
     guid: ea9bfa0d10044664b9f3941cf13e9359
-  - enabled: 1
+  - enabled: 0
     path: Assets/Harout/scenes/house.unity
     guid: 3d1fe5afe8f3c9f45a257d00a776fd8a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Harout/scenes/vignette_1.unity
     guid: fb2efbe314eb56b4da26cdeb6500a51a
   - enabled: 0
@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/William/Scenes/Praise.unity
     guid: 4ab940ec7e28990438d80279102bcc47
+  - enabled: 1
+    path: Assets/Nat_Torre/Scenes/Ishtars_Botched_Seduction_of_Gilgamesh.unity
+    guid: e0882ee419b0102429e4b0a279f32c91
   m_configObjects: {}

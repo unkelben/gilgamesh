@@ -16,12 +16,24 @@ public class CameraFollow : MonoBehaviour
 
     public DivingMovement diving;
     
-    private bool isSwimming; 
+    private bool isSwimming;
+
+    public SoundBox s;
+    AudioClip splash_ref; 
+    AudioSource C_ref;
+
+
+    //UI ELEMENTS 
+    public GameObject airhpbar;
+    public GameObject introText;
+    public GameObject divingbuttons; 
 
     //private bool movingCam = true;
     void Start()
     {
         isSwimming = diving.playerSwimming; //false
+        C_ref = s.C;
+        splash_ref = s.splash; 
     }
 
     private void Update()
@@ -32,8 +44,15 @@ public class CameraFollow : MonoBehaviour
             {
                 Debug.Log("Entering water!");
 
-                //move camera to the position of swimming gilgamesh
+                C_ref.PlayOneShot(splash_ref);
+
+                //UI ELEMENTS
+                airhpbar.SetActive(true);
+                introText.SetActive(false);
+                divingbuttons.SetActive(true);
+
                 transform.position = Vector3.Lerp(transform.position, DivingPosition.position, Time.deltaTime * transitionspeed);
+
 
                 transform.SetParent(player_t, false);
                 isSwimming = true;
@@ -65,7 +84,9 @@ public class CameraFollow : MonoBehaviour
         {
             var cameraZ = transform.position.z;
             var cameraY = player_t.position.y + 1;
+
             transform.position = new Vector3(0, cameraY, cameraZ);
+
         }
        ;
 
