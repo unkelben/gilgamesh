@@ -20,7 +20,9 @@ public class CameraFollow : MonoBehaviour
 
     public SoundBox s;
     AudioClip splash_ref; 
-    AudioSource C_ref; 
+    AudioSource C_ref;
+
+    public GameObject airhpbar; 
 
     //private bool movingCam = true;
     void Start()
@@ -38,7 +40,8 @@ public class CameraFollow : MonoBehaviour
             {
                 Debug.Log("Entering water!");
 
-                C_ref.PlayOneShot(splash_ref); 
+                C_ref.PlayOneShot(splash_ref);
+                airhpbar.SetActive(true);
 
                 //move camera to the position of swimming gilgamesh
                 transform.position = Vector3.Lerp(transform.position, DivingPosition.position, Time.deltaTime * transitionspeed);
