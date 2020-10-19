@@ -10,12 +10,15 @@ public class ChangeBackground : MonoBehaviour
     public Sprite backgroundSprite3;
     public Sprite backgroundSprite4;
 
+    public AudioSource heartSource;
+
     public int interactionAmount;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        heartSource = GetComponent<AudioSource>();
         interactionAmount = 0;
     }
 
