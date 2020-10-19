@@ -35,6 +35,8 @@ public class DivingMovement : MonoBehaviour
 
     private bool cooldown = false;
 
+    public Animator animator;
+
     //Platyer sounds -> moved to playerCollision script
     //public AudioClip gasping;
     //public AudioClip bubbles;
@@ -85,6 +87,8 @@ public class DivingMovement : MonoBehaviour
             {
                 if (cooldown == false)
                 {
+                    //animator.SetBool("isSwimming", true);
+                    animator.SetTrigger("swim");
                     ismovingUp = true;
                     AddForce();
                     Invoke("ResetCooldown", 0.5f); //wait for 0.5 sec to prevent button spamming

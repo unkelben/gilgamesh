@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &329734728864515562
+--- !u!1 &839294360912155731
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 329734728864515561}
-  - component: {fileID: 329734728864515565}
-  - component: {fileID: 329734728864515566}
-  - component: {fileID: 329734728864515567}
-  - component: {fileID: 329734728864515560}
+  - component: {fileID: 839294361796177656}
+  - component: {fileID: 839294360912155735}
+  - component: {fileID: 839294360912155734}
+  - component: {fileID: 839294360912155729}
+  - component: {fileID: 839294360912155728}
+  - component: {fileID: 714302923083586558}
   m_Layer: 0
   m_Name: spotteddevilfish_0
   m_TagString: Enemy
@@ -20,13 +21,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &329734728864515561
+--- !u!4 &839294361796177656
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329734728864515562}
+  m_GameObject: {fileID: 839294360912155731}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -39.414, y: 56.556, z: 425.05276}
   m_LocalScale: {x: 0.63875854, y: 0.63875854, z: 0.63875854}
@@ -34,13 +35,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &329734728864515565
+--- !u!212 &839294360912155735
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329734728864515562}
+  m_GameObject: {fileID: 839294360912155731}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -85,13 +86,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &329734728864515566
+--- !u!70 &839294360912155734
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329734728864515562}
+  m_GameObject: {fileID: 839294360912155731}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -101,14 +102,14 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00000011278249, y: -0.9460882}
   m_Size: {x: 21.516497, y: 3.8878312}
   m_Direction: 1
---- !u!50 &329734728864515567
+--- !u!50 &839294360912155729
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329734728864515562}
+  m_GameObject: {fileID: 839294360912155731}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -122,13 +123,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &329734728864515560
+--- !u!114 &839294360912155728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329734728864515562}
+  m_GameObject: {fileID: 839294360912155731}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d3858699da51074d90126bee5575e50, type: 3}
@@ -138,3 +139,22 @@ MonoBehaviour:
   direction: 
   background: {fileID: 0}
   enemy_name: Freckled Evilfish
+--- !u!95 &714302923083586558
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839294360912155731}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8454bbef4e225614a8b437aa9eada36c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
