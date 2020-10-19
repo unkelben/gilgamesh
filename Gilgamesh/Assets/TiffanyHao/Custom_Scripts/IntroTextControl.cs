@@ -29,12 +29,12 @@ public class IntroTextControl : MonoBehaviour
     {
         if(istransparent)
         {
-            Debug.Log("Fading in"); 
+            //Debug.Log("Fading in"); 
             FadeIn(); 
         }
         else if (!istransparent)
         {
-            Debug.Log("Fading out");
+            //Debug.Log("Fading out");
             FadeOut();
         }
 
