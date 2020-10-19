@@ -6,9 +6,12 @@ public class EnkiduCollide : MonoBehaviour {
 
     public MouseOverRag mouseOverRag;
     public MouseOverCup mouseOverCup;
+    public BowlCollide bowlCollide;
     public ChangeBackground cB;
 
     private AudioSource source;
+
+    public bool cleanFace = false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,17 +48,18 @@ public class EnkiduCollide : MonoBehaviour {
 
         if (other.gameObject.CompareTag("Rag"))
         {
-            Debug.Log("Rag touched Enkidu");
-           if (mouseOverRag.ragOnEnkidu == true)
+            if (bowlCollide.dipBowl && cleanFace == false)
             {
-                mouseOverRag.wipeEnkiduFace = true;
-                source.Play();
-                // animation of rag gently rubbing over enkidu's face
-                // sfx of rag gently rubbing over enkidu's face
-                // return rag
-                // change bg function
-                // disable rag function
+                Debug.Log("Rag touched Enkidu");
+                if (mouseOverRag.ragOnEnkidu == true)
+                {
+                    mouseOverRag.wipeEnkiduFace = true;
+                    source.Play();
+                    cB.interactionAmount = cB.interactionAmount += 1;
+                    cleanFace = true;
+                }
             }
+            
 
         }
     }
@@ -79,7 +83,7 @@ public class EnkiduCollide : MonoBehaviour {
 
         if (other.gameObject.CompareTag("Rag"))
         {
-            cB.interactionAmount = cB.interactionAmount+=1;
+            
         }
     }
 }

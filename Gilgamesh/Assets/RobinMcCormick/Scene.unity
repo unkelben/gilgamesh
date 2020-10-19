@@ -197,7 +197,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseOverRag: {fileID: 1031791495}
   mouseOverCup: {fileID: 1955365259}
+  bowlCollide: {fileID: 1251359265}
   cB: {fileID: 1106196743}
+  cleanFace: 0
 --- !u!50 &230702565
 Rigidbody2D:
   serializedVersion: 4
@@ -865,7 +867,7 @@ MonoBehaviour:
   isWet: 0
   ragOnEnkidu: 0
   wipeEnkiduFace: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: 1031791492}
 --- !u!114 &1031791496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1272,6 +1274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseOverRag: {fileID: 1031791495}
+  dipBowl: 0
 --- !u!82 &1251359266
 AudioSource:
   m_ObjectHideFlags: 0
