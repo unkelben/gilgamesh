@@ -24,19 +24,19 @@ public class ChangeBackground : MonoBehaviour
     {
         if (interactionAmount == 1)
         {
-            print("background changed");
+           
             spriteR.sprite = backgroundSprite2;
         }
 
         if (interactionAmount == 2)
         {
-            print("background changed 2");
+            
             spriteR.sprite = backgroundSprite3;
         }
 
         if (interactionAmount == 3)
         {
-            print("background changed 3");
+            
             spriteR.sprite = backgroundSprite4;
         }
     }
