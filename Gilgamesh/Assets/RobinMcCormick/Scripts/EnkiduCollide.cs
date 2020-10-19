@@ -8,10 +8,12 @@ public class EnkiduCollide : MonoBehaviour {
     public MouseOverCup mouseOverCup;
     public ChangeBackground cB;
 
+    private AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,8 @@ public class EnkiduCollide : MonoBehaviour {
 
             mouseOverCup.animator.enabled = true;
             mouseOverCup.isDrink = true;
+            mouseOverCup.cupSource.Play();
+            cB.interactionAmount = cB.interactionAmount += 1;
             // animation of cup pouring to enkidu's mouth
             // sfx of drinking enkidu
             // return cup
@@ -45,6 +49,7 @@ public class EnkiduCollide : MonoBehaviour {
            if (mouseOverRag.ragOnEnkidu == true)
             {
                 mouseOverRag.wipeEnkiduFace = true;
+                source.Play();
                 // animation of rag gently rubbing over enkidu's face
                 // sfx of rag gently rubbing over enkidu's face
                 // return rag
@@ -69,7 +74,7 @@ public class EnkiduCollide : MonoBehaviour {
         if (other.gameObject.CompareTag("Cup"))
         {
 
-            //   mouseOverCup.interactedWithCup = true;
+               mouseOverCup.interactedWithCup = true;
         }
 
         if (other.gameObject.CompareTag("Rag"))

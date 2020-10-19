@@ -11,6 +11,8 @@ public class MouseOverCup : MonoBehaviour
     public ChangeBackground cB;
     public TestDrag tD;
 
+    public AudioSource cupSource;
+
     public bool isDrink = false;
 
    public Animator animator;
@@ -20,6 +22,7 @@ public class MouseOverCup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cupSource = GetComponent<AudioSource>();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         animator.enabled = false;
