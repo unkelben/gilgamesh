@@ -31,6 +31,7 @@ public class DivingMovement : MonoBehaviour
     public Slider s;
     public GameObject background;
 
+
     private bool ismovingUp = false;
 
     private bool cooldown = false;
@@ -88,21 +89,26 @@ public class DivingMovement : MonoBehaviour
                 if (cooldown == false)
                 {
                     //animator.SetBool("isSwimming", true);
-                    animator.SetTrigger("swim");
+                    //animator.SetTrigger("swim");
+                    animator.SetBool("up", true); 
                     ismovingUp = true;
                     AddForce();
                     Invoke("ResetCooldown", 0.5f); //wait for 0.5 sec to prevent button spamming
                     cooldown = true;
+
+                    
                 }
             }
             else
 
             if (ismovingUp == false)
             {
+                animator.SetBool("up", false); 
                 transform.position += new Vector3(move_side, constant_fall, 0) * Time.deltaTime * fallingspeed;
                 if (move_side < 0)
                 {
                     Debug.Log(move_side);
+                    
                 }
             }
         }
