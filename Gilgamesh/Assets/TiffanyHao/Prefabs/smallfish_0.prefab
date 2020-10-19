@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7111120164187495359
+--- !u!1 &8964396176100100513
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7111120164187495358}
-  - component: {fileID: 7111120164187495344}
-  - component: {fileID: 7111120164187495345}
-  - component: {fileID: 7111120164187495346}
-  - component: {fileID: 7111120164187495347}
-  - component: {fileID: 7111120164187495349}
+  - component: {fileID: 8964396176100100514}
+  - component: {fileID: 8964396176100100517}
+  - component: {fileID: 8964396176100100516}
+  - component: {fileID: 8964396176100100515}
+  - component: {fileID: 8964396176100100519}
+  - component: {fileID: 8964396176100100518}
   m_Layer: 0
-  m_Name: sand_tiger_shark
+  m_Name: smallfish_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7111120164187495358
+--- !u!4 &8964396176100100514
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7111120164187495359}
+  m_GameObject: {fileID: 8964396176100100513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -45.180725, y: -108.91486, z: 425.05276}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 19.242802, y: 202.50607, z: 425.05276}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7111120164187495344
+--- !u!212 &8964396176100100517
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7111120164187495359}
+  m_GameObject: {fileID: 8964396176100100513}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,41 +75,41 @@ SpriteRenderer:
   m_SortingLayerID: 882901369
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1144900771502181804, guid: 1f7eb388ebd00134f949892fe701a592, type: 3}
+  m_Sprite: {fileID: 8784352373619766850, guid: 7f7e49a7168899342aa4b1635cc82308, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 26.827911, y: 6.79}
+  m_Size: {x: 11.18, y: 7.34}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &7111120164187495345
+--- !u!70 &8964396176100100516
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7111120164187495359}
+  m_GameObject: {fileID: 8964396176100100513}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000000067212795, y: -0.056382187}
-  m_Size: {x: 26.827919, y: 4.309175}
-  m_Direction: 1
---- !u!50 &7111120164187495346
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 11.18, y: 7.34}
+  m_Direction: 0
+--- !u!50 &8964396176100100515
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7111120164187495359}
+  m_GameObject: {fileID: 8964396176100100513}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -123,33 +123,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &7111120164187495347
+--- !u!114 &8964396176100100519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7111120164187495359}
+  m_GameObject: {fileID: 8964396176100100513}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d3858699da51074d90126bee5575e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 7
   direction: 
   background: {fileID: 0}
-  enemy_name: Sand Tiger Shark
---- !u!95 &7111120164187495349
+  enemy_name: A group of small fishes
+--- !u!95 &8964396176100100518
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7111120164187495359}
+  m_GameObject: {fileID: 8964396176100100513}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cc68a3658c000b343a0c23743f880c4f, type: 2}
+  m_Controller: {fileID: 9100000, guid: aedbfeec6a6523e4391c9253d255b0ec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
