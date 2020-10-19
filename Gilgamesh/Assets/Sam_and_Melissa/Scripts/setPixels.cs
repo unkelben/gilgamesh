@@ -15,8 +15,8 @@ public class setPixels : MonoBehaviour
     Renderer rend;
     Texture2D texture;
     List<List<Vector3>> paths = new List<List<Vector3>>();
-    Vector3 pointA = new Vector3(40f, 50f, 0f);
-    Vector3 pointB = new Vector3(40f, 78f, 0f);
+    Vector3 pointA = new Vector3(110f, 85f, 0f);
+    Vector3 pointB = new Vector3(35f, 25f, 0f);
     bool connected = false;
 
     GameObject startPoint;

@@ -14,10 +14,13 @@ public class sceneManager : MonoBehaviour
     GameObject bubble4;
     GameObject bubble5;
     GameObject bubble6;
+
+    GameObject finaltxt;
     GameObject maskBubble;
     GameObject maskBubble2;
     GameObject maskBubble3;
     GameObject title;
+    GameObject gilga;
 
     GameObject councillors;
     GameObject backdrop;
@@ -49,6 +52,9 @@ public class sceneManager : MonoBehaviour
     Vector3 maskBubbleInitScale;
     Vector3 maskBubble2InitScale;
     Vector3 maskBubble3InitScale;
+    Vector3 gilgaScale;
+
+    Vector3 finalTextScale;
 
     bool scene2appeared = false;
     bool scene3appeared = false;
@@ -62,17 +68,17 @@ public class sceneManager : MonoBehaviour
         scene2 = GameObject.Find("Scene2");
         scene3 = GameObject.Find("Scene3");
         bubble1 = GameObject.Find("Bubble1");
-        bubble2 = GameObject.Find("Bubble2");
+      //  bubble2 = GameObject.Find("Bubble2");
         bubble3 = GameObject.Find("Bubble3");
-        bubble4 = GameObject.Find("Bubble4");
+      //  bubble4 = GameObject.Find("Bubble4");
         bubble5 = GameObject.Find("Bubble5");
-        bubble6 = GameObject.Find("Bubble6");
+      //  bubble6 = GameObject.Find("Bubble6");
         bubble1InitScale = bubble1.transform.localScale;
-        bubble2InitScale = bubble2.transform.localScale;
+      //  bubble2InitScale = bubble2.transform.localScale;
         bubble3InitScale = bubble3.transform.localScale;
-        bubble4InitScale = bubble4.transform.localScale;
+      //  bubble4InitScale = bubble4.transform.localScale;
         bubble5InitScale = bubble5.transform.localScale;
-        bubble6InitScale = bubble6.transform.localScale;
+      //  bubble6InitScale = bubble6.transform.localScale;
 
         maskBubble = GameObject.Find("MaskBubble");
         maskBubbleInitScale = maskBubble.transform.localScale;
@@ -83,20 +89,27 @@ public class sceneManager : MonoBehaviour
         title = GameObject.Find("Title");
         councillors = GameObject.Find("council-dudes");
         camera = GameObject.Find("Main Camera");
+        finaltxt = GameObject.Find("FinalText");
+        finalTextScale = finaltxt.transform.localScale;
+
+        gilga = GameObject.Find("gilgamesh");
+        gilgaScale = gilga.transform.localScale;
 
         scene1.SetActive(false);
         scene2.SetActive(false);
         scene3.SetActive(false);
 
         bubble1.SetActive(false);
-        bubble2.SetActive(false);
+       // bubble2.SetActive(false);
         bubble3.SetActive(false);
-        bubble4.SetActive(false);
+      //  bubble4.SetActive(false);
         bubble5.SetActive(false);
-        bubble6.SetActive(false);
+      //  bubble6.SetActive(false);
         maskBubble.SetActive(false);
         maskBubble2.SetActive(false);
         maskBubble3.SetActive(false);
+        finaltxt.SetActive(false);
+        gilga.SetActive(false);
     }
 
     // Update is called once per frame
@@ -113,11 +126,11 @@ public class sceneManager : MonoBehaviour
                     phase = 1;
 
                     bubble1.SetActive(true);
-                    bubble2.SetActive(true);
+                 //   bubble2.SetActive(true);
                     maskBubble.SetActive(true);
                     zeroBubble(maskBubble);
                     zeroBubble(bubble1);
-                    zeroBubble(bubble2);
+                  //  zeroBubble(bubble2);
                     scene1.SetActive(true);
                 }
                 break;
@@ -143,16 +156,16 @@ public class sceneManager : MonoBehaviour
             case 2:
 
                 if (counter > 50) growBubble(bubble1, bubble1InitScale);
-                if (counter > 100) growBubble(bubble2, bubble2InitScale);
-                if (counter > 150) growBubble(maskBubble, maskBubbleInitScale);
+               // if (counter > 1000) growBubble(bubble2, bubble2InitScale);
+                if (counter > 1000) growBubble(maskBubble, maskBubbleInitScale);
 
                 
                 counter++;
 
-                if (counter > 300)
+                if (counter > 1050)
                 {
                     counter = 0;
-                    phase = 5;
+                   phase = 5;
                 }
                 break;
 
@@ -182,7 +195,7 @@ public class sceneManager : MonoBehaviour
                     scene1started = true;
                     GameObject.Find("granu").GetComponent<granulator>().setupMountainSceneSound();
                     bubble1.SetActive(false);
-                    bubble2.SetActive(false);
+                //    bubble2.SetActive(false);
                 }
                 else
                 {
@@ -209,11 +222,11 @@ public class sceneManager : MonoBehaviour
                     counter = 0;
 
                     bubble3.SetActive(true);
-                    bubble4.SetActive(true);
+                 //   bubble4.SetActive(true);
                     maskBubble2.SetActive(true);
 
                     zeroBubble(bubble3);
-                    zeroBubble(bubble4);
+                   // zeroBubble(bubble4);
                     zeroBubble(maskBubble2);
                 }
 
@@ -227,8 +240,8 @@ public class sceneManager : MonoBehaviour
                 shrinkBubble(maskBubble);
 
                 if (counter > 50) growBubble(bubble3, bubble3InitScale);
-                if (counter > 100) growBubble(bubble4, bubble4InitScale);
-                if (counter > 150)
+              //  if (counter > 500) growBubble(bubble4, bubble4InitScale);
+                if (counter > 1000)
                 {
                     if (!scene2appeared)
                     {
@@ -243,10 +256,10 @@ public class sceneManager : MonoBehaviour
 
                 counter++;
 
-                if(counter > 300)
+                if(counter > 1050)
                 {
                     counter = 0;
-                    phase = 9;
+                     phase = 9;
                     
 
                 }
@@ -263,7 +276,7 @@ public class sceneManager : MonoBehaviour
                 {
                     phase = 10;
                     bubble3.SetActive(false);
-                    bubble4.SetActive(false);
+                //    bubble4.SetActive(false);
                 }
 
                 break;
@@ -294,11 +307,11 @@ public class sceneManager : MonoBehaviour
                     counter = 0;
 
                     bubble5.SetActive(true);
-                    bubble6.SetActive(true);
+                  //  bubble6.SetActive(true);
                     maskBubble3.SetActive(true);
 
                     zeroBubble(bubble5);
-                    zeroBubble(bubble6);
+                 //   zeroBubble(bubble6);
                     zeroBubble(maskBubble3);
                 }
 
@@ -311,8 +324,8 @@ public class sceneManager : MonoBehaviour
                 shrinkBubble(maskBubble2);
 
                 if (counter > 50) growBubble(bubble5, bubble5InitScale);
-                if (counter > 100) growBubble(bubble6, bubble6InitScale);
-                if (counter > 150)
+              //  if (counter > 100) growBubble(bubble6, bubble6InitScale);
+                if (counter > 1000)
                 {
                     if (!scene3appeared)
                     {
@@ -327,7 +340,7 @@ public class sceneManager : MonoBehaviour
 
                 counter++;
 
-                if (counter > 300)
+                if (counter > 1050)
                 {
                     counter = 0;
                     phase = 13;
@@ -350,7 +363,7 @@ public class sceneManager : MonoBehaviour
                     counter = 0;
                     phase = 14;
                     bubble5.SetActive(false);
-                    bubble6.SetActive(false);
+                  //  bubble6.SetActive(false);
                 }
                 break;
 
@@ -362,6 +375,13 @@ public class sceneManager : MonoBehaviour
                 {
                     counter = 0;
                     phase = 15;
+                    finaltxt.SetActive(true);
+                    zeroBubble(finaltxt);
+
+                    gilga.SetActive(true);
+                    zeroBubble(gilga);
+
+                    councillors.SetActive(false);
                 }
                 break;
 
@@ -387,6 +407,10 @@ public class sceneManager : MonoBehaviour
                 sceneState = "council";
 
                 shrinkBubble(maskBubble3);
+
+                if(counter>120) growBubble(finaltxt, finalTextScale);
+                growBubble(gilga, gilgaScale);
+
                 if (counter == 300)
                 {
                     scene3.SetActive(false);
