@@ -1,0 +1,7 @@
+Fungus: https://assetstore.unity.com/packages/templates/systems/fungus-34184
+
+Fighting game music/”Electronic Fantasy” by Patrick de Arteaga: https://patrickdearteaga.com/arcade-music/
+
+Title Screen music/”Tiny Brook” + Calmer in-game music track/“Extreme Hardcore Death Metal” by plasterbrain: https://plasterbrain.com/about/
+
+Damage sound effect/”snd_enemy_die” by Heartbeast: https://www.heartgamedev.com/
