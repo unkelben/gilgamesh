@@ -25,18 +25,17 @@ public class playerMovement : MonoBehaviour
       GameObject.DontDestroyOnLoad(this.gameObject);
     }
 
-    void Update()
+    void FixedUpdate()
     {
+      transform.localScale = new Vector2(0.1396339f, 0.1396339f);
+
       movement.x = Input.GetAxisRaw("Horizontal");
       movement.y = Input.GetAxisRaw("Vertical");
 
       animator.SetFloat("Horizontal", movement.x);
       animator.SetFloat("Vertical", movement.y);
       animator.SetFloat("Speed", movement.sqrMagnitude);
-    }
 
-    void FixedUpdate()
-    {
       if (moveSpeed>=stepRange)
       {
         for (int i = 0; i < 10; i++)
