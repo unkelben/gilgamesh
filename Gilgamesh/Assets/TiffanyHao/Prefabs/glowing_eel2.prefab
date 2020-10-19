@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1727978063
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -7468060373119685194, guid: 08691cbf670658545a0e981a196da106, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -138,7 +138,7 @@ MonoBehaviour:
   speed: 3
   direction: 
   background: {fileID: 0}
-  enemy_name: Glowing Eel
+  enemy_name: Purple Glowing Eel
 --- !u!95 &2951177477218081411
 Animator:
   serializedVersion: 3

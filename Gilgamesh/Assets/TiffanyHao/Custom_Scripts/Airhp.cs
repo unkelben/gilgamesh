@@ -22,7 +22,7 @@ public class Airhp : MonoBehaviour
     
 
     [SerializeField]
-    public static float decreaseRate = 0.00007f; 
+    public static float decreaseRate = 0.00008f; 
     // Start is called before the first frame update
     void Start()
     {

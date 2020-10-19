@@ -49,10 +49,10 @@ public class CameraFollow : MonoBehaviour
                 //UI ELEMENTS
                 airhpbar.SetActive(true);
                 introText.SetActive(false);
-                divingbuttons.SetActive(true); 
+                divingbuttons.SetActive(true);
 
-                //move camera to the position of swimming gilgamesh
                 transform.position = Vector3.Lerp(transform.position, DivingPosition.position, Time.deltaTime * transitionspeed);
+
 
                 transform.SetParent(player_t, false);
                 isSwimming = true;
@@ -84,7 +84,9 @@ public class CameraFollow : MonoBehaviour
         {
             var cameraZ = transform.position.z;
             var cameraY = player_t.position.y + 1;
+
             transform.position = new Vector3(0, cameraY, cameraZ);
+
         }
        ;
 

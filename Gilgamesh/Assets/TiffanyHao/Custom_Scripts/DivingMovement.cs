@@ -108,14 +108,17 @@ public class DivingMovement : MonoBehaviour
 
             if (ismovingUp == false)
             {
-                animator.SetBool("up", false); 
-                transform.position += new Vector3(move_side, constant_fall, 0) * Time.deltaTime * fallingspeed;
-                if (move_side < 0)
+                animator.SetBool("up", false);
+                if (transform.position.y > -304.3)
                 {
-                    Debug.Log(move_side);
-                    
+                    transform.position += new Vector3(move_side, constant_fall, 0) * Time.deltaTime * fallingspeed;
+                }
+                else
+                {
+                    transform.position += new Vector3(move_side, 0, 0) * Time.deltaTime * fallingspeed;
                 }
             }
+            
         }
        
     }

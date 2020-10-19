@@ -43,7 +43,7 @@ public class PlayerCollision : MonoBehaviour
         {
             ////Debug.Log("hit enemy");
             //Decrease air bar value
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 1500; i++)
             {
                 s.value -= Airhp.decreaseRate;
                 //s.value = 0;
