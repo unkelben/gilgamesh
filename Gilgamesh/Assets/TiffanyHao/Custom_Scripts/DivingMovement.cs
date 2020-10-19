@@ -27,7 +27,7 @@ public class DivingMovement : MonoBehaviour
     public GameObject playerobject;
     public Rigidbody2D rb;
     public float move_side;
-    private float move_down;
+    public float move_down;
     public Slider s;
     public GameObject background;
 
@@ -58,6 +58,9 @@ public class DivingMovement : MonoBehaviour
         //check left right input 
         if(playerSwimming)
         {
+            
+
+
             move_side = Input.GetAxis("Horizontal"); // <0 is left, >0 is right 
 
             move_down = Input.GetAxis("Vertical");  // positive is up, negative is down
@@ -75,7 +78,6 @@ public class DivingMovement : MonoBehaviour
                 move_side = 0;
             }
 
-
             //if(move_down >= 0)
             //{
             //    transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed; 
@@ -86,17 +88,20 @@ public class DivingMovement : MonoBehaviour
 
             if (Input.GetKeyDown("up"))
             {
-                if (cooldown == false)
+                if(playerobject.transform.position.y <= 272)
                 {
-                    //animator.SetBool("isSwimming", true);
-                    //animator.SetTrigger("swim");
-                    animator.SetBool("up", true); 
-                    ismovingUp = true;
-                    AddForce();
-                    Invoke("ResetCooldown", 0.5f); //wait for 0.5 sec to prevent button spamming
-                    cooldown = true;
+                    if (cooldown == false)
+                    {
+                        //animator.SetBool("isSwimming", true);
+                        //animator.SetTrigger("swim");
+                        animator.SetBool("up", true);
+                        ismovingUp = true;
+                        AddForce();
+                        Invoke("ResetCooldown", 0.5f); //wait for 0.5 sec to prevent button spamming
+                        cooldown = true;
 
-                    
+
+                    }
                 }
             }
             else
