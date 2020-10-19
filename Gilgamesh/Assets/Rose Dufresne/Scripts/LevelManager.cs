@@ -16,6 +16,13 @@ namespace Rose.Level
         public GameObject pauseMenuUI;
         [SerializeField] Enkidu enkidu;
 
+        private void Start()
+        {
+            pauseMenuUI.SetActive(false);
+            Time.timeScale = 1f;
+            gameIsPaused = false;
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape) && !enkidu.targetFormAchieved)
@@ -53,10 +60,8 @@ namespace Rose.Level
         public void Replay()
         {
             gameReplayed = true;
-            pauseMenuUI.SetActive(false);
-            gameIsPaused = false;
+            Resume();
             enkidu.targetFormAchieved = false;
-            Time.timeScale = 1f;
             SceneManager.LoadScene("Creation_Of_Enkidu");
         }
 
