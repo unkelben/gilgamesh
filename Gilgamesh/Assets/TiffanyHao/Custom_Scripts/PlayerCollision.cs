@@ -10,7 +10,7 @@ public class PlayerCollision : MonoBehaviour
     public GameObject player;
 
     public AudioClip gasp; 
-    AudioSource a; 
+   AudioSource a; 
 
     // Start is called before the first frame update
     void Start()
