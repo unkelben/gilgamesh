@@ -157,12 +157,12 @@ public class sceneManager : MonoBehaviour
 
                 if (counter > 50) growBubble(bubble1, bubble1InitScale);
                // if (counter > 1000) growBubble(bubble2, bubble2InitScale);
-                if (counter > 300) growBubble(maskBubble, maskBubbleInitScale);
+                if (counter > 1000) growBubble(maskBubble, maskBubbleInitScale);
 
                 
                 counter++;
 
-                if (counter > 350)
+                if (counter > 1050)
                 {
                     counter = 0;
                    phase = 5;
@@ -241,7 +241,7 @@ public class sceneManager : MonoBehaviour
 
                 if (counter > 50) growBubble(bubble3, bubble3InitScale);
               //  if (counter > 500) growBubble(bubble4, bubble4InitScale);
-                if (counter > 300)
+                if (counter > 1000)
                 {
                     if (!scene2appeared)
                     {
@@ -256,7 +256,7 @@ public class sceneManager : MonoBehaviour
 
                 counter++;
 
-                if(counter > 350)
+                if(counter > 1050)
                 {
                     counter = 0;
                      phase = 9;
@@ -325,7 +325,7 @@ public class sceneManager : MonoBehaviour
 
                 if (counter > 50) growBubble(bubble5, bubble5InitScale);
               //  if (counter > 100) growBubble(bubble6, bubble6InitScale);
-                if (counter > 300)
+                if (counter > 600)
                 {
                     if (!scene3appeared)
                     {
@@ -340,7 +340,7 @@ public class sceneManager : MonoBehaviour
 
                 counter++;
 
-                if (counter > 350)
+                if (counter > 1050)
                 {
                     counter = 0;
                     phase = 13;
@@ -411,7 +411,7 @@ public class sceneManager : MonoBehaviour
                 if(counter>120) growBubble(finaltxt, finalTextScale);
                 growBubble(gilga, gilgaScale);
 
-                if (counter == 300)
+                if (counter == 600)
                 {
                     scene3.SetActive(false);
                 }
