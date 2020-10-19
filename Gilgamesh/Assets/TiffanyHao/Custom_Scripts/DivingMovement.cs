@@ -53,50 +53,56 @@ public class DivingMovement : MonoBehaviour
     void Update()
     {
         //check left right input 
-        move_side = Input.GetAxis("Horizontal"); // <0 is left, >0 is right 
-
-        move_down = Input.GetAxis("Vertical");  // positive is up, negative is down
-
-        move_down = -1; // always moving down
-
-        if (move_side < 0 && wall_collidedleft == true) {
-            move_side = 0;
-            //Debug.Log(wall_collidedleft);
-        }
-
-        else if (move_side > 0 && wall_collidedright == true)
+        if(playerSwimming)
         {
-            move_side = 0;
-        }
+            move_side = Input.GetAxis("Horizontal"); // <0 is left, >0 is right 
 
+            move_down = Input.GetAxis("Vertical");  // positive is up, negative is down
 
-        //if(move_down >= 0)
-        //{
-        //    transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed; 
-        //}
+            move_down = -1; // always moving down
 
-        //transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed;
-
-
-        if (Input.GetKeyDown("up"))
-        {
-            if (cooldown == false)
+            if (move_side < 0 && wall_collidedleft == true)
             {
-                ismovingUp = true;
-                AddForce();
-                Invoke("ResetCooldown", 0.5f); //wait for 0.5 sec to prevent button spamming
-                cooldown = true;
+                move_side = 0;
+                //Debug.Log(wall_collidedleft);
             }
-        } else
-        
-        if (ismovingUp == false)
-        {
-            transform.position += new Vector3(move_side, constant_fall, 0) * Time.deltaTime * fallingspeed;
-            if (move_side < 0)
+
+            else if (move_side > 0 && wall_collidedright == true)
             {
-                Debug.Log(move_side);
+                move_side = 0;
+            }
+
+
+            //if(move_down >= 0)
+            //{
+            //    transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed; 
+            //}
+
+            //transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed;
+
+
+            if (Input.GetKeyDown("up"))
+            {
+                if (cooldown == false)
+                {
+                    ismovingUp = true;
+                    AddForce();
+                    Invoke("ResetCooldown", 0.5f); //wait for 0.5 sec to prevent button spamming
+                    cooldown = true;
+                }
+            }
+            else
+
+            if (ismovingUp == false)
+            {
+                transform.position += new Vector3(move_side, constant_fall, 0) * Time.deltaTime * fallingspeed;
+                if (move_side < 0)
+                {
+                    Debug.Log(move_side);
+                }
             }
         }
+       
     }
 
     void AddForce()
