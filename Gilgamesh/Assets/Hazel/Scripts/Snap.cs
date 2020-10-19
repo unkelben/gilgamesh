@@ -9,7 +9,7 @@ public class Snap : MonoBehaviour
     public Sprite on;
     public Sprite off;
     public bool dressed = false;
-
+    private AudioSource source;
     public GameObject[] hairs;
     public GameObject[] shoes;
     public GameObject[] shirts;
@@ -25,7 +25,7 @@ public class Snap : MonoBehaviour
     {
         locationBack = this.transform.position;
 
-
+        source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -47,19 +47,20 @@ public class Snap : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
-                  
-            this.transform.position = location;
+        
+        this.transform.position = location;
         this.GetComponent<SpriteRenderer>().sprite = on;
         dressed = true;
 
         if (!Input.GetMouseButton(0))
         {
+
             hairs = GameObject.FindGameObjectsWithTag("hair");
             shoes = GameObject.FindGameObjectsWithTag("shoes");
             shirts = GameObject.FindGameObjectsWithTag("shirt");
             dresses = GameObject.FindGameObjectsWithTag("dress");
             pants = GameObject.FindGameObjectsWithTag("pants");
-
+            
 
             if (GameObject.Find("enkiBase").GetComponent<Dressed>().hair >= 2)
             {

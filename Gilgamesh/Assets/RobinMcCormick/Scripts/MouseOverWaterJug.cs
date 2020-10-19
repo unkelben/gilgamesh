@@ -7,6 +7,8 @@ public class MouseOverWaterJug : MonoBehaviour
     public bool isMouseOverJug;
     public bool interactedWithJug;
 
+    private AudioSource source;
+
     Animator animator;
 
     public SpriteRenderer sprite;
@@ -17,6 +19,7 @@ public class MouseOverWaterJug : MonoBehaviour
         interactedWithJug = false;
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        source = GetComponent<AudioSource>();
         sprite.color = Color.white;
     }
 
@@ -29,6 +32,8 @@ public class MouseOverWaterJug : MonoBehaviour
             {
                 Debug.Log("Interacted with jug.");
                 animator.SetBool("isPour", true);
+                source.Play();
+
                 interactedWithJug = true;
             } else
             {

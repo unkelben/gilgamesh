@@ -21,7 +21,8 @@ public class player_movement : MonoBehaviour
     private Rigidbody2D myRigidbody;
     private Vector3 change;
     private Animator animator;
-    public vector_value startingPosition;
+    public float stoppingDistance;
+    private Transform target;
 
 
 
@@ -33,7 +34,8 @@ public class player_movement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
-        transform.position = startingPosition.initialValue;
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
     }
 
     // Update is called once per frame
@@ -55,7 +57,7 @@ public class player_movement : MonoBehaviour
             UpdateAnimationAndMove();
         }
 
-        
+        AiFollow();
 
         //if (change != Vector3.zero)
         // {        {
@@ -92,7 +94,7 @@ public class player_movement : MonoBehaviour
 
     void MoveCharacter()
     {
-        
+
         myRigidbody.MovePosition(
             transform.position + change * speed * Time.deltaTime
     );
@@ -115,5 +117,24 @@ public class player_movement : MonoBehaviour
         }
 
     }
+
+
+    public void AiFollow()
+    {
+        if (Vector2.Distance(transform.position, target.position) > stoppingDistance)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
+
+    }
+
+
+
+
+
+
+
+
+
 
 }

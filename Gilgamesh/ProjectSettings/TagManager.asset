@@ -13,6 +13,16 @@ TagManager:
   - Wall_right
   - Wall_left
   - Enemy
+  - MyPlayer
+  - Texts
+  - Block
+  - String
+  - Target
+  - LeftArmTarget
+  - Needle
+  - Player1
+  - Ground
+  - bread
   layers:
   - Default
   - TransparentFX

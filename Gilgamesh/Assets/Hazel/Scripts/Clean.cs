@@ -33,14 +33,17 @@ public class Clean : MonoBehaviour
     void Update()
     {
 
+
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        
 
 
         if (Input.GetMouseButton(0) && Random.Range(0, 10) == 1 && cleanLvl <= 155)
+
         {
+            
             if (bodyCollider == Physics2D.OverlapPoint(mousePos))
             {
+                
                 if (!isPlaying)
                 {
                     source.Play();
@@ -80,7 +83,7 @@ public class Clean : MonoBehaviour
                 cleaning = false;
                 
                 rain.GetComponent<Renderer>().enabled = false;
-                source2.Pause();
+                source.Pause();
             }
 
             

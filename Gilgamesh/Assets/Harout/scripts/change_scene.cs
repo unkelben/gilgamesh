@@ -22,7 +22,7 @@ public class change_scene : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene("house");
+        SceneManager.LoadScene(sceneToLoad);
         StartCoroutine(FadeControl());
     }
 
