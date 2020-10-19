@@ -86,7 +86,7 @@ namespace Rose.Balance
 
         private void CheckEquality()
         {
-            if (blendshapes.GetBlendShapeWeight(3) <= 0 && Mathf.Ceil(enkidu.transform.localScale.magnitude) == Mathf.Ceil(targetScale.magnitude))
+            if (blendshapes.GetBlendShapeWeight(3) <= 0 && Mathf.Ceil(enkidu.transform.localScale.magnitude) == Mathf.Ceil(targetScale.magnitude) || Mathf.Floor(enkidu.transform.localScale.magnitude) == Mathf.Floor(targetScale.magnitude))
             {
                 Timer();
                 if (!winning.isPlaying) winning.Play();
@@ -183,14 +183,16 @@ namespace Rose.Balance
         {
             if (other.tag == "Clay")
             {
-                if (!other.GetComponent<Clay>().isInHand)
+                if (Mathf.Ceil(enkidu.transform.localScale.magnitude + other.GetComponent<Clay>().weight) < Mathf.Ceil(new Vector3(124.9967f, 124.9967f, 124.9967f).magnitude))
                 {
-                    weightToAdd = other.GetComponent<Clay>().weight;
-                    interval += weightToAdd;
-                    print(other.GetComponent<Clay>().weight);
-                    clayWeights.Push(other.GetComponent<Clay>().weight);
-                    Destroy(other.gameObject);
-                    clayAdded = true;
+                    if (!other.GetComponent<Clay>().isInHand)
+                    {
+                        weightToAdd = other.GetComponent<Clay>().weight;
+                        interval += weightToAdd;
+                        clayWeights.Push(other.GetComponent<Clay>().weight);
+                        Destroy(other.gameObject);
+                        clayAdded = true;
+                    }
                 }
             }
         }

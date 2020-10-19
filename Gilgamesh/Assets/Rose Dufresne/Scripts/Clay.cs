@@ -15,6 +15,7 @@ namespace Rose.Clay
 
         private void Start()
         {
+            float adjustedSize = Mathf.Clamp(Mathf.Sqrt(weight) * 8f, Mathf.Sqrt(10f) * 8, Mathf.Sqrt(60f) * 8f);
             transform.localScale = new Vector3(Mathf.Sqrt(weight) * 8f, Mathf.Sqrt(weight) * 8f, Mathf.Sqrt(weight) * 8f);
             finger = new List<GameObject>();
             touchingClay = false;

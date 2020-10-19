@@ -12,16 +12,18 @@ namespace Rose.Clay
         [SerializeField] GameObject clayPrefab;
 
         private bool clayCanBeRemoved;
-        private bool decreaseWeight;
         private Transform claySpawnPosition;
         private float interval;
         private float weightBalance;
+
+        private AudioSource claySound;
 
         // Start is called before the first frame update
         void Start()
         {
             interval = 0;
             clayCanBeRemoved = false;
+            claySound = GetComponent<AudioSource>();
         }
 
         // Update is called once per frame
@@ -31,10 +33,10 @@ namespace Rose.Clay
             {
                 clayCanBeRemoved = false;
             }
-
-            if (Input.GetKeyDown("space") && clayCanBeRemoved)
+            
+            if (Input.GetKeyDown("space") && clayCanBeRemoved && enkiduStand.GetComponent<Enkidu>().clayWeights.Count > 0)
             {
-                decreaseWeight = true;
+                claySound.Play();
                 GameObject clay = Instantiate(clayPrefab, claySpawnPosition.position + new Vector3(0,0.7f,0), Quaternion.identity) as GameObject;
                 clay.GetComponent<Clay>().weight = enkiduStand.GetComponent<Enkidu>().clayWeights.Pop();
                 clay.transform.parent = claySpawnPosition.parent;
