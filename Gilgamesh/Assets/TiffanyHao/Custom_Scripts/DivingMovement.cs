@@ -16,7 +16,7 @@ public class DivingMovement : MonoBehaviour
     public float fallingspeed = 10;
 
     [SerializeField]
-    private float constant_fall = -1;
+    private float constant_fall = -0.7f;
 
  
     public bool playerSwimming = false; //player starts with no swimming
