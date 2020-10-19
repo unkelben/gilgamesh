@@ -25,7 +25,8 @@ public class CameraFollow : MonoBehaviour
 
     //UI ELEMENTS 
     public GameObject airhpbar;
-    public GameObject introText; 
+    public GameObject introText;
+    public GameObject divingbuttons; 
 
     //private bool movingCam = true;
     void Start()
@@ -47,7 +48,8 @@ public class CameraFollow : MonoBehaviour
 
                 //UI ELEMENTS
                 airhpbar.SetActive(true);
-                introText.SetActive(false); 
+                introText.SetActive(false);
+                divingbuttons.SetActive(true); 
 
                 //move camera to the position of swimming gilgamesh
                 transform.position = Vector3.Lerp(transform.position, DivingPosition.position, Time.deltaTime * transitionspeed);

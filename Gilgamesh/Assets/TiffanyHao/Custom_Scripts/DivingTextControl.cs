@@ -13,10 +13,14 @@ public class DivingTextControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!istransparent)
+        if(this.gameObject.activeSelf == true) //check if its active
         {
-            FadeOut(); 
+            if (!istransparent)
+            {
+                FadeOut();
+            }
         }
+       
     }
 
 
@@ -27,7 +31,7 @@ public class DivingTextControl : MonoBehaviour
     }
 
 
-    public IEnumerator FadeImage(CanvasGroup d, float start, float end, float lerpTime = 0.5f)
+    public IEnumerator FadeImage(CanvasGroup d, float start, float end, float lerpTime = 0.9f)
     {
         float _timeStartedLerping = Time.time;
         float timeSinceStarted = Time.time - _timeStartedLerping;
