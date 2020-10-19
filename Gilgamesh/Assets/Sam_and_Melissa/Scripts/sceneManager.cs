@@ -325,7 +325,7 @@ public class sceneManager : MonoBehaviour
 
                 if (counter > 50) growBubble(bubble5, bubble5InitScale);
               //  if (counter > 100) growBubble(bubble6, bubble6InitScale);
-                if (counter > 600)
+                if (counter > 1000)
                 {
                     if (!scene3appeared)
                     {
