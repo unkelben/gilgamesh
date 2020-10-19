@@ -1,0 +1,17 @@
+// Order for the changes that appears on Enkidu's character:
+
+change1 = head1
+change2 = head2
+change3 = head3
+change4 = hair1
+change5 = hair2
+change6 = hair3
+change7 = chest1
+change8 = chest2
+change9 = chest3
+change10 = legs1
+change11 = legs2
+change12 = legs3
+change13 = feet1
+change14 = feet2
+change15 = feet3
