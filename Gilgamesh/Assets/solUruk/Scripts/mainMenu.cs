@@ -14,9 +14,11 @@ public class mainMenu : MonoBehaviour
   public GameObject sidebars;
 
   public readonly string selectedCharacter = "selectedCharacter";
-    // Start is called before the first frame update
+
+  public readonly string oncePlayedthrough = "oncePlayedthrough";
     void Start()
     {
+      PlayerPrefs.SetFloat(oncePlayedthrough, 0);
     }
 
     // Play as Gilgamesh

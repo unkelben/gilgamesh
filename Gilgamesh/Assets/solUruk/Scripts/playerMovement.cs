@@ -6,31 +6,27 @@ using UnityEngine.SceneManagement;
 public class playerMovement : MonoBehaviour
 {
     private float moveSpeed = 2f;
-    private int stepRange = 0; // over 10
+    private int stepRange = 0;
 
     public Animator animator;
     public Rigidbody2D rb;
     public Vector2 movement;
-    // private Vector2 target;
 
     public readonly string playerMovementX = "playerMovementX";
     public readonly string playerMovementY = "playerMovementY";
 
-    // Start is called before the first frame update
+    public readonly string playerPosX = "playerPosX";
+    public readonly string playerPosY = "playerPosY";
+
+    public readonly string oncePlayedthrough = "oncePlayedthrough";
+
     void Start()
     {
       GameObject.DontDestroyOnLoad(this.gameObject);
     }
 
-    // Update is called once per frame
     void Update()
     {
-      // Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-      //
-      // if (Input.GetMouseButtonDown(0))
-      // {
-      //   target = new Vector2(mousePos.x, mousePos.y);
-      // }
       movement.x = Input.GetAxisRaw("Horizontal");
       movement.y = Input.GetAxisRaw("Vertical");
 
@@ -39,12 +35,11 @@ public class playerMovement : MonoBehaviour
       animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
-    // Called 50 times per second
     void FixedUpdate()
     {
       if (moveSpeed>=stepRange)
       {
-        for (int i = 0;i < 10; i++)
+        for (int i = 0; i < 10; i++)
         {
           stepRange++;
           moveSpeed+=stepRange/10;
@@ -52,29 +47,33 @@ public class playerMovement : MonoBehaviour
       }
       else {
         moveSpeed = 2f;
-        stepRange = 5;
+        stepRange = 0;
       }
-      // if (target.x <= transform.position.x && target.y <= transform.position.y)
-      // {
-      //   transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime * moveSpeed);
-      // }
-
       PlayerPrefs.SetFloat(playerMovementX, movement.x);
       PlayerPrefs.SetFloat(playerMovementY, movement.y);
 
       rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+      PlayerPrefs.SetFloat(playerPosX, rb.position.x);
+      PlayerPrefs.SetFloat(playerPosY, rb.position.y);
+
+      float isPlayedthrough = PlayerPrefs.GetFloat(oncePlayedthrough);
+      if (isPlayedthrough==1)
+      {
+        Destroy(this.gameObject);
+      }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
       if (collision.CompareTag("Npc"))
       {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene("tavern");
         Destroy(this.gameObject);
       }
       if (collision.CompareTag("Uruk"))
       {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene("uruk");
       }
     }
 }

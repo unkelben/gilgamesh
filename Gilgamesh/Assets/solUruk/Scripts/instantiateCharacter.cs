@@ -5,14 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(mainMenu))]
 public class instantiateCharacter : MonoBehaviour
 {
-  public GameObject gilgamesh;
-  public GameObject enkidu;
+
   public GameObject bartender;
   public GameObject bartender2;
 
-  public readonly string selectedCharacter = "selectedCharacter";
+  public GameObject gilText;
+  public GameObject enkText;
 
-    // Start is called before the first frame update
+  public readonly string selectedCharacter = "selectedCharacter";
     void Start()
     {
       int getCharacter = PlayerPrefs.GetInt(selectedCharacter);
@@ -21,10 +21,11 @@ public class instantiateCharacter : MonoBehaviour
       {
         case 0:
           Instantiate(bartender, new Vector3(6.27f, 1.81f, 0f), Quaternion.identity);
-
+          Destroy(enkText);
           break;
         case 1:
           Instantiate(bartender2, new Vector3(6.27f, 1.81f, 0f), Quaternion.identity);
+          Destroy(gilText);
           break;
       }
     }
