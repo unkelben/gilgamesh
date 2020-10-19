@@ -18,6 +18,9 @@ public class Airhp : MonoBehaviour
     public float depthTier2;
     public float depthTier3;
 
+    public DivingMovement diving; 
+    
+
     [SerializeField]
     public static float decreaseRate = 0.00010f; 
     // Start is called before the first frame update
@@ -36,29 +39,34 @@ public class Airhp : MonoBehaviour
     {
         playerpos = player.transform.position.y;
 
-        if (s.value <= 0)
+        if(diving.playerSwimming)
         {
+            Debug.Log("Losing Air"); 
+            if (s.value <= 0)
+            {
 
-            SceneManager.LoadScene("BadEnding"); 
+                SceneManager.LoadScene("BadEnding");
+            }
+
+            if (playerpos <= depthTier3)
+            {
+                //Debug.Log("depth tier 3");
+                //Debug.Log(depthTier3);
+                s.value -= decreaseRate * 6;
+            }
+            else if (playerpos <= depthTier2)
+            {
+                //Debug.Log("depth tier 2");
+                //Debug.Log(depthTier2);
+                s.value -= decreaseRate * 3;
+            }
+            else if (playerpos <= depthTier1)
+            {
+                //Debug.Log("depth tier 1");
+                s.value -= decreaseRate;
+            }
         }
-
-        if (playerpos <= depthTier3)
-        {
-            //Debug.Log("depth tier 3");
-            //Debug.Log(depthTier3);
-            s.value -= decreaseRate * 6;
-        } else if (playerpos <= depthTier2)
-        {
-            //Debug.Log("depth tier 2");
-            //Debug.Log(depthTier2);
-            s.value -= decreaseRate*3;
-        } else if(playerpos <= depthTier1)
-        {
-            //Debug.Log("depth tier 1");
-            s.value -= decreaseRate; 
-        }
-
-        
+      
     }
 
 }

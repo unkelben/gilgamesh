@@ -35,18 +35,18 @@ public class DivingMovement : MonoBehaviour
 
     private bool cooldown = false;
 
-    //Platyer sounds
-    public AudioClip gasping;
-    public AudioClip bubbles;
-    public AudioClip splash; 
-    public AudioSource A;
+    //Platyer sounds -> moved to playerCollision script
+    //public AudioClip gasping;
+    //public AudioClip bubbles;
+    //public AudioClip splash; 
+    //public AudioSource A;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         PlayerPrefs.SetString("lastBounty", "Nothing");
-        A = GetComponent<AudioSource>(); 
+        //A = GetComponent<AudioSource>(); 
     }
 
     private float forceAmount = 5f;
@@ -77,7 +77,6 @@ public class DivingMovement : MonoBehaviour
 
         //transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed;
 
- 
 
         if (Input.GetKeyDown("up"))
         {
@@ -98,7 +97,6 @@ public class DivingMovement : MonoBehaviour
                 Debug.Log(move_side);
             }
         }
-
     }
 
     void AddForce()
@@ -126,7 +124,5 @@ public class DivingMovement : MonoBehaviour
     {
         cooldown = false;
     }
-
-
 
 }
