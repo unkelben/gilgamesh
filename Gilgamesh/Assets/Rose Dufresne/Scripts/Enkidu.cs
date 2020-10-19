@@ -187,6 +187,7 @@ namespace Rose.Balance
                 {
                     weightToAdd = other.GetComponent<Clay>().weight;
                     interval += weightToAdd;
+                    print(other.GetComponent<Clay>().weight);
                     clayWeights.Push(other.GetComponent<Clay>().weight);
                     Destroy(other.gameObject);
                     clayAdded = true;

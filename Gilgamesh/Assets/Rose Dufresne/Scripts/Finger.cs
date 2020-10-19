@@ -22,11 +22,11 @@ namespace Rose.ClawMachine
 
         private void Update()
         {
-            if (Input.GetMouseButton(0) && isTouchingClay)
+            if (Input.GetKey("space") && isTouchingClay)
             {
                 pivot.GetComponent<Hand>().stopPinching = true;
             }
-            if (Input.GetMouseButtonUp(0) && isTouchingClay)
+            if (Input.GetKeyUp("space") && isTouchingClay)
             {
                 pivot.GetComponent<Hand>().stopPinching = false;
             }

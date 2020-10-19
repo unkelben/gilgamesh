@@ -27,12 +27,12 @@ namespace Rose.Clay
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetKeyUp("space"))
             {
                 clayCanBeRemoved = false;
             }
 
-            if (Input.GetMouseButtonDown(0) && clayCanBeRemoved)
+            if (Input.GetKeyDown("space") && clayCanBeRemoved)
             {
                 decreaseWeight = true;
                 GameObject clay = Instantiate(clayPrefab, claySpawnPosition.position + new Vector3(0,0.7f,0), Quaternion.identity) as GameObject;

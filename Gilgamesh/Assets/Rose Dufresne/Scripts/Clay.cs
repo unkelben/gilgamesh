@@ -15,7 +15,7 @@ namespace Rose.Clay
 
         private void Start()
         {
-            transform.localScale = (transform.localScale) * weight/10f;
+            transform.localScale = new Vector3(Mathf.Sqrt(weight) * 8f, Mathf.Sqrt(weight) * 8f, Mathf.Sqrt(weight) * 8f);
             finger = new List<GameObject>();
             touchingClay = false;
         }
