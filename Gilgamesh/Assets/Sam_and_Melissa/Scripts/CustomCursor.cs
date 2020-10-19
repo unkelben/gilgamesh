@@ -21,8 +21,6 @@ public class CustomCursor : MonoBehaviour
         string sceneState = GameObject.Find("scene_manager").GetComponent<sceneManager>().sceneState;
         if (mouseState != lastMouseState || sceneState != lastSceneState)
         {
-
-            Debug.Log("cacs scenestate " + sceneState);
             switch (sceneState)
             {
                 case "path":
@@ -77,7 +75,6 @@ public class CustomCursor : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        Debug.Log("cacs");
         if (GameObject.Find("scene_manager").GetComponent<sceneManager>().sceneState == "mountains")
         {
             Cursor.SetCursor(cursorPoint, Vector2.zero, CursorMode.ForceSoftware);
@@ -86,7 +83,6 @@ public class CustomCursor : MonoBehaviour
 
     private void OnMouseExit()
     {
-        Debug.Log("cacs out");
         if (GameObject.Find("scene_manager").GetComponent<sceneManager>().sceneState == "mountains")
         {
             Cursor.SetCursor(cursorHand, Vector2.zero, CursorMode.ForceSoftware);
