@@ -18,11 +18,6 @@ public class FadeBlack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cB.interactionAmount == 3)
-        {
-            fadeAnimator.enabled = true;
-            cB.heartSource.Stop();
 
-        }
     }
 }

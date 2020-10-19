@@ -1001,6 +1001,7 @@ MonoBehaviour:
   backgroundSprite3: {fileID: 21300000, guid: 15bb55c985942aa4e92aeec97373ea6c, type: 3}
   backgroundSprite4: {fileID: 21300000, guid: cd955f1f718f83b43a24c8cf09f50211, type: 3}
   heartSource: {fileID: 1106196744}
+  fB: {fileID: 1260051662}
   interactionAmount: 0
 --- !u!82 &1106196744
 AudioSource:
@@ -1451,7 +1452,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: db2b348d2c2c79b4184b2c3f61848efc, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.007843138}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1469,8 +1470,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260051658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.008, y: 0.006, z: -404.60757}
-  m_LocalScale: {x: 15.980798, y: 9.988342, z: 9.772422}
+  m_LocalPosition: {x: -0.004, y: -0.006, z: 0}
+  m_LocalScale: {x: 16.004307, y: 10.036421, z: 9.772422}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10

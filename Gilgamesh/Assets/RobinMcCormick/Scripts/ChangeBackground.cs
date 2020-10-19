@@ -12,6 +12,8 @@ public class ChangeBackground : MonoBehaviour
 
     public AudioSource heartSource;
 
+    public FadeBlack fB;
+
     public int interactionAmount;
 
 
@@ -41,6 +43,9 @@ public class ChangeBackground : MonoBehaviour
         {
             
             spriteR.sprite = backgroundSprite4;
+            fB.fadeAnimator.enabled = true;
+            heartSource.Stop();
+
         }
     }
 }
