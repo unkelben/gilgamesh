@@ -4,22 +4,22 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Block
-  - Needle
-  - Target
-  - Flower
-  - Enemy
-  - Player1
+  - Cup
+  - Rag
   - breakable
-  - Activator
-  - Ground
-  - bread
+  - bubble
+  - Flower
+  - Wall
+  - Wall_right
+  - Wall_left
+  - Enemy
+  - MyPlayer
+  - Texts
+  - Block
   - String
-  - shirt
-  - shoes
-  - pants
-  - dress
-  - hair
+  - Target
+  - LeftArmTarget
+  - Needle
   layers:
   - Default
   - TransparentFX
@@ -29,10 +29,10 @@ TagManager:
   - UI
   - 
   - 
-  - Background Image
-  - Sprites
-  - player
-  - ground
+  - background
+  - sprites
+  - 
+  - 
   - 
   - 
   - 
@@ -54,27 +54,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: CAMERA
-    uniqueID: 2955582159
-    locked: 0
-  - name: ?player
-    uniqueID: 2028651403
-    locked: 0
-  - name: walkTiles
-    uniqueID: 674032515
-    locked: 0
-  - name: background
-    uniqueID: 3970121359
-    locked: 0
-  - name: foreground
-    uniqueID: 2279546819
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: signs
-    uniqueID: 2295301705
+  - name: behindbg
+    uniqueID: 2591072889
     locked: 0
-  - name: player
-    uniqueID: 176318603
+  - name: background
+    uniqueID: 882901369
+    locked: 0
+  - name: foreground
+    uniqueID: 211793261
     locked: 0

@@ -214,7 +214,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: house
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &260274908
@@ -363,6 +363,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aba9d7128ed3524899e043df7169949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadein: {fileID: 9098925487108795792, guid: edfedae4f508b134f99586ec6a592c36, type: 3}
+  fadeout: {fileID: 1733781788149002037, guid: 0cc180127e2080345aaa82e8b1905ea0, type: 3}
+  fadeWait: 0.33
+  sceneToLoad: intro
 --- !u!4 &1170970660
 Transform:
   m_ObjectHideFlags: 0
@@ -375,7 +379,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460540826
 GameObject:
@@ -427,7 +431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.10635662, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.4339623, g: 0.18571563, b: 0.08460896, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -490,8 +494,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 212}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 429, y: 325}
+  m_SizeDelta: {x: 336.7899, y: 169.46036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1522908057
 MonoBehaviour:
@@ -689,9 +693,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.1894256, y: 25.971678, z: -17.872787}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1820653933}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1820653929
 GameObject:
@@ -787,7 +792,7 @@ RectTransform:
   - {fileID: 1460540827}
   - {fileID: 1003756280}
   - {fileID: 260274906}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1794023413}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -859,5 +864,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -19,7 +19,7 @@ public class Airhp : MonoBehaviour
     public float depthTier3;
 
     [SerializeField]
-    public static float decreaseRate = 0.0002f; 
+    public static float decreaseRate = 0.00010f; 
     // Start is called before the first frame update
     void Start()
     {
@@ -44,17 +44,17 @@ public class Airhp : MonoBehaviour
 
         if (playerpos <= depthTier3)
         {
-            Debug.Log("depth tier 3");
+            //Debug.Log("depth tier 3");
             //Debug.Log(depthTier3);
             s.value -= decreaseRate * 6;
         } else if (playerpos <= depthTier2)
         {
-            Debug.Log("depth tier 2");
+            //Debug.Log("depth tier 2");
             //Debug.Log(depthTier2);
             s.value -= decreaseRate*3;
         } else if(playerpos <= depthTier1)
         {
-            Debug.Log("depth tier 1");
+            //Debug.Log("depth tier 1");
             s.value -= decreaseRate; 
         }
 

@@ -11,8 +11,11 @@ public class DragAndDrop : MonoBehaviour
     public Collider2D bodyCollider;
     public Sprite off;
     public int originalLayer;
+
+    private AudioSource source;
     void Start()
     {
+        source = GetComponent<AudioSource>();
         canMove = false;
         dragging = false;
         originalLayer = this.GetComponent<SpriteRenderer>().sortingOrder;
@@ -24,11 +27,15 @@ public class DragAndDrop : MonoBehaviour
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+
         if (Input.GetMouseButtonDown(0))
         {
             if (clothesCollider == Physics2D.OverlapPoint(mousePos))
             {
                 canMove = true;
+                source.pitch = 1;
+                source.Play();
+                this.GetComponent<Snap>().dressed = false;
             }
             else
             {
@@ -38,13 +45,14 @@ public class DragAndDrop : MonoBehaviour
             {
                 dragging = true;
             }
-            this.GetComponent<SpriteRenderer>().sortingOrder = 200;
+            
 
         }
         if (dragging)
         {
             this.GetComponent<SpriteRenderer>().sprite = off;
             this.transform.position = mousePos;
+            this.GetComponent<SpriteRenderer>().sortingOrder = 100;
             
         }
 
@@ -52,6 +60,12 @@ public class DragAndDrop : MonoBehaviour
         {
             canMove = false;
             dragging = false;
+            if (clothesCollider == Physics2D.OverlapPoint(mousePos))
+            {
+                source.pitch = 2;
+                source.Play();
+            }
+            
             this.GetComponent<SpriteRenderer>().sortingOrder = originalLayer;
         }
     }

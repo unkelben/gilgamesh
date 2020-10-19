@@ -19,7 +19,8 @@ public class Snip : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            anim.Play("Scissors"); 
+            //anim.Play("Scissors");
+            anim.SetTrigger("SnapMe");
         }
 
 
@@ -36,5 +37,10 @@ public class Snip : MonoBehaviour
     public void snip()
     {
         snipped = true;
+    }
+
+    public void snipNot()
+    {
+        snipped = false;
     }
 }
