@@ -1271,8 +1271,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You are the god Anu. Your task is to create Enkidu by matching him to his
-    shadow, Gilgamesh...
+  m_Text: You are the goddess Aruru. Your task is to create Enkidu by matching him
+    to his shadow, Gilgamesh...
 --- !u!222 &1677006349
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1431,8 +1431,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: After many laments from the people, gods gave the god Anu the mission to
-    create Enkidu, Gilgamesh' equal, his living image, his twin...
+  m_Text: After many laments from the people, gods gave the goddess Aruru the mission
+    to create Enkidu, Gilgamesh' equal, his living image, his twin...
 --- !u!222 &1959963652
 CanvasRenderer:
   m_ObjectHideFlags: 0
