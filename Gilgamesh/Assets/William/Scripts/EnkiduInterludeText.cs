@@ -17,7 +17,7 @@ public class EnkiduInterludeText : MonoBehaviour
 
     IEnumerator TextUpdate()
     {
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(17.5f);
         enkiduText.SetText("Woman, I promise you another destiny.");
         yield return new WaitForSeconds(4);
         enkiduText.SetText("The mouth which cursed you shall bless you!");

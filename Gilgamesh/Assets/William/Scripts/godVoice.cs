@@ -18,13 +18,13 @@ public class godVoice : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         sequenceText.SetText("Enkidu, why are you cursing the woman...?");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         sequenceText.SetText("She, the mistress who taught you to eat bread fit for gods and drink wine of kings!");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         sequenceText.SetText("She who put upon you a magnificent garment...");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         sequenceText.SetText("Did she not give you glorious Gilgamesh for your companion!?");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         sequenceText.SetText("");
 
     }

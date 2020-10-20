@@ -9,12 +9,15 @@ public class loadingNewScene : MonoBehaviour
 {
     int yesSir;
 
+    private AudioSource sceneDone;
+
     GameObject[] Needles;
     // Start is called before the first frame update
     void Start()
     {
-        
-        StartCoroutine(NextScene());
+        sceneDone = GetComponent<AudioSource>();
+
+        StartCoroutine(Nextscene());
     }
 
     // Update is called once per frame
@@ -23,18 +26,19 @@ public class loadingNewScene : MonoBehaviour
 
     }
 
-    IEnumerator NextScene()
+    IEnumerator Nextscene()
     {
         while (true)
         {
-            yield return new WaitForSeconds(5);
+
 
             Needles = GameObject.FindGameObjectsWithTag("Needle");
             yesSir = Needles.Length;
+            yield return new WaitForSeconds(5);
             if (yesSir <= 0)
             {
-
-                SceneManager.LoadScene("IntroWilliam", LoadSceneMode.Single);
+                sceneDone.Play();
+                SceneManager.LoadScene("InterludeWilliam", LoadSceneMode.Single);
             }
 
         }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1691757887333733020}
   - component: {fileID: 1878775597152505225}
   m_Layer: 0
-  m_Name: curtain-01
+  m_Name: Curtain_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a2ce2cbfc3731bb4fba78d0d81b4712e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0008e00e6ec6f7449902d7fb2044e671, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

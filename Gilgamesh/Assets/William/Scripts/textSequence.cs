@@ -17,6 +17,7 @@ public class textSequence : MonoBehaviour
 
     IEnumerator TextUpdate()
     {
+        yield return new WaitForSeconds(1);
         sequenceText.SetText("Woman, with a great curse I curse you!");
         yield return new WaitForSeconds(4);
         sequenceText.SetText("You shall be without a roof for your commerce!");
@@ -28,7 +29,7 @@ public class textSequence : MonoBehaviour
         sequenceText.SetText("Brambles and thorns will tear your feet, the drunk and the dry will strike your cheek!");
         yield return new WaitForSeconds(4);
         sequenceText.SetText("And let you be stripped of your purple dyes!");
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(6);
         SceneManager.LoadScene("Wrath", LoadSceneMode.Single);
     }
 

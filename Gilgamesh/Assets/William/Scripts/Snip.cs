@@ -8,9 +8,12 @@ public class Snip : MonoBehaviour
 {
     public Animator anim;
     public bool snipped = false;
-    
+
+    private AudioSource snipping;
+
     void Start()
     {
+        snipping = GetComponent<AudioSource>();
         anim = gameObject.GetComponent<Animator>();
     }
 
@@ -37,6 +40,7 @@ public class Snip : MonoBehaviour
     public void snip()
     {
         snipped = true;
+        snipping.Play();
     }
 
     public void snipNot()
