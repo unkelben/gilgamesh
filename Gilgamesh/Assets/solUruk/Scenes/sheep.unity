@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gilgamesh: {fileID: 8014358376554845990, guid: 016eab0890822b84dab9a1d3dde5f6b9, type: 3}
-  enkidu: {fileID: 166106567213568548, guid: 8088be2ad126b434bab16f1820d30d21, type: 3}
+  enkidu: {fileID: 6791399729463026092, guid: 8088be2ad126b434bab16f1820d30d21, type: 3}
   sheepRb1: {fileID: 982721827}
   sheepRb2: {fileID: 1936015858}
   sheepRb3: {fileID: 954728443}
