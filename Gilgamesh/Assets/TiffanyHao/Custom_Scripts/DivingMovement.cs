@@ -3,84 +3,150 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
+using System;
 
 public class DivingMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    private float movementspeed = 10;
+    public float movementspeed = 10;
 
+    [SerializeField]
+    public float fallingspeed = 10;
+
+    [SerializeField]
+    private float constant_fall = -0.7f;
+
+ 
+    public bool playerSwimming = false; //player starts with no swimming
+
+    public bool wall_collidedleft = false;
+    public bool wall_collidedright = false;
+
+    public GameObject playerobject;
     public Rigidbody2D rb;
-    private float move_side;
-    private float move_down;
+    public float move_side;
+    public float move_down;
     public Slider s;
     public GameObject background;
 
+
+    private bool ismovingUp = false;
+
+    private bool cooldown = false;
+
+    public Animator animator;
+
+    //Platyer sounds -> moved to playerCollision script
+    //public AudioClip gasping;
+    //public AudioClip bubbles;
+    //public AudioClip splash; 
+    //public AudioSource A;
+
+
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); 
+        rb = GetComponent<Rigidbody2D>();
+        PlayerPrefs.SetString("lastBounty", "Nothing");
+        //A = GetComponent<AudioSource>(); 
     }
 
+    private float forceAmount = 5f;
     void Update()
     {
         //check left right input 
-        move_side = Input.GetAxis("Horizontal"); // <0 is left, >0 is right 
-
-        move_down = Input.GetAxis("Vertical");  // positive is up, negative is down 
-
-        if(move_down >= 0)
+        if(playerSwimming)
         {
-            move_down = 0; 
-        }
-        //get screen width and object width
-        float screenW = background.GetComponent<SpriteRenderer>().bounds.size.x;
-        float objectW = gameObject.GetComponent<BoxCollider2D>().bounds.size.x;
-        //if player is moving left and hits left border, block movement
-        if (move_side < 0)
-        {
-            if (transform.position.x <= 0 - screenW / 2 + objectW / 2)
+            
+
+
+            move_side = Input.GetAxis("Horizontal"); // <0 is left, >0 is right 
+
+            move_down = Input.GetAxis("Vertical");  // positive is up, negative is down
+
+            move_down = -1; // always moving down
+
+            if (move_side < 0 && wall_collidedleft == true)
             {
                 move_side = 0;
-                //Debug.Log("left_boder");
+                //Debug.Log(wall_collidedleft);
             }
-        }
-        //if player is moving right and hits right border, block movement
-        if (move_side > 0)
-        {
-            if (transform.position.x >= screenW / 2 - objectW / 2)
+
+            else if (move_side > 0 && wall_collidedright == true)
             {
                 move_side = 0;
-                //Debug.Log("right_boder");
             }
-        }
-        
-        transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed;
 
+            //if(move_down >= 0)
+            //{
+            //    transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed; 
+            //}
+
+            //transform.position += new Vector3(move_side, move_down, 0) * Time.deltaTime * movementspeed;
+
+
+            if (Input.GetKeyDown("up"))
+            {
+                if(playerobject.transform.position.y <= 272)
+                {
+                    if (cooldown == false)
+                    {
+                        //animator.SetBool("isSwimming", true);
+                        //animator.SetTrigger("swim");
+                        animator.SetBool("up", true);
+                        ismovingUp = true;
+                        AddForce();
+                        Invoke("ResetCooldown", 0.5f); //wait for 0.5 sec to prevent button spamming
+                        cooldown = true;
+
+
+                    }
+                }
+            }
+            else
+
+            if (ismovingUp == false)
+            {
+                animator.SetBool("up", false);
+                if (transform.position.y > -304.3)
+                {
+                    transform.position += new Vector3(move_side, constant_fall, 0) * Time.deltaTime * fallingspeed;
+                }
+                else
+                {
+                    transform.position += new Vector3(move_side, 0, 0) * Time.deltaTime * fallingspeed;
+                }
+            }
+            
+        }
+       
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void AddForce()
     {
-        if(collision.gameObject.CompareTag("Flower"))
+        StartCoroutine(FakeAddForceMotion());
+    }
+
+    IEnumerator FakeAddForceMotion()
+    {
+        float i = 0.1f;
+        while (forceAmount > i && forceAmount / i > forceAmount*2)
         {
-            SceneManager.LoadScene("GoodEnding"); 
+            rb.velocity = new Vector2(rb.velocity.x, forceAmount / i); // !! For X axis positive force
+            i = i + Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+            //Debug.Log(forceAmount / i);
         }
-        if(collision.gameObject.CompareTag("Enemy"))
-        {
-            //Debug.Log("hit enemy");
-            //Decrease air bar value
-            for (int i = 0; i < 1000; i++)
-            {
-                //s.value -= Airhp.decreaseRate;
-                s.value = 0;
-            }
-            //if air bar value <=0 -> gameover, assign the collided object as last bounty
-            if (s.value >= 0)
-            {
-                PlayerPrefs.SetString("lastBounty", collision.gameObject.GetComponent<EnemyMovement>().enemy_name);
-                string lastBounty = PlayerPrefs.GetString("lastBounty");
-                Debug.Log(lastBounty);
-            }
-        }
+        rb.velocity = Vector2.zero;
+        yield return null;
+        //Debug.Log("something changes");
+        ismovingUp = false;
+    }
+
+    void ResetCooldown()
+    {
+        cooldown = false;
     }
 
 }

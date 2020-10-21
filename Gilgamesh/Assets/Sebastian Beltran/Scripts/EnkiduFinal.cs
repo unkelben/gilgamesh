@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 public class EnkiduFinal : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] GameObject lion;
+    [SerializeField] Flowchart flowchart;
     Rigidbody2D enkiduRigidBody;
     Animator enkiduAnimator;
+    bool isAtacking = false;
 
 
 
@@ -22,6 +25,7 @@ public class EnkiduFinal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isAtacking = flowchart.GetBooleanVariable("isAtacking");
         Move();
         Attack();
     }
@@ -54,17 +58,13 @@ public class EnkiduFinal : MonoBehaviour
 
     private void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Space) && isAtacking)
         {
             enkiduAnimator.SetBool("Attack", true);
-        } else if (Input.GetKeyUp(KeyCode.X))
+        } else if (Input.GetKeyUp(KeyCode.Space))
         {
             enkiduAnimator.SetBool("Attack", false);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Destroy(lion);
-    }
 }

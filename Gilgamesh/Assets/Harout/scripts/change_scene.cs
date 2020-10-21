@@ -5,25 +5,43 @@ using UnityEngine.SceneManagement;
 
 public class change_scene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject fadein;
+    public GameObject fadeout;
+    public float fadeWait;
+    public string sceneToLoad;
+
+
+
+    private void Awake()
     {
-        
+        if (fadein != null)
+        {
+            GameObject panel = Instantiate(fadein, Vector3.zero, Quaternion.identity) as GameObject;
+            Destroy(panel, 1);
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     public void StartGame()
     {
-        SceneManager.LoadScene("vignette_1");
+        SceneManager.LoadScene(sceneToLoad);
+        StartCoroutine(FadeControl());
     }
 
 
+    public IEnumerator FadeControl()
+
+    {
+        if (fadeout != null)
+        {
+            Instantiate(fadeout, Vector3.zero, Quaternion.identity);
+        }
+        yield return new WaitForSeconds(fadeWait);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
+        while (!asyncOperation.isDone)
+        {
+            yield return null;
+        }
+
+    }
 
 
 

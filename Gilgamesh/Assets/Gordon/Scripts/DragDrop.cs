@@ -27,12 +27,16 @@ public class DragDrop : MonoBehaviour
     [SerializeField] private Transform Istar4;
     [SerializeField] private Transform Istar5;
     [SerializeField] private Transform Istar6;
+    [SerializeField] private Transform Istar7;
+    [SerializeField] private Transform Istar8;
+
+    [SerializeField] private Transform Gilgamesh;
 
     [SerializeField] private Transform MadIstar;
     [SerializeField] private Transform VeryMadIstar;
     [SerializeField] private Transform EndingBG;
 
-    [SerializeField] private Transform IstarRareEnding;
+    
 
     [SerializeField] private Transform textStart;
     [SerializeField] private Transform textReject;
@@ -92,6 +96,8 @@ public class DragDrop : MonoBehaviour
     bool CurrentShephered = false;
     bool CurrentStallion = false;
     bool CurrentTammuz = false;
+
+    bool isSecretEndAchived = false;
 
     int currentIllustration;
     int lastIllustration;
@@ -217,7 +223,7 @@ public class DragDrop : MonoBehaviour
 
             updateTextEnding();
             updateWhatHasBeenSeen();
-            if (allIsSeen == true)
+            if (allIsSeen == true && isSecretEndAchived == false)
             {
                 Istar.transform.position = respawnPoint2.transform.position;
                 Istar2.transform.position = respawnPoint2.transform.position;
@@ -225,6 +231,8 @@ public class DragDrop : MonoBehaviour
                 Istar4.transform.position = respawnPoint2.transform.position;
                 Istar5.transform.position = respawnPoint2.transform.position;
                 Istar6.transform.position = respawnPoint2.transform.position;
+                Istar7.transform.position = respawnPoint2.transform.position;
+                Istar8.transform.position = respawnPoint2.transform.position;
                 EndingBG.transform.position = placeImageOnScreen.transform.position;
                 VeryMadIstar.transform.position = placeImageOnScreen.transform.position;
                 audioVeryMadIstar.Play(1);
@@ -233,7 +241,8 @@ public class DragDrop : MonoBehaviour
                 
 
             }
-            else
+            
+            if(allIsSeen == false && isSecretEndAchived == false)
             {
                 Istar.transform.position = respawnPoint2.transform.position;
                 Istar2.transform.position = respawnPoint2.transform.position;
@@ -241,14 +250,13 @@ public class DragDrop : MonoBehaviour
                 Istar4.transform.position = respawnPoint2.transform.position;
                 Istar5.transform.position = respawnPoint2.transform.position;
                 Istar6.transform.position = respawnPoint2.transform.position;
+                Istar7.transform.position = respawnPoint2.transform.position;
+                Istar8.transform.position = respawnPoint2.transform.position;
                 MadIstar.transform.position = placeImageOnScreen.transform.position;
                 audioMadIstar.Play(1);
                 textReject.transform.position = textspawnPointL.transform.position;
                
             }
-
-
-
 
         }
 
@@ -263,15 +271,49 @@ public class DragDrop : MonoBehaviour
             if (!isDragging)
             {
                 Debug.Log("Yeeee");
-                Heart.transform.position = respawnPoint.transform.position;
 
+                HeartGiven();
 
-                pickIllustration();
-
+              
             }
         }
 
     }
+
+    public void HeartGiven()
+    {
+        
+
+
+        if (heartsGiven <= 99)
+        {
+            
+            isSecretEndAchived = false;
+            
+        }
+        if (heartsGiven == 100)
+        {
+            isSecretEndAchived = true;
+         
+        }
+
+        if (isSecretEndAchived == false)
+        {
+            Heart.transform.position = respawnPoint.transform.position;
+            pickIllustration();
+        }
+        if (isSecretEndAchived == true)
+        {
+            Heart.transform.position = respawnPoint2.transform.position;
+            Istar8.transform.position = respawnPoint2.transform.position;
+            Gilgamesh.transform.position = placeImageOnScreen.transform.position;
+        }
+
+
+    }
+
+
+
 
     public void pickIllustration()
     {
@@ -352,29 +394,50 @@ public class DragDrop : MonoBehaviour
 
     public void IstarState() {
 
-        if (heartsGiven == 1){
+        if (heartsGiven == 4){
             Istar.transform.position = respawnPoint2.transform.position;
             Istar2.transform.position = placeImageOnScreen.transform.position;
         }
-        if (heartsGiven == 3)
+        if (heartsGiven == 10)
         {
             Istar2.transform.position = respawnPoint2.transform.position;
             Istar3.transform.position = placeImageOnScreen.transform.position;
         }
-        if (heartsGiven == 6)
+        if (heartsGiven == 20)
         {
             Istar3.transform.position = respawnPoint2.transform.position;
             Istar4.transform.position = placeImageOnScreen.transform.position;
         }
-        if (heartsGiven >= 10 && heartsGiven <= 49)
+
+        //49
+        if (heartsGiven == 40)
         {
             Istar4.transform.position = respawnPoint2.transform.position;
             Istar5.transform.position = placeImageOnScreen.transform.position;
         }
-        if (heartsGiven >= 50 && heartsGiven <= 99)
+
+
+
+        if (heartsGiven == 60)
         {
             Istar5.transform.position = respawnPoint2.transform.position;
             Istar6.transform.position = placeImageOnScreen.transform.position;
+        }
+
+
+      
+        if (heartsGiven == 80)
+        {
+            Istar6.transform.position = respawnPoint2.transform.position;
+            Istar7.transform.position = placeImageOnScreen.transform.position;
+        }
+
+
+        //50 99
+        if (heartsGiven == 90)
+        {
+            Istar7.transform.position = respawnPoint2.transform.position;
+            Istar8.transform.position = placeImageOnScreen.transform.position;
         }
 
 

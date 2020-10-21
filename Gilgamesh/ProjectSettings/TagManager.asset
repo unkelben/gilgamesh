@@ -4,18 +4,26 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Block
-  - Needle
-  - Target
-  - Flower
-  - Enemy
-  - Player1
+  - Cup
+  - Rag
   - breakable
-  - Activator
+  - bubble
+  - Flower
+  - Wall
+  - Wall_right
+  - Wall_left
+  - Enemy
+  - MyPlayer
+  - Texts
+  - Block
+  - String
+  - Target
+  - LeftArmTarget
+  - Needle
+  - Player1
   - Ground
   - bread
-  - String
-  - Enkidu
+  - Top
   layers:
   - Default
   - TransparentFX
@@ -25,8 +33,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - background
+  - sprites
   - 
   - 
   - 
@@ -53,9 +61,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 4146809285
+  - name: behindbg
+    uniqueID: 2591072889
     locked: 0
-  - name: Sprite
-    uniqueID: 2048442193
+  - name: background
+    uniqueID: 882901369
+    locked: 0
+  - name: foreground
+    uniqueID: 211793261
     locked: 0

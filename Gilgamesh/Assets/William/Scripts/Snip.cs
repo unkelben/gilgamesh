@@ -8,9 +8,12 @@ public class Snip : MonoBehaviour
 {
     public Animator anim;
     public bool snipped = false;
-    
+
+    private AudioSource snipping;
+
     void Start()
     {
+        snipping = GetComponent<AudioSource>();
         anim = gameObject.GetComponent<Animator>();
     }
 
@@ -19,7 +22,8 @@ public class Snip : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            anim.Play("Scissors"); 
+            //anim.Play("Scissors");
+            anim.SetTrigger("SnapMe");
         }
 
 
@@ -36,5 +40,11 @@ public class Snip : MonoBehaviour
     public void snip()
     {
         snipped = true;
+        snipping.Play();
+    }
+
+    public void snipNot()
+    {
+        snipped = false;
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Hole : MonoBehaviour {
     [SerializeField] Sprite[] sprites;
+    [SerializeField] GameController gc;
     int spriteIndex;
 
     SpriteRenderer sprRend;
@@ -21,7 +22,10 @@ public class Hole : MonoBehaviour {
 
     public void Fill() {
         if (spriteIndex < sprites.Length - 1) sprRend.sprite = sprites[++spriteIndex];
-        if (spriteIndex == sprites.Length - 1) GetComponent<Collider2D>().enabled = false;
+        if (spriteIndex == sprites.Length - 1) {
+            GetComponent<Collider2D>().enabled = false;
+            gc.DisableShovel();
+        }
     }
 
     public void Dig() {
