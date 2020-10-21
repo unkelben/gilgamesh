@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class MouseOverWaterJug : MonoBehaviour
 {
-    public bool isMouseOverJug = false;
-    public bool interactedWithJug = false;
+    public bool isMouseOverJug;
+    public bool interactedWithJug;
+
+    private AudioSource source;
 
     Animator animator;
 
@@ -14,20 +16,24 @@ public class MouseOverWaterJug : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        interactedWithJug = false;
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        source = GetComponent<AudioSource>();
         sprite.color = Color.white;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (interactedWithJug == false)
+        if (interactedWithJug == false && isMouseOverJug == true)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("Interacted with jug.");
                 animator.SetBool("isPour", true);
+                source.Play();
+
                 interactedWithJug = true;
             } else
             {

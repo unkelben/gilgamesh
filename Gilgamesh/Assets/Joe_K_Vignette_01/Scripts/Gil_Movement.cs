@@ -12,6 +12,7 @@ public class Gil_Movement : MonoBehaviour
     public Rigidbody2D playerRB; //holds player's rigidbody.
     public float speed; //holds speed value.
     public int idlewalk = 0;
+    bool gameOn = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,33 +27,45 @@ public class Gil_Movement : MonoBehaviour
     }
     void SpriteAnimationController()
     {
-        horDir = Input.GetAxisRaw("Horizontal");
-        verDir = Input.GetAxisRaw("Vertical");
-        Vector2 side = playerRB.transform.localScale;
-        if (verDir < 0)
+        if (gameOn)
         {
-            idlewalk = 1;
+            horDir = Input.GetAxisRaw("Horizontal");
+            verDir = Input.GetAxisRaw("Vertical");
+            Vector2 side = playerRB.transform.localScale;
+            if (verDir < 0)
+            {
+                idlewalk = 1;
+            }
+            if (verDir > 0)
+            {
+                idlewalk = 2;
+            }
+            if(horDir!= 0)
+            {
+                side.x = horDir;
+                idlewalk = 3;
+            }
+            if( verDir == 0 && horDir == 0)
+            {
+                idlewalk = 0;
+            }
+            playerRB.transform.localScale = side;
+            animator.SetInteger("IdlyWalking", idlewalk);
         }
-        if (verDir > 0)
-        {
-            idlewalk = 2;
-        }
-        if(horDir!= 0)
-        {
-            side.x = horDir;
-            idlewalk = 3;
-        }
-        if( verDir == 0 && horDir == 0)
-        {
-            idlewalk = 0;
-        }
-        playerRB.transform.localScale = side;
-        animator.SetInteger("IdlyWalking", idlewalk);
     }
 
     void Moving()
     {
         playerRB.position += (horMove * horDir * speed * Time.deltaTime);
         playerRB.position += (verMove * verDir * speed * Time.deltaTime);
+    }
+
+    public void EndGame()
+    {
+        playerRB.position += new Vector2(10f, 0f);
+    }
+    public void EndGameII()
+    {
+        gameOn = false;
     }
 }

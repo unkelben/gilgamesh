@@ -12,7 +12,7 @@ public class dialogue_manager2 : MonoBehaviour
     public string[] sentences;
     private int index;
     public float typingSpeed;
-
+    public GameObject begin;
     public GameObject continueButton;
 
      void Start()
@@ -72,6 +72,8 @@ public class dialogue_manager2 : MonoBehaviour
         {
             textDisplay.text = "";
             continueButton.SetActive(false);
+
+            begin.SetActive(true);
 
         }
     }

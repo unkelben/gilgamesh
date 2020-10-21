@@ -9,6 +9,7 @@ public class dialogue_manager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
     private Queue<string> sentences;
+    
 
 
     // Start is called before the first frame update
@@ -38,7 +39,11 @@ public class dialogue_manager : MonoBehaviour
             if (sentences.Count ==0)
             {
                 EndDialogue();
-                return;
+
+          
+
+
+            return;
             }
             string sentence = sentences.Dequeue();
         ///  Debug.Log(sentence);

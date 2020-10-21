@@ -13,7 +13,8 @@ public class EnkiduInside : MonoBehaviour
     Rigidbody2D enkiduRigidBody;
     Animator enkiduAnimator;
     bool allowMovement = false;
-
+    bool drinkReady = false;
+    bool isRunning = false;
     public Color weaponColor1;
     public Color weaponColor2;
     public Color weaponColor3;
@@ -30,15 +31,18 @@ public class EnkiduInside : MonoBehaviour
     {
 
         allowMovement = flowchart.GetBooleanVariable("allowMovement");
-        
-         Move();
+        drinkReady = flowchart.GetBooleanVariable("drinkReady");
+        isRunning = flowchart.GetBooleanVariable("isRunning");
+
+        Move();
+        SetDrinkPose();
         
         
     }
 
     private void Move()
     {
-        if (allowMovement == true)
+        if (allowMovement == true && isRunning == false)
         {
             float controlDir = Input.GetAxis("Horizontal");
             Vector2 enkiduVel = new Vector2(controlDir * speed, enkiduRigidBody.velocity.y);
@@ -51,12 +55,29 @@ public class EnkiduInside : MonoBehaviour
 
 
             Flip();
-        } else
+        }
+        else if (allowMovement == true && isRunning == true)
+        {
+            float controlDir = Input.GetAxis("Horizontal");
+            Vector2 enkiduVel = new Vector2(controlDir * 6f, enkiduRigidBody.velocity.y);
+
+            enkiduRigidBody.velocity = enkiduVel;
+
+            bool playerIsMoving = Mathf.Abs(enkiduRigidBody.velocity.x) > Mathf.Epsilon;
+
+            enkiduAnimator.SetBool("Running", playerIsMoving);
+
+
+            Flip();
+        }
+
+        else
         {
             Vector2 enkiduVel = new Vector2(0f,0f);
 
             enkiduRigidBody.velocity = enkiduVel;
             enkiduAnimator.SetBool("Walking", false);
+            enkiduAnimator.SetBool("Running", false);
         }
     }
 
@@ -70,6 +91,11 @@ public class EnkiduInside : MonoBehaviour
         }
 
 
+    }
+
+    private void SetDrinkPose()
+    {
+        enkiduAnimator.SetBool("drinkReady", drinkReady);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -88,5 +114,40 @@ public class EnkiduInside : MonoBehaviour
             axe.SetActive(false);
         }
 
+    }
+
+    void WineTasting()
+    {
+        enkidu.Emote("WineTasting", 0.5f);
+    }
+
+    void Happy()
+    {
+        enkidu.Emote("Happy", 2f);
+    }
+
+    void Drunk()
+    {
+        enkidu.Emote("Drunk");
+    }
+
+    void Blink()
+    {
+        enkidu.Emote("Blink", 1f);
+    }
+
+    void Angry()
+    {
+        enkidu.Emote("Angry");
+    }
+
+    void Talk()
+    {
+        enkidu.Emote("Talk", 1f);
+    }
+
+    void DefaultEmotion()
+    {
+        enkidu.ResetEmote();
     }
 }
