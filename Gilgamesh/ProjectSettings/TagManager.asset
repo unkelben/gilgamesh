@@ -24,6 +24,12 @@ TagManager:
   - Ground
   - bread
   - Top
+  - Underside
+  - ClawMachine
+  - InsideHand
+  - PinchLimit
+  - FingerTip
+  - Clay
   layers:
   - Default
   - TransparentFX
@@ -35,7 +41,7 @@ TagManager:
   - 
   - background
   - sprites
-  - 
+  - ground
   - 
   - 
   - 
