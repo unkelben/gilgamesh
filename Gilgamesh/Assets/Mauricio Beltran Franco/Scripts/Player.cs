@@ -1,7 +1,11 @@
-﻿using System.Collections;
+﻿
+
+#define hello 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
 
 public class Player : MonoBehaviour {
     [SerializeField] Vector3 startPos;
