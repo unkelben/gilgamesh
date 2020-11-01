@@ -1,0 +1,114 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Rose.Characters
+{
+    public class NpcController : MonoBehaviour
+    {
+        [SerializeField] private float speed;
+        [SerializeField] private float rotationSpeed;
+
+        private Rigidbody2D rb;
+        private GameObject player;
+        private GameObject previousNpc;
+
+        private Vector2 newPoint;
+        private Vector2 direction;
+        private Vector2 smoothMoveVelocity;
+        
+        private bool isRoaming;
+        private bool isMoving;
+
+        private float time;
+        [SerializeField] private float timeUntilNextPoint;
+
+        private SpriteRenderer spriteRenderer;
+        [SerializeField] private NpcData[] npcData;
+
+        private void Awake()
+        {
+            player = null;
+            previousNpc = null;
+            rb = GetComponent<Rigidbody2D>();
+            newPoint = new Vector3(0f, 0f, 0f);
+            isRoaming = true;
+            isMoving = false;
+            time = 0;
+        }
+
+        void Start()
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = npcData[Random.Range(0, npcData.Length)].npcSprite;
+        }
+
+        private void FixedUpdate()
+        {
+            Movement();
+        }
+
+        void Update()
+        {
+            FaceDirection();
+        }
+
+        void Movement()
+        {
+            if (isRoaming)
+            {
+                time += Time.deltaTime;
+                if (time >= timeUntilNextPoint)
+                {
+                    timeUntilNextPoint = Random.Range(1, 3f);
+                    newPoint = GenerateNewPoint();
+                    direction = -(transform.position - new Vector3(newPoint.x, newPoint.y, 0f)).normalized;
+                    time = 0;
+                }
+            }
+            else
+            {
+                if (player != null)
+                    direction = (player.transform.position - transform.position).normalized;
+                if (previousNpc != null)
+                    direction = (previousNpc.transform.position - transform.position).normalized;
+            }
+
+            rb.velocity = direction * speed * Time.deltaTime;
+            if (player != null && (player.transform.position - transform.position).magnitude <= 5)
+                rb.velocity = new Vector2(0f, 0f);
+            if (previousNpc != null && (previousNpc.transform.position - transform.position).magnitude <= 5)
+                rb.velocity = new Vector2(0f, 0f);
+
+            isMoving = rb.velocity != new Vector2(0f, 0f) ? true : false;
+            FaceDirection();
+        }
+
+        void FaceDirection()
+        {
+            if (isMoving)
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, direction), rotationSpeed * Time.deltaTime);
+        }
+
+        private Vector2 GenerateNewPoint()
+        {
+            Vector2 point = new Vector2(0f, 0f);
+            
+            point = Camera.main.ScreenToWorldPoint(new Vector2(Random.Range(0, Screen.width), Random.Range(0, Screen.height)));
+
+            return point;
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.tag == "Player" && player == null && previousNpc == null)
+            {
+                player = other.gameObject;
+                if (player.GetComponent<PlayerController>().surroundingNpcs.Count > 0)
+                    previousNpc = player.GetComponent<PlayerController>().surroundingNpcs[player.GetComponent<PlayerController>().surroundingNpcs.Count-1];
+                player.GetComponent<PlayerController>().surroundingNpcs.Add(gameObject);
+                isRoaming = false;
+            }
+        }
+    }
+}
