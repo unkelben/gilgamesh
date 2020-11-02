@@ -13,6 +13,9 @@ public class sailorGilgameshInputs : MonoBehaviour
     void Start()
     {
         rend = gameObject.GetComponent<SpriteRenderer>();
+
+        rend.sprite = sprites[height];
+        transform.position = new Vector3(displacement[height].x, displacement[height].y, transform.position.z);
     }
 
     // Update is called once per frame
@@ -23,18 +26,18 @@ public class sailorGilgameshInputs : MonoBehaviour
         {
             changed = true;
             height = Mathf.RoundToInt(Mathf.Min(height + 1f, sprites.Count-1f));
-            Debug.Log("W! height: " + height);
+           // Debug.Log("W! height: " + height);
         }
         else if (Input.GetKeyDown("s"))
         {
             changed = true;
             height = Mathf.RoundToInt(Mathf.Max(height - 1f, 0f));
-            Debug.Log("S! height: " + height);
+            //Debug.Log("S! height: " + height);
         }
 
         if (changed)
         {
-            Debug.Log("update spriite " + height);
+           // Debug.Log("update spriite " + height);
             rend.sprite = sprites[height];
             transform.position = new Vector3(displacement[height].x, displacement[height].y, transform.position.z);
         }
