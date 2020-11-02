@@ -6,6 +6,8 @@ public class sailorGilgameshInputs : MonoBehaviour
 {
     public List<Sprite> sprites;
     public List<Vector2> displacement;
+    public List<GameObject> sails;
+    public List<Vector2> sailPositions;
     SpriteRenderer rend;
     int height = 0;
 
@@ -13,9 +15,7 @@ public class sailorGilgameshInputs : MonoBehaviour
     void Start()
     {
         rend = gameObject.GetComponent<SpriteRenderer>();
-
-        rend.sprite = sprites[height];
-        transform.position = new Vector3(displacement[height].x, displacement[height].y, transform.position.z);
+        updateSprites();
     }
 
     // Update is called once per frame
@@ -37,10 +37,21 @@ public class sailorGilgameshInputs : MonoBehaviour
 
         if (changed)
         {
-           // Debug.Log("update spriite " + height);
-            rend.sprite = sprites[height];
-            transform.position = new Vector3(displacement[height].x, displacement[height].y, transform.position.z);
+            // Debug.Log("update spriite " + height);
+            updateSprites();
         }
 
+    }
+
+    void updateSprites()
+    {
+        rend.sprite = sprites[height];
+        transform.position = new Vector3(displacement[height].x, displacement[height].y, transform.position.z);
+
+        foreach (GameObject sail in sails){
+            sail.active = false;
+        }
+
+        sails[height].active = true;
     }
 }
