@@ -93,8 +93,12 @@ namespace Rose.Characters
         private Vector2 GenerateNewPoint()
         {
             Vector2 point = new Vector2(0f, 0f);
-            
-            point = Camera.main.ScreenToWorldPoint(new Vector2(Random.Range(0, Screen.width), Random.Range(0, Screen.height)));
+
+            float height = 2f * Camera.main.orthographicSize;
+            float width = height * Camera.main.aspect;
+
+            point = new Vector2(Random.Range(-width/2, width/2), Random.Range(-height/2, height/2));
+            //Debug.DrawLine(transform.position, point, Color.white, 10);
 
             return point;
         }

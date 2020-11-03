@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 500
   rotationSpeed: 10
+  world: {fileID: 6654134587826456028, guid: aa095f44cdd83e0459492e13c1305adc, type: 3}
   timeUntilNextPoint: 1
   npcData:
   - {fileID: 11400000, guid: 6803d9386a2a74841abd1d876e226640, type: 2}
