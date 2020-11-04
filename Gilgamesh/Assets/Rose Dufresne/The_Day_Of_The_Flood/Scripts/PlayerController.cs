@@ -6,7 +6,6 @@ namespace Rose.Characters
 {
     public class PlayerController : MonoBehaviour
     {
-
         [SerializeField] private float speed;
         [SerializeField] private float rotationSpeed;
 
@@ -46,7 +45,7 @@ namespace Rose.Characters
         {
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
-
+            
             isMoving = horizontal != 0 | vertical != 0;
 
             inputVector = new Vector2(horizontal, vertical);
@@ -65,6 +64,11 @@ namespace Rose.Characters
         {
             if (isMoving)
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, moveAmount), rotationSpeed * Time.deltaTime);
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            print("colliding");
         }
     }
 }

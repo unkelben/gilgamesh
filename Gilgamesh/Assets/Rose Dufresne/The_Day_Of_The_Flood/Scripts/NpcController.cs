@@ -104,9 +104,9 @@ namespace Rose.Characters
             return point;
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.tag == "Player" && player == null && previousNpc == null)
+            if (other.collider.tag == "Player" && player == null && previousNpc == null)
             {
                 player = other.gameObject;
                 if (player.GetComponent<PlayerController>().surroundingNpcs.Count > 0)
