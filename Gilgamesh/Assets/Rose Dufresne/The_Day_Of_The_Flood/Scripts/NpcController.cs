@@ -16,6 +16,7 @@ namespace Rose.Characters
         private Vector2 newPoint;
         private Vector2 direction;
         private Vector2 smoothMoveVelocity;
+        [SerializeField] private float distanceBetween;
         
         private bool isRoaming;
         private bool isMoving;
@@ -75,9 +76,9 @@ namespace Rose.Characters
             }
 
             rb.velocity = direction * speed * Time.deltaTime;
-            if (player != null && (player.transform.position - transform.position).magnitude <= 5)
+            if (player != null && (player.transform.position - transform.position).magnitude <= distanceBetween)
                 rb.velocity = new Vector2(0f, 0f);
-            if (previousNpc != null && (previousNpc.transform.position - transform.position).magnitude <= 5)
+            if (previousNpc != null && (previousNpc.transform.position - transform.position).magnitude <= distanceBetween)
                 rb.velocity = new Vector2(0f, 0f);
 
             isMoving = rb.velocity != new Vector2(0f, 0f) ? true : false;

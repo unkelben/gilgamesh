@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1583242728244570889, guid: 52dabef326ad6a14888fb86bfb89784b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4900388b58729ed43830cf6b332dbc4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
+  speed: 700
   rotationSpeed: 10
-  world: {fileID: 6654134587826456028, guid: aa095f44cdd83e0459492e13c1305adc, type: 3}
+  distanceBetween: 6
   timeUntilNextPoint: 1
   npcData:
   - {fileID: 11400000, guid: 6803d9386a2a74841abd1d876e226640, type: 2}
@@ -114,6 +114,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 72d99577c2f3cdf47bfe8a7c9cb52e33, type: 2}
   - {fileID: 11400000, guid: 83b043d84046daf4880edce285ed9647, type: 2}
   - {fileID: 11400000, guid: 304a1e5bbe6eea94ca0d829457aa3492, type: 2}
+  - {fileID: 11400000, guid: 736e6db5a7cb3604dbb18042d170d24f, type: 2}
+  - {fileID: 11400000, guid: b03867578260447458ca2d116b10b65a, type: 2}
+  - {fileID: 11400000, guid: 95593290ed966f54d8506cdb68adf4bb, type: 2}
+  - {fileID: 11400000, guid: b03867578260447458ca2d116b10b65a, type: 2}
+  - {fileID: 11400000, guid: 736e6db5a7cb3604dbb18042d170d24f, type: 2}
+  - {fileID: 11400000, guid: 95593290ed966f54d8506cdb68adf4bb, type: 2}
+  - {fileID: 11400000, guid: b03867578260447458ca2d116b10b65a, type: 2}
+  - {fileID: 11400000, guid: 736e6db5a7cb3604dbb18042d170d24f, type: 2}
+  - {fileID: 11400000, guid: 95593290ed966f54d8506cdb68adf4bb, type: 2}
 --- !u!50 &4934367195851817368
 Rigidbody2D:
   serializedVersion: 4
