@@ -12,9 +12,11 @@ public class rippleEffect : MonoBehaviour
     Renderer rend;
     Texture2D texture;
 
+    public List<Transform> interactingObjects;
+
 
     public float brushval = 100f;
-    float damping = 0.99f;
+    float damping = 0.999f;
     int cols;
     int rows;
     float[,] current;
@@ -28,6 +30,7 @@ public class rippleEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         rend = GetComponent<Renderer>();
         Texture tex = rend.material.mainTexture;
         texture = Instantiate(tex) as Texture2D;
@@ -49,6 +52,8 @@ public class rippleEffect : MonoBehaviour
         }
 
         previous[68, 68] = brushval;
+
+        dragPlane = new Plane(myMainCamera.transform.forward, transform.position);
     }
 
     // Update is called once per frame
@@ -130,6 +135,8 @@ public class rippleEffect : MonoBehaviour
             previous[pixelX, pixelY] = brushval;
         }
 
+        drawAtObjectsPos();
+
     }
 
     void OnMouseDrag()
@@ -140,7 +147,7 @@ public class rippleEffect : MonoBehaviour
     void drawAtMousePos()
     {
         // next 4 lines are taken from that stackoverflow issue on top of the doc
-        dragPlane = new Plane(myMainCamera.transform.forward, transform.position);
+        
         Ray camRay = myMainCamera.ScreenPointToRay(Input.mousePosition);
         float planeDist;
         dragPlane.Raycast(camRay, out planeDist);
@@ -156,7 +163,32 @@ public class rippleEffect : MonoBehaviour
 
         previous[pixelX, pixelY] = brushval;
 
-        // show updated pixels
-        texture.Apply();
+    }
+
+    void drawAtObjectsPos()
+    {
+        foreach(Transform obj in interactingObjects)
+        {
+            if (obj.gameObject.active)
+            {
+                Vector3 screenPos = myMainCamera.WorldToScreenPoint(obj.position);
+                Debug.Log(screenPos);
+                Ray objRay = myMainCamera.ScreenPointToRay(screenPos);
+                float planeDist;
+                dragPlane.Raycast(objRay, out planeDist);
+                // the result is the scene coordinates of my mouse click 
+                Vector3 sceneXY = objRay.GetPoint(planeDist);
+
+                // mouse position relative to canvas top-left corner 
+                Vector3 localXY = sceneXY - (rend.bounds.center - rend.bounds.extents);
+
+                // map to pixel in texture image
+                int pixelX = Mathf.FloorToInt(cols * localXY.x / (rend.bounds.extents.x * 2f));
+                int pixelY = Mathf.FloorToInt(rows * localXY.y / (rend.bounds.extents.y * 2f));
+
+                previous[pixelX, pixelY] = brushval;
+            }
+     
+        }
     }
 }
