@@ -65,10 +65,5 @@ namespace Rose.Characters
             if (isMoving)
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, moveAmount), rotationSpeed * Time.deltaTime);
         }
-
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            print("colliding");
-        }
     }
 }

@@ -133,8 +133,10 @@ GameObject:
   m_Component:
   - component: {fileID: 24161224}
   - component: {fileID: 24161225}
+  - component: {fileID: 24161227}
+  - component: {fileID: 24161226}
   m_Layer: 11
-  m_Name: house_combo1
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,6 +184,36 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &24161226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24161223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &24161227
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24161223}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 7.0572824, y: 6.6276903}
+  serializedVersion: 2
+  m_Radius: 4.366162
 --- !u!1 &38271514
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,9 +225,11 @@ GameObject:
   - component: {fileID: 38271516}
   - component: {fileID: 38271515}
   - component: {fileID: 38271517}
+  - component: {fileID: 38271519}
+  - component: {fileID: 38271518}
   m_Layer: 11
-  m_Name: houses 4_1
-  m_TagString: Obstacle
+  m_Name: house
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -317,6 +351,36 @@ PolygonCollider2D:
       - {x: 0.099999994, y: -0.39999998}
       - {x: 0.21, y: -0.37}
       - {x: 0.32999998, y: -0.34}
+--- !u!114 &38271518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38271514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &38271519
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38271514}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.31115282, y: -0.05253196}
+  serializedVersion: 2
+  m_Radius: 0.25137928
 --- !u!1 &45774859
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +392,7 @@ GameObject:
   - component: {fileID: 45774860}
   - component: {fileID: 45774862}
   - component: {fileID: 45774861}
+  - component: {fileID: 45774863}
   m_Layer: 11
   m_Name: Text (13)
   m_TagString: Untagged
@@ -396,6 +461,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45774859}
   m_CullTransparentMesh: 0
+--- !u!114 &45774863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45774859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &81896135
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +484,7 @@ GameObject:
   - component: {fileID: 81896136}
   - component: {fileID: 81896138}
   - component: {fileID: 81896137}
+  - component: {fileID: 81896139}
   m_Layer: 11
   m_Name: Text (14)
   m_TagString: Untagged
@@ -475,6 +553,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81896135}
   m_CullTransparentMesh: 0
+--- !u!114 &81896139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81896135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &114066117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -558,6 +648,7 @@ GameObject:
   - component: {fileID: 128941453}
   - component: {fileID: 128941455}
   - component: {fileID: 128941454}
+  - component: {fileID: 128941456}
   m_Layer: 11
   m_Name: Text (9)
   m_TagString: Untagged
@@ -626,6 +717,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128941452}
   m_CullTransparentMesh: 0
+--- !u!114 &128941456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128941452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &136982258
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,8 +740,10 @@ GameObject:
   - component: {fileID: 136982260}
   - component: {fileID: 136982259}
   - component: {fileID: 136982261}
+  - component: {fileID: 136982263}
+  - component: {fileID: 136982262}
   m_Layer: 11
-  m_Name: houses 4_21
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -736,6 +841,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.17, y: 1.13}
   m_EdgeRadius: 0
+--- !u!114 &136982262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136982258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &136982263
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136982258}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000019073486, y: 0.5126738}
+  serializedVersion: 2
+  m_Radius: 0.19414848
 --- !u!1 &147284185
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,6 +882,7 @@ GameObject:
   - component: {fileID: 147284186}
   - component: {fileID: 147284188}
   - component: {fileID: 147284187}
+  - component: {fileID: 147284189}
   m_Layer: 11
   m_Name: Text (16)
   m_TagString: Untagged
@@ -815,6 +951,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147284185}
   m_CullTransparentMesh: 0
+--- !u!114 &147284189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147284185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &225455425
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,6 +1056,7 @@ GameObject:
   - component: {fileID: 232810517}
   - component: {fileID: 232810519}
   - component: {fileID: 232810518}
+  - component: {fileID: 232810520}
   m_Layer: 11
   m_Name: Text (2)
   m_TagString: Untagged
@@ -976,6 +1125,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232810516}
   m_CullTransparentMesh: 0
+--- !u!114 &232810520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232810516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &234434013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1059,8 +1220,10 @@ GameObject:
   - component: {fileID: 240063182}
   - component: {fileID: 240063181}
   - component: {fileID: 240063183}
+  - component: {fileID: 240063185}
+  - component: {fileID: 240063184}
   m_Layer: 11
-  m_Name: houses 4_0
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1158,6 +1321,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6, y: 1.44}
   m_EdgeRadius: 0
+--- !u!114 &240063184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240063180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &240063185
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240063180}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.70601004, y: 0.00000047683716}
+  serializedVersion: 2
+  m_Radius: 0.24836297
 --- !u!1 &251117164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,6 +1362,7 @@ GameObject:
   - component: {fileID: 251117165}
   - component: {fileID: 251117167}
   - component: {fileID: 251117166}
+  - component: {fileID: 251117168}
   m_Layer: 11
   m_Name: Text (10)
   m_TagString: Untagged
@@ -1237,6 +1431,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251117164}
   m_CullTransparentMesh: 0
+--- !u!114 &251117168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251117164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &260517066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,6 +1454,7 @@ GameObject:
   - component: {fileID: 260517067}
   - component: {fileID: 260517069}
   - component: {fileID: 260517068}
+  - component: {fileID: 260517070}
   m_Layer: 11
   m_Name: Text (11)
   m_TagString: Untagged
@@ -1316,6 +1523,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260517066}
   m_CullTransparentMesh: 0
+--- !u!114 &260517070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260517066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &262527509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1656,9 +1875,11 @@ GameObject:
   - component: {fileID: 309886249}
   - component: {fileID: 309886248}
   - component: {fileID: 309886250}
+  - component: {fileID: 309886252}
+  - component: {fileID: 309886251}
   m_Layer: 11
-  m_Name: houses 4_9
-  m_TagString: Obstacle
+  m_Name: house
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1793,6 +2014,36 @@ PolygonCollider2D:
       - {x: 1.505, y: -1.1899999}
       - {x: 1.505, y: -0.98999995}
       - {x: 1.495, y: -0.88}
+--- !u!114 &309886251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309886247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &309886252
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309886247}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.18169397, y: -0.42719972}
+  serializedVersion: 2
+  m_Radius: 0.25900194
 --- !u!1 &320831837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,8 +2137,10 @@ GameObject:
   - component: {fileID: 372458204}
   - component: {fileID: 372458203}
   - component: {fileID: 372458205}
+  - component: {fileID: 372458207}
+  - component: {fileID: 372458206}
   m_Layer: 11
-  m_Name: houses 4_28
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2011,6 +2264,36 @@ PolygonCollider2D:
       - {x: 0.74, y: -0.32}
       - {x: 1.03, y: -0.26999998}
       - {x: 1.09, y: -0.22}
+--- !u!114 &372458206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372458202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &372458207
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372458202}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.11122666, y: 0.10266832}
+  serializedVersion: 2
+  m_Radius: 0.25152218
 --- !u!1 &401466273
 GameObject:
   m_ObjectHideFlags: 0
@@ -2188,7 +2471,6 @@ GameObject:
   m_Component:
   - component: {fileID: 419955331}
   - component: {fileID: 419955332}
-  - component: {fileID: 419955333}
   m_Layer: 11
   m_Name: river (3)
   m_TagString: Untagged
@@ -2244,27 +2526,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!50 &419955333
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419955330}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1001 &452736226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2348,9 +2609,11 @@ GameObject:
   - component: {fileID: 455985599}
   - component: {fileID: 455985598}
   - component: {fileID: 455985600}
+  - component: {fileID: 455985602}
+  - component: {fileID: 455985601}
   m_Layer: 11
-  m_Name: houses 4_10
-  m_TagString: Obstacle
+  m_Name: house
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2491,6 +2754,36 @@ PolygonCollider2D:
       - {x: -0.64, y: -1.155}
       - {x: -0.45, y: -1.0749999}
       - {x: -0.35999998, y: -1.045}
+--- !u!114 &455985601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455985597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &455985602
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455985597}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.49940124, y: 0.5362071}
+  serializedVersion: 2
+  m_Radius: 0.254533
 --- !u!1 &473613879
 GameObject:
   m_ObjectHideFlags: 0
@@ -2502,6 +2795,7 @@ GameObject:
   - component: {fileID: 473613880}
   - component: {fileID: 473613882}
   - component: {fileID: 473613881}
+  - component: {fileID: 473613883}
   m_Layer: 11
   m_Name: Text (5)
   m_TagString: Untagged
@@ -2570,6 +2864,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473613879}
   m_CullTransparentMesh: 0
+--- !u!114 &473613883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473613879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &489748449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2758,6 +3064,7 @@ GameObject:
   - component: {fileID: 512029418}
   - component: {fileID: 512029420}
   - component: {fileID: 512029419}
+  - component: {fileID: 512029421}
   m_Layer: 11
   m_Name: Text (17)
   m_TagString: Untagged
@@ -2826,6 +3133,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512029417}
   m_CullTransparentMesh: 0
+--- !u!114 &512029421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512029417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &546422665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2976,10 +3295,12 @@ GameObject:
   - component: {fileID: 575673965}
   - component: {fileID: 575673964}
   - component: {fileID: 575673966}
+  - component: {fileID: 575673968}
   - component: {fileID: 575673967}
+  - component: {fileID: 575673969}
   m_Layer: 11
-  m_Name: houses 4_18
-  m_TagString: Obstacle
+  m_Name: house
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3111,27 +3432,50 @@ PolygonCollider2D:
       - {x: 1.05, y: -1.115}
       - {x: 1.2099999, y: -1.095}
       - {x: 1.23, y: -1.0849999}
---- !u!50 &575673967
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &575673967
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575673963}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &575673968
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575673963}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.3312756, y: 0.4718206}
+  serializedVersion: 2
+  m_Radius: 0.26958925
+--- !u!114 &575673969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575673963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 0}
+  timeUntilNextSpawn: 0
 --- !u!1 &590593139
 GameObject:
   m_ObjectHideFlags: 0
@@ -3143,6 +3487,7 @@ GameObject:
   - component: {fileID: 590593140}
   - component: {fileID: 590593142}
   - component: {fileID: 590593141}
+  - component: {fileID: 590593143}
   m_Layer: 11
   m_Name: Text (5)
   m_TagString: Untagged
@@ -3211,6 +3556,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590593139}
   m_CullTransparentMesh: 0
+--- !u!114 &590593143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590593139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &677542200
 GameObject:
   m_ObjectHideFlags: 0
@@ -3222,10 +3579,11 @@ GameObject:
   - component: {fileID: 677542202}
   - component: {fileID: 677542201}
   - component: {fileID: 677542203}
+  - component: {fileID: 677542205}
   - component: {fileID: 677542204}
   m_Layer: 11
-  m_Name: houses 4_4 (1)
-  m_TagString: Obstacle
+  m_Name: house
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3312,8 +3670,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.00000047683716}
   serializedVersion: 2
   m_Radius: 0.71000004
---- !u!60 &677542204
-PolygonCollider2D:
+--- !u!114 &677542204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677542200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &677542205
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3322,46 +3694,12 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.37, y: 1.42}
-    newSize: {x: 1.37, y: 1.42}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.565, y: -0.42999998}
-      - {x: 0.645, y: -0.29}
-      - {x: 0.685, y: -0.13}
-      - {x: 0.685, y: 0.14}
-      - {x: 0.645, y: 0.26999998}
-      - {x: 0.59499997, y: 0.39999998}
-      - {x: 0.435, y: 0.59}
-      - {x: 0.275, y: 0.65999997}
-      - {x: 0.13499999, y: 0.71}
-      - {x: -0.114999995, y: 0.71}
-      - {x: -0.265, y: 0.68}
-      - {x: -0.39499998, y: 0.59999996}
-      - {x: -0.525, y: 0.47}
-      - {x: -0.655, y: 0.28}
-      - {x: -0.685, y: 0.17}
-      - {x: -0.685, y: -0.17}
-      - {x: -0.615, y: -0.35999998}
-      - {x: -0.435, y: -0.58}
-      - {x: -0.275, y: -0.66999996}
-      - {x: -0.185, y: -0.69}
-      - {x: -0.114999995, y: -0.71}
-      - {x: 0.085, y: -0.71}
-      - {x: 0.185, y: -0.69}
-      - {x: 0.315, y: -0.64}
-      - {x: 0.435, y: -0.56}
+  m_Offset: {x: 0.47592118, y: 0.42536423}
+  serializedVersion: 2
+  m_Radius: 0.2242623
 --- !u!1 &679871107
 GameObject:
   m_ObjectHideFlags: 0
@@ -3543,6 +3881,8 @@ GameObject:
   - component: {fileID: 783180397}
   - component: {fileID: 783180399}
   - component: {fileID: 783180398}
+  - component: {fileID: 783180400}
+  - component: {fileID: 783180401}
   m_Layer: 11
   m_Name: Text (6)
   m_TagString: Untagged
@@ -3602,7 +3942,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 2
 --- !u!222 &783180399
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3611,6 +3951,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783180396}
   m_CullTransparentMesh: 0
+--- !u!114 &783180400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783180396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &783180401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783180396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &815007947
 GameObject:
   m_ObjectHideFlags: 0
@@ -3770,6 +4134,7 @@ GameObject:
   - component: {fileID: 819201997}
   - component: {fileID: 819201999}
   - component: {fileID: 819201998}
+  - component: {fileID: 819202000}
   m_Layer: 11
   m_Name: Text (3)
   m_TagString: Untagged
@@ -3838,6 +4203,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819201996}
   m_CullTransparentMesh: 0
+--- !u!114 &819202000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819201996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &822552780
 GameObject:
   m_ObjectHideFlags: 0
@@ -3849,6 +4226,7 @@ GameObject:
   - component: {fileID: 822552781}
   - component: {fileID: 822552783}
   - component: {fileID: 822552782}
+  - component: {fileID: 822552784}
   m_Layer: 11
   m_Name: Text (10)
   m_TagString: Untagged
@@ -3917,6 +4295,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822552780}
   m_CullTransparentMesh: 0
+--- !u!114 &822552784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822552780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &825662801
 GameObject:
   m_ObjectHideFlags: 0
@@ -4057,7 +4447,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e92972a9555856b4ba70a33a86f72cd7, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.04240513, a: 0.22745098}
+  m_Color: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 0.22745098}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4164,8 +4554,10 @@ GameObject:
   - component: {fileID: 850611372}
   - component: {fileID: 850611371}
   - component: {fileID: 850611373}
+  - component: {fileID: 850611375}
+  - component: {fileID: 850611374}
   m_Layer: 11
-  m_Name: houses 4_25
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4279,6 +4671,36 @@ PolygonCollider2D:
       - {x: 0.19999999, y: -0.51}
       - {x: 0.62, y: -0.04}
       - {x: 0.78, y: 0.19}
+--- !u!114 &850611374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850611370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &850611375
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850611370}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.19699658, y: 0.3980434}
+  serializedVersion: 2
+  m_Radius: 0.226755
 --- !u!1 &898853239
 GameObject:
   m_ObjectHideFlags: 0
@@ -4371,8 +4793,10 @@ GameObject:
   m_Component:
   - component: {fileID: 927309720}
   - component: {fileID: 927309721}
+  - component: {fileID: 927309723}
+  - component: {fileID: 927309722}
   m_Layer: 11
-  m_Name: house_combo1
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4425,6 +4849,36 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &927309722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927309719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &927309723
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927309719}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.047057528, y: -0.71441585}
+  serializedVersion: 2
+  m_Radius: 0.24332373
 --- !u!1 &973177432
 GameObject:
   m_ObjectHideFlags: 0
@@ -4436,8 +4890,10 @@ GameObject:
   - component: {fileID: 973177434}
   - component: {fileID: 973177433}
   - component: {fileID: 973177435}
+  - component: {fileID: 973177437}
+  - component: {fileID: 973177436}
   m_Layer: 11
-  m_Name: houses 4_22
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4554,6 +5010,36 @@ PolygonCollider2D:
       - {x: -0.145, y: -0.755}
       - {x: 0.095, y: -0.525}
       - {x: 0.305, y: -0.345}
+--- !u!114 &973177436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973177432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &973177437
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973177432}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.19678603, y: -0.32512367}
+  serializedVersion: 2
+  m_Radius: 0.24164723
 --- !u!1 &1040267863
 GameObject:
   m_ObjectHideFlags: 0
@@ -4710,8 +5196,10 @@ GameObject:
   - component: {fileID: 1075484840}
   - component: {fileID: 1075484839}
   - component: {fileID: 1075484841}
+  - component: {fileID: 1075484843}
+  - component: {fileID: 1075484842}
   m_Layer: 11
-  m_Name: houses 4_16
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4838,6 +5326,36 @@ PolygonCollider2D:
       - {x: 0.93, y: -0.97499996}
       - {x: 0.93, y: -0.575}
       - {x: 0.90999997, y: -0.405}
+--- !u!114 &1075484842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075484838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &1075484843
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075484838}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.21815383, y: 0.63967484}
+  serializedVersion: 2
+  m_Radius: 0.24288765
 --- !u!1 &1078557471
 GameObject:
   m_ObjectHideFlags: 0
@@ -5051,6 +5569,7 @@ GameObject:
   - component: {fileID: 1102292844}
   - component: {fileID: 1102292846}
   - component: {fileID: 1102292845}
+  - component: {fileID: 1102292847}
   m_Layer: 11
   m_Name: Text (8)
   m_TagString: Untagged
@@ -5119,6 +5638,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102292843}
   m_CullTransparentMesh: 0
+--- !u!114 &1102292847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102292843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1106088941
 GameObject:
   m_ObjectHideFlags: 0
@@ -5212,6 +5743,7 @@ GameObject:
   - component: {fileID: 1110227738}
   - component: {fileID: 1110227740}
   - component: {fileID: 1110227739}
+  - component: {fileID: 1110227741}
   m_Layer: 11
   m_Name: Text (9)
   m_TagString: Untagged
@@ -5280,6 +5812,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110227737}
   m_CullTransparentMesh: 0
+--- !u!114 &1110227741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110227737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1123656783
 GameObject:
   m_ObjectHideFlags: 0
@@ -5291,8 +5835,10 @@ GameObject:
   - component: {fileID: 1123656785}
   - component: {fileID: 1123656784}
   - component: {fileID: 1123656786}
+  - component: {fileID: 1123656788}
+  - component: {fileID: 1123656787}
   m_Layer: 11
-  m_Name: houses 4_7
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5415,6 +5961,36 @@ PolygonCollider2D:
       - {x: 0.28, y: -0.78499997}
       - {x: 0.62, y: -0.305}
       - {x: 0.68, y: -0.195}
+--- !u!114 &1123656787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123656783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &1123656788
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123656783}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.316566, y: -0.37218156}
+  serializedVersion: 2
+  m_Radius: 0.3017038
 --- !u!1 &1144062762
 GameObject:
   m_ObjectHideFlags: 0
@@ -5425,8 +6001,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1144062763}
   - component: {fileID: 1144062764}
+  - component: {fileID: 1144062766}
+  - component: {fileID: 1144062765}
   m_Layer: 11
-  m_Name: house_combo2
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5473,6 +6051,36 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1144062765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144062762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &1144062766
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144062762}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -7.306739, y: -9.103503}
+  serializedVersion: 2
+  m_Radius: 4.0934777
 --- !u!1 &1166206340
 GameObject:
   m_ObjectHideFlags: 0
@@ -5484,6 +6092,7 @@ GameObject:
   - component: {fileID: 1166206341}
   - component: {fileID: 1166206343}
   - component: {fileID: 1166206342}
+  - component: {fileID: 1166206344}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -5543,7 +6152,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 1:39
+  m_Text: 2:00
 --- !u!222 &1166206343
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5552,6 +6161,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166206340}
   m_CullTransparentMesh: 0
+--- !u!114 &1166206344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166206340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34b2c91ed89c84945aee464ee67f08f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1186858992
 GameObject:
   m_ObjectHideFlags: 0
@@ -5645,6 +6266,7 @@ GameObject:
   - component: {fileID: 1187123829}
   - component: {fileID: 1187123831}
   - component: {fileID: 1187123830}
+  - component: {fileID: 1187123832}
   m_Layer: 11
   m_Name: Text (8)
   m_TagString: Untagged
@@ -5713,6 +6335,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187123828}
   m_CullTransparentMesh: 0
+--- !u!114 &1187123832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187123828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1199072660
 GameObject:
   m_ObjectHideFlags: 0
@@ -5786,6 +6420,7 @@ GameObject:
   - component: {fileID: 1208750935}
   - component: {fileID: 1208750937}
   - component: {fileID: 1208750936}
+  - component: {fileID: 1208750938}
   m_Layer: 11
   m_Name: Text (14)
   m_TagString: Untagged
@@ -5854,6 +6489,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208750934}
   m_CullTransparentMesh: 0
+--- !u!114 &1208750938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208750934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1248348596
 GameObject:
   m_ObjectHideFlags: 0
@@ -5947,8 +6594,10 @@ GameObject:
   - component: {fileID: 1251467782}
   - component: {fileID: 1251467781}
   - component: {fileID: 1251467783}
+  - component: {fileID: 1251467785}
+  - component: {fileID: 1251467784}
   m_Layer: 11
-  m_Name: houses 4_5
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6046,6 +6695,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.18, y: 1.09}
   m_EdgeRadius: 0
+--- !u!114 &1251467784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251467780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &1251467785
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251467780}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.48955613, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.249058
 --- !u!1 &1297346864
 GameObject:
   m_ObjectHideFlags: 0
@@ -6057,6 +6736,7 @@ GameObject:
   - component: {fileID: 1297346865}
   - component: {fileID: 1297346867}
   - component: {fileID: 1297346866}
+  - component: {fileID: 1297346868}
   m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
@@ -6125,6 +6805,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297346864}
   m_CullTransparentMesh: 0
+--- !u!114 &1297346868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297346864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1302481645
 GameObject:
   m_ObjectHideFlags: 0
@@ -6381,8 +7073,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1355042222}
   - component: {fileID: 1355042223}
+  - component: {fileID: 1355042225}
+  - component: {fileID: 1355042224}
   m_Layer: 11
-  m_Name: house_combo1 (1)
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6431,6 +7125,36 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1355042224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355042221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &1355042225
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355042221}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.7788803, y: -0.56997573}
+  serializedVersion: 2
+  m_Radius: 0.26235178
 --- !u!1 &1360163446
 GameObject:
   m_ObjectHideFlags: 0
@@ -6639,7 +7363,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -6677,6 +7401,7 @@ GameObject:
   - component: {fileID: 1426912049}
   - component: {fileID: 1426912051}
   - component: {fileID: 1426912050}
+  - component: {fileID: 1426912052}
   m_Layer: 11
   m_Name: Text (1)
   m_TagString: Untagged
@@ -6745,6 +7470,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426912048}
   m_CullTransparentMesh: 0
+--- !u!114 &1426912052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426912048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1432709772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6828,6 +7565,7 @@ GameObject:
   - component: {fileID: 1440398640}
   - component: {fileID: 1440398642}
   - component: {fileID: 1440398641}
+  - component: {fileID: 1440398643}
   m_Layer: 11
   m_Name: Text (9)
   m_TagString: Untagged
@@ -6896,6 +7634,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440398639}
   m_CullTransparentMesh: 0
+--- !u!114 &1440398643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440398639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1449496302
 GameObject:
   m_ObjectHideFlags: 0
@@ -6907,6 +7657,7 @@ GameObject:
   - component: {fileID: 1449496303}
   - component: {fileID: 1449496305}
   - component: {fileID: 1449496304}
+  - component: {fileID: 1449496306}
   m_Layer: 11
   m_Name: Text (12)
   m_TagString: Untagged
@@ -6975,6 +7726,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449496302}
   m_CullTransparentMesh: 0
+--- !u!114 &1449496306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449496302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1456310915
 GameObject:
   m_ObjectHideFlags: 0
@@ -6986,8 +7749,10 @@ GameObject:
   - component: {fileID: 1456310917}
   - component: {fileID: 1456310916}
   - component: {fileID: 1456310918}
+  - component: {fileID: 1456310920}
+  - component: {fileID: 1456310919}
   m_Layer: 11
-  m_Name: houses 4_19
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7113,6 +7878,36 @@ PolygonCollider2D:
       - {x: 0.055, y: -0.89}
       - {x: 0.465, y: -0.53}
       - {x: 0.685, y: -0.29999998}
+--- !u!114 &1456310919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456310915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &1456310920
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456310915}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.48340774, y: -0.32940143}
+  serializedVersion: 2
+  m_Radius: 0.23486467
 --- !u!1 &1476931567
 GameObject:
   m_ObjectHideFlags: 0
@@ -7290,6 +8085,7 @@ GameObject:
   - component: {fileID: 1542180814}
   - component: {fileID: 1542180816}
   - component: {fileID: 1542180815}
+  - component: {fileID: 1542180817}
   m_Layer: 11
   m_Name: Text (11)
   m_TagString: Untagged
@@ -7358,6 +8154,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542180813}
   m_CullTransparentMesh: 0
+--- !u!114 &1542180817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542180813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1657226919
 GameObject:
   m_ObjectHideFlags: 0
@@ -7664,8 +8472,10 @@ GameObject:
   - component: {fileID: 1700630763}
   - component: {fileID: 1700630762}
   - component: {fileID: 1700630764}
+  - component: {fileID: 1700630766}
+  - component: {fileID: 1700630765}
   m_Layer: 11
-  m_Name: houses 4_2
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7784,6 +8594,36 @@ PolygonCollider2D:
       - {x: 0.255, y: -0.49499997}
       - {x: 0.375, y: -0.325}
       - {x: 0.445, y: -0.205}
+--- !u!114 &1700630765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700630761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &1700630766
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700630761}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.22063486, y: -0.3111512}
+  serializedVersion: 2
+  m_Radius: 0.3669699
 --- !u!1 &1718920481
 GameObject:
   m_ObjectHideFlags: 0
@@ -7794,8 +8634,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1718920482}
   - component: {fileID: 1718920483}
+  - component: {fileID: 1718920485}
+  - component: {fileID: 1718920484}
   m_Layer: 11
-  m_Name: house_combo1
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7844,6 +8686,36 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1718920484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718920481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &1718920485
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718920481}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.78657985, y: -0.16259037}
+  serializedVersion: 2
+  m_Radius: 0.23604627
 --- !u!1 &1755512600
 GameObject:
   m_ObjectHideFlags: 0
@@ -7854,8 +8726,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1755512601}
   - component: {fileID: 1755512602}
+  - component: {fileID: 1755512604}
+  - component: {fileID: 1755512603}
   m_Layer: 11
-  m_Name: house_combo1 (1)
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7902,6 +8776,36 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1755512603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755512600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &1755512604
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755512600}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.7468089, y: -0.06732996}
+  serializedVersion: 2
+  m_Radius: 0.17964864
 --- !u!1 &1760259628
 GameObject:
   m_ObjectHideFlags: 0
@@ -8077,6 +8981,7 @@ GameObject:
   - component: {fileID: 1814658002}
   - component: {fileID: 1814658004}
   - component: {fileID: 1814658003}
+  - component: {fileID: 1814658005}
   m_Layer: 11
   m_Name: Text (10)
   m_TagString: Untagged
@@ -8145,6 +9050,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814658001}
   m_CullTransparentMesh: 0
+--- !u!114 &1814658005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814658001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1816023734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8231,8 +9148,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1821296436}
   - component: {fileID: 1821296437}
+  - component: {fileID: 1821296439}
+  - component: {fileID: 1821296438}
   m_Layer: 11
-  m_Name: house_combo1 (1)
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8283,6 +9202,36 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1821296438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821296435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &1821296439
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821296435}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.0566548, y: 0.4834069}
+  serializedVersion: 2
+  m_Radius: 0.24332307
 --- !u!1 &1858279411
 GameObject:
   m_ObjectHideFlags: 0
@@ -8293,7 +9242,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1858279412}
   - component: {fileID: 1858279413}
-  - component: {fileID: 1858279414}
   m_Layer: 11
   m_Name: river (1)
   m_TagString: Untagged
@@ -8346,27 +9294,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!50 &1858279414
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1858279411}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1859940610
 GameObject:
   m_ObjectHideFlags: 0
@@ -8377,8 +9304,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1859940611}
   - component: {fileID: 1859940612}
+  - component: {fileID: 1859940614}
+  - component: {fileID: 1859940613}
   m_Layer: 11
-  m_Name: house_combo1 (2)
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8430,6 +9359,36 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1859940613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859940610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &1859940614
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859940610}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.2919415, y: 0.2780672}
+  serializedVersion: 2
+  m_Radius: 0.2304889
 --- !u!1 &1886380215
 GameObject:
   m_ObjectHideFlags: 0
@@ -8622,6 +9581,7 @@ GameObject:
   - component: {fileID: 1913147253}
   - component: {fileID: 1913147255}
   - component: {fileID: 1913147254}
+  - component: {fileID: 1913147256}
   m_Layer: 11
   m_Name: Text (4)
   m_TagString: Untagged
@@ -8690,6 +9650,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913147252}
   m_CullTransparentMesh: 0
+--- !u!114 &1913147256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913147252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1919794065
 GameObject:
   m_ObjectHideFlags: 0
@@ -8701,6 +9673,7 @@ GameObject:
   - component: {fileID: 1919794066}
   - component: {fileID: 1919794068}
   - component: {fileID: 1919794067}
+  - component: {fileID: 1919794069}
   m_Layer: 11
   m_Name: Text (7)
   m_TagString: Untagged
@@ -8769,6 +9742,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919794065}
   m_CullTransparentMesh: 0
+--- !u!114 &1919794069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919794065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1924233835
 GameObject:
   m_ObjectHideFlags: 0
@@ -8934,6 +9919,7 @@ GameObject:
   - component: {fileID: 1938974449}
   - component: {fileID: 1938974451}
   - component: {fileID: 1938974450}
+  - component: {fileID: 1938974452}
   m_Layer: 11
   m_Name: Text (9)
   m_TagString: Untagged
@@ -9002,6 +9988,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938974448}
   m_CullTransparentMesh: 0
+--- !u!114 &1938974452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938974448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1986616969
 GameObject:
   m_ObjectHideFlags: 0
@@ -9013,6 +10011,7 @@ GameObject:
   - component: {fileID: 1986616970}
   - component: {fileID: 1986616972}
   - component: {fileID: 1986616971}
+  - component: {fileID: 1986616973}
   m_Layer: 11
   m_Name: Text (15)
   m_TagString: Untagged
@@ -9081,6 +10080,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1986616969}
   m_CullTransparentMesh: 0
+--- !u!114 &1986616973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986616969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2014661335
 GameObject:
   m_ObjectHideFlags: 0
@@ -9091,8 +10102,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2014661336}
   - component: {fileID: 2014661337}
+  - component: {fileID: 2014661339}
+  - component: {fileID: 2014661338}
   m_Layer: 11
-  m_Name: house_combo1
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9139,6 +10152,36 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &2014661338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014661335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &2014661339
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014661335}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.0668205, y: 0.23902197}
+  serializedVersion: 2
+  m_Radius: 0.20987296
 --- !u!1 &2036988778
 GameObject:
   m_ObjectHideFlags: 0
@@ -9322,11 +10365,11 @@ GameObject:
   - component: {fileID: 2063152967}
   - component: {fileID: 2063152966}
   - component: {fileID: 2063152968}
-  - component: {fileID: 2063152969}
   - component: {fileID: 2063152970}
+  - component: {fileID: 2063152969}
   m_Layer: 11
-  m_Name: houses 4_8
-  m_TagString: Obstacle
+  m_Name: house
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9475,29 +10518,22 @@ PolygonCollider2D:
       - {x: -0.92499995, y: -1.3399999}
       - {x: -0.715, y: -1.27}
       - {x: -0.505, y: -1.2099999}
---- !u!50 &2063152969
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &2063152969
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063152965}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!60 &2063152970
-PolygonCollider2D:
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &2063152970
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9506,74 +10542,12 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.11, y: 2.72}
-    newSize: {x: 2.11, y: 2.72}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.445, y: -1.1899999}
-      - {x: -0.185, y: -1.13}
-      - {x: -0.095, y: -1.12}
-      - {x: 0.055, y: -1.1}
-      - {x: 0.225, y: -1.05}
-      - {x: 0.275, y: -1}
-      - {x: 0.305, y: -0.82}
-      - {x: 0.355, y: -0.71}
-      - {x: 0.385, y: -0.63}
-      - {x: 0.445, y: -0.5}
-      - {x: 0.475, y: -0.47}
-      - {x: 0.565, y: -0.32999998}
-      - {x: 0.565, y: -0.32}
-      - {x: 0.715, y: -0.17999999}
-      - {x: 0.765, y: -0.14999999}
-      - {x: 0.91499996, y: -0.03}
-      - {x: 1.055, y: 0.04}
-      - {x: 1.055, y: 0.19999999}
-      - {x: 1.035, y: 0.28}
-      - {x: 1.025, y: 0.34}
-      - {x: 0.995, y: 0.51}
-      - {x: 0.905, y: 0.98999995}
-      - {x: 0.895, y: 1.0699999}
-      - {x: 0.825, y: 1.35}
-      - {x: 0.79499996, y: 1.36}
-      - {x: 0.72499996, y: 1.36}
-      - {x: 0.66499996, y: 1.3299999}
-      - {x: 0.505, y: 1.29}
-      - {x: 0.475, y: 1.28}
-      - {x: 0.325, y: 1.2099999}
-      - {x: 0.205, y: 1.14}
-      - {x: 0.125, y: 1.09}
-      - {x: -0.005, y: 1.01}
-      - {x: -0.155, y: 0.90999997}
-      - {x: -0.24499999, y: 0.84}
-      - {x: -0.36499998, y: 0.72999996}
-      - {x: -0.53499997, y: 0.52}
-      - {x: -0.59499997, y: 0.42999998}
-      - {x: -0.685, y: 0.29999998}
-      - {x: -0.745, y: 0.19999999}
-      - {x: -0.875, y: -0.06}
-      - {x: -0.91499996, y: -0.16}
-      - {x: -0.97499996, y: -0.34}
-      - {x: -1.005, y: -0.42}
-      - {x: -1.045, y: -0.64}
-      - {x: -1.055, y: -0.72999996}
-      - {x: -1.055, y: -1.2099999}
-      - {x: -1.045, y: -1.3}
-      - {x: -1.035, y: -1.3299999}
-      - {x: -1.005, y: -1.36}
-      - {x: -0.92499995, y: -1.3399999}
-      - {x: -0.715, y: -1.27}
-      - {x: -0.505, y: -1.2099999}
+  m_Offset: {x: 0.39600933, y: -0.3030679}
+  serializedVersion: 2
+  m_Radius: 0.36188987
 --- !u!1 &2065306284
 GameObject:
   m_ObjectHideFlags: 0
@@ -9585,9 +10559,11 @@ GameObject:
   - component: {fileID: 2065306286}
   - component: {fileID: 2065306285}
   - component: {fileID: 2065306287}
+  - component: {fileID: 2065306289}
+  - component: {fileID: 2065306288}
   m_Layer: 11
-  m_Name: houses 4_4
-  m_TagString: Obstacle
+  m_Name: house
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9674,6 +10650,36 @@ CircleCollider2D:
   m_Offset: {x: 0.00000047683716, y: 0.00000023841858}
   serializedVersion: 2
   m_Radius: 0.7099999
+--- !u!114 &2065306288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065306284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &2065306289
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065306284}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.43771338, y: 0.45004463}
+  serializedVersion: 2
+  m_Radius: 0.25174442
 --- !u!1 &2070796937
 GameObject:
   m_ObjectHideFlags: 0
@@ -9685,8 +10691,10 @@ GameObject:
   - component: {fileID: 2070796939}
   - component: {fileID: 2070796938}
   - component: {fileID: 2070796940}
+  - component: {fileID: 2070796942}
+  - component: {fileID: 2070796941}
   m_Layer: 11
-  m_Name: houses 4_24
+  m_Name: house
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9814,6 +10822,36 @@ PolygonCollider2D:
       - {x: -0.285, y: -0.585}
       - {x: -0.095, y: -0.53499997}
       - {x: 0.065, y: -0.48499998}
+--- !u!114 &2070796941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070796937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296db9a9ea283e64dbabe02de37596ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 4934367195851817372, guid: 9c47e9676a7bdf04eab4b701e63776dd, type: 3}
+  timeUntilNextSpawn: 0.5
+--- !u!58 &2070796942
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070796937}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.15828249, y: 0.11550397}
+  serializedVersion: 2
+  m_Radius: 0.27042243
 --- !u!1 &2085457313
 GameObject:
   m_ObjectHideFlags: 0
@@ -9824,7 +10862,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2085457314}
   - component: {fileID: 2085457315}
-  - component: {fileID: 2085457316}
   m_Layer: 11
   m_Name: river (2)
   m_TagString: Untagged
@@ -9883,27 +10920,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!50 &2085457316
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085457313}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &2093774331
 GameObject:
   m_ObjectHideFlags: 0

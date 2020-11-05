@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4934367195851817373}
   - component: {fileID: 4934367195851817368}
   - component: {fileID: 6431088307347321346}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NPC
-  m_TagString: Clay
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
