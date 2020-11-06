@@ -16,10 +16,17 @@ public class windHandler : MonoBehaviour
 
     public Material mat;
     Material targetmat;
+    GameObject gilgamesh;
+    GameObject boat;
+
+    public int height = 0;
+    public float windPower = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
+        gilgamesh = GameObject.Find("gilga1");
+        boat = GameObject.Find("boat");
         targetmat = Instantiate(mat);
         gameObject.GetComponent<LineRenderer>().material = targetmat;
     }
@@ -32,6 +39,16 @@ public class windHandler : MonoBehaviour
 
         targetmat.mainTextureOffset = new Vector2(val2, 0);
         targetmat.mainTextureScale= new Vector2(val1, 1.19f);
-        counter = (counter + 1f) % animLength;
+
+        if (counter > 0.8 * animLength)
+        {
+           if( gilgamesh.GetComponent<sailorGilgameshInputs>().height == height)
+            {
+                boat.GetComponent<boatMotion>().boatPower += windPower;
+            }
+        }
+        counter++;
+
+        if (counter == animLength) Destroy(gameObject);
     }
 }

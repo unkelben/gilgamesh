@@ -9,7 +9,7 @@ public class sailorGilgameshInputs : MonoBehaviour
     public List<GameObject> sails;
     public List<Vector2> sailPositions;
     SpriteRenderer rend;
-    int height = 0;
+    public int height = 0;
 
     // Start is called before the first frame update
     void Start()

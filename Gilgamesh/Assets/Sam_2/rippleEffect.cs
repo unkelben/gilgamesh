@@ -188,7 +188,7 @@ public class rippleEffect : MonoBehaviour
             if (obj.gameObject.active)
             {
                 Vector3 screenPos = myMainCamera.WorldToScreenPoint(obj.position);
-                Debug.Log(screenPos);
+             //   Debug.Log(screenPos);
                 Ray objRay = myMainCamera.ScreenPointToRay(screenPos);
                 float planeDist;
                 dragPlane.Raycast(objRay, out planeDist);
