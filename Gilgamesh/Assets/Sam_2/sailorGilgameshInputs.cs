@@ -46,7 +46,7 @@ public class sailorGilgameshInputs : MonoBehaviour
     void updateSprites()
     {
         rend.sprite = sprites[height];
-        transform.position = new Vector3(displacement[height].x, displacement[height].y, transform.position.z);
+        transform.localPosition = new Vector3(displacement[height].x, displacement[height].y, transform.position.z);
 
         foreach (GameObject sail in sails){
             sail.active = false;

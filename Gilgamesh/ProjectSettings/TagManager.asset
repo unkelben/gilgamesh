@@ -30,6 +30,7 @@ TagManager:
   - PinchLimit
   - FingerTip
   - Clay
+  - GustOfWind
   layers:
   - Default
   - TransparentFX

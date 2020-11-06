@@ -24,8 +24,12 @@ public class rippleEffect : MonoBehaviour
     float startval = 0;
     int counter = 0;
 
+    public float outMin = 0f;
+    public float outMax = 255f;
+
     public int travelRate = 2;
     int travelAmount = 3;
+    int pixelSurvivalChance = 80;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +63,17 @@ public class rippleEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        switch (travelRate)
+        {
+            case 1: damping = 0.99999999f; pixelSurvivalChance = 10; break;
+            case 2: damping = 0.999999f; pixelSurvivalChance = 20; break;
+            case 3: damping = 0.9991f; pixelSurvivalChance = 88;  break;
+            case 4: damping = 0.998f; pixelSurvivalChance = 80; break;
+            case 5: damping = 0.994f; pixelSurvivalChance = 80; break;
+            case 6: damping = 0.994f; pixelSurvivalChance = 80; break;
+            case 8: damping = 0.994f; pixelSurvivalChance = 80; break;
+        }
        // Debug.Log("yo");
         for(int i=1; i<cols-1; i++)
         {
@@ -70,7 +85,8 @@ public class rippleEffect : MonoBehaviour
                     + previous[i, j - 1] 
                     + previous[i, j + 1] ) / 2 - current[i, j];
                 current[i, j] = (current[i, j] * damping);
-                byte grey =(byte)( 255f - current[i, j]);
+                
+                byte grey =(byte)( outMin+(outMax-outMin)*( 255f - current[i, j] )/255f );
                 texture.SetPixel(i, j, new Color32(grey,grey,grey , 255 ));
             }
         }
@@ -91,7 +107,7 @@ public class rippleEffect : MonoBehaviour
             {
                 for (int j = 0; j < travelAmount; j++)
                 {
-                    if (Random.Range(0, 100) > 80)
+                    if (Random.Range(0, 100) > pixelSurvivalChance)
                     {
                         previous[rows - 1 - j, i] = previous[travelAmount - 1 - j, i];
                         current[rows - 1 - j, i] = current[travelAmount - 1 - j, i];
