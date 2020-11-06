@@ -38,7 +38,7 @@ public class boatMotion : MonoBehaviour
        );
 
         boatPower = Mathf.Min(Mathf.Max(boatPower - friction, 0f), maxBoatPower);
-        Debug.Log(boatPower);
+        //Debug.Log(boatPower);
         int waterSpeed = 7 - Mathf.RoundToInt(boatPower / 10f);
         if(waterSpeed != lastWaterSpeed)
         {

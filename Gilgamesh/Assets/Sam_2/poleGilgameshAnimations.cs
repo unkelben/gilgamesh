@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class poleGilgameshHandler : MonoBehaviour
+public class poleGilgameshAnimations : MonoBehaviour
 {
     public Sprite stillImg;
     public Sprite stillWithPoleImg;
@@ -26,7 +26,7 @@ public class poleGilgameshHandler : MonoBehaviour
     public Vector2 stillNoPoleImgOffset;
     public Vector2 poleImgOffset;
 
-
+    public int pushPower = 0;
     // animateme stuff:
     public bool running = true;
 
@@ -35,8 +35,10 @@ public class poleGilgameshHandler : MonoBehaviour
     int animFrame = 0;
     int animLength = 1;
     string animState = "still";
-
+    string lastState = "";
+    public bool polePlaced = false;
     SpriteRenderer rend;
+    Vector2 baseOffset;
 
     // Start is called before the first frame update
     void Start()
@@ -46,8 +48,19 @@ public class poleGilgameshHandler : MonoBehaviour
 
     void updateFrame(int input, List<Vector2> offsets)
     {
-        transform.localPosition = new Vector3(offsets[animFrame].x, offsets[animFrame].y, transform.localPosition.z);
-        animFrame = (animFrame + 1) % input;
+        transform.localPosition = new Vector3(offsets[animFrame].x+baseOffset.x, offsets[animFrame].y, transform.localPosition.z);
+
+        if (animState == "settingPole" && !polePlaced && animFrame == 3)
+        {
+            transform.parent.gameObject.GetComponent<poleGilgameshController>().onPolePlaceEnd();
+            polePlaced = true;
+        }
+            
+        else if(!polePlaced)
+        {
+            animFrame = (animFrame + 1) % input;
+        }
+        
         
     }
 
@@ -56,13 +69,16 @@ public class poleGilgameshHandler : MonoBehaviour
     {
         if (running && counter % updatePeriod == 0)
         {
+            baseOffset = new Vector2(0f, 0f);
+
             switch (animState)
             {
                 case "still": rend.sprite = stillImg;
                     transform.localPosition = new Vector3(stillImgOffset.x, stillImgOffset.y, transform.localPosition.z); 
                     break;
                 case "stillWithPole": rend.sprite = stillWithPoleImg;
-                    transform.localPosition = new Vector3(stillWithPoleImgOffset.x, stillWithPoleImgOffset.y, transform.localPosition.z); 
+                    checkBaseOffset();
+                    transform.localPosition = new Vector3(stillWithPoleImgOffset.x+baseOffset.x, stillWithPoleImgOffset.y, transform.localPosition.z); 
                     break;
                 case "stillNoPole": rend.sprite = stillNoPoleImg;
                     transform.localPosition = new Vector3(stillNoPoleImgOffset.x, stillNoPoleImgOffset.y, transform.localPosition.z); 
@@ -72,6 +88,7 @@ public class poleGilgameshHandler : MonoBehaviour
                     updateFrame(walkingImg.Count, walkingImgOffset);
                     break;
                 case "walkingWithPole":
+                    checkBaseOffset();
                     rend.sprite = walkingWithPoleImg[animFrame];
                     updateFrame(walkingWithPoleImg.Count, walkingWithPoleImgOffset);
                     break;
@@ -81,14 +98,23 @@ public class poleGilgameshHandler : MonoBehaviour
                     break;
 
                 case "pushBack":
+
                     rend.sprite = pushBackImg[animFrame];
+
                     transform.localPosition = new Vector3(
                         pushBackImgOffset[animFrame].x,
                         pushBackImgOffset[animFrame].y,
                         transform.localPosition.z
                         );
 
-                    animFrame = (animFrame + 1) % pushBackImg.Count;
+                    if (pushPower >= 13)
+                    {
+                        pushPower = 0;
+                        startAnimation("stillNoPole");
+                        transform.parent.gameObject.GetComponent<poleGilgameshController>().onPolePushEnd();
+                    }
+                    if (pushPower >= 10) animFrame = 2;
+                    else if (pushPower >= 5) animFrame = 1;
                     break;
             }
             // rend.sprite = sprites[animFrame];
@@ -107,10 +133,30 @@ public class poleGilgameshHandler : MonoBehaviour
         else if (Input.GetKey("7")) startAnimation("pushBack");
     }
 
+    void checkBaseOffset()
+    {
+        if (transform.parent.gameObject.GetComponent<poleGilgameshController>().flipped)
+        {
+            baseOffset = new Vector2(-4f, 0f);
+        }
+        else
+        {
+            baseOffset = new Vector2(0f, 0f);
+        }
+    }
+
     public void startAnimation(string state)
     {
         animState = state;
-        animFrame = 0;
+
+        if (state != "pushBack" || lastState != "pushBack")
+            animFrame = 0;
+
+        
+      // else if(animFrame>0) animFrame--;
         counter = 0;
+        polePlaced = false;
+        lastState = state;
+
     }
 }
