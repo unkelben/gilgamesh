@@ -31,7 +31,7 @@ namespace Rose.Characters
                 if (time >= timeUntilNextSpawn)
                 {
                     Vector2 spawnPosition = playerTransform.position - playerTransform.up * 4;
-                    GameObject newNpc = Instantiate(npc, spawnPosition, Quaternion.identity);
+                    GameObject newNpc = Instantiate(npc, spawnPosition, Quaternion.identity) as GameObject;
                     npcCounterText.counter -= 1;
                     time = 0;
                 }

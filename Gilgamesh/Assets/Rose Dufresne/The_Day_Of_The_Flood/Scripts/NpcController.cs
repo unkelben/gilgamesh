@@ -6,7 +6,7 @@ namespace Rose.Characters
 {
     public class NpcController : MonoBehaviour
     {
-        [SerializeField] private float speed;
+        [SerializeField] private float speed = 0.75f;
         [SerializeField] private float rotationSpeed;
 
         private Rigidbody2D rb;
@@ -112,7 +112,17 @@ namespace Rose.Characters
                 if (player.GetComponent<PlayerController>().surroundingNpcs.Count > 0)
                     previousNpc = player.GetComponent<PlayerController>().surroundingNpcs[player.GetComponent<PlayerController>().surroundingNpcs.Count-1];
                 player.GetComponent<PlayerController>().surroundingNpcs.Add(gameObject);
+                Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), player.GetComponent<CircleCollider2D>(), true);
                 isRoaming = false;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.tag == "Enemy")
+            {
+                player.GetComponent<PlayerController>().surroundingNpcs.Remove(gameObject);
+                Destroy(gameObject);
             }
         }
     }

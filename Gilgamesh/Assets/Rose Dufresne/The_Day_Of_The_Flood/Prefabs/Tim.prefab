@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8299087396089972651}
   - component: {fileID: 8299087396089972649}
   - component: {fileID: 8299087396089972648}
-  - component: {fileID: 8299087396089972653}
+  - component: {fileID: 2221624444583904913}
   m_Layer: 0
   m_Name: Tim
   m_TagString: Player
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8299087396089972695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.17760637, y: -0.94560456, z: 0}
+  m_LocalPosition: {x: -0.17760637, y: -0.94560456, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 700
   rotationSpeed: 10
---- !u!58 &8299087396089972653
+--- !u!58 &2221624444583904913
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,4 +135,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.162848
+  m_Radius: 2.268432

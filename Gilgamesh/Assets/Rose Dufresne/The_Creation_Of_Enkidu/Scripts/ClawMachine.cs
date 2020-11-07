@@ -38,7 +38,7 @@ namespace Rose.ClawMachine
             for (int i = 0; i < ignore.Length; i++)
             {
                 for (int j=0; j< gameObject.GetComponentsInChildren<Collider>().Length; j++)
-                Physics.IgnoreCollision(gameObject.GetComponentsInChildren<Collider>()[j], ignore[i].GetComponent<Collider>(), true);
+                    Physics.IgnoreCollision(gameObject.GetComponentsInChildren<Collider>()[j], ignore[i].GetComponent<Collider>(), true);
             }
         }
 
