@@ -26,6 +26,8 @@ public class poleGilgameshAnimations : MonoBehaviour
     public Vector2 stillNoPoleImgOffset;
     public Vector2 poleImgOffset;
 
+    public GameObject pole;
+
     public int pushPower = 0;
     // animateme stuff:
     public bool running = true;
@@ -54,6 +56,7 @@ public class poleGilgameshAnimations : MonoBehaviour
         {
             transform.parent.gameObject.GetComponent<poleGilgameshController>().onPolePlaceEnd();
             polePlaced = true;
+            startAnimation("pushBack");
         }
             
         else if(!polePlaced)
@@ -106,15 +109,19 @@ public class poleGilgameshAnimations : MonoBehaviour
                         pushBackImgOffset[animFrame].y,
                         transform.localPosition.z
                         );
-
-                    if (pushPower >= 13)
+                    
+                    if (pushPower >= 43)
                     {
                         pushPower = 0;
                         startAnimation("stillNoPole");
                         transform.parent.gameObject.GetComponent<poleGilgameshController>().onPolePushEnd();
+                        GameObject newPole = Instantiate(pole);
+                        newPole.transform.position = transform.parent.gameObject.transform.position + new Vector3(-5.5f,-1.5f,0f);
                     }
-                    if (pushPower >= 10) animFrame = 2;
-                    else if (pushPower >= 5) animFrame = 1;
+                    if (pushPower >= 28) animFrame = 2;
+                    else if (pushPower >= 13) animFrame = 1;
+
+                    pushPower += 8 - GameObject.Find("Water").GetComponent<rippleEffect>().travelRate;
                     break;
             }
             // rend.sprite = sprites[animFrame];
@@ -150,7 +157,17 @@ public class poleGilgameshAnimations : MonoBehaviour
         animState = state;
 
         if (state != "pushBack" || lastState != "pushBack")
+        {
             animFrame = 0;
+           
+        }
+        
+        if (state == "pushBack")
+        {
+           // GameObject newPole = Instantiate(pole);
+          //  newPole.transform.position = transform.parent.gameObject.transform.position + new Vector3(-1.5f,-0.5f,0f);
+        }
+            
 
         
       // else if(animFrame>0) animFrame--;

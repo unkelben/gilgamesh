@@ -66,14 +66,16 @@ public class rippleEffect : MonoBehaviour
 
         switch (travelRate)
         {
-            case 1: damping = 0.99999999f; pixelSurvivalChance = 10; break;
-            case 2: damping = 0.999999f; pixelSurvivalChance = 20; break;
-            case 3: damping = 0.9991f; pixelSurvivalChance = 88;  break;
-            case 4: damping = 0.998f; pixelSurvivalChance = 80; break;
-            case 5: damping = 0.994f; pixelSurvivalChance = 80; break;
-            case 6: damping = 0.994f; pixelSurvivalChance = 80; break;
-            case 8: damping = 0.994f; pixelSurvivalChance = 80; break;
+            case 1: damping = 0.99999999f; pixelSurvivalChance = 1; break;
+            case 2: damping = 0.999999f; pixelSurvivalChance = 6; break;
+            case 3: damping = 0.991f; pixelSurvivalChance = 88;  break;
+            case 4: damping = 0.98f; pixelSurvivalChance = 80; break;
+            case 5: damping = 0.97f; pixelSurvivalChance = 80; break;
+            case 6: damping = 0.96f; pixelSurvivalChance = 80; break;
+            case 8: damping = 0.95f; pixelSurvivalChance = 80; break;
         }
+
+        
        // Debug.Log("yo");
         for(int i=1; i<cols-1; i++)
         {

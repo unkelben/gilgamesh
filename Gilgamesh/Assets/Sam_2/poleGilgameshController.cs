@@ -24,6 +24,9 @@ public class poleGilgameshController : MonoBehaviour
     bool spacepush = false;
     bool moving = false;
     public bool flipped = false;
+    bool shaking = false;
+    int shakeCount = 0;
+    int shakeLength = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -99,6 +102,20 @@ public class poleGilgameshController : MonoBehaviour
         }
         
         lastMovingState = moving;
+
+
+        
+        if (shaking)
+        {
+            gilgamesh.transform.position = new Vector3(
+                gilgamesh.transform.position.x,
+                gilgamesh.transform.position.y + 0.032f * Mathf.Sin( 3* Mathf.PI * shakeCount/shakeLength ),
+                gilgamesh.transform.position.z
+                );
+        }
+
+        shakeCount++;
+        if (shakeCount > shakeLength) shaking = false;
     }
 
     public void onPolePlaceEnd()
@@ -141,6 +158,7 @@ public class poleGilgameshController : MonoBehaviour
                         // trigger pushing pole
                         pushingPole = true;
                         StartAnimation("pushBack");
+                        Shake();
                         transform.parent.gameObject.GetComponent<boatMotion>().boatPower += 4f;
                     }
                 }
@@ -151,6 +169,12 @@ public class poleGilgameshController : MonoBehaviour
             pushingPole = false;
           //  spacepush = false;
         }
+    }
+
+    void Shake()
+    {
+        shaking = true;
+        shakeCount = 0;
     }
 
     void StartAnimation(string name)
