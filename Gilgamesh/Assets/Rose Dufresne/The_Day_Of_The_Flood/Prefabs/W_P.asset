@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac3a368ef44859c43b0a5c9d11c19200, type: 3}
   m_Name: W_P
   m_EditorClassIdentifier: 
-  npcSprite: {fileID: 5078319148922948757, guid: 57f465188833f9f4cb1327e3f0fb9d3d, type: 3}
-  npcAnimation: {fileID: 0}
+  sprite: {fileID: 5078319148922948757, guid: 57f465188833f9f4cb1327e3f0fb9d3d, type: 3}
+  animatorController: {fileID: 9100000, guid: c2864ba4315f2874a89b32e71c0b8d6d, type: 2}

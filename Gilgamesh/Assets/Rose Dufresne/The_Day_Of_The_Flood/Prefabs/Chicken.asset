@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac3a368ef44859c43b0a5c9d11c19200, type: 3}
   m_Name: Chicken
   m_EditorClassIdentifier: 
-  npcSprite: {fileID: 7755261981684764637, guid: 8b978a5c6ad668a41803311b39fa8ddc, type: 3}
-  npcAnimation: {fileID: 0}
+  sprite: {fileID: 7755261981684764637, guid: 8b978a5c6ad668a41803311b39fa8ddc, type: 3}
+  animatorController: {fileID: 9100000, guid: 38829f7972a01d844af44bfcff4f22a0, type: 2}

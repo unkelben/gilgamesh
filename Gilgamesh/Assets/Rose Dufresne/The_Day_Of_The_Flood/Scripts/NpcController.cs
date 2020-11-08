@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace Rose.Characters
 {
+    using Rose.Utilities;
+
     public class NpcController : MonoBehaviour
     {
         [SerializeField] private float speed = 0.75f;
@@ -12,6 +14,7 @@ namespace Rose.Characters
         private Rigidbody2D rb;
         private GameObject player;
         private GameObject previousNpc;
+        private GameObject boat;
 
         private Vector2 newPoint;
         private Vector2 direction;
@@ -25,7 +28,12 @@ namespace Rose.Characters
         [SerializeField] private float timeUntilNextPoint;
 
         private SpriteRenderer spriteRenderer;
-        [SerializeField] private NpcData[] npcData;
+        [SerializeField] private CharacterData[] npcData;
+
+        private Animator anim;
+        private int colorIndex;
+
+        private Score score;
 
         private void Awake()
         {
@@ -41,7 +49,14 @@ namespace Rose.Characters
         void Start()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = npcData[Random.Range(0, npcData.Length)].npcSprite;
+            colorIndex = Random.Range(0, npcData.Length);
+            spriteRenderer.sprite = npcData[colorIndex].sprite;
+            boat = GameObject.FindGameObjectWithTag("Target");
+
+            anim = GetComponent<Animator>();
+            anim.runtimeAnimatorController = npcData[colorIndex].animatorController;
+
+            score = FindObjectOfType<Score>();
         }
 
         private void FixedUpdate()
@@ -52,6 +67,7 @@ namespace Rose.Characters
         void Update()
         {
             FaceDirection();
+            Animate();
         }
 
         void Movement()
@@ -70,7 +86,12 @@ namespace Rose.Characters
             else
             {
                 if (player != null)
+                {
+                    if (player != boat && player.GetComponent<PlayerController>().safeZone)
+                        player = boat;
+
                     direction = (player.transform.position - transform.position).normalized;
+                }
                 if (previousNpc != null)
                     direction = (previousNpc.transform.position - transform.position).normalized;
             }
@@ -104,9 +125,14 @@ namespace Rose.Characters
             return point;
         }
 
+        void Animate()
+        {
+            anim.SetBool("isMoving", isMoving);
+        }
+
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.collider.tag == "Player" && player == null && previousNpc == null)
+            if (other.collider.tag == "Player" && player == null && previousNpc == null && player != boat)
             {
                 player = other.gameObject;
                 if (player.GetComponent<PlayerController>().surroundingNpcs.Count > 0)
@@ -115,14 +141,23 @@ namespace Rose.Characters
                 Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), player.GetComponent<CircleCollider2D>(), true);
                 isRoaming = false;
             }
+            
+            if (other.collider.tag == "Target")
+            {
+                score.score += 1;
+                Destroy(gameObject);
+            }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
             if (collision.tag == "Enemy")
             {
-                player.GetComponent<PlayerController>().surroundingNpcs.Remove(gameObject);
-                Destroy(gameObject);
+                if (player.GetComponent<PlayerController>() != null)
+                {
+                    player.GetComponent<PlayerController>().surroundingNpcs.Remove(gameObject);
+                    Destroy(gameObject);
+                }
             }
         }
     }

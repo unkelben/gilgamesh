@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4934367195851817373}
   - component: {fileID: 4934367195851817368}
   - component: {fileID: 6431088307347321346}
+  - component: {fileID: 3026034992221254021}
   m_Layer: 9
   m_Name: NPC
   m_TagString: Player1
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 700
   rotationSpeed: 10
+  boat: {fileID: 4842560850593302295, guid: edd0ada41259d7043b2e827f3005a19d, type: 3}
   distanceBetween: 6
   timeUntilNextPoint: 1
   npcData:
@@ -159,3 +161,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.162848
+--- !u!95 &3026034992221254021
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4934367195851817372}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2c062a4f32fa5c94e9e2a25a74b37027, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

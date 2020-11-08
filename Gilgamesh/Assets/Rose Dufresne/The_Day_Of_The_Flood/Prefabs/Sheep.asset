@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac3a368ef44859c43b0a5c9d11c19200, type: 3}
   m_Name: Sheep
   m_EditorClassIdentifier: 
-  npcSprite: {fileID: 1715694909886081764, guid: bbcdc042f7adb0449a519c72ad4db424, type: 3}
-  npcAnimation: {fileID: 0}
+  sprite: {fileID: 1715694909886081764, guid: bbcdc042f7adb0449a519c72ad4db424, type: 3}
+  animatorController: {fileID: 9100000, guid: bf77e59b545465446a056cc746d8b517, type: 2}

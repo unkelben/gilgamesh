@@ -15,8 +15,14 @@ namespace Rose.Characters
         private Vector2 moveAmount;
         private Vector2 smoothMoveVelocity;
         private bool isMoving;
+        public bool safeZone { get; set; }
 
         public List<GameObject> surroundingNpcs { get; set; }
+
+        private SpriteRenderer spriteRenderer;
+        [SerializeField] private CharacterData characterData;
+
+        private Animator anim;
 
         private void Awake()
         {
@@ -28,6 +34,13 @@ namespace Rose.Characters
         {
             surroundingNpcs = new List<GameObject>();
             isMoving = false;
+            safeZone = false;
+
+            anim = GetComponent<Animator>();
+            anim.runtimeAnimatorController = characterData.animatorController;
+
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = characterData.sprite;
         }
 
         private void FixedUpdate()
@@ -39,6 +52,7 @@ namespace Rose.Characters
         {
             HandleInput();
             FaceDirection();
+            Animate();
         }
 
         void HandleInput()
@@ -64,6 +78,27 @@ namespace Rose.Characters
         {
             if (isMoving)
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, moveAmount), rotationSpeed * Time.deltaTime);
+        }
+
+        void Animate()
+        {
+            anim.SetBool("isMoving", isMoving);
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.tag == "bubble")
+            {
+                safeZone = true;
+            }
+        }
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.tag == "bubble")
+            {
+                surroundingNpcs.Clear();
+                safeZone = false;
+            }
         }
     }
 }

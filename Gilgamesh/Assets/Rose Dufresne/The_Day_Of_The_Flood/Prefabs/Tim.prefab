@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8299087396089972649}
   - component: {fileID: 8299087396089972648}
   - component: {fileID: 2221624444583904913}
+  - component: {fileID: 3159696576192847302}
   m_Layer: 0
   m_Name: Tim
   m_TagString: Player
@@ -120,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 700
   rotationSpeed: 10
+  characterData: {fileID: 11400000, guid: 25d17ec80bb430c4192906e13e2be761, type: 2}
 --- !u!58 &2221624444583904913
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,3 +138,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.268432
+--- !u!95 &3159696576192847302
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8299087396089972695}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
