@@ -110,8 +110,11 @@ public class poleGilgameshAnimations : MonoBehaviour
                         transform.localPosition.z
                         );
                     
+                    
                     if (pushPower >= 43)
                     {
+                        // let go of pole 
+                        GameObject.Find("events").GetComponent<boatSceneHandler>().letGoPole();
                         pushPower = 0;
                         startAnimation("stillNoPole");
                         transform.parent.gameObject.GetComponent<poleGilgameshController>().onPolePushEnd();

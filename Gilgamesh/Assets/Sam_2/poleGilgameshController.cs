@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class poleGilgameshController : MonoBehaviour
 {
+    
     GameObject gilgamesh;
     SpriteRenderer gilgaSprite;
     float walkSpeed = 0.014f;
@@ -27,10 +28,16 @@ public class poleGilgameshController : MonoBehaviour
     bool shaking = false;
     int shakeCount = 0;
     int shakeLength = 10;
+    public bool leftPressed = false;
+    public bool rightPressed = false;
+    public bool spacePressed = false;
+
+    int polesLeft;
 
     // Start is called before the first frame update
     void Start()
     {
+        polesLeft = GameObject.Find("events").GetComponent<boatSceneHandler>().polesLeft;
        // Debug.Log(transform.localPosition.x);
         gilgamesh = GameObject.Find("gilga2");
         gilgaSprite = gilgamesh.GetComponent<SpriteRenderer>();
@@ -49,6 +56,7 @@ public class poleGilgameshController : MonoBehaviour
             gilgaSprite.flipX = true;
             flipped = true;
             moving = true;
+            leftPressed = true;
         }
         else if (Input.GetKey("d")||Input.GetKey("right"))
         {
@@ -56,6 +64,7 @@ public class poleGilgameshController : MonoBehaviour
             gilgaSprite.flipX = false;
             flipped = false;
             moving = true;
+            rightPressed = true;
         }
         else acceleration = 0;
 
@@ -94,7 +103,7 @@ public class poleGilgameshController : MonoBehaviour
         {
             if (!pushingPole && !placingPole)
             {
-                Debug.Log("yaaa");
+               // Debug.Log("yaaa");
                 if (moving && !lastMovingState) StartAnimation("walkingWithPole");
                 else if (!moving && lastMovingState) StartAnimation("stillWithPole");
             }
@@ -132,20 +141,28 @@ public class poleGilgameshController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)&&leftPressed&&rightPressed)
         {
+            spacePressed = true;
             // spacepush = true;
-            Debug.Log("space!");
+           // Debug.Log("space!");
 
             if (!carryingPole)
             {
+                GameObject.Find("events").GetComponent<boatSceneHandler>().grabPole();
                 carryingPole = true;
+                polesLeft--;
                 if (moving) StartAnimation("walkingWithPole");
                 else if (!moving) StartAnimation("stillWithPole");
             }
-            else
+            else 
             {
-                if (!polePlaced && !placingPole)
+                if (polesLeft == 9)
+                {
+                    GameObject.Find("events").GetComponent<boatSceneHandler>().instru2b.SetActive(false);
+                    GameObject.Find("events").GetComponent<boatSceneHandler>().instru3.SetActive(true);
+                }
+                if (!polePlaced && !placingPole && polesLeft>=0)
                 {
                     // start placing pole.
                     placingPole = true;

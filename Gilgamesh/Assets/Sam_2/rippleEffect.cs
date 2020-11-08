@@ -46,9 +46,9 @@ public class rippleEffect : MonoBehaviour
         myMainCamera = Camera.main;
         
 
-        for (int i = 1; i < cols - 1; i++)
+        for (int i = 0; i < cols; i++)
         {
-            for (int j = 1; j < rows - 1; j++)
+            for (int j = 0; j < rows; j++)
             {
                 current[i, j] = startval;
                 previous[i, j] = startval;

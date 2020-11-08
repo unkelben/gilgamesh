@@ -11,6 +11,9 @@ public class sailorGilgameshInputs : MonoBehaviour
     SpriteRenderer rend;
     public int height = 0;
 
+    public bool upPressed = false;
+    public bool downPressed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,12 +29,14 @@ public class sailorGilgameshInputs : MonoBehaviour
         {
             changed = true;
             height = Mathf.RoundToInt(Mathf.Min(height + 1f, sprites.Count-1f));
+            upPressed = true;
            // Debug.Log("W! height: " + height);
         }
         else if (Input.GetKeyDown("s"))
         {
             changed = true;
             height = Mathf.RoundToInt(Mathf.Max(height - 1f, 0f));
+            downPressed = true;
             //Debug.Log("S! height: " + height);
         }
 
