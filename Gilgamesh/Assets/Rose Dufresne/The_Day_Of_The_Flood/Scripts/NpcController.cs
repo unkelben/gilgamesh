@@ -20,6 +20,7 @@ namespace Rose.Characters
         private Vector2 direction;
         private Vector2 smoothMoveVelocity;
         [SerializeField] private float distanceBetween;
+        public List<Vector3> pathPoints { get; set; }
         
         private bool isRoaming;
         private bool isMoving;
@@ -44,6 +45,7 @@ namespace Rose.Characters
             isRoaming = true;
             isMoving = false;
             time = 0;
+            pathPoints = new List<Vector3>();
         }
 
         void Start()
@@ -70,8 +72,13 @@ namespace Rose.Characters
             Animate();
         }
 
+        private float inputH;
+        private float inputV;
+        
         void Movement()
         {
+
+            float dist = 1;
             if (isRoaming)
             {
                 time += Time.deltaTime;
@@ -85,18 +92,39 @@ namespace Rose.Characters
             }
             else
             {
+                if (player != boat)
+                {
+                    if (player.GetComponent<PlayerController>().safeZone)
+                    {
+                        player = boat;
+                    }
+                }
+
+                if (((Input.GetAxisRaw("Horizontal") != inputH || Input.GetAxisRaw("Vertical") != inputV)) 
+                    &&(Input.GetAxisRaw("Horizontal") != 0 && Input.GetAxisRaw("Vertical") != 0f)
+                    || player == boat)
+                {
+                    pathPoints.Add(player.transform.position);
+                }
+
+
+                pathPoints[pathPoints.Count - 1] = player.transform.position;
+
                 if (player != null)
                 {
-                    if (player != boat && player.GetComponent<PlayerController>().safeZone)
-                        player = boat;
-
-                    direction = (player.transform.position - transform.position).normalized;
+                    direction = (pathPoints[0] - transform.position).normalized;
+                    if (pathPoints.Count > 1 && (transform.position - pathPoints[0]).magnitude <= 0.2f)
+                    {
+                        pathPoints.Remove(pathPoints[0]);
+                    }
                 }
-                if (previousNpc != null)
-                    direction = (previousNpc.transform.position - transform.position).normalized;
+
+                //dist = Mathf.Clamp(Vector2.Distance(transform.position, pathPoints[0])/distanceBetween, 1, distanceBetween);
+                //if (previousNpc != null)
+                //    direction = (pointATimeAgo - transform.position).normalized;
             }
 
-            rb.velocity = direction * speed * Time.deltaTime;
+            rb.velocity = direction * dist * speed * Time.deltaTime;
             if (player != null && (player.transform.position - transform.position).magnitude <= distanceBetween)
                 rb.velocity = new Vector2(0f, 0f);
             if (previousNpc != null && (previousNpc.transform.position - transform.position).magnitude <= distanceBetween)
@@ -104,6 +132,9 @@ namespace Rose.Characters
 
             isMoving = rb.velocity != new Vector2(0f, 0f) ? true : false;
             FaceDirection();
+
+            inputH = Input.GetAxisRaw("Horizontal");
+            inputV = Input.GetAxisRaw("Vertical");
         }
 
         void FaceDirection()
@@ -135,8 +166,12 @@ namespace Rose.Characters
             if (other.collider.tag == "Player" && player == null && previousNpc == null && player != boat)
             {
                 player = other.gameObject;
+                pathPoints.Add(player.transform.position);
                 if (player.GetComponent<PlayerController>().surroundingNpcs.Count > 0)
-                    previousNpc = player.GetComponent<PlayerController>().surroundingNpcs[player.GetComponent<PlayerController>().surroundingNpcs.Count-1];
+                {
+                    previousNpc = player.GetComponent<PlayerController>().surroundingNpcs[player.GetComponent<PlayerController>().surroundingNpcs.Count - 1];
+                    //pathPoints = previousNpc.GetComponent<NpcController>().pathPoints;
+                }
                 player.GetComponent<PlayerController>().surroundingNpcs.Add(gameObject);
                 Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), player.GetComponent<CircleCollider2D>(), true);
                 isRoaming = false;

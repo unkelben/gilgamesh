@@ -29,7 +29,7 @@ namespace Rose.Utilities
                 string minutes = ((int)timeLeft / 60).ToString();
                 int seconds = (timeLeft % 60);
                 if (seconds < 10)
-                    timerText.text = minutes + ":" + seconds.ToString();
+                    timerText.text = minutes + ":0" + seconds.ToString();
                 else
                     timerText.text = minutes + ":" + seconds;
                 timer = 0;

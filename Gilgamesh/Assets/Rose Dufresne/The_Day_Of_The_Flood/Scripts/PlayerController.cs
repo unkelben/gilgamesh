@@ -62,7 +62,7 @@ namespace Rose.Characters
             
             isMoving = horizontal != 0 | vertical != 0;
 
-            inputVector = new Vector2(horizontal, vertical);
+            inputVector = new Vector2(horizontal, vertical).normalized;
             moveAmount = Vector2.SmoothDamp(moveAmount, inputVector, ref smoothMoveVelocity, 0.15f);
         }
 
@@ -84,7 +84,7 @@ namespace Rose.Characters
         {
             anim.SetBool("isMoving", isMoving);
         }
-
+        
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.tag == "bubble")

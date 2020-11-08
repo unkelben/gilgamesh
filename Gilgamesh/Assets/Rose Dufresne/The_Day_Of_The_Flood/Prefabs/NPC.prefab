@@ -100,8 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 700
   rotationSpeed: 10
-  boat: {fileID: 4842560850593302295, guid: edd0ada41259d7043b2e827f3005a19d, type: 3}
   distanceBetween: 6
+  pathPoints: []
   timeUntilNextPoint: 1
   npcData:
   - {fileID: 11400000, guid: 6803d9386a2a74841abd1d876e226640, type: 2}

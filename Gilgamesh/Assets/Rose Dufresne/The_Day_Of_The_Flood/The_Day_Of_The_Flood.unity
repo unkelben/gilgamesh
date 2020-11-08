@@ -1530,6 +1530,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e0cc86b25ee63b4499903a7c2e24db0a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0cc86b25ee63b4499903a7c2e24db0a, type: 3}
 --- !u!1 &260517066
@@ -11814,6 +11818,10 @@ PrefabInstance:
       propertyPath: characterData
       value: 
       objectReference: {fileID: 11400000, guid: 25d17ec80bb430c4192906e13e2be761, type: 2}
+    - target: {fileID: 8299087396089972648, guid: 967e32ac561894d4387c690455700032, type: 3}
+      propertyPath: minDistance
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 8299087396089972649, guid: 967e32ac561894d4387c690455700032, type: 3}
       propertyPath: m_BodyType
       value: 0
