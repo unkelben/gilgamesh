@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace Rose.World
 {
+    using Rose.Utilities;
+
     public class Flood : MonoBehaviour
     {
         [SerializeField] private float speed;

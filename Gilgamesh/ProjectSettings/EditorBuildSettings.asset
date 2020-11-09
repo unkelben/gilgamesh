@@ -32,19 +32,34 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Hazel/Scenes/EnkiDress.unity
     guid: 4c31ebc7c49b5af4ebff087fdcbff0e0
-  - enabled: 1
+  - enabled: 0
     path: Assets/William/Scenes/IntroWilliam.unity
     guid: 175a4cbf704bbd74a8e9000dd9652b83
-  - enabled: 1
+  - enabled: 0
     path: Assets/William/Scenes/Wrath.unity
     guid: f289fd884b958cd47bf0a4215ed0c1af
-  - enabled: 1
+  - enabled: 0
     path: Assets/William/Scenes/InterludeWilliam.unity
     guid: b742dbe9dcbc2684b9c65d0e684c8d93
-  - enabled: 1
+  - enabled: 0
     path: Assets/William/Scenes/Praise.unity
     guid: 4ab940ec7e28990438d80279102bcc47
-  - enabled: 1
+  - enabled: 0
     path: Assets/Nat_Torre/Scenes/Ishtars_Botched_Seduction_of_Gilgamesh.unity
     guid: e0882ee419b0102429e4b0a279f32c91
+  - enabled: 1
+    path: Assets/Rose Dufresne/The_Day_Of_The_Flood/Start_Scene.unity
+    guid: 16a792b0c71899c46b05a13ff7cdf199
+  - enabled: 1
+    path: Assets/Rose Dufresne/The_Day_Of_The_Flood/The_Day_Of_The_Flood.unity
+    guid: 1118778102a47f94f9302e352551b0e9
+  - enabled: 1
+    path: Assets/Rose Dufresne/The_Day_Of_The_Flood/End_Scene1.unity
+    guid: fd8d667fc601a66409d9e2d1ae0a76cc
+  - enabled: 1
+    path: Assets/Rose Dufresne/The_Day_Of_The_Flood/End_Scene2.unity
+    guid: 8f5af50f8f39aff43a3b077329ad69c6
+  - enabled: 1
+    path: Assets/Rose Dufresne/The_Day_Of_The_Flood/Game_Over1.unity
+    guid: 9b4f4657154482845bee5399ff3a8341
   m_configObjects: {}

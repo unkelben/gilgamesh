@@ -98,11 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4900388b58729ed43830cf6b332dbc4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 700
+  speed: 900
   rotationSpeed: 10
-  distanceBetween: 6
+  distanceBetween: 5
   pathPoints: []
-  timeUntilNextPoint: 1
+  timeUntilNextPoint: 5
   npcData:
   - {fileID: 11400000, guid: 6803d9386a2a74841abd1d876e226640, type: 2}
   - {fileID: 11400000, guid: 32cb70109e222514aa2820f9acb2ac94, type: 2}
@@ -115,15 +115,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 72d99577c2f3cdf47bfe8a7c9cb52e33, type: 2}
   - {fileID: 11400000, guid: 83b043d84046daf4880edce285ed9647, type: 2}
   - {fileID: 11400000, guid: 304a1e5bbe6eea94ca0d829457aa3492, type: 2}
-  - {fileID: 11400000, guid: 736e6db5a7cb3604dbb18042d170d24f, type: 2}
-  - {fileID: 11400000, guid: b03867578260447458ca2d116b10b65a, type: 2}
-  - {fileID: 11400000, guid: 95593290ed966f54d8506cdb68adf4bb, type: 2}
-  - {fileID: 11400000, guid: b03867578260447458ca2d116b10b65a, type: 2}
-  - {fileID: 11400000, guid: 736e6db5a7cb3604dbb18042d170d24f, type: 2}
-  - {fileID: 11400000, guid: 95593290ed966f54d8506cdb68adf4bb, type: 2}
-  - {fileID: 11400000, guid: b03867578260447458ca2d116b10b65a, type: 2}
-  - {fileID: 11400000, guid: 736e6db5a7cb3604dbb18042d170d24f, type: 2}
-  - {fileID: 11400000, guid: 95593290ed966f54d8506cdb68adf4bb, type: 2}
 --- !u!50 &4934367195851817368
 Rigidbody2D:
   serializedVersion: 4

@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Rose.Characters
 {
+    using Rose.Utilities;
+
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float speed;
@@ -16,6 +19,8 @@ namespace Rose.Characters
         private Vector2 smoothMoveVelocity;
         private bool isMoving;
         public bool safeZone { get; set; }
+        public bool inBoat { get; set; }
+        private float timeInBoat;
 
         public List<GameObject> surroundingNpcs { get; set; }
 
@@ -23,6 +28,8 @@ namespace Rose.Characters
         [SerializeField] private CharacterData characterData;
 
         private Animator anim;
+
+        private Score saved;
 
         private void Awake()
         {
@@ -35,12 +42,16 @@ namespace Rose.Characters
             surroundingNpcs = new List<GameObject>();
             isMoving = false;
             safeZone = false;
+            inBoat = false;
+            timeInBoat = 0;
 
             anim = GetComponent<Animator>();
             anim.runtimeAnimatorController = characterData.animatorController;
 
             spriteRenderer = GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = characterData.sprite;
+
+            saved = FindObjectOfType<Score>();
         }
 
         private void FixedUpdate()
@@ -59,6 +70,31 @@ namespace Rose.Characters
         {
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
+
+            if (inBoat)
+            {
+                timeInBoat += Time.deltaTime;
+                horizontal = 0;
+
+                if (timeInBoat <= 0.5f)
+                {
+                    vertical = 0;
+                }
+                else
+                { 
+                    if (vertical == 1)
+                    {
+                        transform.position += new Vector3(0, 10, 0);
+                    }
+                    else if (vertical == -1)
+                    {
+                        transform.position -= new Vector3(0, 10, 0);
+                    }
+                    inBoat = false;
+                    transform.GetComponent<CircleCollider2D>().enabled = true;
+                    timeInBoat = 0;
+                }
+            }
             
             isMoving = horizontal != 0 | vertical != 0;
 
@@ -98,6 +134,23 @@ namespace Rose.Characters
             {
                 surroundingNpcs.Clear();
                 safeZone = false;
+            }
+
+            if (collision.tag == "Enemy" && !inBoat)
+            {
+                if (saved.score < 25)
+                    SceneManager.LoadScene("Game_Over1");
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.collider.tag == "Target")
+            {
+                transform.position = collision.transform.position;
+                transform.up = new Vector3(-1, 0, 0);
+                inBoat = true;
+                transform.GetComponent<CircleCollider2D>().enabled = false;
             }
         }
     }
