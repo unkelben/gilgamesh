@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 namespace Rose.Characters
 {
@@ -21,7 +22,13 @@ namespace Rose.Characters
         private Vector2 smoothMoveVelocity;
         [SerializeField] private float distanceBetween;
         private List<Vector3> pathPoints;
-        
+        [SerializeField] private float nextWayPointDistance = 3f;
+        private Path path;
+        private int currentWaypoint = 0;
+        private bool reachedEnOfPath = false;
+
+        private Seeker seeker;
+
         private bool isRoaming;
         private bool isMoving;
 
@@ -52,6 +59,9 @@ namespace Rose.Characters
 
         void Start()
         {
+            seeker = GetComponent<Seeker>();
+            InvokeRepeating("UpdatePath", 0f, 0.5f);
+
             spriteRenderer = GetComponent<SpriteRenderer>();
             colorIndex = Random.Range(0, npcData.Length);
             spriteRenderer.sprite = npcData[colorIndex].sprite;
@@ -64,7 +74,7 @@ namespace Rose.Characters
 
             destroy = false;
         }
-
+        
         private void FixedUpdate()
         {
             Movement();
@@ -102,43 +112,68 @@ namespace Rose.Characters
                         player = boat;
                     }
                 }
-
-                if (((Input.GetAxisRaw("Horizontal") != inputH || Input.GetAxisRaw("Vertical") != inputV)) 
-                    || player == boat)
-                {
-                    pathPoints.Add(player.transform.position);
-                }
-
-                pathPoints[pathPoints.Count - 1] = player.transform.position;
                 
                 if (player != null)
                 {
-                    direction = (pathPoints[0] - transform.position).normalized;
-                    if (pathPoints.Count > 1 && Vector2.Distance(transform.position, pathPoints[0]) <= 0.5f)
+                    if (path == null)
                     {
-                        pathPoints.Remove(pathPoints[0]);
+                        return;
                     }
+
+                    if (currentWaypoint >= path.vectorPath.Count)
+                    {
+                        reachedEnOfPath = true;
+                        return;
+                    }
+                    else
+                    {
+                        reachedEnOfPath = false;
+                    }
+                    
+                    direction = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+                    print(direction);
                 }
 
                 rb.velocity = direction * speed * Time.deltaTime;
+
+                print(currentWaypoint);
+                float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+                if (distance < nextWayPointDistance)
+                {
+                    currentWaypoint++;
+                }
             }
             
             if (player != null && (player.transform.position - transform.position).magnitude <= distanceBetween)
                 rb.velocity = new Vector2(0f, 0f);
-            if (previousNpc != null && (previousNpc.transform.position - transform.position).magnitude <= distanceBetween)
+            if (previousNpc != null && Vector2.Distance(previousNpc.transform.position, transform.position) <= distanceBetween)
                 rb.velocity = new Vector2(0f, 0f);
 
             isMoving = rb.velocity != new Vector2(0f, 0f) ? true : false;
             FaceDirection();
+        }
 
-            inputH = Input.GetAxisRaw("Horizontal");
-            inputV = Input.GetAxisRaw("Vertical");
+        private void UpdatePath()
+        {
+            if (seeker.IsDone() && player != null && previousNpc == null)
+                seeker.StartPath(rb.position, player.transform.position, OnPathComplete);
+            if (seeker.IsDone() && previousNpc != null)
+                seeker.StartPath(rb.position, previousNpc.transform.position, OnPathComplete);
         }
 
         void FaceDirection()
         {
             if (isMoving)
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, direction), rotationSpeed * Time.deltaTime);
+        }
+        
+        void OnPathComplete(Path p)
+        {
+            if (!p.error)
+            {
+                path = p;
+                currentWaypoint = 0;
+            }
         }
 
         private Vector2 GenerateNewPoint()
@@ -164,11 +199,9 @@ namespace Rose.Characters
             if (other.collider.tag == "Player" && player == null && previousNpc == null && player != boat)
             {
                 player = other.gameObject;
-                pathPoints.Add(player.transform.position);
                 if (player.GetComponent<PlayerController>().surroundingNpcs.Count > 0)
                 {
                     previousNpc = player.GetComponent<PlayerController>().surroundingNpcs[player.GetComponent<PlayerController>().surroundingNpcs.Count - 1];
-                    //pathPoints = previousNpc.GetComponent<NpcController>().pathPoints;
                 }
                 player.GetComponent<PlayerController>().surroundingNpcs.Add(gameObject);
                 Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), player.GetComponent<CircleCollider2D>(), true);

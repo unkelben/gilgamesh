@@ -1335,7 +1335,7 @@ GameObject:
   - component: {fileID: 225455426}
   - component: {fileID: 225455428}
   - component: {fileID: 225455429}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tree
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -2135,7 +2135,7 @@ GameObject:
   - component: {fileID: 266592300}
   - component: {fileID: 266592299}
   - component: {fileID: 266592301}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2182,8 +2182,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: db2b348d2c2c79b4184b2c3f61848efc, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 37459a730bd0d4f49a2f55d583d167e3, type: 3}
+  m_Color: {r: 0.41960788, g: 0.63529414, b: 0.8235295, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2245,7 +2245,7 @@ GameObject:
   - component: {fileID: 278034869}
   - component: {fileID: 278034871}
   - component: {fileID: 278034872}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tree
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -2359,7 +2359,7 @@ GameObject:
   - component: {fileID: 278056021}
   - component: {fileID: 278056020}
   - component: {fileID: 278056022}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: black (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2406,8 +2406,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: db2b348d2c2c79b4184b2c3f61848efc, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 37459a730bd0d4f49a2f55d583d167e3, type: 3}
+  m_Color: {r: 0.41960788, g: 0.63529414, b: 0.8235295, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2659,7 +2659,7 @@ GameObject:
   - component: {fileID: 320831838}
   - component: {fileID: 320831840}
   - component: {fileID: 320831841}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tree
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -3120,7 +3120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 401466275}
   - component: {fileID: 401466274}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: house_combo_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3204,9 +3204,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 412689871}
-  - component: {fileID: 412689870}
   - component: {fileID: 412689872}
-  m_Layer: 10
+  - component: {fileID: 412689870}
+  m_Layer: 11
   m_Name: black (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3252,9 +3252,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: db2b348d2c2c79b4184b2c3f61848efc, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 37459a730bd0d4f49a2f55d583d167e3, type: 3}
+  m_Color: {r: 0.41960788, g: 0.63529414, b: 0.8235295, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3272,7 +3272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412689869}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 385, y: -15.250412, z: 0}
+  m_LocalPosition: {x: 387, y: -15.250412, z: 0}
   m_LocalScale: {x: 426.5, y: 702.9383, z: 1}
   m_Children: []
   m_Father: {fileID: 815007948}
@@ -3658,7 +3658,7 @@ GameObject:
   - component: {fileID: 489748451}
   - component: {fileID: 489748450}
   - component: {fileID: 489748452}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: house_combo_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3927,7 +3927,7 @@ GameObject:
   - component: {fileID: 570078099}
   - component: {fileID: 570078098}
   - component: {fileID: 570078100}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mountain (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5087,7 +5087,7 @@ GameObject:
   - component: {fileID: 816740544}
   - component: {fileID: 816740543}
   - component: {fileID: 816740545}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mountain (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5655,7 +5655,7 @@ GameObject:
   - component: {fileID: 825662802}
   - component: {fileID: 825662804}
   - component: {fileID: 825662805}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tree
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -6303,7 +6303,7 @@ GameObject:
   - component: {fileID: 898853240}
   - component: {fileID: 898853242}
   - component: {fileID: 898853243}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tree
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -7638,7 +7638,7 @@ GameObject:
   - component: {fileID: 1091300870}
   - component: {fileID: 1091300872}
   - component: {fileID: 1091300873}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tree
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -7845,7 +7845,7 @@ GameObject:
   - component: {fileID: 1106088942}
   - component: {fileID: 1106088944}
   - component: {fileID: 1106088945}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tree
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -8550,7 +8550,7 @@ GameObject:
   - component: {fileID: 1186858993}
   - component: {fileID: 1186858995}
   - component: {fileID: 1186858996}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tree
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -8908,15 +8908,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8299087396089972652, guid: 967e32ac561894d4387c690455700032, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.17760637
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8299087396089972652, guid: 967e32ac561894d4387c690455700032, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.9
+      value: -18.1
       objectReference: {fileID: 0}
     - target: {fileID: 8299087396089972652, guid: 967e32ac561894d4387c690455700032, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8299087396089972652, guid: 967e32ac561894d4387c690455700032, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8968,7 +8968,7 @@ GameObject:
   - component: {fileID: 1248348597}
   - component: {fileID: 1248348599}
   - component: {fileID: 1248348600}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tree
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -9730,7 +9730,7 @@ GameObject:
   - component: {fileID: 1395045443}
   - component: {fileID: 1395045442}
   - component: {fileID: 1395045444}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10111,7 +10111,7 @@ GameObject:
   - component: {fileID: 1410884368}
   - component: {fileID: 1410884367}
   - component: {fileID: 1410884369}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: house_combo_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10371,98 +10371,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1430937267
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1430937268}
-  - component: {fileID: 1430937271}
-  - component: {fileID: 1430937270}
-  - component: {fileID: 1430937269}
-  m_Layer: 11
-  m_Name: Text (18)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1430937268
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430937267}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.4000001}
-  m_LocalScale: {x: 0.0139999995, y: 0.0139999995, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2041042457}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1430937269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430937267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1430937270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430937267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 3eb6239352aa99f44ab67bfc7168a401, type: 3}
-    m_FontSize: 70
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 70
-    m_Alignment: 1
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: 2
---- !u!222 &1430937271
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430937267}
-  m_CullTransparentMesh: 0
 --- !u!1 &1440398639
 GameObject:
   m_ObjectHideFlags: 0
@@ -10827,7 +10735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1476931569}
   - component: {fileID: 1476931568}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: house_combo_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10917,7 +10825,7 @@ GameObject:
   - component: {fileID: 1486445184}
   - component: {fileID: 1486445183}
   - component: {fileID: 1486445185}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mountain (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11786,7 +11694,7 @@ GameObject:
   - component: {fileID: 1687840652}
   - component: {fileID: 1687840654}
   - component: {fileID: 1687840655}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tree
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -12245,7 +12153,7 @@ GameObject:
   - component: {fileID: 1760259630}
   - component: {fileID: 1760259629}
   - component: {fileID: 1760259631}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: black (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12292,8 +12200,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: db2b348d2c2c79b4184b2c3f61848efc, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 37459a730bd0d4f49a2f55d583d167e3, type: 3}
+  m_Color: {r: 0.41960788, g: 0.63529414, b: 0.8235295, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12355,7 +12263,7 @@ GameObject:
   - component: {fileID: 1773908033}
   - component: {fileID: 1773908035}
   - component: {fileID: 1773908036}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tree
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -12985,7 +12893,7 @@ GameObject:
   - component: {fileID: 1912079590}
   - component: {fileID: 1912079589}
   - component: {fileID: 1912079591}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mountain (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13539,6 +13447,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3676b0b8523ae4796385f39c5a1874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1920412123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1920412125}
+  - component: {fileID: 1920412124}
+  m_Layer: 0
+  m_Name: A*
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1920412124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920412123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  data:
+    dataString: UEsDBBQAAAgIAACYn+uvifjPdgIAABwFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVEtzmzAQ/isenesM4Bf01hLH6SGPidvJhYtAi9FYlhhJxHYy/u9dCTDUPSF9+/r22xVfhEtTQ2GV3mjOnhQD8n1C3Jl8mwzGRzjRnZJb/gm9zztntnJO1Pu8UcsV4qELM+oAVvPih9wJ5xwg2EheKn1Ysx2kyliDcEmFATRpZV20ROhrQk74mSYu5IynaOVOn3hKgskFjwVIC3rkGt4tokW8ipNwPQ0WXdj8bh7NkjhBaNnFo2O8nC2TRTxbT8PIJ2tkIeihBuY6G3LOomVfPlh6R4lddz6uw0IJwU1Hmdhz7SVJaW0abBgdGKcogecZ4bUCvqtsd7kGv5SlAdvpo+n5nmtUss1KfqpW3gM1+5bZBxUNeE7z2JNqsz795zANvbnU6vDYFw4DV8RWvNi/0XNBjR0NYAzfD8xDr9CRij3NBbxXIJ/VRqtGMjRa3bjQxkB0P1yvvaUVFPsBb6negE09SN7PO7hOa3K5+PZPqeCH3Jnu5i2wFcoL7pcENI7mFxL2K2S6FIg6Fn8M/Ka78a51hgeujUVT16V09HLVaOdK1l4z101jU6UleLgjXYOkwp5fMY29neGNbVT2xvJA3avqine2/rHchHh48A+CG9OrOl6HZSp1fAJTvTRWcAkDaWd4Rp1SJWW7YmNN+rBto0tajMJ2DWf/rhZJ8lWZsHwV5UkRBUE8XQUF5KychYtVEZdlQPzucYl9UvHaEu3kwanJIbnEPet/NpONprVfd6bpccM/D2okOZel2hYaQL60Ga7EQWMRfJZszTgKtAVrufTzJl8ZEarYA8uuiTLf6fpkNc2GLBmp+YeyDslI6v8uGbmQy19QSwMEFAAACAgAAJif68qSZn5tAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tJJlknmaZUqSuVGSZbKRgYGFrrlBcmpSSpqxoal5skVamoFSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAJif66+J+M92AgAAHAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAJif68qSZn5tAAAAeAAAAAkAJAAAAAAAAAAAAAAAwwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAAB7AwAAAAA=
+    upgradeData: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 0
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors:
+    - {r: 0, g: 0, b: 0, a: 0}
+  tagNames: []
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 10
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
+--- !u!4 &1920412125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920412123}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1921270591
 GameObject:
   m_ObjectHideFlags: 0
@@ -13643,7 +13637,7 @@ GameObject:
   - component: {fileID: 1924233836}
   - component: {fileID: 1924233838}
   - component: {fileID: 1924233839}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tree
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -14271,7 +14265,7 @@ GameObject:
   - component: {fileID: 2041042456}
   - component: {fileID: 2041042458}
   - component: {fileID: 2041042459}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tree
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -14339,8 +14333,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -933.00006, y: 626.77795, z: 0}
   m_LocalScale: {x: 30, y: 30, z: 1}
-  m_Children:
-  - {fileID: 1430937268}
+  m_Children: []
   m_Father: {fileID: 1078557472}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14957,7 +14950,7 @@ GameObject:
   - component: {fileID: 2093774332}
   - component: {fileID: 2093774334}
   - component: {fileID: 2093774335}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tree
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -15072,7 +15065,7 @@ GameObject:
   - component: {fileID: 2103687472}
   - component: {fileID: 2103687474}
   - component: {fileID: 2103687475}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tree
   m_TagString: Flower
   m_Icon: {fileID: 0}
@@ -15415,6 +15408,10 @@ PrefabInstance:
     - target: {fileID: 4842560850593302295, guid: edd0ada41259d7043b2e827f3005a19d, type: 3}
       propertyPath: m_Name
       value: boat
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842560850593302295, guid: edd0ada41259d7043b2e827f3005a19d, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edd0ada41259d7043b2e827f3005a19d, type: 3}
