@@ -101,8 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 900
   rotationSpeed: 10
-  distanceBetween: 5
-  nextWayPointDistance: 3
+  nextWayPointDistance: 6
   timeUntilNextPoint: 5
   npcData:
   - {fileID: 11400000, guid: 6803d9386a2a74841abd1d876e226640, type: 2}

@@ -101,6 +101,14 @@ namespace Rose.Characters
                     direction = -(transform.position - new Vector3(newPoint.x, newPoint.y, 0f)).normalized;
                     time = 0;
                 }
+
+                //check if it's not going towards a wall
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 3, 1 << LayerMask.NameToLayer("obstacle"));
+                if (hit.collider != null)
+                {
+                    print(hit.collider.gameObject.layer);
+                    direction = -direction;
+                }
                 rb.velocity = direction * speed/2 * Time.deltaTime;
             }
             else
@@ -130,13 +138,18 @@ namespace Rose.Characters
                         reachedEnOfPath = false;
                     }
                     
-                    direction = (path.vectorPath[currentWaypoint] - transform.position).normalized;
-                    print(direction);
+                    if (player != boat)
+                    {
+                        direction = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+                    }
+                    else
+                    {
+                        direction = (player.transform.position - transform.position).normalized;
+                    }
                 }
 
                 rb.velocity = direction * speed * Time.deltaTime;
-
-                print(currentWaypoint);
+                
                 float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
                 if (distance < nextWayPointDistance)
                 {
@@ -210,6 +223,7 @@ namespace Rose.Characters
             
             if (other.collider.tag == "Target")
             {
+                
                 score.score += 1;
                 if (gameObject != null)
                 {
@@ -225,7 +239,6 @@ namespace Rose.Characters
             {
                 if (player != null && player != boat)
                 {
-                    print(gameObject);
                     player.GetComponent<PlayerController>().surroundingNpcs.Remove(gameObject);
                 }
                 if (gameObject != null)
