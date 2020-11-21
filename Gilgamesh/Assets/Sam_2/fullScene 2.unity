@@ -1388,6 +1388,7 @@ MonoBehaviour:
   instru3: {fileID: 292578442}
   instru4: {fileID: 2021389008}
   youReDone: {fileID: 1164996468}
+  letterObject: {fileID: 7441994610776281687, guid: 8dd6d55d66e21e8498f5fb9a429e0bee, type: 3}
   polesLeft: 10
 --- !u!4 &1287557748
 Transform:
@@ -1971,6 +1972,7 @@ MonoBehaviour:
   pushPower: 0
   running: 1
   updatePeriod: 8
+  animState: still
   polePlaced: 0
 --- !u!212 &1471870514559280693
 SpriteRenderer:

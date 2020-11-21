@@ -31,6 +31,7 @@ public class poleGilgameshController : MonoBehaviour
     public bool leftPressed = false;
     public bool rightPressed = false;
     public bool spacePressed = false;
+    int poleThreshold = 9;
 
     int polesLeft;
 
@@ -49,26 +50,35 @@ public class poleGilgameshController : MonoBehaviour
     {
 
         moving = false;
-
-        if (Input.GetKey("a")||Input.GetKey("left"))
+        if (!polePlaced && !placingPole)
         {
-            acceleration = -walkSpeed;
-            gilgaSprite.flipX = true;
-            flipped = true;
-            moving = true;
-            leftPressed = true;
+            if (Input.GetKey("a") || Input.GetKey("left"))
+            {
+                acceleration = -walkSpeed;
+                gilgaSprite.flipX = true;
+                flipped = true;
+                moving = true;
+                leftPressed = true;
+            }
+            else if (Input.GetKey("d") || Input.GetKey("right"))
+            {
+                acceleration = walkSpeed;
+                gilgaSprite.flipX = false;
+                flipped = false;
+                moving = true;
+                rightPressed = true;
+            }
+            else acceleration = 0;
         }
-        else if (Input.GetKey("d")||Input.GetKey("right"))
+        else
         {
-            acceleration = walkSpeed;
-            gilgaSprite.flipX = false;
+            acceleration = 0;
             flipped = false;
-            moving = true;
-            rightPressed = true;
+            gilgaSprite.flipX = false;
         }
-        else acceleration = 0;
 
-        velocity += acceleration;
+
+            velocity += acceleration;
 
         
         if (velocity - friction > 0f) velocity -= friction;
@@ -141,7 +151,7 @@ public class poleGilgameshController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)&&leftPressed&&rightPressed)
+        if (Input.GetKeyDown(KeyCode.Space)&&leftPressed&&rightPressed&&polesLeft >=0)
         {
             spacePressed = true;
             // spacepush = true;
@@ -149,18 +159,30 @@ public class poleGilgameshController : MonoBehaviour
 
             if (!carryingPole)
             {
-                GameObject.Find("events").GetComponent<boatSceneHandler>().grabPole();
-                carryingPole = true;
+                
                 polesLeft--;
-                if (moving) StartAnimation("walkingWithPole");
-                else if (!moving) StartAnimation("stillWithPole");
+                if (polesLeft >= 0)
+                {
+                    GameObject.Find("events").GetComponent<boatSceneHandler>().grabPole();
+                    carryingPole = true;
+                    if (moving) StartAnimation("walkingWithPole");
+                    else if (!moving) StartAnimation("stillWithPole");
+                }
+                else
+                {
+                    StartAnimation("stillNoPole");
+                }
+                
             }
             else 
             {
-                if (polesLeft == 9)
+                
+
+                if (polesLeft == poleThreshold)
                 {
                     GameObject.Find("events").GetComponent<boatSceneHandler>().instru2b.SetActive(false);
                     GameObject.Find("events").GetComponent<boatSceneHandler>().instru3.SetActive(true);
+                    poleThreshold--;
                 }
                 if (!polePlaced && !placingPole && polesLeft>=0)
                 {

@@ -22,6 +22,7 @@ public class boatSceneHandler : MonoBehaviour
     bool nextInstru3 = false;
     public GameObject letterObject;
     string state = "game1";
+    bool lastSpacePressed = false;
     bool moveOn = false;
 
     public int polesLeft = 10;
@@ -29,6 +30,8 @@ public class boatSceneHandler : MonoBehaviour
 
     GameObject focusedLetter;
     GameObject focusedLetter2;
+
+    int poleThreshold = 9;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,8 +54,8 @@ public class boatSceneHandler : MonoBehaviour
 
             if (counter == 60)
             {
-              // instru1.SetActive(true);
-                animateText(instru1);
+              instru1.SetActive(true);
+               // animateText(instru1);
 
             }
        //     if( counter > 180 && gilgamesh2.GetComponent<sailorGilgameshInputs>().upPressed)
@@ -65,40 +68,42 @@ public class boatSceneHandler : MonoBehaviour
                
                 )
             {
-                if(animState == "click")
-                {
-                    moveOn = true;
-                    
-                }
-                if (animState == "none")
-                {
-                    nextInstru = true;
-                    animateText(instru2);
-                }
-                
-               // instru2.SetActive(true);
+               
+                nextInstru = true;
+                instru2.SetActive(true);
                 
             }
 
-            if(nextInstru
+            if( nextInstru
                 && gilgamesh1.GetComponent<poleGilgameshController>().spacePressed 
+               // && !lastSpacePressed
                 )
             {
-                if (polesLeft == 9 && !nextInstru2)
+                Debug.Log("space!");
+                if (polesLeft == poleThreshold && !nextInstru2)
                 {
                     instru1.SetActive(false);
                     instru2.SetActive(false);
                     instru2b.SetActive(true);
                     nextInstru2 = true;
+                    nextInstru3 = false;
                 }
                 
                
-                if (polesLeft == 8 &&!nextInstru3)
+                if (
+                    polesLeft == poleThreshold 
+                    && GameObject.Find("gilga2").GetComponent<poleGilgameshAnimations>().animState=="stillNoPole" 
+                    && !nextInstru3
+                    )
                 {
                     instru3.SetActive(false);
+                    if(polesLeft>0) instru2.SetActive(true);
                     nextInstru3 = true;
+                    nextInstru2 = false;
+                    poleThreshold--;
                 }
             }
+           // lastSpacePressed = gilgamesh1.GetComponent<poleGilgameshController>().spacePressed;
             counter++;
         }
         else if (state == "headToFront")
@@ -173,6 +178,7 @@ public class boatSceneHandler : MonoBehaviour
             {
                 
                 state = "headToFront";
+                instru3.SetActive(false);
                 headToFront.SetActive(true);
             }
         }

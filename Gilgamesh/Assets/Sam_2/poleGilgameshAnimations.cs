@@ -36,7 +36,7 @@ public class poleGilgameshAnimations : MonoBehaviour
     public int updatePeriod = 100;
     int animFrame = 0;
     int animLength = 1;
-    string animState = "still";
+    public string animState = "still";
     string lastState = "";
     public bool polePlaced = false;
     SpriteRenderer rend;
