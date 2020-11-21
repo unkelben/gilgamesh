@@ -20,10 +20,15 @@ public class boatSceneHandler : MonoBehaviour
     bool nextInstru = false;
     bool nextInstru2 = false;
     bool nextInstru3 = false;
-
+    public GameObject letterObject;
     string state = "game1";
+    bool moveOn = false;
 
     public int polesLeft = 10;
+    string animState = "none";
+
+    GameObject focusedLetter;
+    GameObject focusedLetter2;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,8 +48,13 @@ public class boatSceneHandler : MonoBehaviour
     {
         if (state == "game1")
         {
-            
-            if ( counter == 60 ) instru1.SetActive(true);
+
+            if (counter == 60)
+            {
+              // instru1.SetActive(true);
+                animateText(instru1);
+
+            }
        //     if( counter > 180 && gilgamesh2.GetComponent<sailorGilgameshInputs>().upPressed)
 
             if(
@@ -52,11 +62,22 @@ public class boatSceneHandler : MonoBehaviour
                 && gilgamesh1.GetComponent<poleGilgameshController>().leftPressed
                 && gilgamesh1.GetComponent<poleGilgameshController>().rightPressed
                 && !nextInstru
+               
                 )
             {
+                if(animState == "click")
+                {
+                    moveOn = true;
+                    
+                }
+                if (animState == "none")
+                {
+                    nextInstru = true;
+                    animateText(instru2);
+                }
                 
-                instru2.SetActive(true);
-                nextInstru = true;
+               // instru2.SetActive(true);
+                
             }
 
             if(nextInstru
@@ -114,6 +135,27 @@ public class boatSceneHandler : MonoBehaviour
           //  Debug.Log(power);
         }
 
+
+        if (animState=="enter"&& focusedLetter.GetComponent<RectTransform>().anchoredPosition.x < -140f)
+        {
+            animState = "click";
+        }
+
+        if (animState=="click" && moveOn)
+        {
+            animState = "leave";
+            moveOn = false;
+            GameObject[] letters = GameObject.FindGameObjectsWithTag("flyLetter");
+            foreach (GameObject letter in letters)
+            {
+                letter.GetComponent<letterScript>().frozen = false;
+            }
+        }
+
+        if(animState=="leave" && focusedLetter2 == null)
+        {
+            animState = "none";
+        }
     }
     
     public void grabPole() 
@@ -134,5 +176,39 @@ public class boatSceneHandler : MonoBehaviour
                 headToFront.SetActive(true);
             }
         }
+    }
+
+    void animateText(GameObject input)
+    {
+        StartCoroutine(ExampleCoroutine(input));
+        
+    }
+
+    IEnumerator ExampleCoroutine(GameObject input)
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        string txt = input.GetComponent<UnityEngine.UI.Text>().text;
+        int startval = 0;
+        for (int i = startval; i < txt.Length+ startval; i++)
+        {
+            GameObject newLetter = Instantiate(letterObject);
+            newLetter.GetComponent<UnityEngine.UI.Text>().text = ""+txt[i];
+            newLetter.GetComponent<letterScript>().offset = i;
+            Vector3 pos = newLetter.GetComponent<RectTransform>().anchoredPosition;
+            
+            if (i == startval) focusedLetter = newLetter;
+            else if (i == txt.Length + startval - 1) focusedLetter2 = newLetter;
+         //   letterObject.GetComponent<letterScript>().letter = txt[i];
+
+            yield return new WaitForSeconds(0.108f);
+            animState = "enter";
+        }
+        //yield on a new YieldInstruction that waits for 5 seconds.
+
+        
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 }
