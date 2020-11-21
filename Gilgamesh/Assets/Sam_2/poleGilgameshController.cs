@@ -34,6 +34,7 @@ public class poleGilgameshController : MonoBehaviour
     int poleThreshold = 9;
 
     int polesLeft;
+    public string controlKey = "a";
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +44,10 @@ public class poleGilgameshController : MonoBehaviour
         gilgamesh = GameObject.Find("gilga2");
         gilgaSprite = gilgamesh.GetComponent<SpriteRenderer>();
         StartAnimation("still");
+       // GameObject.Find("events").GetComponent<boatSceneHandler>().shuffleControl();
     }
+
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -52,7 +56,7 @@ public class poleGilgameshController : MonoBehaviour
         moving = false;
         if (!polePlaced && !placingPole)
         {
-            if (Input.GetKey("a") || Input.GetKey("left"))
+            if (Input.GetKey("left"))
             {
                 acceleration = -walkSpeed;
                 gilgaSprite.flipX = true;
@@ -60,7 +64,7 @@ public class poleGilgameshController : MonoBehaviour
                 moving = true;
                 leftPressed = true;
             }
-            else if (Input.GetKey("d") || Input.GetKey("right"))
+            else if (Input.GetKey("right"))
             {
                 acceleration = walkSpeed;
                 gilgaSprite.flipX = false;
@@ -151,8 +155,9 @@ public class poleGilgameshController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)&&leftPressed&&rightPressed&&polesLeft >=0)
+        if (Input.GetKeyDown(controlKey)&&leftPressed&&rightPressed&&polesLeft >=0)
         {
+         //   GameObject.Find("events").GetComponent<boatSceneHandler>().shuffleControl();
             spacePressed = true;
             // spacepush = true;
            // Debug.Log("space!");
@@ -182,6 +187,7 @@ public class poleGilgameshController : MonoBehaviour
                 {
                     GameObject.Find("events").GetComponent<boatSceneHandler>().instru2b.SetActive(false);
                     GameObject.Find("events").GetComponent<boatSceneHandler>().instru3.SetActive(true);
+                    GameObject.Find("events").GetComponent<boatSceneHandler>().shuffleControl(3);
                     poleThreshold--;
                 }
                 if (!polePlaced && !placingPole && polesLeft>=0)

@@ -28,6 +28,8 @@ public class boatSceneHandler : MonoBehaviour
     public int polesLeft = 10;
     string animState = "none";
 
+    string[] Alphabet = new string[26] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+
     GameObject focusedLetter;
     GameObject focusedLetter2;
 
@@ -71,6 +73,7 @@ public class boatSceneHandler : MonoBehaviour
                
                 nextInstru = true;
                 instru2.SetActive(true);
+                shuffleControl(1);
                 
             }
 
@@ -85,6 +88,7 @@ public class boatSceneHandler : MonoBehaviour
                     instru1.SetActive(false);
                     instru2.SetActive(false);
                     instru2b.SetActive(true);
+                    shuffleControl(2);
                     nextInstru2 = true;
                     nextInstru3 = false;
                 }
@@ -100,6 +104,7 @@ public class boatSceneHandler : MonoBehaviour
                     if(polesLeft>0) instru2.SetActive(true);
                     nextInstru3 = true;
                     nextInstru2 = false;
+                    shuffleControl(1);
                     poleThreshold--;
                 }
             }
@@ -161,6 +166,15 @@ public class boatSceneHandler : MonoBehaviour
         {
             animState = "none";
         }
+    }
+
+    public void shuffleControl(int whichone)
+    {
+        string letter = Alphabet[Mathf.FloorToInt(Random.Range(0, 26))];
+        gilgamesh1.GetComponent<poleGilgameshController>().controlKey = letter;
+        if(whichone==1) instru2.GetComponent<UnityEngine.UI.Text>().text = "Press " + letter + " to grab a pole";
+        else if(whichone==2) instru2b.GetComponent<UnityEngine.UI.Text>().text = "Press " + letter + " again to place it";
+        else if(whichone==3) instru3.GetComponent<UnityEngine.UI.Text>().text = "Mash " + letter + " to thrust the boat forward";
     }
     
     public void grabPole() 
