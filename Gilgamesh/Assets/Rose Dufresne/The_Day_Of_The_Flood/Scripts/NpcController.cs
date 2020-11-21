@@ -106,7 +106,6 @@ namespace Rose.Characters
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 3, 1 << LayerMask.NameToLayer("obstacle"));
                 if (hit.collider != null)
                 {
-                    print(hit.collider.gameObject.layer);
                     direction = -direction;
                 }
                 rb.velocity = direction * speed/2 * Time.deltaTime;
@@ -138,14 +137,7 @@ namespace Rose.Characters
                         reachedEnOfPath = false;
                     }
                     
-                    if (player != boat)
-                    {
-                        direction = (path.vectorPath[currentWaypoint] - transform.position).normalized;
-                    }
-                    else
-                    {
-                        direction = (player.transform.position - transform.position).normalized;
-                    }
+                    direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
                 }
 
                 rb.velocity = direction * speed * Time.deltaTime;
@@ -157,7 +149,7 @@ namespace Rose.Characters
                 }
             }
             
-            if (player != null && (player.transform.position - transform.position).magnitude <= distanceBetween)
+            if (player != null && Vector2.Distance(player.transform.position, rb.position) <= distanceBetween)
                 rb.velocity = new Vector2(0f, 0f);
             if (previousNpc != null && Vector2.Distance(previousNpc.transform.position, transform.position) <= distanceBetween)
                 rb.velocity = new Vector2(0f, 0f);

@@ -17,7 +17,7 @@ namespace Rose.Characters
         private Vector2 inputVector;
         private Vector2 moveAmount;
         private Vector2 smoothMoveVelocity;
-        private bool isMoving;
+        public bool isMoving { get; set; }
         public bool safeZone { get; set; }
         public bool inBoat { get; set; }
         private float timeInBoat;
