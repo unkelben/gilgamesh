@@ -26,7 +26,7 @@ public class boatSceneHandler : MonoBehaviour
     public bool moveOn = false;
     int thoughtsIndex = 0;
 
-    public int polesLeft = 10;
+    public int polesLeft = 24;
     public string animState = "none";
 
     string[] Alphabet = new string[26] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
@@ -36,7 +36,7 @@ public class boatSceneHandler : MonoBehaviour
     GameObject focusedLetter;
     GameObject focusedLetter2;
 
-    int poleThreshold = 9;
+    int poleThreshold = 23;
     // Start is called before the first frame update
     void Start()
     {
@@ -90,7 +90,7 @@ public class boatSceneHandler : MonoBehaviour
                // && !lastSpacePressed
                 )
             {
-             //   Debug.Log("space!");
+              // Debug.Log(polesLeft);
                 if (polesLeft == poleThreshold && !nextInstru2)
                 {
                     instru1.SetActive(false);

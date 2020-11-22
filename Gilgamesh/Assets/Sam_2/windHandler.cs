@@ -40,11 +40,12 @@ public class windHandler : MonoBehaviour
         targetmat.mainTextureOffset = new Vector2(val2, 0);
         targetmat.mainTextureScale= new Vector2(val1, 1.19f);
 
-        if (counter > 0.8 * animLength)
+        if (counter > 0.6 * animLength && counter < 0.8 * animLength)
         {
            if( gilgamesh.GetComponent<sailorGilgameshInputs>().height == height)
             {
                 boat.GetComponent<boatMotion>().boatPower += windPower;
+                gilgamesh.GetComponent<sailorGilgameshInputs>().sailPower += windPower;
             }
         }
         counter++;

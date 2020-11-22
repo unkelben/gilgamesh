@@ -10,6 +10,7 @@ public class sailorGilgameshInputs : MonoBehaviour
     public List<Vector2> sailPositions;
     SpriteRenderer rend;
     public int height = 0;
+    public float sailPower = 0f;
 
     public bool upPressed = false;
     public bool downPressed = false;
@@ -25,14 +26,14 @@ public class sailorGilgameshInputs : MonoBehaviour
     void Update()
     {
         bool changed = false;
-        if (Input.GetKeyDown("w"))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             changed = true;
             height = Mathf.RoundToInt(Mathf.Min(height + 1f, sprites.Count-1f));
             upPressed = true;
            // Debug.Log("W! height: " + height);
         }
-        else if (Input.GetKeyDown("s"))
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             changed = true;
             height = Mathf.RoundToInt(Mathf.Max(height - 1f, 0f));
@@ -45,6 +46,11 @@ public class sailorGilgameshInputs : MonoBehaviour
             // Debug.Log("update spriite " + height);
             updateSprites();
         }
+
+        byte redval = (byte)(255f-sailPower * 5f);
+        sails[height].GetComponent<SpriteRenderer>().color = new Color32(255, redval, redval, 255);
+        sailPower = Mathf.Min(Mathf.Max(sailPower - 0.2f, 0f), 45f);
+
 
     }
 

@@ -42,7 +42,7 @@ public class poleGilgameshController : MonoBehaviour
     public bool leftPressed = false;
     public bool rightPressed = false;
     public bool spacePressed = false;
-    int poleThreshold = 9;
+    int poleThreshold = 23;
 
     int polesLeft;
     public string controlKey = "a";
