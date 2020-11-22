@@ -155,6 +155,7 @@ MonoBehaviour:
   distanceBetween: 6
   nextWayPointDistance: 1
   timeUntilNextPoint: 5
+  deathSprite: {fileID: 632122671296589180, guid: 1a82d79858f170f47b640cc32730dc58, type: 3}
   npcData:
   - {fileID: 11400000, guid: 736e6db5a7cb3604dbb18042d170d24f, type: 2}
   - {fileID: 11400000, guid: b03867578260447458ca2d116b10b65a, type: 2}

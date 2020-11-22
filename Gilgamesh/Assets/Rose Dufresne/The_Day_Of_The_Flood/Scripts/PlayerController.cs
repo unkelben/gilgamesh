@@ -175,8 +175,9 @@ namespace Rose.Characters
 
             if (collision.tag == "Enemy" && !inBoat)
             {
-                if (saved.score < 25)
-                    SceneManager.LoadScene("Game_Over1");
+                //if (saved.score < 25)
+                //    SceneManager.LoadScene("Game_Over1");
+                Destroy(gameObject);
             }
         }
 

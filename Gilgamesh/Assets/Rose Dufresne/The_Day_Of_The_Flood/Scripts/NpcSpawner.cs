@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 namespace Rose.Characters
 {
@@ -11,7 +12,9 @@ namespace Rose.Characters
 
         private Transform playerTransform;
 
-        private NpcCounterText npcCounterText;
+        private Transform npcCounterText;
+
+        private Transform deathSprite;
 
         [SerializeField] private float timeUntilNextSpawn;
         private float time;
@@ -19,13 +22,16 @@ namespace Rose.Characters
         private void Start()
         {
             playerTransform = FindObjectOfType<PlayerController>().transform;
-            npcCounterText = GetComponentInChildren<NpcCounterText>();
+            npcCounterText = transform.GetChild(0); 
             time = 0;
+
+            deathSprite = transform.GetChild(1);
+            deathSprite.GetComponent<Image>().enabled = false;
         }
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if (collision.tag == "Player" && npcCounterText.counter > 0)
+            if (collision.tag == "Player" && npcCounterText.GetComponentInChildren<NpcCounterText>().counter > 0)
             {
                 time += Time.deltaTime;
                 if (time >= timeUntilNextSpawn)
@@ -33,22 +39,32 @@ namespace Rose.Characters
                     Vector2 spawnPosition = playerTransform.position - playerTransform.up * 4;
                     GameObject newNpc = Instantiate(npc, spawnPosition, Quaternion.identity) as GameObject;
                     newNpc.GetComponent<NpcController>().isConfused = true;
-                    npcCounterText.counter -= 1;
+                    npcCounterText.GetComponentInChildren<NpcCounterText>().counter -= 1;
                     time = 0;
                 }
             }
         }
 
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.tag == "Enemy")
+            {
+                print("hello");
+                npcCounterText.GetComponent<Text>().enabled = false;
+                deathSprite.GetComponent<Image>().enabled = true;
+            }
+        }
+
         private void OnCollisionStay2D(Collision2D collision)
         {
-            if (transform.tag == "Flower" && collision.collider.tag == "Player" && npcCounterText.counter > 0)
+            if (transform.tag == "Flower" && collision.collider.tag == "Player" && npcCounterText.GetComponentInChildren<NpcCounterText>().counter > 0)
             {
                 time += Time.deltaTime;
                 if (time >= timeUntilNextSpawn)
                 {
                     Vector2 spawnPosition = playerTransform.position - playerTransform.up * 4;
                     GameObject newNpc = Instantiate(npc, spawnPosition, Quaternion.identity) as GameObject;
-                    npcCounterText.counter -= 1;
+                    npcCounterText.GetComponentInChildren<NpcCounterText>().counter -= 1;
                     time = 0;
                 }
             }

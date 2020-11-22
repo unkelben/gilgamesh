@@ -18,7 +18,9 @@ namespace Rose.Characters
         private Rigidbody2D rb;
         private GameObject player;
         private GameObject previousNpc;
+        public int index { get; set; }
         private GameObject boat;
+        private bool goToBoat;
 
         private Vector2 newPoint;
         private Vector2 direction;
@@ -38,6 +40,7 @@ namespace Rose.Characters
         [SerializeField] private float timeUntilNextPoint;
 
         private SpriteRenderer spriteRenderer;
+        [SerializeField] private GameObject deathSprite;
         [SerializeField] private CharacterData[] npcData;
 
         private Animator anim;
@@ -75,6 +78,7 @@ namespace Rose.Characters
             colorIndex = Random.Range(0, npcData.Length);
             child.GetComponent<SpriteRenderer>().sprite = npcData[colorIndex].sprite;
             boat = GameObject.FindGameObjectWithTag("Target");
+            goToBoat = false;
 
             //anim = transform.GetChild(1).GetComponent<Animator>();
             child.GetComponent<Animator>().runtimeAnimatorController = npcData[colorIndex].animatorController;
@@ -129,16 +133,27 @@ namespace Rose.Characters
             }
             else
             {
-                if (player != boat)
+                if (player == null)
                 {
-                    if (player.GetComponent<PlayerController>().safeZone)
-                    {
-                        player = boat;
-                    }
+                    isRoaming = true;
+                    return;
                 }
-                
-                if (player != null)
+
+                else
                 {
+                    if (player.GetComponent<PlayerController>().surroundingNpcs.Count > 1 && index > 0)
+                    {
+                        previousNpc = player.GetComponent<PlayerController>().surroundingNpcs[index - 1];
+                    }
+
+                    if (!goToBoat)
+                    {
+                        if (player.GetComponent<PlayerController>().safeZone)
+                        {
+                            goToBoat = true;
+                        }
+                    }
+
                     if (path == null)
                     {
                         return;
@@ -164,22 +179,24 @@ namespace Rose.Characters
                 {
                     currentWaypoint++;
                 }
+
+                if (Vector2.Distance(player.transform.position, rb.position) <= distanceBetween)
+                    rb.velocity = new Vector2(0f, 0f);
+                if (previousNpc != null && Vector2.Distance(previousNpc.transform.position, transform.position) <= distanceBetween)
+                    rb.velocity = new Vector2(0f, 0f);
             }
             
-            if (player != null && Vector2.Distance(player.transform.position, rb.position) <= distanceBetween)
-                rb.velocity = new Vector2(0f, 0f);
-            if (previousNpc != null && Vector2.Distance(previousNpc.transform.position, transform.position) <= distanceBetween)
-                rb.velocity = new Vector2(0f, 0f);
-
             isMoving = rb.velocity != new Vector2(0f, 0f) ? true : false;
         }
 
         private void UpdatePath()
         {
-            if (seeker.IsDone() && player != null && previousNpc == null)
+            if (seeker.IsDone() && player != null && previousNpc == null && !goToBoat)
                 seeker.StartPath(rb.position, player.transform.position, OnPathComplete);
-            if (seeker.IsDone() && previousNpc != null)
+            else if (seeker.IsDone() && previousNpc != null)
                 seeker.StartPath(rb.position, previousNpc.transform.position, OnPathComplete);
+            else if (goToBoat)
+                seeker.StartPath(rb.position, boat.transform.position, OnPathComplete);
         }
 
         void FaceDirection()
@@ -246,13 +263,10 @@ namespace Rose.Characters
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.collider.tag == "Player" && player == null && previousNpc == null && player != boat)
+            if (other.collider.tag == "Player" && player == null && previousNpc == null && !goToBoat)
             {
                 player = other.gameObject;
-                if (player.GetComponent<PlayerController>().surroundingNpcs.Count > 0)
-                {
-                    previousNpc = player.GetComponent<PlayerController>().surroundingNpcs[player.GetComponent<PlayerController>().surroundingNpcs.Count - 1];
-                }
+                index = player.GetComponent<PlayerController>().surroundingNpcs.Count;
                 player.GetComponent<PlayerController>().surroundingNpcs.Add(gameObject);
                 Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), player.GetComponent<CircleCollider2D>(), true);
                 isRoaming = false;
@@ -278,10 +292,16 @@ namespace Rose.Characters
             {
                 if (player != null && player != boat)
                 {
+                    for (int i=index; i < player.GetComponent<PlayerController>().surroundingNpcs.Count; i++)
+                    {
+                        player.GetComponent<PlayerController>().surroundingNpcs[i].GetComponent<NpcController>().index -= 1;
+                    }
                     player.GetComponent<PlayerController>().surroundingNpcs.Remove(gameObject);
                 }
                 if (gameObject != null)
                 {
+                    Vector3 deathPosition = new Vector3(transform.position.x, transform.position.y, -100f);
+                    Instantiate(deathSprite, deathPosition, Quaternion.identity);
                     Destroy(gameObject);
                 }
             }

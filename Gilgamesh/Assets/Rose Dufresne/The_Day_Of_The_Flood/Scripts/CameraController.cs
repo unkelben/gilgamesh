@@ -33,11 +33,6 @@ public class CameraController : MonoBehaviour
 
     protected virtual void HandleCamera()
     {
-        if (!target)
-        {
-            return;
-        }
-
         float mainHeight = 2f * Camera.main.orthographicSize;
         float mainWidth = mainHeight * Camera.main.aspect;
 
@@ -48,33 +43,43 @@ public class CameraController : MonoBehaviour
         float xPosition = 0;
         float yPosition = 0;
 
-        if ((target.transform.position.x - width / 2 <= -mainWidth / 2) || (target.transform.position.x + width / 2 >= mainWidth / 2))
-        {
-            xPosition = transform.position.x;
-        }
-        else
-        {
-            xPosition = target.transform.position.x;
-        }
-        if ((target.transform.position.y - height/2 <= -mainHeight/2) || (target.transform.position.y + height / 2 >= mainHeight / 2))
-        {
-            yPosition = transform.position.y;
-        }
-        else
-        {
-            yPosition = target.transform.position.y;
-        }
-
         Vector3 targetPosition = new Vector3(xPosition, yPosition, transform.position.z);
 
-        //zoom in/out
-        if (target.GetComponent<PlayerController>().inBoat)
+        if (!target)
         {
             playerCamera.orthographicSize = Mathf.SmoothDamp(height / 2, mainHeight / 2, ref refSpeed, 1);
+            smoothingSpeed = 1;
         }
         else
         {
-            playerCamera.orthographicSize = Mathf.SmoothDamp(height/2, currentHeight, ref refSpeed, 1);
+            if ((target.transform.position.x - width / 2 <= -mainWidth / 2) || (target.transform.position.x + width / 2 >= mainWidth / 2))
+            {
+                xPosition = transform.position.x;
+            }
+            else
+            {
+                xPosition = target.transform.position.x;
+            }
+            if ((target.transform.position.y - height / 2 <= -mainHeight / 2) || (target.transform.position.y + height / 2 >= mainHeight / 2))
+            {
+                yPosition = transform.position.y;
+            }
+            else
+            {
+                yPosition = target.transform.position.y;
+            }
+
+            targetPosition = new Vector3(xPosition, yPosition, transform.position.z);
+
+            //zoom in/out
+            if (target.GetComponent<PlayerController>().inBoat)
+            {
+                playerCamera.orthographicSize = Mathf.SmoothDamp(height / 2, mainHeight / 2, ref refSpeed, 1);
+            }
+            else
+            {
+                playerCamera.orthographicSize = Mathf.SmoothDamp(height / 2, currentHeight, ref refSpeed, 1);
+            }
         }
 
         Vector3 finalPosition = targetPosition;
