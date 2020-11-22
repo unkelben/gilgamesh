@@ -12,7 +12,7 @@ public class rippleEffect : MonoBehaviour
     Renderer rend;
     Texture2D texture;
 
-    public List<Transform> interactingObjects;
+    // List<Transform> interactingObjects;
 
 
     public float brushval = 100f;
@@ -187,11 +187,13 @@ public class rippleEffect : MonoBehaviour
 
     void drawAtObjectsPos()
     {
-        foreach(Transform obj in interactingObjects)
+       // interactingObjects = new List<Transform>();
+        GameObject[] waterColliders = GameObject.FindGameObjectsWithTag("watercollider");
+        foreach(GameObject obj in waterColliders)
         {
-            if (obj.gameObject.active)
+            if (obj.active)
             {
-                Vector3 screenPos = myMainCamera.WorldToScreenPoint(obj.position);
+                Vector3 screenPos = myMainCamera.WorldToScreenPoint(obj.transform.position);
              //   Debug.Log(screenPos);
                 Ray objRay = myMainCamera.ScreenPointToRay(screenPos);
                 float planeDist;

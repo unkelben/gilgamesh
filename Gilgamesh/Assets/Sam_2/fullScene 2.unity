@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 349333469}
   m_Layer: 0
   m_Name: WaterCollider
-  m_TagString: Untagged
+  m_TagString: watercollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -633,9 +633,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369a949bb28767d4bb10c53193b1fe72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactingObjects:
-  - {fileID: 349333471}
-  - {fileID: 997736519}
   brushval: 242.4
   outMin: 0
   outMax: 252.91
@@ -1183,7 +1180,7 @@ GameObject:
   - component: {fileID: 997736520}
   m_Layer: 0
   m_Name: WaterCollider (1)
-  m_TagString: Untagged
+  m_TagString: watercollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
