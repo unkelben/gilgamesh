@@ -32,6 +32,7 @@ namespace Rose.Characters
                 {
                     Vector2 spawnPosition = playerTransform.position - playerTransform.up * 4;
                     GameObject newNpc = Instantiate(npc, spawnPosition, Quaternion.identity) as GameObject;
+                    newNpc.GetComponent<NpcController>().isConfused = true;
                     npcCounterText.counter -= 1;
                     time = 0;
                 }

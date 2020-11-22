@@ -9,6 +9,9 @@ namespace Rose.Characters
 
     public class NpcController : MonoBehaviour
     {
+        private Transform child;
+        private Transform emotes;
+
         [SerializeField] private float speed = 0.75f;
         [SerializeField] private float rotationSpeed;
 
@@ -21,7 +24,6 @@ namespace Rose.Characters
         private Vector2 direction;
         private Vector2 smoothMoveVelocity;
         [SerializeField] private float distanceBetween;
-        private List<Vector3> pathPoints;
         [SerializeField] private float nextWayPointDistance = 3f;
         private Path path;
         private int currentWaypoint = 0;
@@ -40,6 +42,13 @@ namespace Rose.Characters
 
         private Animator anim;
         private int colorIndex;
+        
+        public bool isConfused { get; set; }
+        public bool isAlarmed { get; set; }
+        public bool isNormal { get; set; }
+        public bool isTalking { get; set; }
+        private float emoteTimer;
+        private float emoteTimerInterval;
 
         private Score score;
 
@@ -54,7 +63,6 @@ namespace Rose.Characters
             isRoaming = true;
             isMoving = false;
             time = timeUntilNextPoint;
-            pathPoints = new List<Vector3>();
         }
 
         void Start()
@@ -62,13 +70,22 @@ namespace Rose.Characters
             seeker = GetComponent<Seeker>();
             InvokeRepeating("UpdatePath", 0f, 0.5f);
 
-            spriteRenderer = GetComponent<SpriteRenderer>();
+            child = transform.GetChild(1);
+            //spriteRenderer = transform.GetChild(1).GetComponent<SpriteRenderer>();
             colorIndex = Random.Range(0, npcData.Length);
-            spriteRenderer.sprite = npcData[colorIndex].sprite;
+            child.GetComponent<SpriteRenderer>().sprite = npcData[colorIndex].sprite;
             boat = GameObject.FindGameObjectWithTag("Target");
 
-            anim = GetComponent<Animator>();
-            anim.runtimeAnimatorController = npcData[colorIndex].animatorController;
+            //anim = transform.GetChild(1).GetComponent<Animator>();
+            child.GetComponent<Animator>().runtimeAnimatorController = npcData[colorIndex].animatorController;
+
+            emotes = transform.GetChild(0);
+            isConfused = false;
+            isAlarmed = false;
+            isNormal = false;
+            isTalking = false;
+            emoteTimer = 0;
+            emoteTimerInterval = Random.Range(5, 10);
 
             score = FindObjectOfType<Score>();
 
@@ -155,7 +172,6 @@ namespace Rose.Characters
                 rb.velocity = new Vector2(0f, 0f);
 
             isMoving = rb.velocity != new Vector2(0f, 0f) ? true : false;
-            FaceDirection();
         }
 
         private void UpdatePath()
@@ -169,7 +185,7 @@ namespace Rose.Characters
         void FaceDirection()
         {
             if (isMoving)
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, direction), rotationSpeed * Time.deltaTime);
+                child.rotation = Quaternion.Slerp(child.rotation, Quaternion.LookRotation(Vector3.forward, direction), rotationSpeed * Time.deltaTime);
         }
         
         void OnPathComplete(Path p)
@@ -196,7 +212,36 @@ namespace Rose.Characters
 
         void Animate()
         {
-            anim.SetBool("isMoving", isMoving);
+            child.GetComponent<Animator>().SetBool("isMoving", isMoving);
+            
+            if (isRoaming && !isConfused && !isNormal)
+            {
+                //blissfully ignorant
+                emoteTimer += Time.deltaTime;
+                if (emoteTimer >= emoteTimerInterval)
+                {
+                    emoteTimerInterval = Random.Range(5, 10);
+                    isNormal = true;
+                    emoteTimer = 0;
+                }
+            }
+
+            if (!isNormal && !isTalking && !isAlarmed && !isConfused)
+            {
+                emoteTimer = 0;
+            }
+
+            emotes.GetComponent<Animator>().SetBool("isNormal", isNormal);
+            isNormal = false;
+
+            emotes.GetComponent<Animator>().SetBool("isAlarmed", isAlarmed);
+            isAlarmed = false;
+            
+            emotes.GetComponent<Animator>().SetBool("isTalking", isTalking);
+            isTalking = false;
+
+            emotes.GetComponent<Animator>().SetBool("isConfused", isConfused);
+            isConfused = false;
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -211,6 +256,8 @@ namespace Rose.Characters
                 player.GetComponent<PlayerController>().surroundingNpcs.Add(gameObject);
                 Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), player.GetComponent<CircleCollider2D>(), true);
                 isRoaming = false;
+
+                isAlarmed = true;
             }
             
             if (other.collider.tag == "Target")

@@ -17,7 +17,7 @@ namespace Rose.Characters
         private Vector2 inputVector;
         private Vector2 moveAmount;
         private Vector2 smoothMoveVelocity;
-        public bool isMoving { get; set; }
+        private bool isMoving;
         public bool safeZone { get; set; }
         public bool inBoat { get; set; }
         private float timeInBoat;
@@ -28,6 +28,9 @@ namespace Rose.Characters
         [SerializeField] private CharacterData characterData;
 
         private Animator anim;
+
+        private bool npcIsTalking;
+        private float talkTimer;
 
         private Score saved;
 
@@ -52,6 +55,8 @@ namespace Rose.Characters
             spriteRenderer.sprite = characterData.sprite;
 
             saved = FindObjectOfType<Score>();
+
+            talkTimer = 0;
         }
 
         private void FixedUpdate()
@@ -64,6 +69,7 @@ namespace Rose.Characters
             HandleInput();
             FaceDirection();
             Animate();
+            NPCAnimations();
         }
 
         void HandleInput()
@@ -76,7 +82,7 @@ namespace Rose.Characters
                 timeInBoat += Time.deltaTime;
                 horizontal = 0;
 
-                if (timeInBoat <= 0.5f)
+                if (timeInBoat <= 0.3f)
                 {
                     vertical = 0;
                 }
@@ -85,14 +91,17 @@ namespace Rose.Characters
                     if (vertical == 1)
                     {
                         transform.position += new Vector3(0, 10, 0);
+                        inBoat = false;
+                        transform.GetComponent<CircleCollider2D>().enabled = true;
+                        timeInBoat = 0;
                     }
                     else if (vertical == -1)
                     {
                         transform.position -= new Vector3(0, 10, 0);
+                        inBoat = false;
+                        transform.GetComponent<CircleCollider2D>().enabled = true;
+                        timeInBoat = 0;
                     }
-                    inBoat = false;
-                    transform.GetComponent<CircleCollider2D>().enabled = true;
-                    timeInBoat = 0;
                 }
             }
             
@@ -119,6 +128,34 @@ namespace Rose.Characters
         void Animate()
         {
             anim.SetBool("isMoving", isMoving);
+        }
+
+        void NPCAnimations()
+        {
+            if (surroundingNpcs.Count != 0)
+            {
+                talkTimer += Time.deltaTime;
+
+                if (talkTimer >= 5f)
+                {
+                    foreach (GameObject npc in surroundingNpcs)
+                    {
+                        if (npc.GetComponent<NpcController>().isTalking)
+                        {
+                            npcIsTalking = true;
+                            talkTimer = 0;
+                            break;
+                        }
+                    }
+
+                    if (!npcIsTalking)
+                    {
+                        int index = Random.Range(0, surroundingNpcs.Count - 1);
+                        surroundingNpcs[index].GetComponent<NpcController>().isTalking = true;
+                        talkTimer = 0;
+                    }
+                }
+            }
         }
         
         private void OnTriggerEnter2D(Collider2D collision)
