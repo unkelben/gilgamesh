@@ -23,6 +23,9 @@ public class poleGilgameshController : MonoBehaviour
     public List<AudioClip> grunts;
     AudioSource gruntSFX;
 
+    public GameObject instructionText;
+    public GameObject instruTxt2;
+
     public float stepInterval = 0.2f;
     public float stepPitchMin = 0.7f;
     public float stepPitchMax = 0.85f;
@@ -43,6 +46,9 @@ public class poleGilgameshController : MonoBehaviour
     public bool rightPressed = false;
     public bool spacePressed = false;
     int poleThreshold = 23;
+    int textIndex = 0;
+
+    bool textActive = false;
 
     int polesLeft;
     public string controlKey = "a";
@@ -194,7 +200,13 @@ public class poleGilgameshController : MonoBehaviour
 
     private void Update()
     {
-        if (ready&&Input.GetKeyDown(controlKey)&&leftPressed&&rightPressed&&polesLeft >=0)
+        if (transform.localPosition.x >= 6f)
+        {
+            textActive = false;
+            
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space)&&leftPressed&&rightPressed&&polesLeft >=0)
         {
             if (Random.Range(0f, 1f) > 0.68) playGruntSound();
          //   GameObject.Find("events").GetComponent<boatSceneHandler>().shuffleControl();
@@ -202,12 +214,33 @@ public class poleGilgameshController : MonoBehaviour
             // spacepush = true;
            // Debug.Log("space!");
 
-            if (!carryingPole)
+            if(transform.localPosition.x < 6f)
+            {
+                textActive = !textActive;
+                if (!textActive && textIndex == 1)
+                {
+                    textActive = true;
+                    instructionText.SetActive(false);
+                }
+                if (textActive)
+                {
+                    
+                    if (textIndex == 1)
+                    {
+                        instructionText = instruTxt2;
+                    }
+                    textIndex++;
+                }
+                
+            }
+            else if (!carryingPole)
             {
                 
-                polesLeft--;
-                if (polesLeft >= 0)
+
+                
+                if (polesLeft >= 0 && transform.localPosition.x > 8.5f)
                 {
+                    polesLeft--;
                     GameObject.Find("events").GetComponent<boatSceneHandler>().grabPole();
                     carryingPole = true;
                     if (moving) StartAnimation("walkingWithPole");
@@ -222,14 +255,14 @@ public class poleGilgameshController : MonoBehaviour
             else 
             {
                 
-
+                
                 if (polesLeft == poleThreshold)
                 {
                     GameObject ev = GameObject.Find("events");
                     ev.GetComponent<boatSceneHandler>().keepPushing();
                     poleThreshold--;
                 }
-                if (!polePlaced && !placingPole && polesLeft>=0)
+                if (!polePlaced && !placingPole && polesLeft>=0 && transform.localPosition.x < 8.5f)
                 {
                     // start placing pole.
                     placingPole = true;
@@ -254,6 +287,9 @@ public class poleGilgameshController : MonoBehaviour
             pushingPole = false;
           //  spacepush = false;
         }
+
+        instructionText.SetActive(textActive);
+        
     }
 
     void Shake()

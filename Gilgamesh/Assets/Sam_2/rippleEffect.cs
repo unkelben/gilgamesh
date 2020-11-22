@@ -207,8 +207,9 @@ public class rippleEffect : MonoBehaviour
                 // map to pixel in texture image
                 int pixelX = Mathf.FloorToInt(cols * localXY.x / (rend.bounds.extents.x * 2f));
                 int pixelY = Mathf.FloorToInt(rows * localXY.y / (rend.bounds.extents.y * 2f));
-
-                previous[pixelX, pixelY] = brushval;
+               // Debug.Log(pixelX +" "+ pixelY);
+                if(pixelX >=0 && pixelX < cols && pixelY>=0 && pixelY < rows)
+                    previous[pixelX, pixelY] = brushval;
             }
      
         }

@@ -80,8 +80,9 @@ public class boatSceneHandler : MonoBehaviour
             {
                
                 nextInstru = true;
-                instru2.SetActive(true);
-                shuffleControl(1);
+                instru1.SetActive(false);
+             //   instru2.SetActive(true);
+              //  shuffleControl(1);
                 
             }
 
@@ -94,9 +95,9 @@ public class boatSceneHandler : MonoBehaviour
                 if (polesLeft == poleThreshold && !nextInstru2)
                 {
                     instru1.SetActive(false);
-                    instru2.SetActive(false);
-                    instru2b.SetActive(true);
-                    shuffleControl(2);
+                  //  instru2.SetActive(false);
+                  //  instru2b.SetActive(true);
+                //    shuffleControl(2);
                     nextInstru2 = true;
                     nextInstru3 = false;
                 }
@@ -108,16 +109,16 @@ public class boatSceneHandler : MonoBehaviour
                     && !nextInstru3
                     )
                 {
-                    instru3.SetActive(false);
+                  //  instru3.SetActive(false);
                     // reset 
-                    if (polesLeft > 0) instru2.SetActive(true);
+                  //  if (polesLeft > 0) instru2.SetActive(true);
 
                 
 
                     
                     nextInstru3 = true;
                     nextInstru2 = false;
-                    shuffleControl(1);
+                    //shuffleControl(1);
                     poleThreshold--;
                 }
             }
@@ -184,9 +185,9 @@ public class boatSceneHandler : MonoBehaviour
 
     public void keepPushing()
     {
-        instru2b.SetActive(false);
-        instru3.SetActive(true);
-        shuffleControl(3);
+     //   instru2b.SetActive(false);
+     //   instru3.SetActive(true);
+       // shuffleControl(3);
 
     }
 
@@ -222,7 +223,7 @@ public class boatSceneHandler : MonoBehaviour
             {
                 
                 state = "headToFront";
-                instru3.SetActive(false);
+               // instru3.SetActive(false);
                 headToFront.SetActive(true);
             }
         }
