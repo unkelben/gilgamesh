@@ -19,6 +19,10 @@ public class poleGilgameshController : MonoBehaviour
 
     public List<AudioClip> steps;
     AudioSource stepSFX;
+
+    public List<AudioClip> grunts;
+    AudioSource gruntSFX;
+
     public float stepInterval = 0.2f;
     public float stepPitchMin = 0.7f;
     public float stepPitchMax = 0.85f;
@@ -47,7 +51,9 @@ public class poleGilgameshController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stepSFX = gameObject.GetComponent<AudioSource>();
+        AudioSource[] sources = gameObject.GetComponents<AudioSource>();
+        stepSFX = sources[0];
+        gruntSFX = sources[1];
         polesLeft = GameObject.Find("events").GetComponent<boatSceneHandler>().polesLeft;
        // Debug.Log(transform.localPosition.x);
         gilgamesh = GameObject.Find("gilga2");
@@ -162,6 +168,18 @@ public class poleGilgameshController : MonoBehaviour
         if (shakeCount > shakeLength) shaking = false;
     }
 
+    public void playGruntSound()
+    {
+        if (!gruntSFX.isPlaying)
+        {
+            gruntSFX.clip = grunts[Mathf.FloorToInt(Random.Range(0f, grunts.Count))];
+            gruntSFX.pitch = Random.Range(0.85f, 1.1f);
+            gruntSFX.volume = 0.8f;
+            gruntSFX.Play();
+        }
+        
+    }
+
     public void onPolePlaceEnd()
     {
         placingPole = false;
@@ -178,6 +196,7 @@ public class poleGilgameshController : MonoBehaviour
     {
         if (ready&&Input.GetKeyDown(controlKey)&&leftPressed&&rightPressed&&polesLeft >=0)
         {
+            if (Random.Range(0f, 1f) > 0.68) playGruntSound();
          //   GameObject.Find("events").GetComponent<boatSceneHandler>().shuffleControl();
             spacePressed = true;
             // spacepush = true;

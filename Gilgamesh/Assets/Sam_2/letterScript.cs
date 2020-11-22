@@ -15,6 +15,8 @@ public class letterScript : MonoBehaviour
     float maxVel2b = 8f;
     float maxVel3 = 12.5f;
 
+    float spacing = 14f;
+
     int counter = 0;
 
     float opacity = 0f;
@@ -44,7 +46,7 @@ public class letterScript : MonoBehaviour
         Vector3 pos = gameObject.GetComponent<RectTransform>().anchoredPosition;
         if (offset != 0 && !offsetted)
         {
-            pos.x += offset * 8f;
+            pos.x += offset * spacing;
             offsetted = true;
             frozenpos = pos;
         }
@@ -83,7 +85,7 @@ public class letterScript : MonoBehaviour
             );
 
 
-        if (frozen && frozenpos.x <= -250f + offset * 8f)
+        if (frozen && frozenpos.x <= -250f + offset * spacing)
         {
             float count = counter / 100f;
             float range = 10f;

@@ -75,23 +75,25 @@ public class rippleEffect : MonoBehaviour
             case 8: damping = 0.95f; pixelSurvivalChance = 80; break;
         }
 
-        
-       // Debug.Log("yo");
-        for(int i=1; i<cols-1; i++)
-        {
-            for(int j=1; j<rows-1; j++)
+       
+            // Debug.Log("yo");
+            for (int i = 1; i < cols - 1; i++)
             {
-                current[i, j] = 
-                    ( previous[i - 1, j] 
-                    + previous[i + 1, j] 
-                    + previous[i, j - 1] 
-                    + previous[i, j + 1] ) / 2 - current[i, j];
-                current[i, j] = (current[i, j] * damping);
-                
-                byte grey =(byte)( outMin+(outMax-outMin)*( 255f - current[i, j] )/255f );
-                texture.SetPixel(i, j, new Color32(grey,grey,grey , 255 ));
+                for (int j = 1; j < rows - 1; j++)
+                {
+                    current[i, j] =
+                        (previous[i - 1, j]
+                        + previous[i + 1, j]
+                        + previous[i, j - 1]
+                        + previous[i, j + 1]) / 2 - current[i, j];
+                    current[i, j] = (current[i, j] * damping);
+
+                    byte grey = (byte)(outMin + (outMax - outMin) * (0f + current[i, j]) / 255f);
+                    texture.SetPixel(i, j, new Color32(grey, grey, grey, grey));
+                }
             }
-        }
+        
+       
 
         // show updated pixels
         texture.Apply();
