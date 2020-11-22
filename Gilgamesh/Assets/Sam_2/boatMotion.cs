@@ -18,6 +18,17 @@ public class boatMotion : MonoBehaviour
     float maxBoatPower = 60f;
     int lastWaterSpeed = 0;
 
+    bool trigger1 = false;
+    bool trigger2 = true;
+    
+    float wordCounter = 0f;
+    float interval = 2000f;
+
+    float threshold1 = 2000f;
+    float threshold2 = 1000f;
+
+    public bool textTrigger = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +49,25 @@ public class boatMotion : MonoBehaviour
        );
 
         boatPower = Mathf.Min(Mathf.Max(boatPower - friction, 0f), maxBoatPower);
+        wordCounter += boatPower/10f;
+
+        if(trigger2 && wordCounter > threshold2)
+        {
+            trigger1 = true;
+            trigger2 = false;
+            threshold2 += interval;
+            Debug.Log("EY STARTANIM");
+            GameObject.Find("events").GetComponent<boatSceneHandler>().startNextTextAnimation();
+                        
+        }
+        else if(trigger1 && wordCounter > threshold1)
+        {
+            trigger2 = true;
+            trigger1 = false;
+            threshold1 += interval;
+            Debug.Log("EY MOVE ON");
+            GameObject.Find("events").GetComponent<boatSceneHandler>().moveOn = true;
+        }
         //Debug.Log(boatPower);
         int waterSpeed = 7 - Mathf.RoundToInt(boatPower / 10f);
         if (waterSpeed == 7) waterSpeed = 8;

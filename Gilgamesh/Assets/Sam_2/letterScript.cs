@@ -68,7 +68,7 @@ public class letterScript : MonoBehaviour
             maxVel = maxVel3;
             opacity = Mathf.Max(opacity - 0.1f, 0f);
 
-            if (pos.x < -350f)
+            if (pos.x < -450f)
             {
                 Destroy(gameObject);
             }

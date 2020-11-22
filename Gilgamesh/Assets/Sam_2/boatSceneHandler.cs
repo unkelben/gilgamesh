@@ -23,12 +23,15 @@ public class boatSceneHandler : MonoBehaviour
     public GameObject letterObject;
     string state = "game1";
     bool lastSpacePressed = false;
-    bool moveOn = false;
+    public bool moveOn = false;
+    int thoughtsIndex = 0;
 
     public int polesLeft = 10;
-    string animState = "none";
+    public string animState = "none";
 
     string[] Alphabet = new string[26] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+
+    public List<GameObject> thoughts = new List<GameObject>();
 
     GameObject focusedLetter;
     GameObject focusedLetter2;
@@ -46,6 +49,11 @@ public class boatSceneHandler : MonoBehaviour
         instru3.SetActive(false);
         instru4.SetActive(false);
         instru2b.SetActive(false);
+
+        for(int i=0; i<thoughts.Count; i++)
+        {
+            thoughts[i].SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -82,7 +90,7 @@ public class boatSceneHandler : MonoBehaviour
                // && !lastSpacePressed
                 )
             {
-                Debug.Log("space!");
+             //   Debug.Log("space!");
                 if (polesLeft == poleThreshold && !nextInstru2)
                 {
                     instru1.SetActive(false);
@@ -101,7 +109,12 @@ public class boatSceneHandler : MonoBehaviour
                     )
                 {
                     instru3.SetActive(false);
-                    if(polesLeft>0) instru2.SetActive(true);
+                    // reset 
+                    if (polesLeft > 0) instru2.SetActive(true);
+
+                
+
+                    
                     nextInstru3 = true;
                     nextInstru2 = false;
                     shuffleControl(1);
@@ -151,6 +164,7 @@ public class boatSceneHandler : MonoBehaviour
             animState = "click";
         }
 
+      //  Debug.Log("ove on "+moveOn);
         if (animState=="click" && moveOn)
         {
             animState = "leave";
@@ -168,18 +182,34 @@ public class boatSceneHandler : MonoBehaviour
         }
     }
 
+    public void keepPushing()
+    {
+        instru2b.SetActive(false);
+        instru3.SetActive(true);
+        shuffleControl(3);
+
+    }
+
     public void shuffleControl(int whichone)
     {
         string letter = Alphabet[Mathf.FloorToInt(Random.Range(0, 26))];
+        gilgamesh1.GetComponent<poleGilgameshController>().ready = true;
         gilgamesh1.GetComponent<poleGilgameshController>().controlKey = letter;
-        if(whichone==1) instru2.GetComponent<UnityEngine.UI.Text>().text = "Press " + letter + " to grab a pole";
-        else if(whichone==2) instru2b.GetComponent<UnityEngine.UI.Text>().text = "Press " + letter + " again to place it";
-        else if(whichone==3) instru3.GetComponent<UnityEngine.UI.Text>().text = "Mash " + letter + " to thrust the boat forward";
+
+        if (whichone == 1) instru2.GetComponent<UnityEngine.UI.Text>().text = "Press " + letter;// + " to grab a pole";
+        else if (whichone == 2) instru2b.GetComponent<UnityEngine.UI.Text>().text = "Press " + letter;// + " again to place it";
+        else if (whichone == 3) instru3.GetComponent<UnityEngine.UI.Text>().text = "Mash " + letter;// + " to thrust the boat forward";
     }
     
     public void grabPole() 
     {
         if(polesLeft>0) polesLeft--;
+    }
+
+    public void startNextTextAnimation()
+    {
+        animateText(thoughts[thoughtsIndex]);
+        thoughtsIndex = Mathf.Min(thoughtsIndex + 1, thoughts.Count);
     }
 
     public void letGoPole()
@@ -207,7 +237,7 @@ public class boatSceneHandler : MonoBehaviour
     IEnumerator ExampleCoroutine(GameObject input)
     {
         //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+       // Debug.Log("Started Coroutine at timestamp : " + Time.time);
 
         string txt = input.GetComponent<UnityEngine.UI.Text>().text;
         int startval = 0;
@@ -229,6 +259,6 @@ public class boatSceneHandler : MonoBehaviour
 
         
         //After we have waited 5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+       // Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 }

@@ -17,6 +17,13 @@ public class poleGilgameshController : MonoBehaviour
     public float boatBoundMin = -5f;
     public float boatBoundMax = 5f;
 
+    public List<AudioClip> steps;
+    AudioSource stepSFX;
+    public float stepInterval = 0.2f;
+    public float stepPitchMin = 0.7f;
+    public float stepPitchMax = 0.85f;
+    float nextStep = 0f;
+
     bool lastMovingState = false;
     bool carryingPole = false;
     bool pushingPole = false;
@@ -35,10 +42,12 @@ public class poleGilgameshController : MonoBehaviour
 
     int polesLeft;
     public string controlKey = "a";
+    public bool ready = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        stepSFX = gameObject.GetComponent<AudioSource>();
         polesLeft = GameObject.Find("events").GetComponent<boatSceneHandler>().polesLeft;
        // Debug.Log(transform.localPosition.x);
         gilgamesh = GameObject.Find("gilga2");
@@ -79,6 +88,18 @@ public class poleGilgameshController : MonoBehaviour
             acceleration = 0;
             flipped = false;
             gilgaSprite.flipX = false;
+        }
+
+        if (moving)
+        {
+            float time = Time.time;
+            if (time > nextStep)
+            {
+                stepSFX.clip = steps[Mathf.FloorToInt(Random.Range(0, steps.Count))];
+                stepSFX.pitch = Random.Range(stepPitchMin, stepPitchMax);
+                stepSFX.Play();
+                nextStep += stepInterval;
+            }
         }
 
 
@@ -155,7 +176,7 @@ public class poleGilgameshController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(controlKey)&&leftPressed&&rightPressed&&polesLeft >=0)
+        if (ready&&Input.GetKeyDown(controlKey)&&leftPressed&&rightPressed&&polesLeft >=0)
         {
          //   GameObject.Find("events").GetComponent<boatSceneHandler>().shuffleControl();
             spacePressed = true;
@@ -185,9 +206,8 @@ public class poleGilgameshController : MonoBehaviour
 
                 if (polesLeft == poleThreshold)
                 {
-                    GameObject.Find("events").GetComponent<boatSceneHandler>().instru2b.SetActive(false);
-                    GameObject.Find("events").GetComponent<boatSceneHandler>().instru3.SetActive(true);
-                    GameObject.Find("events").GetComponent<boatSceneHandler>().shuffleControl(3);
+                    GameObject ev = GameObject.Find("events");
+                    ev.GetComponent<boatSceneHandler>().keepPushing();
                     poleThreshold--;
                 }
                 if (!polePlaced && !placingPole && polesLeft>=0)
@@ -203,6 +223,7 @@ public class poleGilgameshController : MonoBehaviour
                         // trigger pushing pole
                         pushingPole = true;
                         StartAnimation("pushBack");
+                        
                         Shake();
                         transform.parent.gameObject.GetComponent<boatMotion>().boatPower += 4f;
                     }

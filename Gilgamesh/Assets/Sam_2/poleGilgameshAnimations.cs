@@ -28,6 +28,8 @@ public class poleGilgameshAnimations : MonoBehaviour
 
     public GameObject pole;
 
+    AudioSource splashSFX;
+
     public int pushPower = 0;
     // animateme stuff:
     public bool running = true;
@@ -45,6 +47,7 @@ public class poleGilgameshAnimations : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        splashSFX = gameObject.GetComponent<AudioSource>();
         rend = gameObject.GetComponent<SpriteRenderer>();
     }
 
@@ -56,11 +59,14 @@ public class poleGilgameshAnimations : MonoBehaviour
         {
             transform.parent.gameObject.GetComponent<poleGilgameshController>().onPolePlaceEnd();
             polePlaced = true;
+            splashSFX.pitch = Random.Range(0.8f, 0.94f);
+            splashSFX.Play();
             startAnimation("pushBack");
         }
             
         else if(!polePlaced)
         {
+            
             animFrame = (animFrame + 1) % input;
         }
         
