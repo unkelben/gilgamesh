@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement
+using UnityEngine.SceneManagement;
 
 public class startSceneHandler : MonoBehaviour
 {
+    public bool isStartScene = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class startSceneHandler : MonoBehaviour
             Application.Quit();
         }
 
-        else if (Input.GetKeyDown(KeyCode.Space))
+        else if (isStartScene&&Input.GetKeyDown(KeyCode.Space))
         {
             
         //https://answers.unity.com/questions/1141235/how-to-move-to-next-scene-using-scene-manager.html
