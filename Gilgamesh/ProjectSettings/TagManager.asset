@@ -30,7 +30,7 @@ TagManager:
   - PinchLimit
   - FingerTip
   - Clay
-  - Obstacle
+  - GustOfWind
   layers:
   - Default
   - TransparentFX
@@ -43,7 +43,7 @@ TagManager:
   - background
   - sprites
   - ground
-  - obstacle
+  - 
   - 
   - 
   - 
