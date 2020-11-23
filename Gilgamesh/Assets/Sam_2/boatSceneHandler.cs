@@ -132,6 +132,7 @@ public class boatSceneHandler : MonoBehaviour
             {
                 counter = 0;
                 state = "game2";
+                
                 GameObject.Find("BGM").GetComponent<bgmHandler>().SetSynthVol(1f);
                 GameObject.Find("BGM").GetComponent<bgmHandler>().SetGuitVol(1f);
                 GameObject.Find("BGM").GetComponent<bgmHandler>().SetDrumVol(1f);
