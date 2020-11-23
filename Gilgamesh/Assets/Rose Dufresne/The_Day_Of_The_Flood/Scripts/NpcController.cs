@@ -9,6 +9,8 @@ namespace Rose.Characters
 
     public class NpcController : MonoBehaviour
     {
+        [SerializeField] bool isHuman;
+
         private Transform child;
         private Transform emotes;
 
@@ -41,8 +43,10 @@ namespace Rose.Characters
 
         private SpriteRenderer spriteRenderer;
         [SerializeField] private GameObject deathSprite;
-        [SerializeField] private CharacterData[] npcData;
+        [SerializeField] private CharacterData[] npcDataArray;
+        CharacterData npcData;
 
+        //animations
         private Animator anim;
         private int colorIndex;
         
@@ -52,6 +56,9 @@ namespace Rose.Characters
         public bool isTalking { get; set; }
         private float emoteTimer;
         private float emoteTimerInterval;
+
+        //audio sources
+        private AudioSource sound;
 
         private Score score;
 
@@ -74,14 +81,15 @@ namespace Rose.Characters
             InvokeRepeating("UpdatePath", 0f, 0.5f);
 
             child = transform.GetChild(1);
-            //spriteRenderer = transform.GetChild(1).GetComponent<SpriteRenderer>();
-            colorIndex = Random.Range(0, npcData.Length);
-            child.GetComponent<SpriteRenderer>().sprite = npcData[colorIndex].sprite;
+            colorIndex = Random.Range(0, npcDataArray.Length);
+            child.GetComponent<SpriteRenderer>().sprite = npcDataArray[colorIndex].sprite;
+
+            npcData = npcDataArray[colorIndex];
+
             boat = GameObject.FindGameObjectWithTag("Target");
             goToBoat = false;
-
-            //anim = transform.GetChild(1).GetComponent<Animator>();
-            child.GetComponent<Animator>().runtimeAnimatorController = npcData[colorIndex].animatorController;
+            
+            child.GetComponent<Animator>().runtimeAnimatorController = npcDataArray[colorIndex].animatorController;
 
             emotes = transform.GetChild(0);
             isConfused = false;
@@ -90,6 +98,8 @@ namespace Rose.Characters
             isTalking = false;
             emoteTimer = 0;
             emoteTimerInterval = Random.Range(5, 10);
+
+            sound = GetComponent<AudioSource>();
 
             score = FindObjectOfType<Score>();
 
@@ -180,10 +190,13 @@ namespace Rose.Characters
                     currentWaypoint++;
                 }
 
-                if (Vector2.Distance(player.transform.position, rb.position) <= distanceBetween)
-                    rb.velocity = new Vector2(0f, 0f);
-                if (previousNpc != null && Vector2.Distance(previousNpc.transform.position, transform.position) <= distanceBetween)
-                    rb.velocity = new Vector2(0f, 0f);
+                if (!goToBoat)
+                {
+                    if (Vector2.Distance(player.transform.position, rb.position) <= distanceBetween)
+                        rb.velocity = new Vector2(0f, 0f);
+                    if (previousNpc != null && Vector2.Distance(previousNpc.transform.position, transform.position) <= distanceBetween)
+                        rb.velocity = new Vector2(0f, 0f);
+                }
             }
             
             isMoving = rb.velocity != new Vector2(0f, 0f) ? true : false;
@@ -231,29 +244,37 @@ namespace Rose.Characters
         {
             child.GetComponent<Animator>().SetBool("isMoving", isMoving);
             
-            if (isRoaming && !isConfused && !isNormal)
+            if (isRoaming)
             {
-                //blissfully ignorant
+                emotes.GetComponent<Animator>().SetBool("isNormal", isNormal);
+                isNormal = false;
                 emoteTimer += Time.deltaTime;
                 if (emoteTimer >= emoteTimerInterval)
                 {
                     emoteTimerInterval = Random.Range(5, 10);
-                    isNormal = true;
                     emoteTimer = 0;
+                    isNormal = true;
                 }
             }
 
-            if (!isNormal && !isTalking && !isAlarmed && !isConfused)
+            if (isAlarmed)
             {
-                emoteTimer = 0;
+                sound.clip = npcData.alarm;
+                sound.Play();
+            }
+            if (!isConfused)
+            {
+                emotes.GetComponent<Animator>().SetBool("isAlarmed", isAlarmed);
+                isAlarmed = false;
             }
 
-            emotes.GetComponent<Animator>().SetBool("isNormal", isNormal);
-            isNormal = false;
+            if (isTalking)
+            {
+                int randomVoiceLine = Random.Range(0, npcData.voiceLines.Length);
 
-            emotes.GetComponent<Animator>().SetBool("isAlarmed", isAlarmed);
-            isAlarmed = false;
-            
+                sound.clip = npcData.voiceLines[randomVoiceLine];
+                sound.Play();
+            }
             emotes.GetComponent<Animator>().SetBool("isTalking", isTalking);
             isTalking = false;
 
@@ -276,8 +297,13 @@ namespace Rose.Characters
             
             if (other.collider.tag == "Target")
             {
-                
-                score.score += 1;
+                goToBoat = false;
+                boat.GetComponent<Boat>().isHappy = true;
+
+                if (isHuman)
+                    score.peopleScore += 1;
+                else
+                    score.animalScore += 1;
                 if (gameObject != null)
                 {
                     destroy = true;
@@ -290,7 +316,7 @@ namespace Rose.Characters
         {
             if (collision.tag == "Enemy" && !destroy)
             {
-                if (player != null && player != boat)
+                if (player != null && !goToBoat)
                 {
                     for (int i=index; i < player.GetComponent<PlayerController>().surroundingNpcs.Count; i++)
                     {

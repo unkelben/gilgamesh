@@ -49,9 +49,11 @@ namespace Rose.Characters
         {
             if (collision.tag == "Enemy")
             {
-                print("hello");
-                npcCounterText.GetComponent<Text>().enabled = false;
-                deathSprite.GetComponent<Image>().enabled = true;
+                if (npcCounterText.GetComponentInChildren<NpcCounterText>().counter > 0)
+                {
+                    npcCounterText.GetComponent<Text>().enabled = false;
+                    deathSprite.GetComponent<Image>().enabled = true;
+                }
             }
         }
 

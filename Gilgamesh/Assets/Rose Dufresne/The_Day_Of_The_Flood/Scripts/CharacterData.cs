@@ -9,5 +9,8 @@ namespace Rose.Characters
     {
         public Sprite sprite;
         public RuntimeAnimatorController animatorController;
+        public AudioClip[] voiceLines;
+        public AudioClip alarm;
+        public AudioClip confused;
     }
 }

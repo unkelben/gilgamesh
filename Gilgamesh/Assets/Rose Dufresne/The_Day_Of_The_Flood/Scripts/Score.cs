@@ -10,16 +10,31 @@ namespace Rose.Utilities
 
         private Text scoreText;
 
+        public int animalScore { get; set; }
+        public int peopleScore { get; set; }
+
+        [SerializeField] bool isPeople;
+
         void Start()
         {
             scoreText = GetComponent<Text>();
 
             score = 0;
+            animalScore = 0;
+            peopleScore = 0;
         }
         
         void Update()
         {
-            scoreText.text = "Saved: " + score.ToString();
+            score = peopleScore + animalScore;
+            
+            if (isPeople)
+            {
+                scoreText.text = "People: " + peopleScore.ToString();
+            }
+               
+            else
+                scoreText.text = "Animals: " + animalScore.ToString();
         }
     }
 }
