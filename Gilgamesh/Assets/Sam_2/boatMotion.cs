@@ -24,8 +24,8 @@ public class boatMotion : MonoBehaviour
     float wordCounter = 0f;
     float interval = 2000f;
 
-    float threshold1 = 2000f;
-    float threshold2 = 1000f;
+    float threshold1 = 3000f;
+    float threshold2 = 1500f;
 
     public bool textTrigger = false;
 
@@ -56,7 +56,7 @@ public class boatMotion : MonoBehaviour
             trigger1 = true;
             trigger2 = false;
             threshold2 += interval;
-            Debug.Log("EY STARTANIM");
+           // Debug.Log("EY STARTANIM");
             GameObject.Find("events").GetComponent<boatSceneHandler>().startNextTextAnimation();
                         
         }
@@ -65,7 +65,7 @@ public class boatMotion : MonoBehaviour
             trigger2 = true;
             trigger1 = false;
             threshold1 += interval;
-            Debug.Log("EY MOVE ON");
+           // Debug.Log("EY MOVE ON");
             GameObject.Find("events").GetComponent<boatSceneHandler>().moveOn = true;
         }
         //Debug.Log(boatPower);

@@ -65,6 +65,7 @@ public class boatSceneHandler : MonoBehaviour
             if (counter == 60)
             {
               instru1.SetActive(true);
+             //   GameObject.Find("pressSpace").GetComponent<UnityEngine.UI.Text>().text = "Try moving left and right";
                // animateText(instru1);
 
             }
@@ -78,7 +79,7 @@ public class boatSceneHandler : MonoBehaviour
                
                 )
             {
-               
+              //  GameObject.Find("pressSpace").GetComponent<UnityEngine.UI.Text>().text = "Press Space";
                 nextInstru = true;
                 instru1.SetActive(false);
              //   instru2.SetActive(true);
@@ -131,6 +132,9 @@ public class boatSceneHandler : MonoBehaviour
             {
                 counter = 0;
                 state = "game2";
+                GameObject.Find("BGM").GetComponent<bgmHandler>().SetSynthVol(1f);
+                GameObject.Find("BGM").GetComponent<bgmHandler>().SetGuitVol(1f);
+                GameObject.Find("BGM").GetComponent<bgmHandler>().SetDrumVol(1f);
                 windMakerSpawned = true;
                 Instantiate(windMaker);
                 gilgamesh1.SetActive(false);
@@ -223,8 +227,10 @@ public class boatSceneHandler : MonoBehaviour
             {
                 
                 state = "headToFront";
-               // instru3.SetActive(false);
-                headToFront.SetActive(true);
+               // moveOn = true;
+                // instru3.SetActive(false);
+                // headToFront.SetActive(true);
+                gilgamesh1.GetComponent<poleGilgameshController>().instructionText = instru2b;
             }
         }
     }

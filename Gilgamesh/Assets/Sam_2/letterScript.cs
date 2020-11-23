@@ -89,7 +89,7 @@ public class letterScript : MonoBehaviour
         {
             float count = counter / 100f;
             float range = 10f;
-            
+            frozenpos.x = -250f + offset * spacing;
             randomOffset = new Vector3(
                 2f*range*( Mathf.PerlinNoise(count, 0f) - 0.5f ),
                 2f * range * (Mathf.PerlinNoise(count, 1f) - 0.5f),

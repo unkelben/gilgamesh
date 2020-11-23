@@ -14,7 +14,7 @@ public class rippleEffect : MonoBehaviour
 
     // List<Transform> interactingObjects;
 
-
+    public int updateRate = 2;
     public float brushval = 100f;
     float damping = 0.999f;
     int cols;
@@ -96,6 +96,7 @@ public class rippleEffect : MonoBehaviour
        
 
         // show updated pixels
+        if(counter % updateRate==0)
         texture.Apply();
 
         float[,] temp = new float[cols, rows];

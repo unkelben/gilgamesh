@@ -338,6 +338,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9055731717802439662, guid: 538c409cd562f2c4f80f2516e682d3c9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.593978
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055731717802439662, guid: 538c409cd562f2c4f80f2516e682d3c9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7.593978
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055731717802439662, guid: 538c409cd562f2c4f80f2516e682d3c9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.593978
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538c409cd562f2c4f80f2516e682d3c9, type: 3}
 --- !u!1 &138138889
@@ -482,8 +494,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36.5, y: 45.7}
-  m_SizeDelta: {x: 252.5, y: 45.3}
+  m_AnchoredPosition: {x: -169.7, y: -11.8}
+  m_SizeDelta: {x: 299.6, y: 108.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &292578444
 MonoBehaviour:
@@ -507,7 +519,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 96c4c6e5754a29141b40f6b21dd900cc, type: 3}
-    m_FontSize: 18
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -518,7 +530,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Go!!!!
+  m_Text: "Grab a pole, \nThen stand in the middle of the boat\nAnd push us forward."
 --- !u!222 &292578445
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -803,8 +815,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57.57, y: 24.1}
-  m_SizeDelta: {x: 242.7, y: 45.3}
+  m_AnchoredPosition: {x: -199.5, y: 6.8}
+  m_SizeDelta: {x: 242.7, y: 71.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &376450361
 MonoBehaviour:
@@ -828,7 +840,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 96c4c6e5754a29141b40f6b21dd900cc, type: 3}
-    m_FontSize: 18
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -839,7 +851,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Grab a pole n work it!
+  m_Text: 'Gilgamesh...
+
+    I hope you know what we''re doing out here.'
 --- !u!222 &376450362
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -958,10 +972,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369a949bb28767d4bb10c53193b1fe72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  updateRate: 2
   brushval: 178.66
   outMin: 0
   outMax: 100.9
   travelRate: 8
+--- !u!1 &526900651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 526900652}
+  - component: {fileID: 526900654}
+  - component: {fileID: 526900653}
+  m_Layer: 5
+  m_Name: pressSpace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &526900652
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526900651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1714693199}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 13.4}
+  m_SizeDelta: {x: 252.5, y: 45.300003}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &526900653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526900651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8113208, g: 0.8074938, b: 0.8074938, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 96c4c6e5754a29141b40f6b21dd900cc, type: 3}
+    m_FontSize: 18
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 243
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Press Space
+--- !u!222 &526900654
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526900651}
+  m_CullTransparentMesh: 0
 --- !u!1 &686225948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,7 +1414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.2, y: 96.61}
+  m_AnchoredPosition: {x: -0.96, y: 81.5}
   m_SizeDelta: {x: 242.7, y: 45.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &906314833
@@ -1344,19 +1438,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 96c4c6e5754a29141b40f6b21dd900cc, type: 3}
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: use arrow keys to move left and right
+  m_Text: "Use Arrow Keys to move, \nPress Space to interact."
 --- !u!222 &906314834
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1849,6 +1943,7 @@ GameObject:
   - component: {fileID: 1183124414}
   - component: {fileID: 1183124413}
   - component: {fileID: 1183124412}
+  - component: {fileID: 1183124416}
   m_Layer: 0
   m_Name: BGM
   m_TagString: Untagged
@@ -1867,7 +1962,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6375833704926592787, guid: 1d905bd6aadb5444e8eb4fef66e416fb, type: 2}
   m_audioClip: {fileID: 8300000, guid: 43c1e79716cace044b2ea692a961c3f7, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -1963,7 +2058,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8259714087461818278, guid: 1d905bd6aadb5444e8eb4fef66e416fb, type: 2}
   m_audioClip: {fileID: 8300000, guid: 46fa80840495b0f4c86fe699fd615156, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -2058,8 +2153,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1568775699362426559, guid: 1d905bd6aadb5444e8eb4fef66e416fb, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 70cc82c77b809ba4dbe0c4c5d9c28898, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 5b99c2d325f82f641adf2de76f3c7557, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -2158,6 +2253,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1183124416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183124411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4526ad5bb7fe54b8769bee08b06393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1269290384
 GameObject:
   m_ObjectHideFlags: 0
@@ -2293,6 +2400,7 @@ MonoBehaviour:
   - {fileID: 341972643}
   - {fileID: 92902196}
   - {fileID: 1337613630}
+  - {fileID: 1420503247}
 --- !u!4 &1287557748
 Transform:
   m_ObjectHideFlags: 0
@@ -2377,7 +2485,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "because of my brother I stray through the wilderness.\r"
+  m_Text: Because of my brother,
 --- !u!222 &1337613633
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2499,8 +2607,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36, y: 6}
-  m_SizeDelta: {x: 252.5, y: 36.3}
+  m_AnchoredPosition: {x: -194.7, y: 3.5}
+  m_SizeDelta: {x: 252.5, y: 76.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1355321440
 MonoBehaviour:
@@ -2523,11 +2631,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 64bd3e45f7a714f16b3c213f55f17fea, type: 3}
-    m_FontSize: 24
+    m_Font: {fileID: 12800000, guid: 96c4c6e5754a29141b40f6b21dd900cc, type: 3}
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -2535,7 +2643,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press Y
+  m_Text: "You're out of poles Gilgamesh.\nHead to the front of the ship. \nYou'll
+    be the sail."
 --- !u!222 &1355321441
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2543,6 +2652,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355321438}
+  m_CullTransparentMesh: 0
+--- !u!1 &1420503247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1420503248}
+  - component: {fileID: 1420503250}
+  - component: {fileID: 1420503249}
+  m_Layer: 5
+  m_Name: gilgaThoughts (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1420503248
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420503247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1714693199}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 19, y: 95.2}
+  m_SizeDelta: {x: 252.5, y: 45.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1420503249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420503247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "I stray through the wilderness.\r"
+--- !u!222 &1420503250
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420503247}
   m_CullTransparentMesh: 0
 --- !u!1 &1450455572
 GameObject:
@@ -2965,6 +3153,8 @@ RectTransform:
   - {fileID: 341972644}
   - {fileID: 92902197}
   - {fileID: 1337613631}
+  - {fileID: 526900652}
+  - {fileID: 1420503248}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3171,8 +3361,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 276.6, y: 19.2}
-  m_SizeDelta: {x: 161.4, y: 32.3}
+  m_AnchoredPosition: {x: 288.5, y: -9.8}
+  m_SizeDelta: {x: 161.4, y: 90.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2021389010
 MonoBehaviour:
@@ -3187,7 +3377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3195,11 +3385,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 96c4c6e5754a29141b40f6b21dd900cc, type: 3}
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -3684,6 +3874,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffadc64902c94b344b319e77690f15b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poles2: {fileID: 21300000, guid: 3639d4a78b347a54cb7ac480f7a34b48, type: 3}
+  poles3: {fileID: 21300000, guid: e19f7db2d6d071144bd00019fbc15404, type: 3}
+  poles4: {fileID: 21300000, guid: e5ef45ae31e5c044980253bb9f76b6c3, type: 3}
+  poles5: {fileID: 21300000, guid: 8f9aa1819b59ddb4596f016a98505643, type: 3}
   boatBoundMin: -0.18
   boatBoundMax: 13.18
   steps:
@@ -3710,6 +3904,7 @@ MonoBehaviour:
   spacePressed: 0
   controlKey: 
   ready: 0
+  pressSpace: {fileID: 526900651}
 --- !u!82 &1471870515394391091
 AudioSource:
   m_ObjectHideFlags: 0

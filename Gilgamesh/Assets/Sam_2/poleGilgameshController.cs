@@ -7,6 +7,12 @@ public class poleGilgameshController : MonoBehaviour
     
     GameObject gilgamesh;
     SpriteRenderer gilgaSprite;
+
+    public Sprite poles2;
+    public Sprite poles3;
+    public Sprite poles4;
+    public Sprite poles5;
+
     float walkSpeed = 0.014f;
 
     float acceleration = 0f;
@@ -48,11 +54,14 @@ public class poleGilgameshController : MonoBehaviour
     int poleThreshold = 23;
     int textIndex = 0;
 
+
     bool textActive = false;
 
     int polesLeft;
     public string controlKey = "a";
     public bool ready = false;
+
+    public GameObject pressSpace;
 
     // Start is called before the first frame update
     void Start()
@@ -206,6 +215,28 @@ public class poleGilgameshController : MonoBehaviour
             
         }
 
+        if (carryingPole && !polePlaced && !placingPole && transform.localPosition.x < 8.5f)
+        {
+            pressSpace.SetActive(true);
+            
+        }
+        else if (carryingPole && polePlaced)
+        {
+            pressSpace.GetComponent<UnityEngine.UI.Text>().text = "Mash Space";
+            pressSpace.SetActive(true);
+        }
+        else if(!carryingPole && polesLeft > 0 && transform.localPosition.x > 8.5f && textIndex > 0)
+        {
+            pressSpace.GetComponent<UnityEngine.UI.Text>().text = "Press Space";
+            pressSpace.SetActive(true);
+        }
+        else if (transform.localPosition.x < 6f &&leftPressed&&rightPressed)
+        {
+            pressSpace.GetComponent<UnityEngine.UI.Text>().text = "Press Space";
+            pressSpace.SetActive(true);
+        }
+        else pressSpace.SetActive(false);
+
         if (Input.GetKeyDown(KeyCode.Space)&&leftPressed&&rightPressed&&polesLeft >=0)
         {
             if (Random.Range(0f, 1f) > 0.68) playGruntSound();
@@ -228,6 +259,7 @@ public class poleGilgameshController : MonoBehaviour
                     if (textIndex == 1)
                     {
                         instructionText = instruTxt2;
+                       
                     }
                     textIndex++;
                 }
@@ -238,9 +270,45 @@ public class poleGilgameshController : MonoBehaviour
                 
 
                 
-                if (polesLeft >= 0 && transform.localPosition.x > 8.5f)
+                if (polesLeft >= 0 && transform.localPosition.x > 8.5f &&textIndex>0)
                 {
                     polesLeft--;
+
+                    GameObject poles = GameObject.Find("poles");
+                    if (polesLeft == 22)
+                    {
+                        GameObject.Find("BGM").GetComponent<bgmHandler>().SetGuitVol(1f);
+                        GameObject.Find("BGM").GetComponent<bgmHandler>().StartBGM();
+                    }
+                   else  if (polesLeft == 19)
+                    {
+                        // GameObject.Find("BGM").GetComponent<bgmHandler>().SetSynthVol(0.1f);
+                        
+                        poles.GetComponent<SpriteRenderer>().sprite = poles2;
+                    }
+                    else if (polesLeft == 13)
+                    {
+                        // GameObject.Find("BGM").GetComponent<bgmHandler>().SetSynthVol(0.2f);
+                        
+                        poles.GetComponent<SpriteRenderer>().sprite = poles3;
+                    }
+                    else if (polesLeft == 7)
+                    {
+                        // GameObject.Find("BGM").GetComponent<bgmHandler>().SetSynthVol(0.3f);
+                        
+                        poles.GetComponent<SpriteRenderer>().sprite = poles4;
+                    }
+                    else if (polesLeft == 2)
+                    {
+                        GameObject.Find("BGM").GetComponent<bgmHandler>().SetGuitVol(0f);
+                        poles.GetComponent<SpriteRenderer>().sprite = poles5;
+                    }
+                    else if (polesLeft == 0)
+                    {
+                        //GameObject.Find("BGM").GetComponent<bgmHandler>().SetSynthVol(1f);
+                        poles.SetActive(false);
+                    }
+
                     GameObject.Find("events").GetComponent<boatSceneHandler>().grabPole();
                     carryingPole = true;
                     if (moving) StartAnimation("walkingWithPole");
