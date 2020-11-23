@@ -90,14 +90,14 @@ namespace Rose.Characters
                 { 
                     if (vertical == 1)
                     {
-                        transform.position += new Vector3(0, 10, 0);
+                        rb.position += new Vector2(0, 10);
                         inBoat = false;
                         transform.GetComponent<CircleCollider2D>().enabled = true;
                         timeInBoat = 0;
                     }
                     else if (vertical == -1)
                     {
-                        transform.position -= new Vector3(0, 10, 0);
+                        rb.position -= new Vector2(0, 10);
                         inBoat = false;
                         transform.GetComponent<CircleCollider2D>().enabled = true;
                         timeInBoat = 0;
@@ -175,8 +175,14 @@ namespace Rose.Characters
 
             if (collision.tag == "Enemy" && !inBoat)
             {
-                //if (saved.score < 25)
-                //    SceneManager.LoadScene("Game_Over1");
+                if (Score.score >= 12 && Score.animalScore < 12)
+                    SceneManager.LoadScene("End_Scene2");
+                else if (Score.score < 12 && Score.animalScore >= 12)
+                    SceneManager.LoadScene("End_Scene3");
+                else if (Score.score < 12 && Score.animalScore < 12)
+                    SceneManager.LoadScene("Game_Over1");
+                else if (Score.score >= 12 && Score.animalScore >= 12)
+                    SceneManager.LoadScene("End_scene1_2");
                 Destroy(gameObject);
             }
         }

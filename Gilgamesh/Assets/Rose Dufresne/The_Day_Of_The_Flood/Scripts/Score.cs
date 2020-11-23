@@ -6,22 +6,18 @@ namespace Rose.Utilities
 {
     public class Score : MonoBehaviour
     {
-        public int score { get; set; }
+        public static int score;
 
         private Text scoreText;
 
-        public int animalScore { get; set; }
-        public int peopleScore { get; set; }
+        public static int animalScore;
+        public static int peopleScore;
 
         [SerializeField] bool isPeople;
 
         void Start()
         {
             scoreText = GetComponent<Text>();
-
-            score = 0;
-            animalScore = 0;
-            peopleScore = 0;
         }
         
         void Update()

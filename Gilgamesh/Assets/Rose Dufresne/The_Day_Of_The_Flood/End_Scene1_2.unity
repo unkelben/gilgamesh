@@ -213,12 +213,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1978501742}
+  - {fileID: 2001178165}
   - {fileID: 1095290764}
   - {fileID: 1620124714}
   - {fileID: 1072191688}
   - {fileID: 1748262978}
-  - {fileID: 479109208}
+  - {fileID: 1769092696}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -227,68 +227,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1001 &479109207
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 64745275}
-    m_Modifications:
-    - target: {fileID: 409322260034205217, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
-      propertyPath: m_Name
-      value: Scores
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 34.864014
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8.437103
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -382.01257
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
---- !u!4 &479109208 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
-  m_PrefabInstance: {fileID: 479109207}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1072191688 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8454862295287175427, guid: a9ee39c670b5d7b409736de9f2887cb7, type: 3}
@@ -369,8 +307,8 @@ MonoBehaviour:
 
     the world. When the seventh day dawned
 
-    the people and creatures
-    of Shurrupak could not endure the torment any longer...
+    the storm from the
+    south subsided, the sea grew calm, the flood was stilled.
 
     ~'
 --- !u!222 &1095290766
@@ -495,8 +433,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Utnapishtim failed to save his people and the animals \nand their fate
-    has been left to the seas."
+  m_Text: "Utnapishtim was a mortal man that sacrificed himself to save many from
+    the \nwrath of the gods; He will be remembered as legend in the city of Shurrupak."
 --- !u!222 &1620124716
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -593,6 +531,68 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5264624352894605297, guid: d1b7315fa05698d47a47369aeaa6debf, type: 3}
   m_PrefabInstance: {fileID: 5264624353295939507}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1769092695
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 64745275}
+    m_Modifications:
+    - target: {fileID: 409322260034205217, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
+      propertyPath: m_Name
+      value: Scores
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 34.864014
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.437103
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -382.01257
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
+--- !u!4 &1769092696 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3294497214760079646, guid: 0e4c3d2d36b3065439964880bd1ba584, type: 3}
+  m_PrefabInstance: {fileID: 1769092695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1921682661
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,7 +659,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1978501741
+--- !u!1001 &2001178164
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -669,7 +669,7 @@ PrefabInstance:
     - target: {fileID: 2172882590920554988, guid: 0792b990619bc7443a7c007bf6ccbbe6, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 36df5708b506cb94daa3ea6d77d31084, type: 3}
+      objectReference: {fileID: 21300000, guid: 1888665e839f24e43a242736e6a6edfe, type: 3}
     - target: {fileID: 5380557359763912283, guid: 0792b990619bc7443a7c007bf6ccbbe6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -760,10 +760,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0792b990619bc7443a7c007bf6ccbbe6, type: 3}
---- !u!224 &1978501742 stripped
+--- !u!224 &2001178165 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5380557359763912283, guid: 0792b990619bc7443a7c007bf6ccbbe6, type: 3}
-  m_PrefabInstance: {fileID: 1978501741}
+  m_PrefabInstance: {fileID: 2001178164}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5264624353295939507
 PrefabInstance:

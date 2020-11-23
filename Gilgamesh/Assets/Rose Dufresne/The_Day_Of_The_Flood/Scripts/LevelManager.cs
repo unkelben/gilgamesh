@@ -18,13 +18,11 @@ namespace Rose.Utilities
 
         private GameObject player;
         private TimerText timer;
-        private Score saved;
 
         private void Start()
         {
             player = GameObject.FindGameObjectWithTag("Player");
             timer = FindObjectOfType<TimerText>();
-            saved = FindObjectOfType<Score>();
             pauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
             gameIsPaused = false;
@@ -46,7 +44,7 @@ namespace Rose.Utilities
 
             Scene currentScene = SceneManager.GetActiveScene();
             string sceneName = currentScene.name;
-            if (sceneName == "End_Scene1" || sceneName == "End_Scene2" || sceneName == "Game_Over1" || sceneName == "Start_Scene")
+            if (sceneName == "End_Scene1" || sceneName == "End_Scene1_2" || sceneName == "End_Scene2" || sceneName == "End_Scene3" || sceneName == "Game_Over1" || sceneName == "Start_Scene")
             {
                 Pause();
             }
@@ -72,6 +70,9 @@ namespace Rose.Utilities
         {
             gameReplayed = true;
             Resume();
+            Score.score = 0;
+            Score.animalScore = 0;
+            Score.peopleScore = 0;
             SceneManager.LoadScene("The_Day_Of_The_Flood");
         }
 
@@ -82,13 +83,13 @@ namespace Rose.Utilities
 
         public void WinningLosingCondition()
         {
-            if (player != null && timer != null && saved != null)
+            if (player != null && timer != null)
             {
-                if (player.GetComponent<PlayerController>().inBoat && timer.timeLeft <= 0f && saved.score >= 25)
+                if (player.GetComponent<PlayerController>().inBoat && timer.timeLeft <= 0f && Score.peopleScore >= 12 && Score.animalScore >= 12)
                     SceneManager.LoadScene("End_Scene1");
-                if (!player.GetComponent<PlayerController>().inBoat && timer.timeLeft <= 0f && saved.score >= 25)
-                    SceneManager.LoadScene("End_Scene2");
-                if (timer.timeLeft <= 0f && saved.score < 25)
+                else if (!player.GetComponent<PlayerController>().inBoat && timer.timeLeft <= 0f && Score.peopleScore >= 12 && Score.animalScore >= 12)
+                    SceneManager.LoadScene("End_Scene1_2");
+                else if (timer.timeLeft <= 0f && Score.score < 12 && Score.animalScore < 12)
                     SceneManager.LoadScene("Game_Over1");
             }
         }

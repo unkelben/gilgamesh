@@ -14,3 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -4639029667824352794, guid: 52dabef326ad6a14888fb86bfb89784b, type: 3}
   animatorController: {fileID: 9100000, guid: aff64edb64b19264ca7a542d146d0a1a, type: 2}
+  voiceLines:
+  - {fileID: 8300000, guid: ec5159f8cf576b349a2a3f3208b1c42e, type: 3}
+  - {fileID: 8300000, guid: 0d27e5f004bdf93469a839768ecb0692, type: 3}
+  - {fileID: 8300000, guid: 44520b6296650e14cb6c8158e1ee67c4, type: 3}
+  - {fileID: 8300000, guid: dc96a210c42f4364e9261561514986ed, type: 3}
+  - {fileID: 8300000, guid: 37bdbeb87f2cf4842a39db8faf444795, type: 3}
+  - {fileID: 8300000, guid: f1dd3317a70c0a8499421b2bf44a2955, type: 3}
+  - {fileID: 8300000, guid: 10f280cf0705d84418d4e5e4447dbe0e, type: 3}
+  alarm: {fileID: 8300000, guid: 48102cb1e1706c240a7dbab5aad70446, type: 3}
+  confused: {fileID: 8300000, guid: 48102cb1e1706c240a7dbab5aad70446, type: 3}

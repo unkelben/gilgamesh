@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac3a368ef44859c43b0a5c9d11c19200, type: 3}
-  m_Name: M_P
+  m_Name: M_P 1
   m_EditorClassIdentifier: 
   sprite: {fileID: 1583242728244570889, guid: 52dabef326ad6a14888fb86bfb89784b, type: 3}
   animatorController: {fileID: 9100000, guid: 5c64312c2f24eea4282879d1d3a633c3, type: 2}
+  voiceLines: []
+  alarm: {fileID: 0}
+  confused: {fileID: 0}

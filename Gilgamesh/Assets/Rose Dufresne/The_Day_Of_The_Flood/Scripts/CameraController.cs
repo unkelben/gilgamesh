@@ -83,8 +83,14 @@ public class CameraController : MonoBehaviour
         }
 
         Vector3 finalPosition = targetPosition;
-        
-        transform.position = Vector3.SmoothDamp(transform.position, finalPosition, ref refVelocity, smoothingSpeed);
+
+        if ((int)height / 2 == currentHeight)
+        {
+            transform.position = Vector3.SmoothDamp(transform.position, finalPosition, ref refVelocity, smoothingSpeed);
+        }
+        else
+            if (height / 2 - 40 >= 0)
+                transform.position = Vector3.SmoothDamp(transform.position, finalPosition, ref refVelocity, (height/2-40)/20);
         //transform.LookAt(Vector3.forward, target.position);
     }
 }

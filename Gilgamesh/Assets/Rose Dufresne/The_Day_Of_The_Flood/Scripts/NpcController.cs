@@ -60,8 +60,6 @@ namespace Rose.Characters
         //audio sources
         private AudioSource sound;
 
-        private Score score;
-
         private bool destroy;
 
         private void Awake()
@@ -100,8 +98,6 @@ namespace Rose.Characters
             emoteTimerInterval = Random.Range(5, 10);
 
             sound = GetComponent<AudioSource>();
-
-            score = FindObjectOfType<Score>();
 
             destroy = false;
         }
@@ -151,7 +147,7 @@ namespace Rose.Characters
 
                 else
                 {
-                    if (player.GetComponent<PlayerController>().surroundingNpcs.Count > 1 && index > 0)
+                    if (player.GetComponent<PlayerController>().surroundingNpcs.Count > 1 && index > 0 && !goToBoat)
                     {
                         previousNpc = player.GetComponent<PlayerController>().surroundingNpcs[index - 1];
                     }
@@ -301,9 +297,9 @@ namespace Rose.Characters
                 boat.GetComponent<Boat>().isHappy = true;
 
                 if (isHuman)
-                    score.peopleScore += 1;
+                    Score.peopleScore += 1;
                 else
-                    score.animalScore += 1;
+                    Score.animalScore += 1;
                 if (gameObject != null)
                 {
                     destroy = true;
