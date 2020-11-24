@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 namespace Rose.Utilities
 {
     using Rose.Characters;
-    using Rose.Utilities;
 
     public class LevelManager : MonoBehaviour
     {
