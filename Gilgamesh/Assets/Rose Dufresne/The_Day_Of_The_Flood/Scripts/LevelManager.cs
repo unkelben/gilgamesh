@@ -89,6 +89,10 @@ namespace Rose.Utilities
                     SceneManager.LoadScene("End_Scene1");
                 else if (!player.GetComponent<PlayerController>().inBoat && timer.timeLeft <= 0f && Score.peopleScore >= 12 && Score.animalScore >= 12)
                     SceneManager.LoadScene("End_Scene1_2");
+                else if (timer.timeLeft <= 0f && Score.score >= 12 && Score.animalScore < 12)
+                    SceneManager.LoadScene("End_Scene2");
+                else if (timer.timeLeft <= 0f && Score.score < 12 && Score.animalScore >= 12)
+                    SceneManager.LoadScene("End_Scene3");
                 else if (timer.timeLeft <= 0f && Score.score < 12 && Score.animalScore < 12)
                     SceneManager.LoadScene("Game_Over1");
             }
