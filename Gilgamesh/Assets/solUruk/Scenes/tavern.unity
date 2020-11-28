@@ -370,9 +370,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 587648238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17d6b09fd86437e489fbe48860a8493e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ba1e2e5e26bbad4c9361b178d9d912f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  air: {fileID: 2841492119299066681, guid: 0c45c1a2da7ecd845a42f72a63301040, type: 3}
+  pop: {fileID: 148231755596297291, guid: 890919a8fe89c2d4487a73e8272ec413, type: 3}
+  gilText: {fileID: 743285424}
+  enkText: {fileID: 165798114}
 --- !u!82 &587648244
 AudioSource:
   m_ObjectHideFlags: 0
