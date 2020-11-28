@@ -175,13 +175,13 @@ namespace Rose.Characters
 
             if (collision.tag == "Enemy" && !inBoat)
             {
-                if (Score.score >= 12 && Score.animalScore < 12)
+                if (Score.peopleScore >= 12 && Score.animalScore < 12)
                     SceneManager.LoadScene("End_Scene2");
-                else if (Score.score < 12 && Score.animalScore >= 12)
+                else if (Score.peopleScore < 12 && Score.animalScore >= 12)
                     SceneManager.LoadScene("End_Scene3");
-                else if (Score.score < 12 && Score.animalScore < 12)
+                else if (Score.peopleScore < 12 && Score.animalScore < 12)
                     SceneManager.LoadScene("Game_Over1");
-                else if (Score.score >= 12 && Score.animalScore >= 12)
+                else if (Score.peopleScore >= 12 && Score.animalScore >= 12)
                     SceneManager.LoadScene("End_scene1_2");
                 Destroy(gameObject);
             }
